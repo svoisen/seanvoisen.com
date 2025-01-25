@@ -1,0 +1,21 @@
+{
+    "name": "seanvoisen.com",
+    "version": "0.1.0",
+    "description": "A personal website.",
+    "type": "module",
+    "scripts": {
+        "build": "npx @11ty/eleventy",
+        "start": "npx @11ty/eleventy --serve --quiet",
+        "debug": "cross-env DEBUG=Eleventy* npx @11ty/eleventy",
+        "debugstart": "cross-env DEBUG=Eleventy* npx @11ty/eleventy --serve --quiet",
+        "benchmark": "cross-env DEBUG=Eleventy:Benchmark* npx @11ty/eleventy"
+    },
+    "author": "Sean Voisen",
+    "license": "MIT",
+    "devDependencies": {
+        "@11ty/eleventy": "^3.0.0",
+        "@11ty/eleventy-plugin-rss": "^2.0.3",
+        "@11ty/eleventy-plugin-syntaxhighlight": "^5.0.0",
+        "luxon": "^3.5.0"
+    }
+}

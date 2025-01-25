@@ -1,0 +1,14 @@
+<header class="header">
+    <a href="/" class="home-link">
+        {% include "partials/logo.njk" %}
+    </a>
+    <nav class="nav">
+        <ul>
+            {% for item in navigation.items %}
+            <li>
+                <a href="{{ item.url }}">{{ item.title }}</a>
+            </li>
+            {% endfor %}
+        </ul>
+    </nav>
+</header>

@@ -1,0 +1,39 @@
+---
+layout: 'layouts/home.njk'
+---
+
+{% set maxPosts = 3 %}
+
+{% macro postList(items) %}
+<ul class="post-list">
+{% for item in items %}
+  <li class="post-list-item">
+    {{ item.data.title }}
+  </li>
+{% endfor %}
+</ul>
+{% endmacro %}
+
+<div class="content">
+    <section>
+        <p>Hello! I'm <strong>Sean</strong>, a design technologist and software engineering leader who is interested in creative tools, tools for thought, malleable systems, the open web, human-computer interaction, sustainable computing, and generally anything related to making computers more inclusive, empowering, and convivial.</p>
+        <p>This site is my blog and "<a href="https://maggieappleton.com/garden-history">digital garden</a>," a collection of <a href="/blog/">writing</a> and <a href="/notes/">notes</a> on topics of personal interest.
+    </section>
+    <hr>
+    <section>
+        <h2>Latest blog posts</h2>
+        {{ postList(collections.blog.slice(-1 * maxPosts)) }}
+        <a href="/blog/">More posts in the archives</a>
+        {% if collections.blog.length > maxPosts %}
+        <a href="/blog/">More posts in the archives</a>
+        {% endif %}
+    </section>
+    <hr>
+    <section>
+        <h2>Latest in the stream</h2>
+        {{ postList(collections.stream.slice(-1 * maxPosts)) }}
+        {% if collections.blog.length > maxPosts %}
+        <a href="/blog/">More posts in the archives</a>
+        {% endif %}
+    </section>
+</div>
