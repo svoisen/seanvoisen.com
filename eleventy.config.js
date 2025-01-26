@@ -1,15 +1,15 @@
+import { DateTime } from "luxon";
 import pluginSyntaxHighlight from "@11ty/eleventy-plugin-syntaxhighlight";
 
 export default async function(eleventyConfig) {
   /**
    * Filters
    */
-  eleventyConfig.addFilter("readableDate", (dateObj, format, zone) => {
-    // Formatting tokens for Luxon: https://moment.github.io/luxon/#/formatting?id=table-of-tokens
-    return DateTime.fromJSDate(dateObj, { zone: zone || "utc" }).toFormat(format || "dd LLLL yyyy");
+  eleventyConfig.addFilter("w3Date", (dateObj) => {
+    return new Date(dateObj).toISOString();
   });
 
-  eleventyConfig.addFilter("htmlDateString", (dateObj) => {
+  eleventyConfig.addFilter("htmlDate", (dateObj) => {
     // dateObj input: https://html.spec.whatwg.org/multipage/common-microsyntaxes.html#valid-date-string
     return DateTime.fromJSDate(dateObj, { zone: "utc" }).toFormat('yyyy-LL-dd');
   });
@@ -27,8 +27,18 @@ export default async function(eleventyConfig) {
     return array.slice(0, n);
   });
 
-  eleventyConfig.addFilter("filterTagList", function filterTagList(tags) {
+  eleventyConfig.addFilter("filteredTagList", function filterTagList(tags) {
     return (tags || []).filter(tag => ["all", "blog", "stream"].indexOf(tag) === -1);
+  });
+
+  eleventyConfig.addWatchTarget("./css/");
+
+  eleventyConfig.addCollection('blog', (collection) => {
+    return [...collection.getFilteredByGlob('./content/blog/*.md')].reverse();
+  });
+
+  eleventyConfig.addCollection('stream', (collection) => {
+    return [...collection.getFilteredByGlob('./content/stream/*.md')].reverse();
   });
   
   /**

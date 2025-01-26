@@ -2,17 +2,10 @@
 layout: 'layouts/home.njk'
 ---
 
+{% from "macros.njk" import postList %}
 {% set maxPosts = 3 %}
-
-{% macro postList(items) %}
-<ul class="post-list">
-{% for item in items %}
-  <li class="post-list-item">
-    {{ item.data.title }}
-  </li>
-{% endfor %}
-</ul>
-{% endmacro %}
+{% set latestBlogPosts = collections.blog | head(maxPosts) %}
+{% set latestStreamPosts = collections.stream | head(maxPosts) %}
 
 <div class="content">
     <section>
@@ -22,18 +15,14 @@ layout: 'layouts/home.njk'
     <hr>
     <section>
         <h2>Latest blog posts</h2>
-        {{ postList(collections.blog.slice(-1 * maxPosts)) }}
-        <a href="/blog/">More posts in the archives</a>
-        {% if collections.blog.length > maxPosts %}
-        <a href="/blog/">More posts in the archives</a>
-        {% endif %}
+        {{ postList(latestBlogPosts) }}
+        {% if collections.blog.length > maxPosts %}<p class="more-posts"><a href="/blog/">More posts in the archives →</a></p>{% endif %}
     </section>
     <hr>
     <section>
         <h2>Latest in the stream</h2>
-        {{ postList(collections.stream.slice(-1 * maxPosts)) }}
-        {% if collections.blog.length > maxPosts %}
-        <a href="/blog/">More posts in the archives</a>
+        {{ postList(latestStreamPosts) }}
+        {% if collections.stream.length > maxPosts %}<p class="more-posts"><a href="/blog/">More posts in the archives →</a></p>
         {% endif %}
     </section>
 </div>
