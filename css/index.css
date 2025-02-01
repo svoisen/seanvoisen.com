@@ -1,138 +1,21 @@
 :root {
     color-scheme: light dark;
 
-    --flexoki-black:           #100F0F;
-    --flexoki-paper:           #FFFCF0;
-
-    --flexoki-50:              #F2F0E5;
-    --flexoki-100:             #E6E4D9;
-    --flexoki-150:             #DAD8CE;
-    --flexoki-200:             #CECDC3;
-    --flexoki-300:             #B7B5AC;
-    --flexoki-400:             #9F9D96;
-    --flexoki-500:             #878580;
-    --flexoki-600:             #6F6E69;
-    --flexoki-700:             #575653;
-    --flexoki-800:             #403E3C;
-    --flexoki-850:             #343331;
-    --flexoki-900:             #282726;
-    --flexoki-950:             #1C1B1A;
-
-    --flexoki-red-50:          #FFE1D5;
-    --flexoki-red-100:         #FFCABB;
-    --flexoki-red-150:         #FDB2A2;
-    --flexoki-red-200:         #F89A8A;
-    --flexoki-red-300:         #E8705F;
-    --flexoki-red-400:         #D14D41;
-    --flexoki-red-500:         #C03E35;
-    --flexoki-red-600:         #AF3029;
-    --flexoki-red-700:         #942822;
-    --flexoki-red-800:         #6C201C;
-    --flexoki-red-850:         #551B18;
-    --flexoki-red-900:         #3E1715;
-    --flexoki-red-950:         #261312;
-
-    --flexoki-orange-50:       #FFE7CE;
-    --flexoki-orange-100:      #FED3AF;
-    --flexoki-orange-150:      #FCC192;
-    --flexoki-orange-200:      #F9AE77;
-    --flexoki-orange-300:      #EC8B49;
-    --flexoki-orange-400:      #DA702C;
-    --flexoki-orange-500:      #CB6120;
-    --flexoki-orange-600:      #BC5215;
-    --flexoki-orange-700:      #9D4310;
-    --flexoki-orange-800:      #71320D;
-    --flexoki-orange-850:      #59290D;
-    --flexoki-orange-900:      #40200D;
-    --flexoki-orange-950:      #27180E;
-
-    --flexoki-yellow-50:       #FAEEC6;
-    --flexoki-yellow-100:      #F6E2A0;
-    --flexoki-yellow-150:      #F1D67E;
-    --flexoki-yellow-200:      #ECCB60;
-    --flexoki-yellow-300:      #DFB431;
-    --flexoki-yellow-400:      #D0A215;
-    --flexoki-yellow-500:      #BE9207;
-    --flexoki-yellow-600:      #AD8301;
-    --flexoki-yellow-700:      #8E6B01;
-    --flexoki-yellow-800:      #664D01;
-    --flexoki-yellow-850:      #503D02;
-    --flexoki-yellow-900:      #3A2D04;
-    --flexoki-yellow-950:      #241E08;
-
-    --flexoki-green-50:        #EDEECF;
-    --flexoki-green-100:       #DDE2B2;
-    --flexoki-green-150:       #CDD597;
-    --flexoki-green-200:       #BEC97E;
-    --flexoki-green-300:       #A0AF54;
-    --flexoki-green-400:       #879A39;
-    --flexoki-green-500:       #768D21;
-    --flexoki-green-600:       #66800B;
-    --flexoki-green-700:       #536907;
-    --flexoki-green-800:       #3D4C07;
-    --flexoki-green-850:       #313D07;
-    --flexoki-green-900:       #252D09;
-    --flexoki-green-950:       #1A1E0C;
-
-    --flexoki-cyan-50:         #DDF1E4;
-    --flexoki-cyan-100:        #BFE8D9;
-    --flexoki-cyan-150:        #A2DECE;
-    --flexoki-cyan-200:        #87D3C3;
-    --flexoki-cyan-300:        #5ABDAC;
-    --flexoki-cyan-400:        #3AA99F;
-    --flexoki-cyan-500:        #2F968D;
-    --flexoki-cyan-600:        #24837B;
-    --flexoki-cyan-700:        #1C6C66;
-    --flexoki-cyan-800:        #164F4A;
-    --flexoki-cyan-850:        #143F3C;
-    --flexoki-cyan-900:        #122F2C;
-    --flexoki-cyan-950:        #101F1D;
-
-    --flexoki-blue-50:         #E1ECEB;
-    --flexoki-blue-100:        #C6DDE8;
-    --flexoki-blue-150:        #ABCFE2;
-    --flexoki-blue-200:        #92BFDB;
-    --flexoki-blue-300:        #66A0C8;
-    --flexoki-blue-400:        #4385BE;
-    --flexoki-blue-500:        #3171B2;
-    --flexoki-blue-600:        #205EA6;
-    --flexoki-blue-700:        #1A4F8C;
-    --flexoki-blue-800:        #163B66;
-    --flexoki-blue-850:        #133051;
-    --flexoki-blue-900:        #12253B;
-    --flexoki-blue-950:        #101A24;
-
-    --flexoki-purple-50:       #F0EAEC;
-    --flexoki-purple-100:      #E2D9E9;
-    --flexoki-purple-150:      #D3CAE6;
-    --flexoki-purple-200:      #C4B9E0;
-    --flexoki-purple-300:      #A699D0;
-    --flexoki-purple-400:      #8B7EC8;
-    --flexoki-purple-500:      #735EB5;
-    --flexoki-purple-600:      #5E409D;
-    --flexoki-purple-700:      #4F3685;
-    --flexoki-purple-800:      #3C2A62;
-    --flexoki-purple-850:      #31234E;
-    --flexoki-purple-900:      #261C39;
-    --flexoki-purple-950:      #1A1623;
-
-    --flexoki-magenta-50:      #FEE4E5;
-    --flexoki-magenta-100:     #FCCFDA;
-    --flexoki-magenta-150:     #F9B9CF;
-    --flexoki-magenta-200:     #F4A4C2;
-    --flexoki-magenta-300:     #E47DA8;
-    --flexoki-magenta-400:     #CE5D97;
-    --flexoki-magenta-500:     #B74583;
-    --flexoki-magenta-600:     #A02F6F;
-    --flexoki-magenta-700:     #87285E;
-    --flexoki-magenta-800:     #641F46;
-    --flexoki-magenta-850:     #4F1B39;
-    --flexoki-magenta-900:     #39172B;
-    --flexoki-magenta-950:     #24131D;
+    --color-slate-50: oklch(0.984 0.003 247.858);  
+    --color-slate-100: oklch(0.968 0.007 247.896);  
+    --color-slate-200: oklch(0.929 0.013 255.508);  
+    --color-slate-300: oklch(0.869 0.022 252.894);  
+    --color-slate-400: oklch(0.704 0.04 256.788);  
+    --color-slate-500: oklch(0.554 0.046 257.417);  
+    --color-slate-600: oklch(0.446 0.043 257.281);  
+    --color-slate-700: oklch(0.372 0.044 257.287);  
+    --color-slate-800: oklch(0.279 0.041 260.031);  
+    --color-slate-900: oklch(0.208 0.042 265.755);  
+    --color-slate-950: oklch(0.129 0.042 264.695);
 
     /**
-     * Font sizes
-     */
+* Font sizes
+*/
     /* Step -2: 12.642px → 11.52px */
     --font-size--2: clamp(0.72rem, 0.8145rem + -0.122vi, 0.7901rem);
     /* Step -1: 14.2222px → 14.4px */
@@ -151,8 +34,8 @@
     --font-size-5: clamp(1.802rem, 1.2347rem + 2.8369vi, 3.4332rem);
 
     /**
-     * Spacing
-     */
+* Spacing
+*/
     --space-3xs: clamp(0.25rem, 0.2283rem + 0.1087vi, 0.3125rem);
     --space-2xs: clamp(0.5rem, 0.4783rem + 0.1087vi, 0.5625rem);
     --space-xs: clamp(0.75rem, 0.7065rem + 0.2174vi, 0.875rem);
@@ -164,157 +47,250 @@
     --space-3xl: clamp(4rem, 3.8261rem + 0.8696vi, 4.5rem);
 
     /**
-     * Typography
-     */
+* Typography
+*/
     --font-family-sans-serif: -apple-system, BlinkMacSystemFont, avenir next, avenir, segoe ui, helvetica neue, helvetica, Cantarell, Ubuntu, roboto, noto, arial, sans-serif;
-    --font-family-serif: Charter, 'Bitstream Charter', 'Sitka Text', Cambria, serif;
-    --font-family-mono: Menlo, Consolas, Monaco, Liberation Mono, Lucida Console, monospace; 
-    --line-height: 1.5;
 
-    --bg-color: light-dark(var(--flexoki-paper), var(--flexoki-black));
-    --content-color: light-dark(var(--flexoki-black), var(--flexoki-300));
-    --heading-color: light-dark(var(--flexoki-black), var(--flexoki-100));
-    --marker-color: light-dark(var(--flexoki-black), var(--flexoki-500));
-    --metadata-color: light-dark(var(--flexoki-black), var(--flexoki-500));
-    --link-color: light-dark(var(--flexoki-yellow-400), var(--flexoki-yellow-400));
+    /**
+* Colors
+*/
+    --background-color: var(--color-slate-50);
+    --foreground-color: var(--color-slate-900);
+    --deemphasized-color: var(--color-slate-500);
+    --border-color: var(--color-slate-300);
+    --metadata-background-color: var(--color-slate-200);
+    --metadata-foreground-color: var(--color-slate-900);
+    --link-color: var(--foreground-color);
+    --header-background-color: var(--color-slate-900);
+    --header-foreground-color: var(--color-slate-50);
+    --header-border-color: var(--color-slate-600);
+    --line-height: 1.5;
+    --width: 42rem;
 }
 
-html, body {
+* {
+    box-sizing: border-box;
     margin: 0;
     padding: 0;
-    font-family: var(--font-family-sans-serif);
-    background-color: var(--bg-color);
-    color: var(--flexoki-200);
 }
 
 body {
-    margin: var(--space-xl);
+    line-height: var(--line-height);
+    font-family: var(--font-family-sans-serif);
+    font-weight: 400;
+    font-size: var(--font-size-0);
+    font-optical-sizing: auto;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    -webkit-text-size-adjust: 100%;
+    text-rendering: optimizeLegibility;
+    background-color: var(--header-background-color);
+}
+
+hr {
+    border: none;
+    box-sizing: content-box;
+    height: 1px;
+    overflow: visible;
+    background-color: var(--border-color);
+    margin: var(--space-xl) 0 var(--space-xl) 0;
 }
 
 a {
     color: var(--link-color);
-    text-decoration-color: var(--flexoki-600);
-    text-decoration-thickness: 2px;
+    text-decoration-color: var(--border-color);
+    text-decoration-style: solid;
+    text-decoration-thickness: 1.5px;
 }
 
 a:hover {
-    color: var(--flexoki-blue-100);
-    text-decoration-color: var(--flexoki-500);
+    color: var(--link-hover-color);
+    text-decoration-color: var(--link-hover-underline-color);
+    transition: 0.25s;
 }
 
-ul, ol {
-    margin: 0 0 0 var(--space-s);
-    padding: 0;
-    list-style-position: outside;
+a:after { font-size: 0.75em; vertical-align: super; color: var(--deemphasized-color) }
+a[href*="//"]:not([href*="seanvoisen.com"]):after { content: "\00A0↗"; }
+a[href^="http:"]:after { content: "\00A0!" !important; }
+a[href$=".pdf"]:after, a[href$=".zip"]:after, a[href$=".gz"]:after {
+	content: "\00A0↓" !important;
+}
 
-    & li::marker {
-        color: var(--marker-color);
-    }
+p {
+    margin: var(--space-m) 0 var(--space-m) 0;
 }
 
 h1 {
-    font-weight: 500;
-    font-size: var(--font-size-2);
-    color: var(--heading-color);
+    font-size: var(--font-size-3);
+    font-weight: 900;
 }
 
 h2 {
-    font-weight: 500;
-    font-size: var(--font-size-1);
-    color: var(--heading-color);
+    font-size: var(--font-size-2);
+    font-weight: 900;
 }
 
-hr {
-    width: 100%;
-    border: 0;
-    height: 1px;
-    margin-top: var(--space-xl);
-    margin-bottom: var(--space-xl);
-    background: var(--flexoki-900);
+h3 {
+    font-size: var(--font-size-1);
+    font-weight: 900;
+}
+
+ul {
+    margin-left: var(--space-m);
+
+    & li {
+        margin-bottom: var(--space-3xs);
+    }
+}
+
+.main {
+    color: var(--foreground-color);
+    background-color: var(--background-color);
+
+    & > article, & > div {
+        max-width: var(--width);
+        padding: var(--space-m);
+
+        & p:first-child {
+            margin-top: 0;
+        }
+
+        & h1 + p, & h2 + p, & h3 + p {
+            margin-top: 0;
+        }
+    }
 }
 
 .header {
-    font-size: var(--font-size-0);
-    margin-bottom: var(--space-xl);
+    background-color: var(--header-background-color);
+    color: var(--header-foreground-color);
     display: flex;
-    flex-direction: row;
-    align-items: center;
+    flex-direction: column;
     align-content: center;
+    padding: var(--space-m);
+    font-size: var(--font-size--1);
 
-    & a:hover > .logo path {
-        fill: var(--flexoki-cyan-200);
-    }
-}
-
-.logo {
-    margin-right: var(--space-l);
-    height: var(--space-xl);
-
-    & path {
-        fill: var(--flexoki-paper);
-    }
-}
-
-.content {
-    color: var(--content-color);
-    max-width: 42rem;
-    font-size: var(--font-size-0);
-    line-height: 1.5;
-}
-
-.nav {
-    & a {
+    & a  {
+        color: var(--header-foreground-color);
         text-decoration: none;
     }
 
-    & ul {
-        list-style-type: none;
-
-        & li {
-            display: inline-block;
-            margin-right: var(--space-l);
-        }
+    & .logo-wrapper {
+        flex: 1;
     }
-}
 
-.post-list {
-    list-style-type: none;
-    margin: 0;
-
-    & .post-list-item {
-        display: flex;
-        gap: var(--space-m);
-        align-items: center;
-        align-content: center;
-        margin-bottom: var(--space-2xs);
-
-        & .post-list-item-date {
-            color: var(--metadata-color);
-            text-align: right;
-            font-family: var(--font-family-mono);
-            font-size: var(--font-size--1);
-        }
-    }
-}
-
-.note-list {
-    & li {
-        margin-left: var(--space-m);
+    & svg.logo {
+        height: 2rem;
+        fill: var(--header-foreground-color);
     }
 }
 
 .footer {
-    margin-top: var(--space-2xl);
     font-size: var(--font-size--1);
-    color: var(--content-color);
-    line-height: 1.5;
+    background-color: var(--header-background-color);
+    color: var(--header-foreground-color);
+    padding: var(--space-m) var(--space-m) var(--space-xl) var(--space-m);
+
+    & .external-links {
+        margin-bottom: var(--space-s);
+    }
 
     & p {
         margin: 0;
-        padding: 0;
     }
 
-    & .external-links {
-        margin-bottom: var(--space-xs);
+    & a {
+        color: var(--header-foreground-color);
+        text-decoration-color: var(--header-border-color);
+    }
+}
+
+.nav {
+    margin-top: var(--space-m);
+
+    & ul {
+        list-style: none;
+        display: flex;
+        flex-direction: column;
+        margin: 0;
+
+        & li {
+            margin-bottom: var(--space-3xs);
+        }
+    }
+}
+
+.post-metadata, .page-metadata {
+    margin: var(--space-m) 0 var(--space-m) 0;
+    padding: var(--space-s);
+    font-size: var(--font-size--1);
+    background-color: var(--metadata-background-color);
+    color: var(--metadata-foreground-color);
+
+    & dt {
+        font-weight: 500;
+        display: inline;
+        float: left;
+        margin-right: 0.5ch;
+        clear: both;
+    }
+
+    & dd:not(:first-of-type), & dt:not(:first-of-type) {
+        margin-top: var(--space-3xs);
+    }
+
+    & dt::after {
+        content: ': ';
+    }
+}
+
+.post-title, .page-title {
+    margin-bottom: var(--space-s);
+}
+
+.post-list {
+    margin: var(--space-s) 0;
+    list-style: none;
+}
+
+.post-list-item-title {
+    display: block;
+}
+
+.post-list-item-date {
+    color: var(--deemphasized-color);
+    font-size: var(--font-size--1);
+    display: block;
+}
+
+@media only screen and (min-width: 568px) {
+    .header {
+        flex-direction: row;
+        line-height: 0;
+        font-size: var(--font-size-0);
+        align-items: center;
+    }
+
+    .nav {
+        margin: 0;
+
+        & ul {
+            flex-direction: row;
+
+            & li {
+                margin-left: var(--space-s);
+            }
+        }
+    }
+}
+
+@media only screen and (min-width: 960px) {
+    .post-metadata, .page-metadata {
+        position: absolute;
+        left: var(--width);
+        margin-top: 0;
+        margin-right: var(--space-m);
+        min-width: 12rem;
+        max-width: 20rem;
     }
 }

@@ -1,5 +1,5 @@
 ---
-layout: 'layouts/home.njk'
+layout: "layouts/home.njk"
 ---
 
 {% from "macros.njk" import postList %}
@@ -7,22 +7,22 @@ layout: 'layouts/home.njk'
 {% set latestBlogPosts = collections.blog | head(maxPosts) %}
 {% set latestStreamPosts = collections.stream | head(maxPosts) %}
 
-<div class="content">
+<article class="content">
     <section>
-        <p>Hello! I'm <strong>Sean</strong>, a design technologist and software engineering leader who is interested in creative tools, tools for thought, malleable systems, the open web, human-computer interaction, sustainable computing, and generally anything related to making computers more inclusive, empowering, and convivial.</p>
+        <p>Hello! <strong><a href="/about">I'm Sean</a></strong>, a design technologist and software engineering leader who is interested in creative tools, tools for thought, malleable systems, the open web, human-computer interaction, sustainable computing, and generally anything related to making computers more inclusive, empowering, and convivial.</p>
         <p>This site is my blog and "<a href="https://maggieappleton.com/garden-history">digital garden</a>," a collection of <a href="/blog/">writing</a> and <a href="/notes/">notes</a> on topics of personal interest.
     </section>
     <hr>
     <section>
-        <h2>Latest blog posts</h2>
+        <h2>Blog posts</h2>
         {{ postList(latestBlogPosts) }}
         {% if collections.blog.length > maxPosts %}<p class="more-posts"><a href="/blog/">More posts in the archives →</a></p>{% endif %}
     </section>
     <hr>
     <section>
-        <h2>Latest in the stream</h2>
+        <h2>Thoughts in the stream</h2>
         {{ postList(latestStreamPosts) }}
         {% if collections.stream.length > maxPosts %}<p class="more-posts"><a href="/blog/">More posts in the archives →</a></p>
         {% endif %}
     </section>
-</div>
+</article>

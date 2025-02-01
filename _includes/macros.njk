@@ -2,8 +2,8 @@
 <ul class="post-list">
 {% for item in items %}
   <li class="post-list-item">
+    <a class="post-list-item-title" href="{{ item.url }}">{{ item.data.title }}</a>
     <time class="post-list-item-date" datetime="{{ item.date | w3Date }}">{{ item.date | htmlDate }}</time>
-    <a href="{{ item.url }}">{{ item.data.title }}</a
   </li>
 {% endfor %}
 </ul>

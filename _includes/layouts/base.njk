@@ -6,13 +6,16 @@
         <title>{{ title or site.title }}</title>
         <meta name="description" content="{{ description or site.description }}">
         <link rel="alternate" href="feed/feed.xml" type="application/atom+xml" title="{{ metadata.title }}">
-        <link rel="icon" type="image/png" href="/favicon/favicon-96x96.png" sizes="96x96" />
-        <link rel="icon" type="image/svg+xml" href="/favicon/favicon.svg" />
-        <link rel="shortcut icon" href="/favicon/favicon.ico" />
-        <link rel="apple-touch-icon" sizes="180x180" href="/favicon/apple-touch-icon.png" />
+        <link rel="icon" type="image/png" href="/assets/favicon/favicon-96x96.png" sizes="96x96" />
+        <link rel="icon" type="image/svg+xml" href="/assets/favicon/favicon.svg" />
+        <link rel="shortcut icon" href="/assets/favicon/favicon.ico" />
+        <link rel="apple-touch-icon" sizes="180x180" href="/assets/favicon/apple-touch-icon.png" />
         <meta name="apple-mobile-web-app-title" content="Sean Voisen" />
         <link rel="manifest" href="/favicon/site.webmanifest" />
-        {%- css %}{% include "css/index.css" %}{% endcss %}
+        <link rel="me" href="https://front-end.social/@svoisen">
+        {%- css %}
+        {% include "css/index.css" %}
+        {% endcss %}
         <style>{% getBundle "css" %}</style>
     </head>
     <body>

@@ -1,7 +1,9 @@
 <header class="header">
-    <a href="/" class="home-link">
-        {% include "partials/logo.njk" %}
-    </a>
+    <div class="logo-wrapper">
+        <a href="/" class="home-link">
+            {% include "partials/logo.njk" %}
+        </a>
+    </div>
     <nav class="nav">
         <ul>
             {% for item in navigation.items %}

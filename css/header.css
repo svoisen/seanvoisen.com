@@ -1,0 +1,22 @@
+.header {
+    background-color: var(--foreground-color);
+    color: var(--background-color);
+    display: flex;
+    align-items: center;
+    align-content: center;
+
+    & svg.logo {
+        height: 2rem;
+    }
+
+    & .nav {
+        flex: 1;
+        text-align: right;
+
+        & ul {
+            list-style: none;
+            display: flex;
+            flex-direction: row;
+        }
+    }
+}
