@@ -13,6 +13,8 @@
     --color-slate-900: oklch(0.208 0.042 265.755);  
     --color-slate-950: oklch(0.129 0.042 264.695);
 
+      --color-blue-50: oklch(0.97 0.014 254.604);  --color-blue-100: oklch(0.932 0.032 255.585);  --color-blue-200: oklch(0.882 0.059 254.128);  --color-blue-300: oklch(0.809 0.105 251.813);  --color-blue-400: oklch(0.707 0.165 254.624);  --color-blue-500: oklch(0.623 0.214 259.815);  --color-blue-600: oklch(0.546 0.245 262.881);  --color-blue-700: oklch(0.488 0.243 264.376);  --color-blue-800: oklch(0.424 0.199 265.638);  --color-blue-900: oklch(0.379 0.146 265.522);  --color-blue-950: oklch(0.282 0.091 267.935);
+
     /**
 * Font sizes
 */
@@ -61,6 +63,7 @@
     --metadata-background-color: var(--color-slate-200);
     --metadata-foreground-color: var(--color-slate-900);
     --link-color: var(--foreground-color);
+    --link-hover-color: var(--color-blue-600);
     --header-background-color: var(--color-slate-900);
     --header-foreground-color: var(--color-slate-50);
     --header-border-color: var(--color-slate-600);
@@ -93,14 +96,14 @@ hr {
     height: 1px;
     overflow: visible;
     background-color: var(--border-color);
-    margin: var(--space-xl) 0 var(--space-xl) 0;
+    margin: var(--space-l) 0 var(--space-l) 0;
 }
 
 a {
     color: var(--link-color);
     text-decoration-color: var(--border-color);
     text-decoration-style: solid;
-    text-decoration-thickness: 1.5px;
+    text-decoration-thickness: 2px;
 }
 
 a:hover {
@@ -126,20 +129,26 @@ h1 {
 }
 
 h2 {
+    margin-top: var(--space-l);
     font-size: var(--font-size-2);
     font-weight: 900;
 }
 
 h3 {
+    margin-top: var(--space-l);
     font-size: var(--font-size-1);
     font-weight: 900;
 }
 
-ul {
-    margin-left: var(--space-m);
+ul, ol {
+    margin: var(--space-m) 0 var(--space-m) var(--space-m);
 
     & li {
         margin-bottom: var(--space-3xs);
+
+        &::marker {
+            color: var(--deemphasized-color);
+        }
     }
 }
 
@@ -156,7 +165,7 @@ ul {
         }
 
         & h1 + p, & h2 + p, & h3 + p {
-            margin-top: 0;
+            margin-top: var(--space-2xs);
         }
     }
 }
@@ -253,8 +262,24 @@ ul {
     list-style: none;
 }
 
+.post-list-item {
+    position: relative;
+    margin-bottom: var(--space-s);
+}
+
 .post-list-item-title {
     display: block;
+}
+
+.post-list-item-title::after {
+    content: "";
+    display: block;
+    left: 0;
+    top: 0;
+    position: absolute;
+    z-index: 1;
+    height: 100%;
+    width: 100%;
 }
 
 .post-list-item-date {

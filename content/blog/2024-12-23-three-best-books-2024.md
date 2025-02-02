@@ -1,6 +1,7 @@
 ---
 title: The three best books I read in 2024
 description: A quick roundup of my favorite reading from the past year.
+tags: ["books", "reading"]
 ---
 
 Choosing books is always challenging, and this year I got lucky. I ended up reading several (definitely more than three!) books that I thoroughly enjoyed. As such, choosing a mere three to highlight is a challenging task. This is a rare for me; I'm prone to abandoning books I don't like and while I engaged in more than my fair share of book abandonment last year, I can recall only a single instance of it in 2024. Comparatively, I struggled to figure out what I really wanted to share as favorite reads in 2023.

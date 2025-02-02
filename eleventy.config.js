@@ -27,7 +27,7 @@ export default async function(eleventyConfig) {
     return array.slice(0, n);
   });
 
-  eleventyConfig.addFilter("filteredTagList", function filterTagList(tags) {
+  eleventyConfig.addFilter("filteredTagList", (collection) => {
     return (tags || []).filter(tag => ["all", "blog", "stream"].indexOf(tag) === -1);
   });
 
@@ -40,16 +40,50 @@ export default async function(eleventyConfig) {
   eleventyConfig.addCollection('stream', (collection) => {
     return [...collection.getFilteredByGlob('./content/stream/*.md')].reverse();
   });
-  
+
+  eleventyConfig.addCollection('tagList', (collection) => {
+    let tagSet = new Set();
+    collection
+      .getAllSorted()
+      .forEach(function (item) {
+        if ("tags" in item.data) {
+          let tags = item.data.tags;
+          if (typeof tags === "string") {
+            tags = [tags];
+          }
+
+          tags = tags.filter(function (item) {
+            switch (item) {
+              // this list should match the `filter` list in tags.njk
+              case "all":
+              case "nav":
+              case "post":
+              case "posts":
+                return false;
+            }
+
+            return true;
+          });
+
+          for (const tag of tags) {
+            tagSet.add(tag);
+          }
+        }
+      });
+
+    // returning an array in addCollection works in Eleventy 0.5.3
+    return [...tagSet].sort();
+  });
+
   /**
    * Passthroughs
    */
   eleventyConfig.addPassthroughCopy({
-      "./assets": "/assets"
+    "./assets": "/assets"
   });
 
   eleventyConfig.addPassthroughCopy({
-      "./assets/favicon/favicon.ico": "/"
+    "./assets/favicon/favicon.ico": "/"
   });
 
   /**
