@@ -19,13 +19,11 @@ layout: "layouts/home.njk"
     {% endfor %}
     </ul>
 </section>
-<hr>
 <section>
     <h2>Blog posts</h2>
     {{ postList(latestBlogPosts) }}
     {% if collections.blog.length > maxPosts %}<p class="more-posts"><a href="/blog/">More posts in the archives →</a></p>{% endif %}
 </section>
-<hr>
 <section>
     <h2>Thoughts in the stream</h2>
     {{ postList(latestStreamPosts) }}

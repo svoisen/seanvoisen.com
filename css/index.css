@@ -58,7 +58,7 @@
 */
     --background-color: var(--color-slate-50);
     --foreground-color: var(--color-slate-900);
-    --deemphasized-color: var(--color-slate-500);
+    --deemphasized-color: var(--color-slate-600);
     --border-color: var(--color-slate-300);
     --metadata-background-color: var(--color-slate-200);
     --metadata-foreground-color: var(--color-slate-900);
@@ -97,6 +97,22 @@ hr {
     overflow: visible;
     background-color: var(--border-color);
     margin: var(--space-l) 0 var(--space-l) 0;
+}
+
+section {
+    & :is(h1, h2, h3) {
+        margin-top: 0;
+    }
+
+    & :is(p, ul, ol):last-child {
+        margin-bottom: 0;
+    }
+
+    &:not(:first-child) {
+        margin-top: var(--space-l);
+        padding-top: var(--space-l);
+        border-top: 1px solid var(--border-color);
+    }
 }
 
 a {
@@ -161,8 +177,9 @@ figcaption {
 .main {
     color: var(--foreground-color);
     background-color: var(--background-color);
+    padding-bottom: var(--space-xl);
 
-    & > article, & > div {
+    & > :is(article, div) {
         max-width: var(--width);
         padding: var(--space-m);
 
@@ -176,8 +193,8 @@ figcaption {
             margin-top: 0;
         }
 
-        & h1 + p, & h2 + p, & h3 + p {
-            margin-top: var(--space-2xs);
+        :is(h1, h2, h3):has(+ p, + ul, + ol) {
+            margin-bottom: var(--space-2xs);
         }
     }
 }
@@ -276,7 +293,7 @@ figcaption {
 }
 
 .post-list {
-    margin: var(--space-s) 0;
+    margin: 0;
     list-style: none;
 }
 
@@ -311,6 +328,15 @@ figcaption {
     vertical-align: baseline;
     color: var(--foreground-color);
     font-size: 1em;
+}
+
+.tag-list {
+    margin: 0;
+    list-style: none;
+
+    & li {
+        display: inline;
+    }
 }
 
 @media only screen and (min-width: 568px) {
