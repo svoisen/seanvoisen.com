@@ -12,8 +12,8 @@
     --color-slate-800: oklch(0.279 0.041 260.031);  
     --color-slate-900: oklch(0.208 0.042 265.755);  
     --color-slate-950: oklch(0.129 0.042 264.695);
-
-      --color-blue-50: oklch(0.97 0.014 254.604);  --color-blue-100: oklch(0.932 0.032 255.585);  --color-blue-200: oklch(0.882 0.059 254.128);  --color-blue-300: oklch(0.809 0.105 251.813);  --color-blue-400: oklch(0.707 0.165 254.624);  --color-blue-500: oklch(0.623 0.214 259.815);  --color-blue-600: oklch(0.546 0.245 262.881);  --color-blue-700: oklch(0.488 0.243 264.376);  --color-blue-800: oklch(0.424 0.199 265.638);  --color-blue-900: oklch(0.379 0.146 265.522);  --color-blue-950: oklch(0.282 0.091 267.935);
+    --color-blue-50: oklch(0.97 0.014 254.604);
+    --color-blue-100: oklch(0.932 0.032 255.585);  --color-blue-200: oklch(0.882 0.059 254.128);  --color-blue-300: oklch(0.809 0.105 251.813);  --color-blue-400: oklch(0.707 0.165 254.624);  --color-blue-500: oklch(0.623 0.214 259.815);  --color-blue-600: oklch(0.546 0.245 262.881);  --color-blue-700: oklch(0.488 0.243 264.376);  --color-blue-800: oklch(0.424 0.199 265.638);  --color-blue-900: oklch(0.379 0.146 265.522);  --color-blue-950: oklch(0.282 0.091 267.935);
 
     /**
 * Font sizes
@@ -126,6 +126,7 @@ p {
 h1 {
     font-size: var(--font-size-3);
     font-weight: 900;
+    line-height: 1.2;
 }
 
 h2 {
@@ -152,6 +153,11 @@ ul, ol {
     }
 }
 
+figcaption {
+    font-size: var(--font-size--1);
+    color: var(--deemphasized-color);
+}
+
 .main {
     color: var(--foreground-color);
     background-color: var(--background-color);
@@ -159,6 +165,12 @@ ul, ol {
     & > article, & > div {
         max-width: var(--width);
         padding: var(--space-m);
+
+        & img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 0.5rem;
+        }
 
         & p:first-child {
             margin-top: 0;
@@ -179,9 +191,15 @@ ul, ol {
     padding: var(--space-m);
     font-size: var(--font-size--1);
 
-    & a  {
+    & a {
         color: var(--header-foreground-color);
         text-decoration: none;
+
+        &:hover {
+            text-decoration: underline;
+            text-decoration-color: var(--header-foreground-color);
+            text-decoration-thickness: 2px;
+        }
     }
 
     & .logo-wrapper {
@@ -286,6 +304,13 @@ ul, ol {
     color: var(--deemphasized-color);
     font-size: var(--font-size--1);
     display: block;
+}
+
+.inline-tag-list-tag:not(:last-child):after {
+    content: ",";
+    vertical-align: baseline;
+    color: var(--foreground-color);
+    font-size: 1em;
 }
 
 @media only screen and (min-width: 568px) {

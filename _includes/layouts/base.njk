@@ -3,7 +3,7 @@
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <title>{{ title or site.title }}</title>
+        <title>{{ site.title }} > {{ title or site.description }}</title>
         <meta name="description" content="{{ description or site.description }}">
         <link rel="alternate" href="feed/feed.xml" type="application/atom+xml" title="{{ metadata.title }}">
         <link rel="icon" type="image/png" href="/assets/favicon/favicon-96x96.png" sizes="96x96" />
@@ -13,10 +13,11 @@
         <meta name="apple-mobile-web-app-title" content="Sean Voisen" />
         <link rel="manifest" href="/favicon/site.webmanifest" />
         <link rel="me" href="https://front-end.social/@svoisen">
-        {%- css %}
+        <style>
+        {% postcss %}
         {% include "css/index.css" %}
-        {% endcss %}
-        <style>{% getBundle "css" %}</style>
+        {% endpostcss %}
+        </style>
     </head>
     <body>
         {% include "partials/header.njk" %}

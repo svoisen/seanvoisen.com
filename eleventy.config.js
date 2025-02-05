@@ -1,10 +1,41 @@
+import postcss from "postcss";
+import cssnano from "cssnano";
 import { DateTime } from "luxon";
 import pluginSyntaxHighlight from "@11ty/eleventy-plugin-syntaxhighlight";
+import { eleventyImageTransformPlugin } from "@11ty/eleventy-img";
+import markdownIt from "markdown-it";
+import implicitFigures from "markdown-it-image-figures";
 
 export default async function(eleventyConfig) {
+  const md = markdownIt({
+    html: true
+  }).use(implicitFigures, {
+    figcaption: true
+  });
+
+  eleventyConfig.setLibrary("md", md);
+
+  eleventyConfig.addPlugin(eleventyImageTransformPlugin, {
+    extensions: 'html',
+    formats: ['webp'],
+    widths: ['auto', 1280, 800, 640],
+    htmlOptions: {
+      imgAttributes: {
+        loading: 'lazy',
+        decoding: 'async'
+      },
+    },
+  });
+
+  eleventyConfig.addPairedShortcode("postcss",
+    async code => {
+      return await postcss([cssnano]).process(code, { from: undefined }).then(result => result.css);
+    });
+
   /**
    * Filters
    */
+
   eleventyConfig.addFilter("w3Date", (dateObj) => {
     return new Date(dateObj).toISOString();
   });
@@ -79,11 +110,11 @@ export default async function(eleventyConfig) {
    * Passthroughs
    */
   eleventyConfig.addPassthroughCopy({
-    "./assets": "/assets"
+    "./content/assets": "/assets"
   });
 
   eleventyConfig.addPassthroughCopy({
-    "./assets/favicon/favicon.ico": "/"
+    "./content/assets/favicon/favicon.ico": "/"
   });
 
   /**
