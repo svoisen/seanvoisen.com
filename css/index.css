@@ -67,6 +67,7 @@
     --header-background-color: var(--color-slate-900);
     --header-foreground-color: var(--color-slate-50);
     --header-border-color: var(--color-slate-600);
+    --border-radius: 0.5rem;
     --line-height: 1.5;
     --width: 42rem;
 }
@@ -172,6 +173,7 @@ ul, ol {
 figcaption {
     font-size: var(--font-size--1);
     color: var(--deemphasized-color);
+    text-align: right;
 }
 
 .main {
@@ -186,7 +188,7 @@ figcaption {
         & img {
             max-width: 100%;
             height: auto;
-            border-radius: 0.5rem;
+            border-radius: var(--border-radius);
         }
 
         & p:first-child {
@@ -270,6 +272,7 @@ figcaption {
     font-size: var(--font-size--1);
     background-color: var(--metadata-background-color);
     color: var(--metadata-foreground-color);
+    border-radius: var(--border-radius);
 
     & dt {
         font-weight: 500;

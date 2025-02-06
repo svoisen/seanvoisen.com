@@ -1,6 +1,7 @@
 ---
 layout: "layouts/page.njk"
 title: "About"
+description: "A little bit about me and how I use this site."
 date: Last Modified
 ---
 
