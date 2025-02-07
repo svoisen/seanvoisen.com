@@ -361,6 +361,10 @@ summary {
 
     & li {
         display: inline;
+
+        &:not(:last-of-type)::after {
+            content: ", ";
+        }
     }
 }
 
