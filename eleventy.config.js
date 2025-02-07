@@ -37,7 +37,7 @@ export default async function(eleventyConfig) {
    */
 
   eleventyConfig.addFilter("w3Date", (dateObj) => {
-    return new Date(dateObj).toISOString();
+    return DateTime.fromJSDate(dateObj, { zone: "utc" }).toISO();
   });
 
   eleventyConfig.addFilter("htmlDate", (dateObj) => {
@@ -47,19 +47,23 @@ export default async function(eleventyConfig) {
 
   // Get the first `n` elements of a collection.
   eleventyConfig.addFilter("head", (array, n) => {
-    if(!Array.isArray(array) || array.length === 0) {
+    if (!Array.isArray(array) || array.length === 0) {
       return [];
     }
 
-    if( n < 0 ) {
+    if (n < 0) {
       return array.slice(n);
     }
 
     return array.slice(0, n);
   });
 
-  eleventyConfig.addFilter("filteredTagList", (collection) => {
-    return (tags || []).filter(tag => ["all", "blog", "stream"].indexOf(tag) === -1);
+  eleventyConfig.addFilter("slice", (array, start, end) => {
+    if (!Array.isArray(array) || array.length === 0) {
+      return [];
+    }
+
+    return array.slice(start, end);
   });
 
   eleventyConfig.addWatchTarget("./css/");

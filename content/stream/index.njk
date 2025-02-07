@@ -1,0 +1,13 @@
+---
+layout: "layouts/home.njk"
+title: "Stream"
+permalink: "/stream/"
+---
+
+{% from "macros.njk" import postList %}
+
+<header class="page-header">
+    <h1 class="page-title">{{ title }}</h1>
+</header>
+<p>Brief thoughts and off-the-cuff comments, mostly about things I've read on the web.</p>
+{{ postList(collections.stream) }}
