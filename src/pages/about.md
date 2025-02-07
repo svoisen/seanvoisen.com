@@ -1,8 +1,9 @@
 ---
-layout: "layouts/page.njk"
+layout: "page"
 title: "About"
 description: "A little bit about me and how I use this site."
 date: Last Modified
+permalink: "/about/"
 ---
 
 ![A portrait of the author.](/assets/images/sean_voisen_wide.webp

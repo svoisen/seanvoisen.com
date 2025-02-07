@@ -1,19 +1,28 @@
-import postcss from "postcss";
-import cssnano from "cssnano";
-import { DateTime } from "luxon";
 import pluginSyntaxHighlight from "@11ty/eleventy-plugin-syntaxhighlight";
 import { eleventyImageTransformPlugin } from "@11ty/eleventy-img";
-import markdownIt from "markdown-it";
-import implicitFigures from "markdown-it-image-figures";
+
+import filters from "./src/_config/filters.js";
+import collections from "./src/_config/collections.js";
+import plugins from "./src/_config/plugins.js";
 
 export default async function(eleventyConfig) {
-  const md = markdownIt({
-    html: true
-  }).use(implicitFigures, {
-    figcaption: true
-  });
+  /*
+   * libraries
+   */
+  eleventyConfig.setLibrary("md", plugins.markdownLib);
 
-  eleventyConfig.setLibrary("md", md);
+  /*
+   * watch targets
+   */
+  eleventyConfig.addWatchTarget("./src/assets/**/*.{css,js,webp,svg,png,jpg}");
+
+  /*
+   * plugins
+   */
+  eleventyConfig.addPlugin(plugins.cssConfig);
+  eleventyConfig.addPlugin(pluginSyntaxHighlight, {
+    preAttributes: { tabindex: 0 }
+  });
 
   eleventyConfig.addPlugin(eleventyImageTransformPlugin, {
     extensions: 'html',
@@ -27,116 +36,50 @@ export default async function(eleventyConfig) {
     },
   });
 
-  eleventyConfig.addPairedShortcode("postcss",
-    async code => {
-      return await postcss([cssnano]).process(code, { from: undefined }).then(result => result.css);
-    });
-
-  /**
-   * Filters
+  /*
+   * bundles
    */
+  eleventyConfig.addBundle('css', { hoist: true });
 
-  eleventyConfig.addFilter("w3Date", (dateObj) => {
-    return DateTime.fromJSDate(dateObj, { zone: "utc" }).toISO();
-  });
-
-  eleventyConfig.addFilter("htmlDate", (dateObj) => {
-    // dateObj input: https://html.spec.whatwg.org/multipage/common-microsyntaxes.html#valid-date-string
-    return DateTime.fromJSDate(dateObj, { zone: "utc" }).toFormat('yyyy-LL-dd');
-  });
-
-  // Get the first `n` elements of a collection.
-  eleventyConfig.addFilter("head", (array, n) => {
-    if (!Array.isArray(array) || array.length === 0) {
-      return [];
-    }
-
-    if (n < 0) {
-      return array.slice(n);
-    }
-
-    return array.slice(0, n);
-  });
-
-  eleventyConfig.addFilter("slice", (array, start, end) => {
-    if (!Array.isArray(array) || array.length === 0) {
-      return [];
-    }
-
-    return array.slice(start, end);
-  });
-
-  eleventyConfig.addWatchTarget("./css/");
-
-  eleventyConfig.addCollection('blog', (collection) => {
-    return [...collection.getFilteredByGlob('./content/blog/*.md')].reverse();
-  });
-
-  eleventyConfig.addCollection('stream', (collection) => {
-    return [...collection.getFilteredByGlob('./content/stream/*.md')].reverse();
-  });
-
-  eleventyConfig.addCollection('tagList', (collection) => {
-    let tagSet = new Set();
-    collection
-      .getAllSorted()
-      .forEach(function (item) {
-        if ("tags" in item.data) {
-          let tags = item.data.tags;
-          if (typeof tags === "string") {
-            tags = [tags];
-          }
-
-          tags = tags.filter(function (item) {
-            switch (item) {
-              // this list should match the `filter` list in tags.njk
-              case "all":
-              case "nav":
-              case "post":
-              case "posts":
-                return false;
-            }
-
-            return true;
-          });
-
-          for (const tag of tags) {
-            tagSet.add(tag);
-          }
-        }
-      });
-
-    // returning an array in addCollection works in Eleventy 0.5.3
-    return [...tagSet].sort();
-  });
-
-  /**
-   * Passthroughs
+  /*
+   * filters
    */
-  eleventyConfig.addPassthroughCopy({
-    "./content/assets": "/assets"
+  eleventyConfig.addFilter("w3Date", filters.w3Date);
+  eleventyConfig.addFilter("htmlDate", filters.htmlDate);
+  eleventyConfig.addFilter("head", filters.head);
+  eleventyConfig.addFilter("slice", filters.slice);
+
+  /*
+   * collections
+   */
+  eleventyConfig.addCollection("blog", collections.blog);
+  eleventyConfig.addCollection("stream", collections.stream);
+  eleventyConfig.addCollection("tags", collections.tags);
+
+  /*
+   * layout aliases
+   */
+  eleventyConfig.addLayoutAlias("base", "base.njk");
+  eleventyConfig.addLayoutAlias("page", "page.njk");
+  eleventyConfig.addLayoutAlias("post", "page.njk");
+  eleventyConfig.addLayoutAlias("home", "home.njk");
+
+  /*
+   * passthrough file copy
+   */
+  ["src/assets/images"].forEach(path => {
+    eleventyConfig.addPassthroughCopy(path)
   });
 
   eleventyConfig.addPassthroughCopy({
-    "./content/assets/favicon/favicon.ico": "/"
-  });
-
-  /**
-   * Bundles
-   */
-  eleventyConfig.addBundle("css", {
-    toFileDirectory: "dist"
-  });
-
-  eleventyConfig.addBundle("js", {
-    toFileDirectory: "dist"
-  });
-
-  eleventyConfig.addPlugin(pluginSyntaxHighlight, {
-    preAttributes: { tabindex: 0 }
+    // copy favicon to root
+    "src/assets/favicon/*": "/"
   });
 }
 
+/*
+ * basic config
+ */
 export const config = {
   templateFormats: [
     "md",
@@ -149,9 +92,10 @@ export const config = {
   htmlTemplateEngine: "njk",
 
   dir: {
-    input: "content",          
-    includes: "../_includes",
-    data: "../_data", 
-    output: "_site"
-  },
-}
+    input: "src",          
+    output: "dist",
+    includes: "_includes",
+    data: "_data", 
+    layouts: "_layouts"
+  }
+};
