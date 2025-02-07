@@ -1,7 +1,7 @@
 ---
 title: Favorite books of 2022 (and 2021)
 description: A few favorite books I read during the years 2021 and 2022.
-category: blog
+tags: ["reading"]
 ---
 
 It's the end of 2022, and I usually enjoy recounting my past year by conducting a quick review of my annual reading. There's something about the experience of reading a _book_ that imprints itself on the mind, serving as a waymarker for personal history. Indeed, I often find it easier to remember years by recounting what books I was reading at the time. Books are like thematic anchors in a sea of thoughts and memories; their length and physicality (I like paper books) have a kind of mnemonic gravity.

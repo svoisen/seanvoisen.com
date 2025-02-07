@@ -1,6 +1,7 @@
 ---
 title: Thoughts inspired by "A Child's Plaything"
 description:
+tags: ["ai"]
 ---
 
 Read [A Child's Plaything](https://www.tobyord.com/writing/a-childs-plaything)

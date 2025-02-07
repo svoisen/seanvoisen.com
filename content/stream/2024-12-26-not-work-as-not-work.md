@@ -1,7 +1,7 @@
 ---
-tags: stream
 title: Not work as "not work"
 description: Some thoughts on keeping side-projects fun
+tags: ["programming", "productivity"]
 ---
 
 In [My little games workshop](https://daverupert.com/2024/12/my-little-games-workshop/) Dave Rupert writes:

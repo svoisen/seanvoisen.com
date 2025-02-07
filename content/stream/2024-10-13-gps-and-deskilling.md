@@ -1,7 +1,7 @@
 ---
-tags: stream
 title: GPS and deskilling
 description: Notes and thoughts on the modern over-reliance on GPS
+tags: ["tools", "computing", "cognition"]
 ---
 
 In [The Glass Cage](https://bookshop.org/a/106240/9780393351637), Nicholas Carr describes how over-reliance on computerized automation is a force for deskilling. In outsourcing our labor and our thinking to machines, we come to increasingly depend on those same machines to the point that we cannot make do in the world without them. One such example is GPS. The sad truth is that most of us can no longer find our own way, even within the confines of our own cities, without GPS.

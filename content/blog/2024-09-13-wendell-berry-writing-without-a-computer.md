@@ -1,6 +1,7 @@
 ---
 title: Wendell Berry on the benefits of writing without a computer
 description: What do we lose when we default to crafting our written words using purely digital tools?
+tags: ["computing", "tools"]
 ---
 
 We often take for granted that most writers in the modern era perform their work on computers. Like most bloggers, I’m composing the first draft of these very words on a computer. Indeed, for the vast majority of writers, amateur and professional alike, the physical act of writing is synonymous with the physical act of typing. Since the advent of the typewriter, the rapid plunking of fingers on keys has long been viewed as the most expedient method for getting words on a sheet of paper. 

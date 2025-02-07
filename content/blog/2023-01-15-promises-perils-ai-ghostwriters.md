@@ -1,7 +1,7 @@
 ---
 title: The promises and perils of AI ghostwriters
 description: AI-assisted writing tools promise to make us all better writers, but will they?
-category: blog
+tags: ["ai", "computing"]
 ---
 
 > More than iron, more than lead, more than gold I need electricity.<br> 

@@ -291,12 +291,22 @@ summary {
     color: var(--metadata-foreground-color);
     border-radius: var(--border-radius);
 
+    & dl {
+        display: grid;
+        grid-template-columns: max-content auto;
+    }
+
     & dt {
+        text-align: right;
         font-weight: 500;
         display: inline;
-        float: left;
-        margin-right: 0.5ch;
-        clear: both;
+        grid-column-start: 1;
+        padding-right: 0.75ch;
+    }
+
+    & dd {
+        display: inline;
+        grid-column-start: 2;
     }
 
     & dd:not(:first-of-type), & dt:not(:first-of-type) {

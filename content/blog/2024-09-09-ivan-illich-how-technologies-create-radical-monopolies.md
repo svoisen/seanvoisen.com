@@ -1,7 +1,7 @@
 ---
 title: Ivan Illich on how technologies create radical monopolies
 description: From smartphones to cars, some technologies can exert exclusive control over entire aspects of daily life, and not always for the better.
-tags: ["conviviality", "tools"]
+tags: ["design", "tools"]
 ---
 
 As society moves to replace what have traditionally been analog processes and infrastructure with digital equivalents—a phenomenon rapidly accelerated by COVID-19 and our desire for “touch free” interaction—it has become increasingly difficult to get by without access to a smartphone. From restaurants foisting QR codes for access to menus on patrons, to digital boarding passes, to museum and concert tickets now requiring bespoke apps, smartphone ownership is often a deciding factor for access to many cultural experiences, or at the very least, a differentiator in the level of service one now receives in a multitude of commercial interactions. What's worse, this is compounded by the fact that owning just *any* smartphone is often insufficient—one must own a smartphone tied to one of only two major application ecosystems: Apple's or Google's.

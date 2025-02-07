@@ -1,6 +1,6 @@
 ---
 title: On joining Mozilla
-tags: ["personal", "career"]
+tags: ["personal", "work"]
 ---
 
 I first started creating for the Web way back in 1995. At the time, I was a precocious 14-year-old messing around with HTML, publishing websites on my local ISP’s server using FTP over a 14.4K dial-up modem. A year later, in 1996, the [introduction of JavaScript in Netscape 2.0](https://en.wikipedia.org/wiki/JavaScript#Beginnings_at_Netscape) introduced me to programming, and more importantly, the joys of creating interactive content. It was the drive to see things on my screen respond and *come to life* that kept me programming, and it was the ability to share those things with the world that kept me enamored with the Web. 

@@ -1,7 +1,7 @@
 ---
 title: CSS masonry will take time, and that's just fine
 description: Reflections on CSS masonry's early origins and the slow evolution of the web.
-tags: ["platforms", "web development"]
+tags: ["web", "computing"]
 ---
 
 Back when I was managing the CSS and layout team for Firefox, one of the engineers on my team — Mats, our resident grid layout expert — approached me with the idea for what is now [CSS grid layout level 3](https://drafts.csswg.org/css-grid-3/), aka CSS masonry layout.

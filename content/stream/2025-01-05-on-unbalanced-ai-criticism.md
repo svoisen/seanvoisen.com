@@ -1,7 +1,7 @@
 ---
-tags: stream
 title: On unbalanced AI criticism
 description: LLMs need better criticism
+tags: ["ai"]
 ---
 
 I find the state of AI criticism, especially about LLMs, to be woefully unbalanced towards the pure negative. And I'm someone deeply sympathetic with the critical viewpoint.

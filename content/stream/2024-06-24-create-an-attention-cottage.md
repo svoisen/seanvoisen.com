@@ -1,7 +1,7 @@
 ---
 title: Creating an attention cottage
 description: Creating an attention cottage
-custom_css: notes
+tags: ["productivity"]
 ---
 
 From [The Attention Cottage](https://blog.ayjay.org/the-attention-cottage/) by A.J. Jacobs:

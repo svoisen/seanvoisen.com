@@ -12,10 +12,9 @@ At the time, I was a graduate student at [UC Irvine](https://www.uci.edu) studyi
 > 
 > The suggestions for use of the tables reads as a bizarre magical rite, outside its mathematical context: "...open the book to an unselected page... blindly choose a 5-digit number; this number reduced modulo 2 determines the starting line; the two digits to the right... determine the starting column...", complete with suggestions on avoiding the obvious pitfalls of books that fall open to the same page, human tendencies to choose numbers in the middle of a page, etc, all precisely the opposite of how mathematical tables are used. And it's of course perfectly, verifiably correct.
 
-<figure class="wide">
-    <img src="{{ site.url }}/assets/images/random_digits_book.webp" class="full-width" alt="The RAND Corporation's Million Random Digits with 100,000 Normal Deviates.">
-    <figcaption>The RAND Corporation's "Million Random Digits with 100,000 Normal Deviates."</figcaption>
-</figure>
+![The RAND Corporation's "Million Random Digits with 100,000 Normal
+Deviates"](/assets/images/random_digits_book.webp "The RAND Corporation's
+\"Million Random Digits with 100,000 Normal Deviates\"")
 
 Recently, I found myself thinking about Tom and this strange book while reading James Bridle’s excellent [Ways of Being: Animals, Plants, Machines and the Search for a Planetary Intelligence](https://bookshop.org/a/106240/9781250872968). Bridle devotes an entire chapter of this book to the subject of randomness and the myriad ways it is essential to life, intelligence, and both human and non-human creativity. On the immense, often under-appreciated value and importance of randomness, they write:
 

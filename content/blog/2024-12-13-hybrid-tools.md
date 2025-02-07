@@ -1,7 +1,7 @@
 ---
 title: We need more hybrid tools
 description: Bridging design and engineering in the age of generative AI.
-tags: ["design", "ux", "collaboration"]
+tags: ["design", "tools"]
 ---
 
 We need more hybrid tools. We need more digital spaces where designers and developers can work together while still being able to practice their respective disciplines. If there's one hope I have for generative AI despite its numerous flaws, it is that it will unlock new opportunities to build these kinds of hybrid tools.

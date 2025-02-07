@@ -1,7 +1,7 @@
 ---
 title: Design engineering writing and resources
 description: A growing collection of articles, books, blog posts and other resources about design engineering.
-tags: ["career", "design engineering"]
+tags: ["design", "work"]
 ---
 
 This is a short list of articles, books, blog posts and other resources about the practice of design engineering. 

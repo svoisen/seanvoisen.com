@@ -1,6 +1,6 @@
 ---
 title: Thoughts on the design of conversational UIs
-tags: ["ux", "design"]
+tags: ["design"]
 ---
 
 **Designers! Take heed!**

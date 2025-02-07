@@ -1,7 +1,7 @@
 ---
 title: Some early impressions of HTMX
 description: Some early impressions of HTMX
-tags: ["programming", "web development"]
+tags: ["programming", "web"]
 ---
 
 I'm bullish on HTML-first, JavaScript-light frameworks and libraries gaining more developer mindshare over the coming years. We're seeing more and more developers starting to realize that maybe JavaScript-heavy SPAs are *not the best way* to build many applications.

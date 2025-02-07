@@ -1,7 +1,7 @@
 ---
 title: "On being a ‹insert favorite technology here› “guy”"
 description: Thoughts on the advantages and disadvantages of identifying too strongly with a technology or framework.
-tags: ["programming"]
+tags: ["programming", "cognition"]
 ---
 
 When I was in graduate school, my thesis advisor, [Simon Penny](https://simonpenny.net), once told me a story about an encounter he had with a locksmith during the renovation of one of the buildings on our side of campus:
