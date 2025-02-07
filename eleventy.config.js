@@ -69,11 +69,11 @@ export default async function(eleventyConfig) {
   eleventyConfig.addWatchTarget("./css/");
 
   eleventyConfig.addCollection('blog', (collection) => {
-    return [...collection.getFilteredByGlob('./content/blog/*.md')].reverse();
+    return [...collection.getFilteredByGlob('./src/blog/*.md')].reverse();
   });
 
   eleventyConfig.addCollection('stream', (collection) => {
-    return [...collection.getFilteredByGlob('./content/stream/*.md')].reverse();
+    return [...collection.getFilteredByGlob('./src/stream/*.md')].reverse();
   });
 
   eleventyConfig.addCollection('tagList', (collection) => {
@@ -114,11 +114,11 @@ export default async function(eleventyConfig) {
    * Passthroughs
    */
   eleventyConfig.addPassthroughCopy({
-    "./content/assets": "/assets"
+    "./src/assets": "/assets"
   });
 
   eleventyConfig.addPassthroughCopy({
-    "./content/assets/favicon/favicon.ico": "/"
+    "./src/assets/favicon/favicon.ico": "/"
   });
 
   /**
@@ -149,9 +149,10 @@ export const config = {
   htmlTemplateEngine: "njk",
 
   dir: {
-    input: "content",          
-    includes: "../_includes",
-    data: "../_data", 
-    output: "_site"
+    input: "src",          
+    output: "dist",
+    includes: "_includes",
+    data: "_data", 
+    layouts: "_layouts"
   },
 }
