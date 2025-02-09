@@ -79,7 +79,7 @@
     --link-color: var(--foreground-color);
     --link-underline-color: var(--color-slate-300);
     --link-hover-color: var(--foreground-color);
-    --link-hover-underline-color: var(--foreground-color);
+    --link-hover-underline-color: var(--color-yellow-500);
     --header-background-color: var(--color-slate-900);
     --header-foreground-color: var(--color-slate-50);
     --header-border-color: var(--color-slate-600);
