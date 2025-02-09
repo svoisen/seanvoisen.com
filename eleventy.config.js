@@ -1,6 +1,3 @@
-import pluginSyntaxHighlight from "@11ty/eleventy-plugin-syntaxhighlight";
-import { eleventyImageTransformPlugin } from "@11ty/eleventy-img";
-
 import filters from "./src/_config/filters.js";
 import collections from "./src/_config/collections.js";
 import plugins from "./src/_config/plugins.js";
@@ -20,11 +17,23 @@ export default async function(eleventyConfig) {
    * plugins
    */
   eleventyConfig.addPlugin(plugins.cssConfig);
-  eleventyConfig.addPlugin(pluginSyntaxHighlight, {
+  eleventyConfig.addPlugin(plugins.rss, {
+    type: "atom",
+    outputPath: "/feed.xml",
+    collection: {
+      name: "blog",
+      limit: 10,
+    },
+    metadata: {
+      title: "Sean Voisen",
+      base: "https://seanvoisen.com"
+    }
+  });
+  eleventyConfig.addPlugin(plugins.syntaxHighlight, {
     preAttributes: { tabindex: 0 }
   });
 
-  eleventyConfig.addPlugin(eleventyImageTransformPlugin, {
+  eleventyConfig.addPlugin(plugins.eleventyImageTransformPlugin, {
     extensions: 'html',
     formats: ['webp'],
     widths: ['auto', 1280, 800, 640],

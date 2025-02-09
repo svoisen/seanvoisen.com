@@ -9,6 +9,9 @@
         
         {% include "head/css-inline.njk" %}
 
+        <meta name="generator" content="{{ eleventy.generator }}" />
+        <meta name="format-detection" content="telephone=no" />
+        <meta name="color-scheme" content="light dark" />
         <link rel="alternate" href="feed/feed.xml" type="application/atom+xml" title="{{ site.title }} Feed">
         <link rel="icon" type="image/png" href="/favicon-96x96.png" sizes="96x96" />
         <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
@@ -17,7 +20,6 @@
         <meta name="apple-mobile-web-app-title" content="Sean Voisen" />
         <link rel="manifest" href="/site.webmanifest" />
         <link rel="me" href="https://front-end.social/@svoisen">
-
     </head>
     <body>
         {% include "partials/header.njk" %}

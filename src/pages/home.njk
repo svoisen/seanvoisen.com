@@ -7,10 +7,10 @@ permalink: "/index.html"
 {% from "macros/postlist.njk" import postList %}
 {% set maxPosts = 3 %}
 {% set maxMorePosts = 10 %}
-{% set latestBlogPosts = collections.blog | head(maxPosts) %}
-{% set latestStreamPosts = collections.stream | head(maxPosts) %}
-{% set moreBlogPosts = collections.blog | slice(maxPosts, maxMorePosts) %}
-{% set moreStremPosts = collections.stream | slice(maxPosts, maxMorePosts) %}
+{% set latestBlogPosts = collections.blog | reverse | head(maxPosts) %}
+{% set latestStreamPosts = collections.stream | reverse | head(maxPosts) %}
+{% set moreBlogPosts = collections.blog | reverse | slice(maxPosts, maxMorePosts) %}
+{% set moreStreamPosts = collections.stream | reverse | slice(maxPosts, maxMorePosts) %}
 
 <section>
     <p>Hello! <strong><a href="/about">I'm Sean</a></strong>, a design technologist and software engineering leader who is interested in creative tools, tools for thought, malleable systems, the open web, human-computer interaction, sustainable computing, and generally anything related to making computers more inclusive, empowering, and convivial.</p>
@@ -40,7 +40,7 @@ permalink: "/index.html"
     {% if collections.stream.length > maxPosts %}
     <details>
         <summary>Show more…</summary>
-        {{ postList(moreStremPosts) }}
+        {{ postList(moreStreamPosts) }}
     </details>
     {% endif %}
 </section>

@@ -10,4 +10,4 @@ permalink: "/blog/"
     <h1 class="page-title">{{ title }}</h1>
 </header>
 <p>Short essays and personal updates.</p>
-{{ postList(collections.blog) }}
+{{ postList(collections.blog.reverse()) }}
