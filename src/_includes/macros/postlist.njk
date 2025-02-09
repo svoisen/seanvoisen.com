@@ -8,9 +8,3 @@
 {% endfor %}
 </ul>
 {% endmacro %}
-
-{% macro tagList(tags) %}
-{% for tag in tags %}
-<a class="inline-tag-list-tag" href="/tags/{{ tag | slug }}/">{{ tag }}</a>
-{% endfor %}
-{% endmacro %}

@@ -4,7 +4,7 @@ date: Last Modified
 permalink: "/index.html"
 ---
 
-{% from "macros.njk" import postList %}
+{% from "macros/postlist.njk" import postList %}
 {% set maxPosts = 3 %}
 {% set maxMorePosts = 10 %}
 {% set latestBlogPosts = collections.blog | head(maxPosts) %}
