@@ -2,6 +2,12 @@
 layout: base
 ---
 
+{% if (page.filePathStem.split("/")[1] == "blog") %}
+    {% set type = "Blog" %}
+{% else %}
+    {% set type = "Stream" %}
+{% endif %}
+
 {% from "macros/taglist.njk" import tagList %}
 
 <article class="post">
@@ -13,10 +19,12 @@ layout: base
                 <dd>
                     <time class="post-timestamp" datetime="{{ page.date }}">{{ page.date | htmlDate }}</time>
                 </dd>
-                <dt>Type</dt>
-                <dd>{{ page.filePathStem }}</dd>
+                <dt>Post type</dt>
+                <dd>{{ type }}</dd>
+                {% if description %}
                 <dt>Summary</dt>
                 <dd>{{ description }}</dd>
+                {% endif %}
                 <dt>Tags</dt>
                 <dd>{{ tagList(tags) }}</dd>
             </dl>

@@ -1,7 +1,7 @@
 ---
 layout: "page"
 title: "About"
-description: "A little bit about me and how I use this site."
+description: "A bit about me and this site."
 date: Last Modified
 permalink: "/about/"
 ---

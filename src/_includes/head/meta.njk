@@ -1,0 +1,15 @@
+        <meta name="description" content="{{ description or site.description }}">
+        <meta name="generator" content="{{ eleventy.generator }}" />
+        <meta name="format-detection" content="telephone=no" />
+        <meta name="color-scheme" content="light dark" />
+        <link rel="canonical" href="{{ site.url }}{{ page.url | url }}" />
+        <link rel="me" href="https://front-end.social/@svoisen">
+        <link rel="alternate" href="/feed.xml" type="application/atom+xml" title="Atom Feed">
+        <link rel="alternate" href="/feed.json" type="application/json" title="JSON Feed">
+
+        <link rel="icon" type="image/png" href="{{ "/favicon-96x96.png" | url }}" sizes="96x96" />
+        <link rel="icon" type="image/svg+xml" href="{{ "/favicon.svg" | url }}" />
+        <link rel="shortcut icon" href="{{ "/favicon.ico" | url }}" />
+        <link rel="apple-touch-icon" sizes="180x180" href="{{ "/apple-touch-icon.png" | url }}" />
+        <meta name="apple-mobile-web-app-title" content="Sean Voisen" />
+        <link rel="manifest" href="{{ "/site.webmanifest" | url }}" />

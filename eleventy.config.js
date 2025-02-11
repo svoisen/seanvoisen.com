@@ -16,7 +16,6 @@ export default async function(eleventyConfig) {
   /*
    * plugins
    */
-  eleventyConfig.addPlugin(plugins.cssConfig);
   eleventyConfig.addPlugin(plugins.rss, {
     type: "atom",
     outputPath: "/feed.xml",
@@ -57,6 +56,8 @@ export default async function(eleventyConfig) {
   eleventyConfig.addFilter("htmlDate", filters.htmlDate);
   eleventyConfig.addFilter("head", filters.head);
   eleventyConfig.addFilter("slice", filters.slice);
+  eleventyConfig.addFilter("cssnano", filters.cssnanoFilter);
+  eleventyConfig.addFilter("titlecase", filters.titlecase);
 
   /*
    * collections
@@ -64,13 +65,14 @@ export default async function(eleventyConfig) {
   eleventyConfig.addCollection("blog", collections.blog);
   eleventyConfig.addCollection("stream", collections.stream);
   eleventyConfig.addCollection("tags", collections.tags);
+  eleventyConfig.addCollection("sitemap", collections.sitemap);
 
   /*
    * layout aliases
    */
   eleventyConfig.addLayoutAlias("base", "base.njk");
   eleventyConfig.addLayoutAlias("page", "page.njk");
-  eleventyConfig.addLayoutAlias("post", "page.njk");
+  eleventyConfig.addLayoutAlias("post", "post.njk");
   eleventyConfig.addLayoutAlias("home", "home.njk");
 
   /*

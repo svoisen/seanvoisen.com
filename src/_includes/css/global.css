@@ -12,34 +12,15 @@
     --color-slate-800: oklch(0.279 0.041 260.031);  
     --color-slate-900: oklch(0.208 0.042 265.755);  
     --color-slate-950: oklch(0.129 0.042 264.695);
-
-    --color-yellow-50: oklch(0.987 0.026 102.212);  
-    --color-yellow-100: oklch(0.973 0.071 103.193);  
-    --color-yellow-200: oklch(0.945 0.129 101.54);  
-    --color-yellow-300: oklch(0.905 0.182 98.111);  
-    --color-yellow-400: oklch(0.852 0.199 91.936);  
     --color-yellow-500: oklch(0.795 0.184 86.047);  
-    --color-yellow-600: oklch(0.681 0.162 75.834);  
-    --color-yellow-700: oklch(0.554 0.135 66.442);  
-    --color-yellow-800: oklch(0.476 0.114 61.907);  
-    --color-yellow-900: oklch(0.421 0.095 57.708);  
-    --color-yellow-950: oklch(0.286 0.066 53.813);
 
-    /* Step -2: 12.642px → 11.52px */
     --font-size--2: clamp(0.72rem, 0.8145rem + -0.122vi, 0.7901rem);
-    /* Step -1: 14.2222px → 14.4px */
     --font-size--1: clamp(0.8889rem, 0.885rem + 0.0193vi, 0.9rem);
-    /* Step 0: 16px → 18px */
     --font-size-0: clamp(1rem, 0.9565rem + 0.2174vi, 1.125rem);
-    /* Step 1: 18px → 22.5px */
     --font-size-1: clamp(1.125rem, 1.0272rem + 0.4891vi, 1.4063rem);
-    /* Step 2: 20.25px → 28.125px */
     --font-size-2: clamp(1.2656rem, 1.0944rem + 0.856vi, 1.7578rem);
-    /* Step 3: 22.7813px → 35.1563px */
     --font-size-3: clamp(1.4238rem, 1.1548rem + 1.3451vi, 2.1973rem);
-    /* Step 4: 25.6289px → 43.9453px */
     --font-size-4: clamp(1.6018rem, 1.2036rem + 1.9909vi, 2.7466rem);
-    /* Step 5: 28.8325px → 54.9316px */
     --font-size-5: clamp(1.802rem, 1.2347rem + 2.8369vi, 3.4332rem);
 
     --space-3xs: clamp(0.25rem, 0.2283rem + 0.1087vi, 0.3125rem);
@@ -59,22 +40,14 @@
     --deemphasized-color: var(--color-slate-500);
     --border-color: var(--color-slate-300);
     --blockquote-border-color: var(--color-slate-200);
-    --deemphasized-border-color: var(--color-slate-100);
     --metadata-background-color: var(--color-slate-200);
     --metadata-foreground-color: var(--foreground-color);
     --link-color: var(--foreground-color);
-    --link-underline-color: var(--color-slate-300);
-    --link-hover-color: var(--foreground-color);
-    --link-hover-underline-color: var(--color-yellow-500);
     --header-background-color: var(--color-slate-900);
     --header-foreground-color: var(--color-slate-50);
-    --header-border-color: var(--color-slate-600);
-    --header-link-hover-color: var(--color-yellow-500);
-    --header-deemphasized-color: var(--color-slate-400);
-
-    --border-radius: 0.5rem;
+    --logo-hover-color: var(--color-yellow-500);
     --line-height: 1.5;
-    --width: 40em;
+    --width: 37em;
 }
 
 * {
@@ -123,14 +96,13 @@ section {
 
 a {
     color: var(--link-color);
-    text-decoration-color: var(--link-underline-color);
+    text-decoration-color: var(--foreground-color);
     text-decoration-style: solid;
-    text-decoration-thickness: 2px;
+    text-decoration-thickness: 1px;
 }
 
 a:hover {
-    color: var(--link-hover-color);
-    text-decoration-color: var(--link-hover-underline-color);
+    text-decoration-thickness: 2px;
 }
 
 a:after { font-size: 0.75em; vertical-align: super; color: var(--deemphasized-color) }
@@ -146,20 +118,20 @@ p {
 
 h1 {
     font-size: var(--font-size-3);
-    font-weight: 900;
+    font-weight: 700;
     line-height: 1.2;
 }
 
 h2 {
     margin-top: var(--space-l);
     font-size: var(--font-size-2);
-    font-weight: 900;
+    font-weight: 700;
 }
 
 h3 {
     margin-top: var(--space-l);
     font-size: var(--font-size-1);
-    font-weight: 900;
+    font-weight: 700;
 }
 
 ul, ol {
@@ -205,7 +177,6 @@ summary {
         & img {
             max-width: 100%;
             height: auto;
-            border-radius: var(--border-radius);
         }
 
         & p:first-child {
@@ -228,7 +199,7 @@ summary {
     display: flex;
     flex-direction: column;
     align-content: center;
-    padding: var(--space-m);
+    padding: var(--space-s) var(--space-m) var(--space-s) var(--space-m);
     font-size: var(--font-size--1);
 
     & a {
@@ -240,7 +211,7 @@ summary {
             text-decoration-thickness: 2px;
 
             & svg.logo {
-                fill: var(--header-link-hover-color);
+                fill: var(--logo-hover-color);
             }
         }
     }
@@ -271,14 +242,10 @@ summary {
 
     & a {
         color: var(--header-foreground-color);
-        text-decoration-color: var(--header-border-color);
-
-        &:hover {
-            text-decoration-color: var(--header-foreground-color);
-        }
+        text-decoration-color: var(--header-foreground-color);
 
         &::after {
-            color: var(--header-deemphasized-color);
+            color: var(--deemphasized-color);
         }
     }
 }
@@ -301,27 +268,22 @@ summary {
 .post-metadata, .page-metadata {
     margin: var(--space-m) 0 var(--space-m) 0;
     padding: var(--space-s);
-    font-size: var(--font-size--1);
     background-color: var(--metadata-background-color);
     color: var(--metadata-foreground-color);
-    border-radius: var(--border-radius);
 
     & dl {
-        display: grid;
-        grid-template-columns: max-content auto;
+        font-size: var(--font-size--1);
     }
 
     & dt {
-        text-align: right;
         font-weight: 500;
+        float: left;
+        clear: left;
         display: inline;
-        grid-column-start: 1;
-        padding-right: 0.75ch;
+        padding-right: 0.5ch;
     }
 
     & dd {
-        display: inline;
-        grid-column-start: 2;
     }
 
     & dd:not(:first-of-type), & dt:not(:first-of-type) {
@@ -348,8 +310,7 @@ summary {
 }
 
 .post-list-item-title {
-    display: block;
-    font-weight: 500;
+    font-weight: 400;
 }
 
 .post-list-item-title::after {
@@ -419,8 +380,6 @@ summary {
         position: absolute;
         left: var(--width);
         margin-top: 0;
-        margin-right: var(--space-m);
-        min-width: 12rem;
-        max-width: 20rem;
+        width: 17em;
     }
 }
