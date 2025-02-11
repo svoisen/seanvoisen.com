@@ -16,6 +16,7 @@ export default async function(eleventyConfig) {
   /*
    * plugins
    */
+  eleventyConfig.addPlugin(plugins.wordStats);
   eleventyConfig.addPlugin(plugins.rss, {
     type: "atom",
     outputPath: "/feed.xml",

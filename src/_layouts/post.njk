@@ -21,10 +21,8 @@ layout: base
                 </dd>
                 <dt>Post type</dt>
                 <dd>{{ type }}</dd>
-                {% if description %}
-                <dt>Summary</dt>
-                <dd>{{ description }}</dd>
-                {% endif %}
+                <dt>Length</dt>
+                <dd>{{ content | wordStats }}</dd>
                 <dt>Tags</dt>
                 <dd>{{ tagList(tags) }}</dd>
             </dl>

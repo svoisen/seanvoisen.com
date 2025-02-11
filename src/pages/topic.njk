@@ -10,7 +10,7 @@ permalink: /topics/{{ tag | slug }}/index.html
 {% from "macros/postlist.njk" import postList %}
 <article class="page">
     <header class="page-header">
-        <h1 class="page-title"><a href="/topics/">Topics</a> / {{ tag | titlecase }}</h1>
+        <h1 class="page-title"><a class="nav-link" href="/topics/">Topics</a> / {{ tag | titlecase }}</h1>
     </header>
     <p>There are {{ collections[tag].length }} {% if (collections[tag].length) > 1 %}entries{% else %}entry{% endif %} about this topic:</p>
     {{ postList(collections[tag].reverse()) }}
