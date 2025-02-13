@@ -2,14 +2,28 @@
         <meta name="generator" content="{{ eleventy.generator }}" />
         <meta name="format-detection" content="telephone=no" />
         <meta name="color-scheme" content="light dark" />
-        <link rel="canonical" href="{{ site.url }}{{ page.url | url }}" />
+        <link rel="canonical" href="{{ site.base }}{{ page.url | url }}" />
+
         <link rel="me" href="https://front-end.social/@svoisen">
+
         <link rel="alternate" href="/feed.xml" type="application/atom+xml" title="Atom Feed">
         <link rel="alternate" href="/feed.json" type="application/json" title="JSON Feed">
+
+        <meta property="og:url" content="{{ site.base }}{{ page.url | url }}" />
+        <meta property="og:type" content="website" />
+        <meta property="og:title" content="{{ title or site.title }}" />
+        <meta property="og:image" content="{{ site.base }}{{ site.og.image }}" />
+        <meta property="og:image:alt" content="{{ title or site.title }}" />
+        <meta property="og:image:width" content="{{ site.og.width }}" />
+        <meta property="og:image:height" content="{{ site.og.height }}" />
+        <meta property="og:description" content="{{ description or site.description }}" />
+        <meta property="og:site_name" content="{{ site.title }}" />
+        <meta property="og:locale" content="{{ site.locale }}" />
+        <meta property="article:author" content="{{ site.author.name }}" />
 
         <link rel="icon" type="image/png" href="{{ "/favicon-96x96.png" | url }}" sizes="96x96" />
         <link rel="icon" type="image/svg+xml" href="{{ "/favicon.svg" | url }}" />
         <link rel="shortcut icon" href="{{ "/favicon.ico" | url }}" />
         <link rel="apple-touch-icon" sizes="180x180" href="{{ "/apple-touch-icon.png" | url }}" />
-        <meta name="apple-mobile-web-app-title" content="Sean Voisen" />
+        <meta name="apple-mobile-web-app-title" content="{{ site.title }}" />
         <link rel="manifest" href="{{ "/site.webmanifest" | url }}" />

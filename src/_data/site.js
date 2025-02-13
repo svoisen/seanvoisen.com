@@ -6,3 +6,8 @@ export const author = {
 };
 export const locale = "en_US";
 export const lang = "en";
+export const og = {
+  image: "/assets/images/og/og_default.png",
+  width: 1200,
+  height: 630
+};
