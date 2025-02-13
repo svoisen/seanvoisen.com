@@ -6,13 +6,14 @@
     </div>
     <nav class="nav">
         <ul>
-            {% for item in navigation.items %}
+            {% set items = navigation.items | navigationItems %}
+            {% for item in items %}
             {% if item.url == page.url %}
             <li class="active">
             {% else %}
             <li>
             {% endif %}
-                <a href="{{ item.url }}">{{ item.title }}</a>
+                <a href="{{ item.url }}" title="{{ item.description }}">{{ item.title }}</a>
             </li>
             {% endfor %}
         </ul>

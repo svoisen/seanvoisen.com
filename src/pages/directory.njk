@@ -2,4 +2,16 @@
 layout: page
 permalink: /directory/
 title: Directory
+showMetadata: false
 ---
+
+{% set items = navigation.items | directoryItems %}
+
+<ul class="directory-list">
+{% for item in items %}
+    <li class="directory-list-item">
+        <a class="directory-list-item-title" href="{{ item.url }}">{{ item.url }}</a>
+        <span class="directory-list-item-description">{{ item.description }}</span>
+    </li>
+{% endfor %}
+</ul>

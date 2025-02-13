@@ -2,19 +2,33 @@
     "items": [
         {
             "title": "Blog",
-            "url": "/blog/"
+            "url": "/blog",
+            "description": "Short essays and personal updates.",
+            "inNavigation": true
         },
         {
             "title": "Stream",
-            "url": "/stream/"
+            "url": "/stream",
+            "description": "Brief thoughts and comments, mostly about things I've read in books or on the web.",
+            "inNavigation": true
         },
         {
             "title": "About",
-            "url": "/about/"
+            "url": "/about",
+            "description": "About me and this site.",
+            "inNavigation": true
         },
         {
             "title": "Directory",
-            "url": "/directory/"
+            "url": "/directory",
+            "description": "Directory of primary site pages.",
+            "inNavigation": true
+        },
+        {
+            "title": "Now",
+            "url": "/now",
+            "description": "What I'm doing now.",
+            "inNavigation": false
         }
     ]
 }

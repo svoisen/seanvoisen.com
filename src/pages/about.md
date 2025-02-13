@@ -19,9 +19,9 @@ Currently, I lead teams of front-end engineers and design technologists building
 
 ---
 
-If anything I write resonates with you, please feel free to <a href="#" class="eml-protected">send me a note</a>. You can also <a href="{{ site.url }}/subscribe">subscribe</a> for regular updates or [find me on Mastodon](https://front-end.social/@svoisen).
+If anything I write resonates with you, please feel free to <a href="#" class="eml-protected">send me a note</a> or [find me on Mastodon](https://front-end.social/@svoisen).
 
-_Views and opinions expressed on this site are purely my own and not representative of my employer._
+_Views and opinions expressed on this site are purely my own and not representative of those of my employer._
 
 <script>
     function decode(encodedString) {

@@ -6,6 +6,7 @@ layout: base
     <header class="page-header">
         <h1 class="page-title">{{ title }}</h1>
     </header>
+    {% if showMetadata != false %}
     <aside class="page-metadata">
         <dl>
             <dt>Last updated</dt>
@@ -16,6 +17,7 @@ layout: base
             <dd>{{ description }}</dd>
         </dl>
     </aside>
+    {% endif %}
     <div class="page-content">
         {{ content | safe }}
     </div>

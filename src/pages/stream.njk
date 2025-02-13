@@ -1,13 +1,13 @@
 ---
-layout: "home"
+layout: page
 title: "Stream"
 permalink: "/stream/"
+showMetadata: false
 ---
 
 {% from "macros/postlist.njk" import postList %}
+{% set stream = collections.stream | reverse %}
+{% set description = navigation.items | getDescription(permalink) %}
 
-<header class="page-header">
-    <h1 class="page-title">{{ title }}</h1>
-</header>
-<p>Brief thoughts and off-the-cuff comments, mostly about things I've read on the web.</p>
-{{ postList(collections.stream.reverse()) }}
+<p>{{ description }}</p>
+{{ postList(stream) }}

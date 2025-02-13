@@ -16,7 +16,7 @@ excludeFromSitemap: true
     }
   ],
   "items": [
-    {%- for post in collections.posts | reverse | head(10) %}
+    {%- for post in collections.blog | reverse | head(10) %}
     {%- set absolutePostUrl %}{{ post.url | htmlBaseUrl(site.base) }}{% endset %}
     {
       "id": "{{ absolutePostUrl }}",

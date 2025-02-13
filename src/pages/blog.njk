@@ -1,13 +1,13 @@
 ---
-layout: "home"
+layout: page
 title: "Blog"
 permalink: "/blog/"
+showMetadata: false
 ---
 
 {% from "macros/postlist.njk" import postList %}
+{% set blog = collections.blog | reverse %}
+{% set description = navigation.items | getDescription(permalink) %}
 
-<header class="page-header">
-    <h1 class="page-title">{{ title }}</h1>
-</header>
-<p>Short essays and personal updates.</p>
-{{ postList(collections.blog.reverse()) }}
+<p>{{ description }}</p>
+{{ postList(blog) }}
