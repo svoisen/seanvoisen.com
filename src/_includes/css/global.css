@@ -45,6 +45,7 @@
     --metadata-background-color: light-dark(var(--color-zinc-200), var(--color-zinc-800));
     --metadata-foreground-color: var(--foreground-color);
     --link-color: var(--foreground-color);
+    --link-underline-color: light-dark(var(--color-zinc-300), var(--color-zinc-500));
     --link-hover-color: light-dark(var(--color-blue-600), var(--color-yellow-500));
     --line-height: 1.5;
     --width: 37em;
@@ -98,7 +99,8 @@ section {
 a {
     color: var(--link-color);
     text-decoration-style: solid;
-    text-decoration-thickness: 1px;
+    text-decoration-thickness: 2px;
+    text-decoration-color: var(--link-underline-color);
 
     &:after {
         font-size: 0.75em; 
@@ -108,6 +110,7 @@ a {
 
     &:hover {
         color: var(--link-hover-color);
+        text-decoration-color: var(--link-hover-color);
 
         &:after {
             color: var(--link-hover-color);
@@ -118,7 +121,7 @@ a {
 a[href*="//"]:not([href*="seanvoisen.com"]):after { content: "\00A0↗"; }
 a[href^="http:"]:after { content: "\00A0!" !important; }
 a[href$=".pdf"]:after, a[href$=".zip"]:after, a[href$=".gz"]:after {
-	content: "\00A0↓" !important;
+    content: "\00A0↓" !important;
 }
 
 p {
@@ -283,9 +286,6 @@ summary {
         padding-right: 0.5ch;
     }
 
-    & dd {
-    }
-
     & dd:not(:first-of-type), & dt:not(:first-of-type) {
         margin-top: var(--space-3xs);
     }
@@ -354,14 +354,13 @@ summary {
     }
 }
 
-.directory-list {
-    margin: 0;
-    list-style: none;
-}
-
-.directory-list-item-title {
-    font-weight: 700;
-    display: block;
+.visual-hidden {
+    clip:rect(1px, 1px, 1px, 1px);
+    height:1px;
+    overflow:hidden;
+    position:absolute !important;
+    white-space:nowrap;
+    width:1px
 }
 
 @media only screen and (min-width: 568px) {
@@ -388,6 +387,10 @@ summary {
 
 @media only screen and (min-width: 960px) {
     .post-metadata, .page-metadata {
+        background-color: transparent;
+        padding-top: 0;
+        padding-bottom: 0;
+        padding-right: 0;
         position: absolute;
         left: var(--width);
         margin-top: 0;

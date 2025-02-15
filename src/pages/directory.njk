@@ -1,8 +1,9 @@
 ---
 layout: page
-permalink: /directory/
-title: Directory
+permalink: "/directory/"
+title: "Directory"
 showMetadata: false
+localCSS: ["directory"]
 ---
 
 {% set items = navigation.items | directoryItems %}
@@ -12,6 +13,8 @@ showMetadata: false
     <li class="directory-list-item">
         <a class="directory-list-item-title" href="{{ item.url }}">{{ item.url }}</a>
         <span class="directory-list-item-description">{{ item.description }}</span>
+        <span class="books-grid-rating">
+        </span>
     </li>
 {% endfor %}
 </ul>

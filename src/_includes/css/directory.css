@@ -1,0 +1,14 @@
+.directory-list {
+    margin: 0;
+    list-style: none;
+}
+
+.directory-list-item {
+    margin-bottom: var(--space-s);
+}
+
+.directory-list-item-title {
+    font-weight: 700;
+    display: block;
+}
+

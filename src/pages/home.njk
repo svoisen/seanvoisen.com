@@ -5,6 +5,7 @@ permalink: "/index.html"
 ---
 
 {% from "macros/postlist.njk" import postList %}
+{% from "macros/taglist.njk" import tagList %}
 {% set maxPosts = 3 %}
 {% set maxMorePosts = 10 %}
 {% set latestBlogPosts = collections.blog | reverse | head(maxPosts) %}

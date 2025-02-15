@@ -3,12 +3,9 @@
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <title>{{ site.title }} > {{ title or site.description }}</title>
+        <title>{{ site.title }} | {{ title or site.description }}</title>
         <base href="{{ page.url }}" />
-        {% set css %}{% include "css/global.css" %}{% endset %}
-        <style>
-        {{ css | cssnano | safe }}
-        </style>
+        {% include "head/css-inline.njk" %}
         {% include "head/meta.njk" %}
     </head>
     <body>

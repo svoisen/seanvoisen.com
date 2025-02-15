@@ -1,0 +1,35 @@
+---
+layout: page
+title: Bookshelf
+permalink: "/bookshelf/"
+showMetadata: false
+localCSS: ["bookshelf"]
+---
+
+{% set description = navigation.items | getDescription(permalink) %}
+<p>{{ description }}</p>
+<aside class="page-metadata">
+    <dl>
+        <dt>Last updated</dt>
+        <dd>
+            <time datetime="{{ page.date }}">{{ page.date | htmlDate }}</time>
+        </dd>
+        <dt>Total books</dt>
+        <dd>{{ books.books.length }}</dd>
+    </dl>
+</aside>
+
+<ul class="books-grid">
+{% for book in books.books %}
+    <li class="books-grid-item">
+        <img class="books-grid-cover" src="/assets/images/book_covers/{{ book.slug }}@320.webp" alt="{{ book.title }} cover" loading="lazy">
+        <div class="books-grid-metadata">
+            <a class="books-grid-title" href="{{ book.url }}">{{ book.title }}</a>
+            <span class="books-grid-author">by {{ book.author }}</span>
+            <span class="books-grid-rating">
+                <span class="visual-hidden">{{ book.rating }}/5.0 stars</span>
+                <span class="stars" aria-hidden="true">{{ book.rating | stars }}</span>
+            </span>
+        </div>
+{% endfor %}
+</ul>

@@ -1,7 +1,11 @@
-	{%- if eleventy.env.runMode === "serve" %}
-		<link rel="stylesheet" href="{% getBundleFileUrl "css", "global" %}">
-	{%- else  %}
-		<style>{% getBundle "css", "global" %}</style>
-	{%- endif %}
-
-	{% css "global" %}{% include "css/global.css" %}{% endcss %}
+{% set css %}
+{% include "css/global.css" %}
+{%- if localCSS %}
+{%- for filename in localCSS %}
+{% include "css/" + filename + ".css" %}
+{%- endfor %}
+{%- endif %}
+{% endset %}
+<style>
+{{ css | cssnano | safe }}
+</style>
