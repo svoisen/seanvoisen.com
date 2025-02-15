@@ -4,8 +4,10 @@ layout: base
 
 {% if (page.filePathStem.split("/")[1] == "blog") %}
     {% set type = "Blog" %}
+    {% set typelink = "/blog/" %}
 {% else %}
     {% set type = "Stream" %}
+    {% set typelink = "/stream/" %}
 {% endif %}
 
 {% from "macros/taglist.njk" import tagList %}
@@ -20,7 +22,7 @@ layout: base
                     <time class="post-timestamp" datetime="{{ page.date }}">{{ page.date | htmlDate }}</time>
                 </dd>
                 <dt>Post type</dt>
-                <dd>{{ type }}</dd>
+                <dd><a href="{{ typelink }}">{{ type }}</a></dd>
                 <dt>Length</dt>
                 <dd>{{ content | wordStats }}</dd>
                 <dt>Tags</dt>

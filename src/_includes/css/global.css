@@ -14,7 +14,6 @@
     --color-zinc-950: oklch(0.141 0.005 285.823);
     --color-yellow-500: oklch(0.795 0.184 86.047);  
     --color-blue-600: oklch(0.546 0.245 262.881);
-    --color-sky-500: oklch(0.685 0.169 237.323);
 
     --font-size--2: clamp(0.72rem, 0.8145rem + -0.122vi, 0.7901rem);
     --font-size--1: clamp(0.8889rem, 0.885rem + 0.0193vi, 0.9rem);
@@ -218,6 +217,7 @@ summary {
 
         &:hover {
             text-decoration: underline;
+            text-decoration-thickness: 2px;
 
             & svg.logo {
                 fill: var(--link-hover-color);
