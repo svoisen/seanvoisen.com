@@ -1,6 +1,17 @@
 {
     "books": [
         {
+            "title": "Gratitude",
+            "author": "Oliver Sacks",
+            "year": 2025,
+            "rating": 4,
+            "type": "book",
+            "link": "https://bookshop.org/a/106240/9780451492937",
+            "slug": "gratitude",
+            "isbn_13": 9780451492937,
+            "favorite": false
+        },
+        {
             "title": "Seneca: A Life",
             "author": "Emily Wilson",
             "year": 2025,
@@ -26,7 +37,7 @@
             "title": "The Art of Living",
             "author": "Thich Nhat Hanh",
             "year": 2025,
-            "rating": 4,
+            "rating": 3.5,
             "type": "book",
             "link": "https://bookshop.org/a/106240/9780062434661",
             "slug": "art_of_living",

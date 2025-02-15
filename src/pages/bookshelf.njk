@@ -4,16 +4,18 @@ title: Bookshelf
 permalink: "/bookshelf/"
 showMetadata: false
 localCSS: ["bookshelf"]
+date: Last Modified
 ---
 
 {% from "macros/bookshelf-section.njk" import bookshelfSection %}
 {% set description = navigation.items | getDescription(permalink) %}
+
 <p>{{ description }}</p>
 <aside class="page-metadata">
     <dl>
         <dt>Last updated</dt> 
         <dd>
-            <time datetime="{{ page.date }}">{{ page.date | htmlDate }}</time>
+            <time datetime="{{ page.date | w3Date }}">{{ page.date | htmlDate }}</time>
         </dd>
         <dt>Total books</dt>
         <dd>{{ books.books.length }}</dd>

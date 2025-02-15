@@ -35,6 +35,12 @@
             "url": "/bookshelf/",
             "description": "Books I've read, grouped by year.",
             "inNavigation": false
+        },
+        {
+            "title": "Topics",
+            "url": "/topics/",
+            "description": "Index of all topics used in blog and stream posts.",
+            "inNavigation": false
         }
     ]
 }
