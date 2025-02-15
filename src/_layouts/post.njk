@@ -19,7 +19,7 @@ layout: base
             <dl>
                 <dt>Published</dt>
                 <dd>
-                    <time class="post-timestamp" datetime="{{ page.date }}">{{ page.date | htmlDate }}</time>
+                    <time class="post-timestamp" datetime="{{ page.date | w3Date }}">{{ page.date | htmlDate }}</time>
                 </dd>
                 <dt>Post type</dt>
                 <dd><a href="{{ typelink }}">{{ type }}</a></dd>

@@ -11,7 +11,7 @@ layout: base
         <dl>
             <dt>Last updated</dt>
             <dd>
-                <time class="post-timestamp" datetime="{{ page.date }}">{{ page.date | htmlDate }}</time>
+                <time class="post-timestamp" datetime="{{ page.date | w3Date }}">{{ page.date | htmlDate }}</time>
             </dd>
             <dt>Length</dt>
             <dd>{{ content | wordStats }}</dd>
