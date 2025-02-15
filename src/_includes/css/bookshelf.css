@@ -32,6 +32,10 @@
 .books-grid-title {
     font-size: var(--font-size--1);
     display: block;
+
+    &::after {
+        content: "" !important;
+    }
 }
 
 .books-grid-title::after {

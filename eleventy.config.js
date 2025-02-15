@@ -16,10 +16,7 @@ export default async function(eleventyConfig) {
   /*
    * plugins
    */
-  eleventyConfig.addPlugin(plugins.wordStats, {
-    wordsPerMinute: 238
-  });
-
+  eleventyConfig.addPlugin(plugins.wordStats);
   eleventyConfig.addPlugin(plugins.rss, {
     type: "atom",
     outputPath: "/feed.xml",
@@ -32,7 +29,6 @@ export default async function(eleventyConfig) {
       base: "https://seanvoisen.com"
     }
   });
-
   eleventyConfig.addPlugin(plugins.syntaxHighlight, {
     preAttributes: { tabindex: 0 }
   });
@@ -61,6 +57,7 @@ export default async function(eleventyConfig) {
   eleventyConfig.addFilter("htmlDate", filters.htmlDate);
   eleventyConfig.addFilter("head", filters.head);
   eleventyConfig.addFilter("slice", filters.slice);
+  eleventyConfig.addFilter("filter", filters.filter);
   eleventyConfig.addFilter("cssnano", filters.cssnanoFilter);
   eleventyConfig.addFilter("titlecase", filters.titlecase);
   eleventyConfig.addFilter("navigationItems", filters.navigationItems);
@@ -119,3 +116,5 @@ export const config = {
     layouts: "_layouts"
   }
 };
+
+

@@ -6,6 +6,7 @@ showMetadata: false
 localCSS: ["bookshelf"]
 ---
 
+{% from "macros/bookshelf-section.njk" import bookshelfSection %}
 {% set description = navigation.items | getDescription(permalink) %}
 <p>{{ description }}</p>
 <aside class="page-metadata">
@@ -19,17 +20,7 @@ localCSS: ["bookshelf"]
     </dl>
 </aside>
 
-<ul class="books-grid">
-{% for book in books.books %}
-    <li class="books-grid-item">
-        <img class="books-grid-cover" src="/assets/images/book_covers/{{ book.slug }}@320.webp" alt="{{ book.title }} cover" loading="lazy">
-        <div class="books-grid-metadata">
-            <a class="books-grid-title" href="{{ book.url }}">{{ book.title }}</a>
-            <span class="books-grid-author">by {{ book.author }}</span>
-            <span class="books-grid-rating">
-                <span class="visual-hidden">{{ book.rating }}/5.0 stars</span>
-                <span class="stars" aria-hidden="true">{{ book.rating | stars }}</span>
-            </span>
-        </div>
-{% endfor %}
-</ul>
+{{ bookshelfSection(books.books, 2025) }}
+{{ bookshelfSection(books.books, 2024) }}
+{{ bookshelfSection(books.books, 2023) }}
+{{ bookshelfSection(books.books, 2022) }}

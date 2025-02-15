@@ -17,3 +17,7 @@ export const slice = (array, start, end) => {
 
   return array.slice(start, end);
 };
+
+export const filter = (array, key, value) => {
+  return array.filter(item => item[key] === value);
+}

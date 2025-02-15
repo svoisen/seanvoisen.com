@@ -1,0 +1,17 @@
+{% macro bookshelfSection(books, year) %}
+<h2>{{ year }}</h2>
+<ul class="books-grid">
+{% for book in books | filter("year", year) %}
+    <li class="books-grid-item">
+        <img class="books-grid-cover" src="/assets/images/book_covers/{{ book.slug }}@320.webp" alt="{{ book.title }} cover" loading="lazy">
+        <div class="books-grid-metadata">
+            <a class="books-grid-title" href="{{ book.link }}">{{ book.title }}</a>
+            <span class="books-grid-author">by {{ book.author }}</span>
+            <span class="books-grid-rating">
+                <span class="visual-hidden">{{ book.rating }}/5.0 stars</span>
+                <span class="stars" aria-hidden="true">{{ book.rating | stars }}</span>
+            </span>
+        </div>
+{% endfor %}
+</ul>
+{% endmacro %}
