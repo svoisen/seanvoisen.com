@@ -7,6 +7,12 @@
             "inNavigation": true
         },
         {
+            "title": "Notes",
+            "url": "/notes/",
+            "description": "Evergreen notes on a variety of topics of personal interest.",
+            "inNavigation": true
+        },
+        {
             "title": "Stream",
             "url": "/stream/",
             "description": "Brief thoughts and comments, mostly about things I've read in books or on the web.",

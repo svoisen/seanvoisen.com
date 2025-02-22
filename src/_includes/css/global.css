@@ -57,6 +57,11 @@
     padding: 0;
 }
 
+html, body {
+    background-color: var(--background-color);
+    color: var(--foreground-color);
+}
+
 body {
     line-height: var(--line-height);
     font-family: var(--font-family-sans-serif);
@@ -67,7 +72,6 @@ body {
     -moz-osx-font-smoothing: grayscale;
     -webkit-text-size-adjust: 100%;
     text-rendering: optimizeLegibility;
-    background-color: var(--background-color);
 }
 
 hr {
@@ -150,7 +154,7 @@ ul, ol {
     margin: var(--space-m) 0 var(--space-m) var(--space-m);
 
     & li {
-        margin-bottom: var(--space-xs);
+        margin-bottom: var(--space-3xs);
 
         &::marker {
             color: var(--deemphasized-color);
@@ -194,11 +198,11 @@ summary {
             margin-top: 0;
         }
 
-        :is(h1, h2, h3):has(+ p, + ul, + ol) {
+        :is(h1, h2, h3):has(+ p, + ul, + ol, + blockquote) {
             margin-bottom: var(--space-2xs);
         }
 
-        :is(h1, h2, h3) + p {
+        :is(h1, h2, h3) + :is(p, ul, ol, blockquote) {
             margin-top: var(--space-2x);
         }
     }

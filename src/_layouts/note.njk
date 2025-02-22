@@ -1,0 +1,24 @@
+---
+layout: base
+---
+
+<article class="page">
+    <header class="page-header">
+        <h1 class="page-title">{{ title }}</h1>
+    </header>
+    <aside class="page-metadata">
+        <dl>
+            <dt>Last updated</dt>
+            <dd>
+                <time class="post-timestamp" datetime="{{ page.date | w3Date }}">{{ page.date | htmlDate }}</time>
+            </dd>
+            <dt>Length</dt>
+            <dd>{{ content | wordStats }}</dd>
+            <dt>Status</dt>
+            <dd>{{ status }}</dd>
+        </dl>
+    </aside>
+    <div class="page-content">
+        {{ content | safe }}
+    </div>
+</article>

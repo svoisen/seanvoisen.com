@@ -58,7 +58,7 @@ export default async function(eleventyConfig) {
   eleventyConfig.addFilter("head", filters.head);
   eleventyConfig.addFilter("slice", filters.slice);
   eleventyConfig.addFilter("filter", filters.filter);
-  eleventyConfig.addFilter("cssnano", filters.cssnanoFilter);
+  eleventyConfig.addFilter("postcss", filters.postCssFilter);
   eleventyConfig.addFilter("titlecase", filters.titlecase);
   eleventyConfig.addFilter("navigationItems", filters.navigationItems);
   eleventyConfig.addFilter("directoryItems", filters.directoryItems);
@@ -72,6 +72,7 @@ export default async function(eleventyConfig) {
   eleventyConfig.addCollection("stream", collections.stream);
   eleventyConfig.addCollection("tags", collections.tags);
   eleventyConfig.addCollection("sitemap", collections.sitemap);
+  eleventyConfig.addCollection("notes", collections.notes);
 
   /*
    * layout aliases
@@ -80,6 +81,7 @@ export default async function(eleventyConfig) {
   eleventyConfig.addLayoutAlias("page", "page.njk");
   eleventyConfig.addLayoutAlias("post", "post.njk");
   eleventyConfig.addLayoutAlias("home", "home.njk");
+  eleventyConfig.addLayoutAlias("note", "note.njk");
 
   /*
    * passthrough file copy

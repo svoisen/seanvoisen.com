@@ -18,6 +18,7 @@
         "@11ty/eleventy-plugin-rss": "^2.0.3",
         "@11ty/eleventy-plugin-syntaxhighlight": "^5.0.0",
         "@photogabble/eleventy-plugin-word-stats": "^1.0.1",
+        "autoprefixer": "^10.4.20",
         "cross-env": "^7.0.3",
         "cssnano": "^7.0.6",
         "luxon": "^3.5.0",

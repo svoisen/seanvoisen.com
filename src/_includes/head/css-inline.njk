@@ -7,5 +7,5 @@
 {%- endif %}
 {% endset %}
 <style>
-{{ css | cssnano | safe }}
+{{ css | postcss | safe }}
 </style>
