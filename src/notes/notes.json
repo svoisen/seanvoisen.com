@@ -1,4 +1,5 @@
 {
     "layout": "note",
-    "permalink": "/{{ page.filePathStem }}/index.html"
+    "permalink": "/{{ page.filePathStem }}/index.html",
+    "date": "git Last Modified"
 }

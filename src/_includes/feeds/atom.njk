@@ -1,20 +1,15 @@
----
-permalink: /feed.xml
-eleventyExcludeFromCollections: true
-excludeFromSitemap: true
----
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom" xml:lang="{{ metadata.language or page.lang }}">
-  <title>{{ site.title }}</title>
-  <subtitle>{{ site.description }}</subtitle>
+  <title>{{ title or site.title }}</title>
+  <subtitle>{{ description or site.description }}</subtitle>
   <link href="{{ permalink | htmlBaseUrl(site.base) }}" rel="self" />
   <link href="{{ site.base | addPathPrefixToFullUrl }}" />
-  <updated>{{ collections.posts | getNewestCollectionItemDate | dateToRfc3339 }}</updated>
+  <updated>{{ collection | getNewestCollectionItemDate | dateToRfc3339 }}</updated>
   <id>{{ site.base | addPathPrefixToFullUrl }}</id>
   <author>
     <name>{{ site.author.name }}</name>
   </author>
-  {%- for post in collections.blog | reverse | head(10) %}
+  {%- for post in collection | reverse | head(10) %}
   {%- set absolutePostUrl %}{{ post.url | htmlBaseUrl(site.base) }}{% endset %}
   <entry>
     <title>{{ post.data.title }}</title>

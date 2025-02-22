@@ -1,7 +1,6 @@
 ---
 title: Engineering management resources
-status: "This list is a bit rough. There's some work ahead to polish and provide better descriptions of each resource, but I'm publishing it for now anyway."
-date: Last Modified
+status: "This list is still a bit rough. There's some work ahead to polish and provide better descriptions of each resource, but I'm publishing it for now anyway."
 ---
 
 A collection of resources that I often share with new and experienced engineering managers.

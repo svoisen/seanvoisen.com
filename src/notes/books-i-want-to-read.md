@@ -1,7 +1,6 @@
 ---
 title: Books I want to read
-status: "The one thing I refuse to deprive myself of are books. There will always be more books I want to read than I will ever have time to read. Such is life."
-date: Last Modified
+status: "There will always be more books I want to read than I will ever have time to read. Such is life."
 ---
 
 ## Critical views on technology
@@ -15,7 +14,7 @@ date: Last Modified
 - [Open Standards and the Digital
   Age](https://www.cambridge.org/core/books/open-standards-and-the-digital-age/3605A03EC74D80F2D30FE233C7BCBF35)
   by Andrew L. Russell
-- 
+- The Chinese Typewriter by Thomas Mullaney
 
 ## Philosophy
 

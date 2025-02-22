@@ -2,7 +2,7 @@
 layout: "page"
 title: "About"
 description: "About me and this site."
-date: Last Modified
+date: git Last Modified
 permalink: "/about/"
 ---
 

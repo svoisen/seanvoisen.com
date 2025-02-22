@@ -1,22 +1,17 @@
----
-permalink: /feed.json
-eleventyExcludeFromCollections: true
-excludeFromSitemap: true
----
 {
   "version": "https://jsonfeed.org/version/1.1",
-  "title": "{{ site.title }}",
+  "title": "{{ title or site.title }}",
   "language": "{{ site.lang or page.lang }}",
   "home_page_url": "{{ site.base | addPathPrefixToFullUrl }}",
   "feed_url": "{{ permalink | htmlBaseUrl(site.base) }}",
-  "description": "{{ site.description }}",
+  "description": "{{ description or site.description }}",
   "authors": [
     {
       "name": "{{ site.author.name }}"
     }
   ],
   "items": [
-    {%- for post in collections.blog | reverse | head(10) %}
+    {%- for post in collection | reverse | head(10) %}
     {%- set absolutePostUrl %}{{ post.url | htmlBaseUrl(site.base) }}{% endset %}
     {
       "id": "{{ absolutePostUrl }}",

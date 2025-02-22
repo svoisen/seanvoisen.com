@@ -17,18 +17,7 @@ export default async function(eleventyConfig) {
    * plugins
    */
   eleventyConfig.addPlugin(plugins.wordStats);
-  eleventyConfig.addPlugin(plugins.rss, {
-    type: "atom",
-    outputPath: "/feed.xml",
-    collection: {
-      name: "blog",
-      limit: 10,
-    },
-    metadata: {
-      title: "Sean Voisen",
-      base: "https://seanvoisen.com"
-    }
-  });
+  eleventyConfig.addPlugin(plugins.rss);
   eleventyConfig.addPlugin(plugins.syntaxHighlight, {
     preAttributes: { tabindex: 0 }
   });
@@ -82,6 +71,7 @@ export default async function(eleventyConfig) {
   eleventyConfig.addLayoutAlias("post", "post.njk");
   eleventyConfig.addLayoutAlias("home", "home.njk");
   eleventyConfig.addLayoutAlias("note", "note.njk");
+  eleventyConfig.addLayoutAlias("atom", "atom.njk");
 
   /*
    * passthrough file copy

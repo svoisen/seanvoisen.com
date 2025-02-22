@@ -1,7 +1,6 @@
 ---
-title: Favorite stoic quotes
-date: Last Modified
-status: "My study focus has centered on Roman Stoics: Seneca, Epictetus and Marcus Aurelius, which is pretty evident from this list."
+title: Stoic quotes
+status: "My focus so far has centered on Roman Stoics: Seneca, Epictetus and Marcus Aurelius, which is pretty evident from this list."
 ---
 
 A growing collection of quotes from ancient stoics that I enjoy using for reflection when contemplating how to live well in tumultuous times.

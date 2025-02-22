@@ -17,4 +17,4 @@ Evergreen notes on a variety of topics of personal interest.
 - [Software tools I use](/notes/software-tools-i-use/)
 
 ## Philosophy
-- [Favorite stoic quotes](/notes/favorite-stoic-quotes/)
+- [Stoic quotes](/notes/stoic-quotes/)

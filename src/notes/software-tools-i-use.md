@@ -1,6 +1,6 @@
 ---
 title: "Software tools I use"
-status: "I'm constantly experimenting with new tools, so this list will never be static."
+status: "I'm constantly experimenting with new tools, but it's rare for me to adopt something as a regular go-to tool. I don't expect this list to update too frequently."
 date: Last Modified
 tags: ["tools"]
 ---
@@ -31,4 +31,4 @@ I'm pretty entrenched in the Apple hardware ecosystem, but I enjoy using indepen
 - I use [Lightroom](https://lightroom.adobe.com/) for photo management and editing. Though I tend not to shoot in RAW these days (Fujifilm cameras have great JPEG output), I still prefer Lightoom for when the need arises. Additionally, my wife and I lean on Apple Photos for family sharing.
 - I use both [Illustrator](https://www.adobe.com/products/illustrator.html#modal-hash) and [Inkscape](https://inkscape.org/) for vector graphics editing and preparation of artwork for pen plotters. While I greatly prefer working in Illustrator, Inkscape is the only vector editing tool that can communicate directly with the [Axidraw](https://www.axidraw.com/) series of pen
   plotter.
-- [Vsketch](https://vsketch.readthedocs.io/en/latest/) is a Python-based environment built specifically for algorithmic generation of vector artwork. It is one of my favorite tools to use when engaged in creative coding for pen plotters.
+- [Vsketch](https://vsketch.readthedocs.io/en/latest/) is a Python-based environment built specifically for algorithmic generation of vector artwork. It is one of my favorite tools to use when working on creative coding for pen plotters.
