@@ -47,6 +47,12 @@
             "url": "/topics/",
             "description": "Index of all topics used in blog and stream posts.",
             "inNavigation": false
+        },
+        {
+            "title": "Colophon",
+            "url": "/colophon/",
+            "description": "How this site is designed and built.",
+            "inNavigation": false
         }
     ]
 }

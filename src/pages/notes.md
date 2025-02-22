@@ -11,6 +11,7 @@ Evergreen notes on a variety of topics of personal interest.
 - [Engineering management resources](/notes/engineering-management-resources/)
 
 ## Reading
+- [Favorite books](/notes/favorite-books/)
 - [Books I want to read](/notes/books-i-want-to-read/)
 
 ## Computing

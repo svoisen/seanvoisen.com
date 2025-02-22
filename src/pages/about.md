@@ -19,7 +19,11 @@ Currently, I lead teams of front-end engineers and design technologists building
 
 ---
 
-If anything I write resonates with you, please feel free to <a href="#" class="eml-protected">send me a note</a> or [find me on Mastodon](https://front-end.social/@svoisen).
+- If you're curious about how this site is designed or built, [check out the
+colophon](/colophon/).
+- If anything I write resonates with you, please feel free to <a href="#" class="eml-protected">send me a note</a> or [find me on Mastodon](https://front-end.social/@svoisen).
+
+## Disclaimer
 
 _Views and opinions expressed on this site are purely my own and not representative of those of my employer._
 

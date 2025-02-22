@@ -3,7 +3,7 @@ layout: page
 title: Now
 description: What I'm doing now.
 permalink: /now/
-date: Last Modified
+date: git Last Modified
 ---
 
 This is my [now page](https://nownownow.com/about), a brief summary of what I'm
