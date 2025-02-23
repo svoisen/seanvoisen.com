@@ -3,16 +3,16 @@
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <title>{{ site.title }} | {{ title or site.description }}</title>
+        <title>{% if title %}{{ title }} | {{ site.title }}{% else %}{{ site.title }} | {{ site.description }}{% endif %}</title>
         <base href="{{ page.url }}" />
-        {% include "head/css-inline.njk" %}
-        {% include "head/meta.njk" %}
+        {%- include "head/css-inline.njk" %}
+        {%- include "head/meta.njk" %}
     </head>
     <body>
-        {% include "partials/header.njk" %}
+        {%- include "partials/header.njk" %}
         <main class="main">
             {{ content | safe }}
         </main>
-        {% include "partials/footer.njk" %}
+        {%- include "partials/footer.njk" %}
     </body>
 </html>
