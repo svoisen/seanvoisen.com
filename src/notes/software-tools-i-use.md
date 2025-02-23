@@ -8,7 +8,8 @@ tags: ["tools"]
 I'm pretty entrenched in the Apple hardware ecosystem, but I enjoy using independently-developed software when possible. I happily financially support independent creators, open source projects, and small businesses that produce software I value.
 
 ## Software development
-- [Neovim](https://neovim.io) is my go-to text editor. I have been a vim user for over 15 years, but just recently migrated to neovim, porting most of my custom configuration and shortcuts, which long ago became embedded in muscle memory. I make heavy use of neovim with tmux when coding.
+
+- [Neovim](https://neovim.io) is my go-to text editor. I have been a vim user for over 15 years, but this past year I finally migrated to Neovim, porting most of my custom configuration and shortcuts, which long ago became embedded in muscle memory. I make heavy use of Neovim with tmux when writing code.
 - [Alacritty](https://alacritty.org) is a high-performance, cross-platform terminal emulator and can be configured using standard TOML configuration files, which makes it easy to port my configuration across machines. I use tmux for multiplexing, so I don't need a lot of bells and whistles, and enjoy the fact that Alacritty has a pretty minimal feature set.
 - After many years of using Solarized and Gruvbox, I recently switched to [Catppuccin](https://catppuccin.com/) as my default color scheme for text editing, terminal emulation, and note taking. I prefer the "macchiato" flavor.
 
