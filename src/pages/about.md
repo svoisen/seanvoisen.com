@@ -19,9 +19,24 @@ Currently, I lead teams of front-end engineers and design technologists building
 
 ---
 
-- If you're curious about how this site is designed or built, [check out the
-colophon](/colophon/).
-- If anything I write resonates with you, please feel free to <a href="#" class="eml-protected">send me a note</a> or [find me on Mastodon](https://front-end.social/@svoisen).
+## Contact me
+
+If anything I write resonates with you, please feel free to <a href="#" class="eml-protected">send me a note</a> or [find me on Mastodon](https://front-end.social/@svoisen).
+
+## AI usage
+
+I believe personal websites are about the fostering of human relationships. As such, **I do not use AI to generate any content on this site**, and never will.
+
+## Privacy and analytics
+
+- This site does not use any third party tracking scripts. 
+- This site does not collect any data. 
+- This site does not use any JavaScript at all except for the sole purpose of obfuscating my email address from bots and harvesters.
+- I am a [Bookshop.org](https://bookshop.org) affiliate. Links to books on this site typically use my affiliate link, which means I may receive a small commission on any purchases made through the link.
+
+## Design and production 
+
+If you're curious about how this site is designed or built, [check out the colophon](/colophon/).
 
 ## Disclaimer
 
