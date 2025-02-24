@@ -25,7 +25,9 @@ If anything I write resonates with you, please feel free to <a href="#" class="e
 
 ## AI usage
 
-I believe personal websites are about the fostering of human relationships. As such, **I do not use AI to generate any content on this site**, and never will.
+**I do not use AI to generate any content on this site** unless explicitly labeled as such, and only will do so when needing to provide an example of AI content for editorial purpose. 
+
+I believe personal websites are about the fostering of human relationships. As such, I believe the content on websites like this one should be 100% created by the *human* author of the site. 
 
 ## Privacy and analytics
 
