@@ -15,7 +15,13 @@ My professional mission is to _make computing better for human creativity_. I'm 
 
 I’m originally from California, and live with my wife and kids in the San Francisco bay area. I studied computer science at [UCLA](https://www.ucla.edu) and at the (radically interdisciplinary and sadly now shuttered) Arts Computation Engineering program at [UC Irvine](https://www.uci.edu). 
 
-Currently, I lead teams of front-end engineers and design technologists building design systems and new user experiences for web, mobile and desktop.
+Currently, I work at [Adobe](https://adobe.com), leading teams of front-end engineers and design technologists building design systems and new user experiences for web, mobile and desktop. In the past I have:
+
+- Built real-time collaboration and accessibility features for [Adobe Express](https://express.adobe.com)
+- Managed layout and accessibility engineering teams working on [Firefox](https://mozilla.org)
+- Built web-based tools for making animated VR and AR comics at [Madefire](https://techcrunch.com/2022/04/29/madefire-shuts-down/)
+- Led prototype engineering inside [Adobe’s Design Studio](https://adobe.design)
+- Developed chat and instant messaging applications at [Userplane](https://en.wikipedia.org/wiki/Userplane)
 
 ---
 
@@ -25,9 +31,7 @@ If anything I write resonates with you, please feel free to <a href="#" class="e
 
 ## AI usage
 
-**I do not use AI to generate any content on this site** unless explicitly labeled as such, and only will do so when needing to provide an example of AI content for editorial purpose. 
-
-I believe personal websites are about the fostering of human relationships. As such, I believe the content on websites like this one should be 100% created by the *human* author of the site. 
+**I do not use AI to generate any content on this site** unless explicitly labeled as such, and only will do so when needing to provide an example of AI content for editorial purposes. 
 
 ## Privacy and analytics
 
