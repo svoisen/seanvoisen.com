@@ -15,7 +15,7 @@ My professional mission is to _make computing better for human creativity_. I'm 
 
 I’m originally from California, and live with my wife and kids in the San Francisco bay area. I studied computer science at [UCLA](https://www.ucla.edu) and at the (radically interdisciplinary and sadly now shuttered) Arts Computation Engineering program at [UC Irvine](https://www.uci.edu). 
 
-Currently, I work at [Adobe](https://adobe.com), leading teams of front-end engineers and design technologists building design systems and new user experiences for web, mobile and desktop. In the past I have:
+Currently, I lead teams of front-end engineers and design technologists building design systems and new user experiences for web, mobile and desktop. In the past I have:
 
 - Built real-time collaboration and accessibility features for [Adobe Express](https://express.adobe.com)
 - Managed layout and accessibility engineering teams working on [Firefox](https://mozilla.org)

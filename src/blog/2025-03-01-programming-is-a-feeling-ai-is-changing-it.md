@@ -21,4 +21,4 @@ I have to admit I’m not totally unfamiliar with the pain of this transition. T
 
 Working alone with AI, there is no “we.” But there also isn't just an “I” either. This is something else, something new, and since it’s clearly the momentum of things for the entire industry—both for better and for worse—figuring out what this means for human happiness at work is going to matter.
 
-I am no “[stubborn developer](https://sourcegraph.com/blog/the-death-of-the-stubborn-developer)” but stubborn developers exist for a reason—beyond lamenting the ethical challenges or the environmental impact of AI—I think there’s also simply this: the grieving of the loss of that "programming feeling."
+I am no “[stubborn developer](https://sourcegraph.com/blog/the-death-of-the-stubborn-developer)” but stubborn developers exist and I sympathize with their reasons for being stubborn—beyond lamenting the ethical challenges or the climate impact of AI, there’s also simply this: the grieving of the loss of that "programming feeling."
