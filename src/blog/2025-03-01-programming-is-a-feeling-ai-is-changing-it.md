@@ -1,6 +1,6 @@
 ---
 title: Programming is a feeling, and AI is changing it 
-tags: ["programming", "work"]
+tags: ["ai", "programming", "work"]
 ---
 
 Recently, I ran a small experiment: I spent a day building for myself a small, self-hostable read-it-later app. As part of this experiment I intentionally wrote no code, instead relying 100% on AI to create it. I figured this project would be of significant enough scope and complexity that it would challenge what I might be able to pull of purely conversationally with an LLM, but not so novel or full of unsolved problems that it couldn’t be done. It was something I could build on my own with enough time and dedication, but I wanted to see if I could create something as good, or even better, in a fraction of the time it would have take me otherwise. The result: of course I pulled it off. In fact, it was surprisingly too easy.
@@ -13,7 +13,7 @@ Any programmer who has experimented seriously with AI coding tools has probably 
 
 **Programming is an activity, but it’s also a feeling.** For those of us who actually enjoy programming, there is a deep satisfaction that comes from solving problems through well-written code, a kind of ineffable joy found in the elegant expression of a system through our favorite syntax. It is akin to the same satisfaction a craftsperson might find at the end of the day after toiling away on well-made piece of furniture, the culmination of small dopamine hits that come from sweating the details on something and getting them just right. Maybe nobody will notice those details, but it doesn’t matter. *We* care, *we* notice, *we* get joy from the aesthetics of the craft.
 
-Tim O’Reilly [recently proclaimed that AI tools mean the end of programming as we know it](https://www.oreilly.com/radar/the-end-of-programming-as-we-know-it/). He’s not wrong, but for those who have long enjoyed the art of programming *without the aid of AI*, these changes threaten the end of this particular kind feeling, or at least how frequently we have the opportunity to experience it. 
+Tim O’Reilly [recently proclaimed that AI tools mean the end of programming as we know it](https://www.oreilly.com/radar/the-end-of-programming-as-we-know-it/). He’s not *entirely* wrong, but for those who have long enjoyed the art of programming *without the aid of AI*, these changes threaten the end of this particular kind feeling, or at least how frequently we have the opportunity to experience it. 
 
 Sure, there will always be a need for humans to hand-write code. LLMs may allow us to tap into the accumulated knowledge of millions of other programmers, but that also means they’re not so great at helping solve truly novel problems. That said, I think we must also admit, the number of truly novel problems that the average programmer encounters on a regular basis are small. So, as programming becomes less an act of hands-on craft or in-the-weeds problem solving, and more an act akin to the art of management, the ways in which we experience satisfaction and happiness in our daily activity will also have to change.
 
