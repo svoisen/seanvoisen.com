@@ -1,6 +1,17 @@
 {
     "books": [
         {
+            "title": "A Swim in a Pond in the Rain",
+            "author": "George Saunders",
+            "year": 2025,
+            "rating": 3.5,
+            "type": "book",
+            "link": "https://bookshop.org/a/106240/9781984856036",
+            "slug": "swim_pond_rain",
+            "isbn_13": 9781984856036,
+            "favorite": false
+        },
+        {
             "title": "Gratitude",
             "author": "Oliver Sacks",
             "year": 2025,
