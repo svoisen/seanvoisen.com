@@ -7,7 +7,7 @@ Are we at risk of "vibe coding" our way to design homogenization?
 
 ---
 
-Recently, [Matt Webb mused](https://interconnected.org/home/2025/03/07/schelling) about the use of AI to make little "home-cooked" micro-apps:
+Recently, [Matt Webb mused](https://interconnected.org/home/2025/03/07/schelling):
 
 >... with the rise of vibe coding and the end of apps, we’ll see everyone using AI to make and share their own micro-apps to do everything, and these apps will differentiate by personal weird aesthetic ...
 
