@@ -3,7 +3,7 @@ title: Vibe coding our way to design homogenization
 tags: ["ai", "design"]
 ---
 
-We are at risk of "vibe coding" our way to design homogenization.
+Are we at risk of "vibe coding" our way to design homogenization?
 
 ---
 
