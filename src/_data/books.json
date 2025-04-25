@@ -1,6 +1,28 @@
 {
     "books": [
         {
+            "title": "Art and Fear",
+            "author": "Ted Orland and David Byles",
+            "year": 2025,
+            "rating": 4,
+            "type": "book",
+            "link": "https://bookshop.org/a/106240/9780961454739",
+            "slug": "art_and_Fear",
+            "isbn_13": 9780961454739,
+            "favorite": false
+        },
+        {
+            "title": "Subtract",
+            "author": "Leidy Klotz",
+            "year": 2025,
+            "rating": 3.5,
+            "type": "book",
+            "link": "https://bookshop.org/a/106240/9781250249876",
+            "slug": "subtract",
+            "isbn_13": 9781250249876,
+            "favorite": false
+        },
+        {
             "title": "Software Takes Command",
             "author": "Lev Manovich",
             "year": 2025,
