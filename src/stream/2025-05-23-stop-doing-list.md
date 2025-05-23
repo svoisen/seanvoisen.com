@@ -4,9 +4,9 @@ description: A few things I know I want to stop doing in order to free up more t
 tags: ["productivity"]
 ---
 
-Last month I finished [Subtract](https://bookshop.org/a/106240/9781250249876), a great, quick book about how *less* is often better in many circumstances, but could probably do a better job following its own advice.
+Last month I finished [Subtract](https://bookshop.org/a/106240/9781250249876), a great, quick read about how *less* is often better in many circumstances, but could probably do a better job following its own advice.
 
-Anyway ... one compelling tip that author Leidy Klotz suggests is to create a "stop doing list." Many of us (self included) are often guilty of keeping todo lists that seem to grow with each passing day. But few of us create lists of the things we want to *stop* doing or simply say "no" to. So, I created one of my own. Maybe if I publish it, I will hold myself more accountable to stop doing the things I say I'm going to stop doing.
+Anyway ... one compelling tip that author Leidy Klotz shares is the idea of a "stop doing list." Many of us (self included) are often guilty of keeping todo lists that seem to grow with each passing day. But few of us create lists of the things we want to *stop* doing or simply say "no" to. So, I created one of my own. Maybe if I publish it, I will hold myself more accountable to stop doing the things I say I'm going to stop doing.
 
 This is my current "stop doing list," a short collection of activities I've found to be wasteful of my time and in which I am making a concerted effort to no longer do:
 
