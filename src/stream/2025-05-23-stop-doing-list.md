@@ -14,6 +14,6 @@ This is my current "stop doing list," a short collection of activities I've foun
 - Reading major news outlets. I listen to NPR in the morning, and I read independent media. If it's being reported by a major news outlet I'm probably going to hear about it anyway.
 - Going down research rabbit holes on a whim, especially on my phone. From now on, I will jot down the question and wait at least 24 hours to see if it's still worth looking into. Odds are, it won't be.
 - Continuously honing my note taking systems or generally engaging in "productivity theater." I use Obsidian and I use plain paper notebooks—whatever's on hand to capture the passing thought or idea. There is no perfect system and I'd rather focus on producing output than over-organizing input.
-- Generally, worrying about anything over which I have absolutely no control. Easier said than done, but this is where a regular meditation practice helps.
+- Generally, worrying about anything over which I have absolutely no control. I choose to focus on initiatives and issues over which I can have some actual influence. I can do very little about the activities of the current administration, but I *can* join my local teachers' union on the picket line. I can do very little about being blindsided by an unexpected health crisis, but I can maintain an active and healthy lifestyle.
 
 Will this list grow? Perhaps. But if less truly *is* better, than maybe I should be keeping this list brief too.
