@@ -1,6 +1,28 @@
 {
     "books": [
         {
+            "title": "Strange Tools",
+            "author": "Alva Noë",
+            "year": 2025,
+            "rating": 4,
+            "type": "book",
+            "link": "https://bookshop.org/a/106240/9780809089161",
+            "slug": "strange_tools",
+            "isbn_13": 9780809089161,
+            "favorite": false
+        },
+        {
+            "title": "Abundance",
+            "author": "Ezra Klein and Derek Thompson",
+            "year": 2025,
+            "rating": 3.5,
+            "type": "book",
+            "link": "https://bookshop.org/a/106240/9781668023488",
+            "slug": "abundance",
+            "isbn_13": 9781668023488,
+            "favorite": false
+        },
+        {
             "title": "Art and Fear",
             "author": "Ted Orland and David Byles",
             "year": 2025,
@@ -15,7 +37,7 @@
             "title": "Subtract",
             "author": "Leidy Klotz",
             "year": 2025,
-            "rating": 3.5,
+            "rating": 3,
             "type": "book",
             "link": "https://bookshop.org/a/106240/9781250249876",
             "slug": "subtract",
