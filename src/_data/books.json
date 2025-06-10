@@ -1,6 +1,17 @@
 {
     "books": [
         {
+            "title": "How to Think Like a Roman Emperor",
+            "author": "Donald Robertson",
+            "year": 2025,
+            "rating": 5,
+            "type": "book",
+            "link": "https://bookshop.org/a/106240/9781250621436",
+            "slug": "how_to_think_like_a_roman_emperor",
+            "isbn_13": 9781250621436,
+            "favorite": false
+        },
+        {
             "title": "Strange Tools",
             "author": "Alva Noë",
             "year": 2025,
