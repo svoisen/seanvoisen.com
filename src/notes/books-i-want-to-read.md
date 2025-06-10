@@ -26,14 +26,12 @@ status: "There will always be more books I want to read than I will ever have ti
 ## Cognition and psychology
 
 - [Cognition in the Wild](https://bookshop.org/a/106240/9780262581462) by Edwin Hutchins
-- [Subtract](https://bookshop.org/a/106240/9781250249876) by Leidy Klotz
 
 ## Fiction
 
 - [Middlemarch](https://www.gutenberg.org/ebooks/145) by George Eliot
 - [Never Let Me Go](https://bookshop.org/a/106240/9781400078776) by Kazuo Ishiguro
 - [Infinite Detail](https://bookshop.org/a/106240/9780374175412) by Tim Maughan
-- ~~[A Swim in the Pond in the Rain](https://bookshop.org/a/106240/9781984856036) by George Saunders~~ (Reading now)
 
 ## Philosophy
 
