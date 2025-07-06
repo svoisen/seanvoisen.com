@@ -1,7 +1,6 @@
 ---
 title: "Software tools I use"
 status: "I'm constantly experimenting with new tools, but it's rare for me to adopt something as a regular go-to tool. I don't expect this list to update too frequently."
-date: Last Modified
 tags: ["tools"]
 ---
 
