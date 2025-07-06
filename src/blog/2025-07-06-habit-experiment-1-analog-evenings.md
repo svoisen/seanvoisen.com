@@ -1,5 +1,6 @@
 ---
 title: "Habit experiment №1: Analog evenings"
+description: A personal experiment in eschewing digital devices for quieter, more contemplative evenings.
 tags: ["habits", "personal"]
 ---
 
