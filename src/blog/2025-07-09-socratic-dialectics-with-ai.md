@@ -12,7 +12,7 @@ In Plato's *[Phaedrus](https://en.wikipedia.org/wiki/Phaedrus_\(dialogue\))*, So
 
 Proponents of new technologies often lean on the story of Thamus and Theuth as a rhetorical device for arguing that people have always feared how new technologies might damage our ability to think. They'll say that we shouldn't worry so much about calculators, the Internet, AI, whatever comes next—just look at what Theuth thought writing would do to us, and look how wrong he was!
 
-I'm reminded of this story because the MIT Media Lab [recently published a study](https://arxiv.org/abs/2506.08872)", which demonstrates exactly how using AI as a crutch in an academic context can indeed impede one's ability to learn and think for oneself. And I've noticed, once again, folks [attempting to use Plato's famous dialog as a tool for assuaging our worries about AI potentially making us dumb](https://www.oneusefulthing.org/p/against-brain-damage).
+I'm reminded of this story because the MIT Media Lab [recently published a study](https://arxiv.org/abs/2506.08872), which demonstrates exactly how using AI as a crutch in an academic context can indeed impede one's ability to learn and think for oneself. And I've noticed, once again, folks [attempting to use Plato's famous dialog as a tool for assuaging our worries about AI potentially making us dumb](https://www.oneusefulthing.org/p/against-brain-damage).
 
 But, here's the thing: **Neither Plato (nor Socrates, by extension), ever argued against writing!** They were not saying that writing would somehow impede our ability to think. The *Phaedrus* isn't an argument against technology or cognitive support.
 
