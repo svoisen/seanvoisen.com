@@ -1,6 +1,39 @@
 {
     "books": [
         {
+            "title": "The Burnout Society",
+            "author": "Byung-Chul Han",
+            "year": 2025,
+            "rating": 4,
+            "type": "book",
+            "link": "https://bookshop.org/a/106240/9780804795098",
+            "slug": "burnout_society",
+            "isbn_13": 9780804795098,
+            "favorite": false
+        },
+        {
+            "title": "Open Socrates",
+            "author": "Agnes Callard",
+            "year": 2025,
+            "rating": 4,
+            "type": "book",
+            "link": "https://bookshop.org/a/106240/9781631498466",
+            "slug": "open_socrates",
+            "isbn_13": 9781631498466,
+            "favorite": false
+        },
+        {
+            "title": "How to Think Like Socrates",
+            "author": "Donald Robertson",
+            "year": 2025,
+            "rating": 5,
+            "type": "book",
+            "link": "https://bookshop.org/a/106240/9781250280503",
+            "slug": "how_to_think_like_socrates",
+            "isbn_13": 9781250280510,
+            "favorite": false
+        },
+        {
             "title": "How to Think Like a Roman Emperor",
             "author": "Donald Robertson",
             "year": 2025,
