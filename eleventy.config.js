@@ -81,10 +81,7 @@ export default async function(eleventyConfig) {
   });
 
   eleventyConfig.addPassthroughCopy({
-    // copy favicon to root
     "src/assets/favicon/*": "/",
-    // copy _redirects file to root
-    "src/_redirects": "/"
   });
 }
 
