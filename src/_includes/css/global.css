@@ -121,7 +121,7 @@ a {
     }
 }
 
-a[href*="//"]:not([href*="seanvoisen.com"]):after { content: "\00A0↗"; }
+a[href*="//"]:not([href^="https://seanvoisen.com"]):after { content: "\00A0↗"; }
 a[href^="http:"]:after { content: "\00A0!" !important; }
 a[href$=".pdf"]:after, a[href$=".zip"]:after, a[href$=".gz"]:after {
     content: "\00A0↓" !important;
