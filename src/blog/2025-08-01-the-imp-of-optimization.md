@@ -1,8 +1,7 @@
 ---
 title: The imp of optimization
-description: A meditation on what we lose when we measure our lives.
+description: A meditation on what we lose when we excessively measure our lives.
 tags: ["philosophy", "habits"]
-image: "/assets/images/og/imp_of_optimization.jpg"
 ---
 
 Most workday afternoons, I leave my desk, set my Slack status to "away," and take a meandering forty-minute walk around my neighborhood. This open secret between me and my coworkers—a habit I stumbled into a few years ago—has proven immensely beneficial to both my psychological and physical well-being. After a walk I think better, I feel better, and I have more energy. So I treat the brief time I dedicate to walking as sacred, blocking out the time on my calendar and ignoring or disabling notifications on my phone.
