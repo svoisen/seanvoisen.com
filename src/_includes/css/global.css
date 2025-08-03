@@ -43,6 +43,11 @@
     --blockquote-border-color: light-dark(var(--color-zinc-200), var(--color-zinc-700));
     --metadata-background-color: light-dark(var(--color-zinc-200), var(--color-zinc-800));
     --metadata-foreground-color: var(--foreground-color);
+    --input-border-color: light-dark(var(--color-zinc-400), var(--color-zinc-600));
+    --button-background-color: light-dark(var(--color-zinc-200), var(--color-zinc-800));
+    --button-foreground-color: light-dark(var(--color-zinc-950), var(--color-zinc-50));
+    --button-hover-background-color: light-dark(var(--color-zinc-300), var(--color-zinc-700));
+    --button-hover-foreground-color: light-dark(var(--color-zinc-800), var(--color-zinc-200));
     --link-color: var(--foreground-color);
     --link-underline-color: light-dark(var(--color-zinc-300), var(--color-zinc-500));
     --link-hover-color: light-dark(var(--color-blue-600), var(--color-yellow-500));
@@ -96,6 +101,38 @@ section {
         margin-top: var(--space-l);
         padding-top: var(--space-l);
         border-top: 1px solid var(--border-color);
+    }
+}
+
+input[type="text"], input[type="email"], input[type="search"] {
+    font-family: inherit;
+    font-size: inherit;
+    line-height: inherit;
+    color: inherit;
+    background-color: transparent;
+    border: 2px solid var(--input-border-color);
+    border-radius: 0.25rem;
+    padding: var(--space-2xs) var(--space-2xs);
+
+    &::placeholder {
+        color: var(--deemphasized-color);
+    }
+}
+
+input[type="submit"], button {
+    font-family: inherit;
+    font-size: inherit;
+    line-height: inherit;
+    color: var(--button-foreground-color);
+    background-color: var(--button-background-color);
+    border: 2px solid var(--input-border-color);
+    border-radius: 0.25rem;
+    padding: var(--space-2xs) var(--space-xs);
+    cursor: pointer;
+
+    &:hover {
+        background-color: var(--button-hover-background-color);
+        color: var(--button-hover-foreground-color);
     }
 }
 
@@ -236,6 +273,16 @@ summary {
     & svg.logo {
         height: 2em;
         fill: var(--foreground-color);
+    }
+}
+
+.subscribe-form {
+    display: flex;
+    gap: var(--space-xs);
+    max-width: 95%;
+    
+    & input[type="text"], & input[type="email"] {
+        flex: 1;
     }
 }
 
@@ -386,6 +433,10 @@ summary {
                 margin-left: var(--space-s);
             }
         }
+    }
+
+    .subscribe-form {
+        max-width: 80%;
     }
 }
 
