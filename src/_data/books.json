@@ -1,6 +1,17 @@
 {
     "books": [
         {
+            "title": "Philosophy of Technology: An Introduction",
+            "author": "Don Ihde",
+            "year": 2025,
+            "rating": 3,
+            "type": "book",
+            "link": "https://bookshop.org/a/106240/9781557782731",
+            "slug": "philosophy_of_technology",
+            "isbn_13": 9781557782731,
+            "favorite": false
+        },
+        {
             "title": "The Scent of Time",
             "author": "Byung-Chul Han",
             "year": 2025,
