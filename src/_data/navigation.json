@@ -10,7 +10,7 @@
             "title": "Notes",
             "url": "/notes/",
             "description": "Evergreen notes on a variety of topics of personal interest.",
-            "inNavigation": true
+            "inNavigation": false
         },
         {
             "title": "Stream",
