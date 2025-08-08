@@ -37,6 +37,6 @@ Second, and somewhat related, I find I simply sleep better following "sleep hygi
 
 ## The commitment
 
-I'll write a follow-up post in a month. 
-
 My hope is that, by publishing my intention here, both I and you, dear reader, may better hold me accountable. But, my other secret hope is that maybe—just maybe—this will also inspire other people to try out and blog about their own new habits too. Could this be you?
+
+~~I'll write a follow-up post in a month.~~ Update: This experiment has concluded, and [I have written a follow-up](blog/habit-experiment-1-analog-evenings-followup/) detailing my reflections.
