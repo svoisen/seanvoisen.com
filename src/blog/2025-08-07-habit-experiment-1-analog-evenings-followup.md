@@ -1,6 +1,6 @@
 ---
 title: "Follow-up to habit experiment №1: Analog evenings"
-description: A follow-up on my first experiment exploring a new habit maintaining electronics-free evenings.
+description: A follow-up to my first experiment exploring a new habit of eschewing electronics and screens in the evening.
 tags: ["habits", "personal"]
 ---
 
