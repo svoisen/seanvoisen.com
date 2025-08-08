@@ -36,4 +36,4 @@ I'll allow myself to use my phone for utilitarian purposes, such as timing medit
 
 If anything, this month-long experiment has taught me that the quality of my evenings profoundly shapes the quality of my sleep, my thinking, and ultimately my days. While I'm fine relaxing some rules to maintain balance, the spirit of the habit remains: to create intentional boundaries around distracting technology in the day's waning hours. 
 
-For me, this isn't about deprivation, it's about reclamation. With this new habit I've found it easier to reclaim time for deeper thought, better rest, and the kind of quiet presence that our always-connected world so easily intrudes upon.
+For me, this isn't about deprivation so much as it is about reclamation. With this new habit I've found it easier to reclaim time for deeper thought, better rest, and the kind of quiet presence that our always-connected world so easily intrudes upon.
