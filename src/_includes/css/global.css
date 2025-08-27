@@ -72,7 +72,7 @@
     --button-hover-foreground-color: light-dark(var(--flexoki-900), var(--flexoki-100));
 
     --theme-toggle-slider-color: light-dark(var(--flexoki-100), var(--flexoki-850));
-    --theme-toggle-slider-hover-color: light-dark(var(--flexoki-200), var(--flexoki-800));
+    --theme-toggle-slider-hover-color: light-dark(var(--flexoki-200), var(--flexoki-700));
     --theme-toggle-border-color: light-dark(var(--flexoki-200), var(--flexoki-800));
     --theme-toggle-hover-background-color: light-dark(var(--flexoki-50), var(--flexoki-950));
     --theme-toggle-hover-foreground-color: var(--link-hover-color);
@@ -275,12 +275,33 @@ summary {
 
 .header {
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
     align-content: center;
+    align-items: center;
+    line-height: 0;
     max-width: var(--width);
     margin: 0 auto;
     padding: var(--space-l) var(--space-m) var(--space-s) var(--space-m);
     font-size: var(--font-size--1);
+
+    .theme-toggle {
+        margin-top: -2px;
+        margin-left: var(--space-s);
+        align-self: auto;
+    }
+
+    .nav {
+        margin: 0;
+
+        & ul {
+            flex-direction: row;
+
+            & .nav__item {
+                margin-left: var(--space-s);
+            }
+        }
+    }
+
 
     & a {
         text-decoration: none;
@@ -439,11 +460,11 @@ summary {
         flex-direction: column;
         margin: 0;
 
-        & li {
+        & .nav__item {
             margin-bottom: var(--space-3xs);
         }
 
-        & li.active {
+        & .nav__item.active {
             font-weight: 700;
         }
     }
@@ -545,31 +566,16 @@ summary {
     width:1px
 }
 
+/* Hide navigation items on mobile screens smaller than 568px */
+@media only screen and (max-width: 567px) {
+    .nav__item--hidden {
+        display: none;
+    }
+}
+
 @media only screen and (min-width: 568px) {
     .header {
-        flex-direction: row;
-        line-height: 0;
         font-size: var(--font-size-0);
-        align-items: center;
-        margin: 0 auto;
-    }
-
-    .nav {
-        margin: 0;
-
-        & ul {
-            flex-direction: row;
-
-            & li {
-                margin-left: var(--space-s);
-            }
-        }
-    }
-
-    .theme-toggle {
-        margin-top: 0;
-        margin-left: var(--space-s);
-        align-self: auto;
     }
 
     .subscribe-form {

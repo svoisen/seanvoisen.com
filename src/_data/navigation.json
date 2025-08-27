@@ -4,7 +4,8 @@
             "title": "Blog",
             "url": "/blog/",
             "description": "Short essays and personal updates.",
-            "inNavigation": true
+            "inNavigation": true,
+            "hideOnMobile": true
         },
         {
             "title": "Notes",
@@ -16,19 +17,22 @@
             "title": "Stream",
             "url": "/stream/",
             "description": "Brief thoughts and comments, mostly about things I've read in books or on the web.",
-            "inNavigation": true
+            "inNavigation": true,
+            "hideOnMobile": true
         },
         {
             "title": "About",
             "url": "/about/",
             "description": "About me and this site.",
-            "inNavigation": true
+            "inNavigation": true,
+            "hideOnMobile": false
         },
         {
             "title": "Directory",
             "url": "/directory/",
             "description": "Directory of primary site pages.",
-            "inNavigation": true
+            "inNavigation": true,
+            "hideOnMobile": false
         },
         {
             "title": "Now",
