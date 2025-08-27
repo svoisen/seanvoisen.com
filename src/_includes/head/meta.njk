@@ -2,8 +2,8 @@
         <meta name="generator" content="{{ eleventy.generator }}">
         <meta name="format-detection" content="telephone=no">
         <meta name="color-scheme" content="light dark">
-        <meta name="theme-color" content="#09090b" media="(prefers-color-scheme: dark)">
-        <meta name="theme-color" content="#fafafa" media="(prefers-color-scheme: light)">
+        <meta name="theme-color" content="#100F0F" media="(prefers-color-scheme: dark)">
+        <meta name="theme-color" content="#FFFCF0" media="(prefers-color-scheme: light)">
         <link rel="canonical" href="{{ site.base }}{{ page.url | url }}" />
 
         <link rel="me" href="https://front-end.social/@svoisen">
@@ -25,9 +25,9 @@
         <meta property="og:locale" content="{{ site.locale }}">
         <meta property="article:author" content="{{ site.author.name }}">
 
-        <link rel="icon" type="image/png" href="{{ "/favicon-96x96.png" | url }}" sizes="96x96">
-        <link rel="icon" type="image/svg+xml" href="{{ "/favicon.svg" | url }}">
-        <link rel="shortcut icon" href="{{ "/favicon.ico" | url }}">
-        <link rel="apple-touch-icon" sizes="180x180" href="{{ "/apple-touch-icon.png" | url }}">
+        <link rel="icon" type="image/svg+xml" href={{ "/favicon-adaptive.svg" | url }}>
+        <link rel="icon" type="image/x-icon" href={{ "/favicon.ico" | url }}>
+        <link rel="apple-touch-icon" sizes="180x180" href={{ "/apple-touch-icon.png" | url }} media="(prefers-color-scheme: dark)">
+
         <meta name="apple-mobile-web-app-title" content="{{ site.title }}">
         <link rel="manifest" href="{{ "/site.webmanifest" | url }}">
