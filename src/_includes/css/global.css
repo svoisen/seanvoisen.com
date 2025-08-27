@@ -72,10 +72,9 @@
     --button-hover-foreground-color: light-dark(var(--flexoki-900), var(--flexoki-100));
     --link-color: var(--foreground-color);
     --link-underline-color: light-dark(var(--flexoki-150), var(--flexoki-600));
-    --link-hover-color: light-dark(var(--flexoki-cyan-400), var(--flexoki-yellow-400));
-    --line-height: 1.5;
-    --width: 37em;
-    --metadata-width: 17em;
+    --link-hover-color: light-dark(var(--flexoki-blue-400), var(--flexoki-yellow-400));
+    --line-height: 1.6;
+    --width: 40em;
 }
 
 * {
@@ -242,10 +241,11 @@ summary {
 
 .main {
     padding-bottom: var(--space-xl);
+    margin: 0 auto;
+    max-width: var(--width);
+    padding: var(--space-m);
 
     & > :is(article, div) {
-        max-width: var(--width);
-        padding: var(--space-m);
 
         & img {
             max-width: 100%;
@@ -271,8 +271,9 @@ summary {
     display: flex;
     flex-direction: column;
     align-content: center;
-    padding: var(--space-s) 0 var(--space-s) var(--space-m);
-    margin-right: var(--space-m);
+    max-width: var(--width);
+    margin: 0 auto;
+    padding: var(--space-s) var(--space-m) var(--space-s) var(--space-m);
     font-size: var(--font-size--1);
 
     & a {
@@ -309,14 +310,16 @@ summary {
 }
 
 .footer {
-    font-size: var(--font-size--1);
-    padding: var(--space-m) var(--space-m) var(--space-xl) var(--space-m);
+    max-width: var(--width);
+    margin: 0 auto;
+    padding: var(--space-m);
 
     & .external-links {
         margin-bottom: var(--space-s);
     }
 
     & p {
+        font-size: var(--font-size--1);
         margin: 0;
     }
 }
@@ -442,7 +445,7 @@ summary {
         line-height: 0;
         font-size: var(--font-size-0);
         align-items: center;
-        max-width: calc(var(--width) + var(--metadata-width));
+        margin: 0 auto;
     }
 
     .nav {
@@ -459,18 +462,5 @@ summary {
 
     .subscribe-form {
         max-width: 80%;
-    }
-}
-
-@media only screen and (min-width: 960px) {
-    .post-metadata, .page-metadata {
-        background-color: transparent;
-        padding-top: 0;
-        padding-bottom: 0;
-        padding-right: 0;
-        position: absolute;
-        left: var(--width);
-        margin-top: 0;
-        width: var(--metadata-width);
     }
 }
