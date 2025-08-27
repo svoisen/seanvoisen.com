@@ -2,19 +2,21 @@
 (function() {
     'use strict';
     
-    // Theme toggle functionality
+    // Theme toggle functionality (loaded at bottom for performance)
     function initThemeToggle() {
         const toggle = document.getElementById('theme-toggle');
         if (!toggle) return;
         
-        // Check for saved theme preference or default to system preference
+        // Get current theme state
         const savedTheme = localStorage.getItem('theme');
         const systemPrefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
         const isDark = savedTheme ? savedTheme === 'dark' : systemPrefersDark;
         
-        // Set initial theme
-        setTheme(isDark);
+        // Sync toggle with current theme (theme already applied by inline script)
         toggle.checked = isDark;
+        
+        // Update theme color meta tag to match current theme
+        updateThemeColor(isDark);
         
         // Listen for toggle changes
         toggle.addEventListener('change', function() {
@@ -34,13 +36,30 @@
     
     function setTheme(isDark) {
         document.documentElement.style.colorScheme = isDark ? 'dark' : 'light';
+        
+        // Update Safari toolbar theme color
+        updateThemeColor(isDark);
     }
     
-    // Initialize when DOM is ready
-    if (document.readyState === 'loading') {
-        document.addEventListener('DOMContentLoaded', initThemeToggle);
-    } else {
-        initThemeToggle();
+    function updateThemeColor(isDark) {
+        // Define theme colors (matching your Flexoki palette)
+        const lightColor = '#FFFCF0'; // flexoki-paper
+        const darkColor = '#100F0F';  // flexoki-black
+        
+        // Remove existing theme-color meta tags
+        const existingThemeColorTags = document.querySelectorAll('meta[name="theme-color"]');
+        existingThemeColorTags.forEach(tag => tag.remove());
+        
+        // Create new theme-color meta tag
+        const themeColorMeta = document.createElement('meta');
+        themeColorMeta.name = 'theme-color';
+        themeColorMeta.content = isDark ? darkColor : lightColor;
+        
+        // Insert the new meta tag
+        document.head.appendChild(themeColorMeta);
     }
+    
+    // Initialize immediately since DOM is ready (script at bottom of page)
+    initThemeToggle();
 })();
 </script>

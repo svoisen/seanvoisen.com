@@ -112,7 +112,7 @@ hr {
     height: 1px;
     overflow: visible;
     background-color: var(--border-color);
-    margin: var(--space-l) 0 var(--space-l) 0;
+    margin: var(--space-l) 0;
 }
 
 section {
@@ -192,7 +192,7 @@ a[href$=".pdf"]:after, a[href$=".zip"]:after, a[href$=".gz"]:after {
 }
 
 p {
-    margin: var(--space-m) 0 var(--space-m) 0;
+    margin: var(--space-m) 0;
 }
 
 h1 {
@@ -284,24 +284,14 @@ summary {
     padding: var(--space-l) var(--space-m) var(--space-s) var(--space-m);
     font-size: var(--font-size--1);
 
-    .theme-toggle {
-        margin-top: -2px;
-        margin-left: var(--space-s);
-        align-self: auto;
+    & .logo-wrapper {
+        flex: 1;
     }
 
-    .nav {
-        margin: 0;
-
-        & ul {
-            flex-direction: row;
-
-            & .nav__item {
-                margin-left: var(--space-s);
-            }
-        }
+    & svg.logo {
+        height: 2em;
+        fill: var(--foreground-color);
     }
-
 
     & a {
         text-decoration: none;
@@ -314,15 +304,6 @@ summary {
                 fill: var(--link-hover-color);
             }
         }
-    }
-
-    & .logo-wrapper {
-        flex: 1;
-    }
-
-    & svg.logo {
-        height: 2em;
-        fill: var(--foreground-color);
     }
 }
 
@@ -470,8 +451,9 @@ summary {
     }
 }
 
-.post-metadata, .page-metadata {
-    margin: var(--space-m) 0 var(--space-m) 0;
+.post-metadata, 
+.page-metadata {
+    margin: var(--space-m) 0;
     padding: var(--space-s);
     background-color: var(--metadata-background-color);
     color: var(--metadata-foreground-color);
@@ -487,18 +469,20 @@ summary {
         clear: left;
         display: inline;
         padding-right: 0.5ch;
+
+        &::after {
+            content: ': ';
+        }
     }
 
-    & dd:not(:first-of-type), & dt:not(:first-of-type) {
+    & dd:not(:first-of-type), 
+    & dt:not(:first-of-type) {
         margin-top: var(--space-3xs);
-    }
-
-    & dt::after {
-        content: ': ';
     }
 }
 
-.post-title, .page-title {
+.post-title, 
+.page-title {
     margin-bottom: var(--space-s);
 }
 
@@ -566,7 +550,6 @@ summary {
     width:1px
 }
 
-/* Hide navigation items on mobile screens smaller than 568px */
 @media only screen and (max-width: 567px) {
     .nav__item--hidden {
         display: none;
@@ -574,6 +557,25 @@ summary {
 }
 
 @media only screen and (min-width: 568px) {
+    .nav {
+        margin: 0;
+
+        & ul {
+            flex-direction: row;
+
+            & .nav__item {
+                margin-bottom: 0;
+                margin-left: var(--space-s);
+            }
+        }
+    }
+
+    .theme-toggle {
+        margin-top: -2px;
+        margin-left: var(--space-s);
+        align-self: auto;
+    }
+
     .header {
         font-size: var(--font-size-0);
     }
