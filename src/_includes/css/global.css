@@ -1,19 +1,40 @@
 :root {
     color-scheme: light dark;
 
-    --color-zinc-50: oklch(0.985 0 0);
-    --color-zinc-100: oklch(0.967 0.001 286.375);  
-    --color-zinc-200: oklch(0.92 0.004 286.32);  
-    --color-zinc-300: oklch(0.871 0.006 286.286);  
-    --color-zinc-400: oklch(0.705 0.015 286.067);  
-    --color-zinc-500: oklch(0.552 0.016 285.938);  
-    --color-zinc-600: oklch(0.442 0.017 285.786);  
-    --color-zinc-700: oklch(0.37 0.013 285.805);  
-    --color-zinc-800: oklch(0.274 0.006 286.033);  
-    --color-zinc-900: oklch(0.21 0.006 285.885);  
-    --color-zinc-950: oklch(0.141 0.005 285.823);
-    --color-yellow-500: oklch(0.795 0.184 86.047);  
-    --color-blue-600: oklch(0.546 0.245 262.881);
+    /* Flexoki color palette - Base colors */
+    --flexoki-black: #100F0F;
+    --flexoki-paper: #FFFCF0;
+    --flexoki-50: #F2F0E5;
+    --flexoki-100: #E6E4D9;
+    --flexoki-150: #DAD8CE;
+    --flexoki-200: #CECDC3;
+    --flexoki-300: #B7B5AC;
+    --flexoki-400: #9F9D96;
+    --flexoki-500: #878580;
+    --flexoki-600: #6F6E69;
+    --flexoki-700: #575653;
+    --flexoki-800: #403E3C;
+    --flexoki-850: #343331;
+    --flexoki-900: #282726;
+    --flexoki-950: #1C1B1A;
+
+    /* Flexoki accent colors */
+    --flexoki-red-400: #D14D41;
+    --flexoki-red-600: #AF3029;
+    --flexoki-orange-400: #DA702C;
+    --flexoki-orange-600: #BC5215;
+    --flexoki-yellow-400: #D0A215;
+    --flexoki-yellow-600: #AD8301;
+    --flexoki-green-400: #879A39;
+    --flexoki-green-600: #66800B;
+    --flexoki-cyan-400: #3AA99F;
+    --flexoki-cyan-600: #24837B;
+    --flexoki-blue-400: #4385BE;
+    --flexoki-blue-600: #205EA6;
+    --flexoki-purple-400: #8B7EC8;
+    --flexoki-purple-600: #5E409D;
+    --flexoki-magenta-400: #CE5D97;
+    --flexoki-magenta-600: #A02F6F;
 
     --font-size--2: clamp(0.72rem, 0.8145rem + -0.122vi, 0.7901rem);
     --font-size--1: clamp(0.8889rem, 0.885rem + 0.0193vi, 0.9rem);
@@ -35,22 +56,23 @@
     --space-3xl: clamp(4rem, 3.8261rem + 0.8696vi, 4.5rem);
 
     --font-family-sans-serif: -apple-system, BlinkMacSystemFont, avenir next, avenir, segoe ui, helvetica neue, helvetica, Cantarell, Ubuntu, roboto, noto, arial, sans-serif;
+    --heading-font-weight: 500;
 
-    --background-color: light-dark(var(--color-zinc-50), var(--color-zinc-950));
-    --foreground-color: light-dark(var(--color-zinc-950), var(--color-zinc-50));
-    --deemphasized-color: light-dark(var(--color-zinc-500), var(--color-zinc-400));
-    --border-color: light-dark(var(--color-zinc-300), var(--color-zinc-700));
-    --blockquote-border-color: light-dark(var(--color-zinc-200), var(--color-zinc-700));
-    --metadata-background-color: light-dark(var(--color-zinc-200), var(--color-zinc-800));
+    --background-color: light-dark(var(--flexoki-paper), var(--flexoki-black));
+    --foreground-color: light-dark(var(--flexoki-black), var(--flexoki-200));
+    --deemphasized-color: light-dark(var(--flexoki-600), var(--flexoki-500));
+    --border-color: light-dark(var(--flexoki-150), var(--flexoki-800));
+    --blockquote-border-color: light-dark(var(--flexoki-100), var(--flexoki-800));
+    --metadata-background-color: light-dark(var(--flexoki-100), var(--flexoki-900));
     --metadata-foreground-color: var(--foreground-color);
-    --input-border-color: light-dark(var(--color-zinc-400), var(--color-zinc-600));
-    --button-background-color: light-dark(var(--color-zinc-200), var(--color-zinc-800));
-    --button-foreground-color: light-dark(var(--color-zinc-950), var(--color-zinc-50));
-    --button-hover-background-color: light-dark(var(--color-zinc-300), var(--color-zinc-700));
-    --button-hover-foreground-color: light-dark(var(--color-zinc-800), var(--color-zinc-200));
+    --input-border-color: light-dark(var(--flexoki-300), var(--flexoki-700));
+    --button-background-color: light-dark(var(--flexoki-100), var(--flexoki-900));
+    --button-foreground-color: light-dark(var(--flexoki-black), var(--flexoki-200));
+    --button-hover-background-color: light-dark(var(--flexoki-150), var(--flexoki-800));
+    --button-hover-foreground-color: light-dark(var(--flexoki-900), var(--flexoki-100));
     --link-color: var(--foreground-color);
-    --link-underline-color: light-dark(var(--color-zinc-300), var(--color-zinc-500));
-    --link-hover-color: light-dark(var(--color-blue-600), var(--color-yellow-500));
+    --link-underline-color: light-dark(var(--flexoki-150), var(--flexoki-600));
+    --link-hover-color: light-dark(var(--flexoki-cyan-400), var(--flexoki-yellow-400));
     --line-height: 1.5;
     --width: 37em;
     --metadata-width: 17em;
@@ -170,21 +192,21 @@ p {
 
 h1 {
     font-size: var(--font-size-3);
-    font-weight: 700;
+    font-weight: var(--heading-font-weight);
     line-height: 1.2;
 }
 
 h2 {
     margin-top: var(--space-l);
     font-size: var(--font-size-2);
-    font-weight: 700;
+    font-weight: var(--heading-font-weight);
     line-height: 1.4;
 }
 
 h3 {
     margin-top: var(--space-l);
     font-size: var(--font-size-1);
-    font-weight: 700;
+    font-weight: var(--heading-font-weight);
 }
 
 ul, ol {
