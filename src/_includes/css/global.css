@@ -54,7 +54,7 @@
     --space-3xl: clamp(4rem, 3.8261rem + 0.8696vi, 4.5rem);
 
     --link-color: var(--foreground-color);
-    --link-underline-color: light-dark(var(--flexoki-150), var(--flexoki-600));
+    --link-underline-color: light-dark(var(--flexoki-150), var(--flexoki-700));
     --link-hover-color: light-dark(var(--flexoki-blue-600), var(--flexoki-yellow-400));
 
     --background-color: light-dark(var(--flexoki-paper), var(--flexoki-black));
