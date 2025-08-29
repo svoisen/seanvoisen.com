@@ -7,6 +7,9 @@ showMetadata: false
 
 Evergreen notes on a variety of topics of personal interest.
 
+## Self-study
+- [Philosophy for Designers reading list](/notes/philosophy-for-designers/)
+
 ## Leading and managing humans
 - [Engineering management resources](/notes/engineering-management-resources/)
 

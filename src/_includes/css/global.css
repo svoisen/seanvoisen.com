@@ -280,6 +280,13 @@ summary {
         :is(h1, h2, h3) + :is(p, ul, ol, blockquote) {
             margin-top: var(--space-2x);
         }
+
+        :is(aside) {
+            padding: var(--space-s);
+            background-color: var(--metadata-background-color);
+            color: var(--metadata-foreground-color);
+            border-radius: 0.25rem;
+        }
     }
 }
 
