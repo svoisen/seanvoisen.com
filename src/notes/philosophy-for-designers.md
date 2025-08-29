@@ -23,17 +23,16 @@ The ultimate goal of this quest is to build a solid understanding of phenomenolo
 
 ### Main texts
 
-- **Don Ihde** - _Technics and Praxis_ (1979)
-- **Don Ihde** - _Technology and the Lifeworld_ (1990)
-- **Hubert Dreyfus** - _Being-in-the-World_ (1991)
-- **Martin Heidegger** - "The Question Concerning Technology" (1954)
-- **Maurice Merleau-Ponty** - _Phenomenology of Perception_ (1945)
-- **Robert Sokolowski** - _Introduction to Phenomenology_ (2000)
+- [Don Ihde - _Technology and the Lifeworld_ (1990)](https://bookshop.org/a/106240/9780253205605)
+- [Hubert Dreyfus - _Being-in-the-World_ (1991)](https://bookshop.org/a/106240/9780262540568)
+- [Martin Heidegger - "The Question Concerning Technology" (1954)](https://bookshop.org/a/106240/9780062290700)
+- [Maurice Merleau-Ponty - _Phenomenology of Perception_ (1945)](https://bookshop.org/a/106240/9781774645093)
+- [Robert Sokolowski - _Introduction to Phenomenology_ (2000)](https://bookshop.org/a/106240/9780521667920)
 
 ### Side quest texts
 
-- **Jaron Lanier** - _You Are Not a Gadget_ (2010)
-- **Yuk Hui** - _On the Existence of Digital Objects_ (2016)
+- [Jaron Lanier - _You Are Not a Gadget_ (2010)](https://bookshop.org/a/106240/9780307389978)
+- [Yuk Hui - _On the Existence of Digital Objects_ (2016)](https://bookshop.org/a/106240/9780816698912)
 
 ## Quest №2: Foundations of Ethics and Technology
 *Developing frameworks for ethical evaluation in technological contexts*
@@ -44,18 +43,18 @@ The readings in this quest remind us that technology is not morally neutral. Eve
 
 ### Main texts
 
-- **Albert Borgmann** - *Technology and the Character of Contemporary Life* (1984)
-- **Hans Jonas** - _The Imperative of Responsibility_ (1979)
-- **Langdon Winner** - *The Whale and the Reactor* (1989)
-- **Peter-Paul Verbeek** - _Moralizing Technology_ (2011)
-- **Philip Brey** - "Anticipatory Ethics for Emerging Technologies" (2012)
-- **Shannon Vallor** - _Technology and the Virtues_ (2016)
+- Albert Borgmann - *Technology and the Character of Contemporary Life* (1984)
+- Hans Jonas - _The Imperative of Responsibility_ (1979)
+- Langdon Winner - *The Whale and the Reactor* (1989)
+- Peter-Paul Verbeek - _Moralizing Technology_ (2011)
+- Philip Brey - "Anticipatory Ethics for Emerging Technologies" (2012)
+- Shannon Vallor - _Technology and the Virtues_ (2016)
 
 ### Side quest texts
 
-- **Batya Friedman et al.** - *Value Sensitive Design* (2019)
-- **Helen Nissenbaum** - "Values in Design" (2005)
-- **Luciano Floridi** - _The Ethics of Information_ (2013)
+- Batya Friedman et al. - *Value Sensitive Design* (2019)
+- Helen Nissenbaum - "Values in Design" (2005)
+- Luciano Floridi - _The Ethics of Information_ (2013)
 
 ## Quest №3: Embodiment and Ethics in Computation
 
