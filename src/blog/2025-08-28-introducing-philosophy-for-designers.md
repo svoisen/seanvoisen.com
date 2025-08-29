@@ -12,11 +12,11 @@ Father John Culkin, a friend of media theorist Marshall McLuhan, made a similar 
 
 >We shape our tools and then our tools shape us.
 
-Likewise, Sherry Turkle, in [Evocative Objects](https://mitpress.mit.edu/9780262516778/evocative-objects/), argued that our tools and most precious possessions often reshape how we think, writing:
+Likewise, Sherry Turkle, in [Evocative Objects](https://mitpress.mit.edu/9780262516778/evocative-objects/), argued that our tools and our most precious possessions often reshape how we think, writing:
 
 >We think with the objects we love; we love the objects we think with.
 
-If designing tools truly is akin to designing objects of "love" and "ways of being," then it seems imperative that we think deeply about the things we design, and take great care in deciding how we bring them forth into the world. The question is: How, exactly, can we do this? Or, more importantly, how can we do this *better*?
+If designing tools truly is akin to designing objects of "love" and "ways of being," then it seems imperative that we think deeply about the things we design, and take great care in deciding how we bring them forth into the world. The question is: How can we do this? Or, more importantly, how can we do this *better*?
 
 In the world of computer software, we often look to the practice of user experience design to help answer these questions. UX designers draw from a great number of other fields and disciplines to help them navigate the complex challenges of designing digital experiences—psychology, cognitive science, graphic design, and anthropology, just to name a few. The joy and power of UX design lies in its immensely interdisciplinary nature. Yet, in most conversations about design there is one field that seems to be conspicuously absent. Surprisingly, it is also the field that might be most relevant for helping us navigate the challenges designers face in the era of AI. That field, of course, is **philosophy**.
 
