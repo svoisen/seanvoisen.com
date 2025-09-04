@@ -4,11 +4,11 @@ description: Thoughts on Flash's end of life.
 tags: ["programming", "computing", "design"]
 ---
 
-![Screenshot of the Flash uninstaller announcing end-of-life on December 31, 2020](/assets/images/flash_uninstall_eol.jpg)
-
 Adobe Flash officially reaches its end-of-life at the end of this month, the last day of the last month of a year that will surely live in infamy. That a browser plug-in technology so polarizing as Flash—simultaneously loved and reviled—should die on this day feels somehow &hellip; fitting.
 
 The upcoming occasion has given me cause to reflect on Flash, what it meant to me personally, and how I believe it transformed computing and the web. I feel I would be remiss in not writing some sort of eulogy.
+
+![Screenshot of the Flash uninstaller announcing end-of-life on December 31, 2020](/assets/images/flash_uninstall_eol.jpg)
 
 I should open by noting that I currently work at [Mozilla](https://mozilla.org), helping push open web standards (albeit as an engineering manager, and thus in a behind-the-scenes kind of way). Despite this, Flash—which gained notoriety by proliferating a proprietary plug-in on the web—occupies a special place in my heart. Perhaps that's hyperbolic to say about software. Yet, in many ways, Flash launched my career. It is what got me excited enough about computing to pursue a degree in computer science and career in software development. It gave me a supportive community of like-minded developers to learn from, an audience to teach as I developed my own expertise, and a stable income for many years. It even helped me through some dark times—including my own battle with cancer—by providing me an outlet for my own creative expression, a way to take my mind off things.
 

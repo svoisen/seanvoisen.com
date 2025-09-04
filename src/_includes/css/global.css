@@ -567,6 +567,20 @@ summary {
     width:1px
 }
 
+.post-content figure figcaption, .page-content figure figcaption {
+    text-align: center;
+    font-size: var(--font-size--1);
+    color: var(--deemphasized-color);
+    margin-top: var(--space-2xs);
+}
+
+.post-content figure img, .page-content figure img {
+    width: 100%;
+    height: auto;
+    border-radius: 0.25rem;
+    display: block;
+}
+
 @media only screen and (max-width: 567px) {
     .nav__item--hidden {
         display: none;
@@ -581,4 +595,20 @@ summary {
     .subscribe-form {
         max-width: 80%;
     }
+}
+
+@media (min-width: 768px) {
+  .post-content figure, .page-content figure {
+    display: block;
+    width: 100vw;
+    max-width: 48em;
+    position: relative;
+    left: 50%;
+    transform: translateX(-50%);
+    margin-left: 0;
+    margin-right: 0;
+    padding-left: var(--space-m);
+    padding-right: var(--space-m);
+  }
+
 }
