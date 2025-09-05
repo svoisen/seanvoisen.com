@@ -252,6 +252,10 @@ summary {
     color: var(--deemphasized-color);
     font-size: var(--font-size--1);
     cursor: pointer;
+
+}
+
+details[open] > summary {
     margin-bottom: var(--space-s);
 }
 
