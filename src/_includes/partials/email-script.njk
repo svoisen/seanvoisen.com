@@ -1,0 +1,23 @@
+<script>
+    function decode(encodedString) {
+        var email = ''; 
+        var keyInHex = encodedString.substr(0, 2);
+        var key = parseInt(keyInHex, 16);
+        for (var n = 2; n < encodedString.length; n += 2) {
+            var charInHex = encodedString.substr(n, 2)
+            var char = parseInt(charInHex, 16);
+            var output = char ^ key;
+            email += String.fromCharCode(output);
+        }
+
+        return email;
+    }
+
+    window.addEventListener('DOMContentLoaded', function() {
+        const allElements = document.getElementsByClassName('eml-protected');
+        const eml = decode('582b3d3936182b3d39362e37312b3d36763b3735');
+        for (let i = 0; i < allElements.length; i++) {
+            allElements[i].href = 'mailto:' + eml;
+        }
+    });
+</script>

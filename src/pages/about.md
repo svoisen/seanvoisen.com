@@ -42,28 +42,3 @@ If you're curious about how this site is designed or built, [check out the colop
 ## Disclaimer
 
 _Views and opinions expressed on this site are purely my own and not representative of those of my employer._
-
-<script>
-    function decode(encodedString) {
-        var email = ''; 
-        var keyInHex = encodedString.substr(0, 2);
-        var key = parseInt(keyInHex, 16);
-        for (var n = 2; n < encodedString.length; n += 2) {
-            var charInHex = encodedString.substr(n, 2)
-            var char = parseInt(charInHex, 16);
-            var output = char ^ key;
-            email += String.fromCharCode(output);
-        }
-
-        return email;
-    }
-
-    window.addEventListener('DOMContentLoaded', function() {
-        const allElements = document.getElementsByClassName('eml-protected');
-        const eml = decode('582b3d3936182b3d39362e37312b3d36763b3735');
-        for (let i = 0; i < allElements.length; i++) {
-            allElements[i].href = 'mailto:' + eml;
-        }
-    });
-</script>
-
