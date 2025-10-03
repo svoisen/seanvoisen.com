@@ -21,7 +21,7 @@ Despite the designer's painstaking work to specify everything she could think of
 
 Beyond these questions, I faced the problem of somehow testing the thing. Should I build an entire test harness to simulate the comings and goings of users? How would I test the variety of configurations of languages and user profiles? Could I simulate server errors like lost connections or incorrect information? How could I verify it worked as expected without integrating it in the actual application? 
 
-I quickly that we had treated the face pile as a standalone component that we could design and build outside the context of our application. But all the questions and challenges I was facing were caused exactly by this framing. The face pile made no sense in isolation—it couldn't be fully designed and developed on its own. Only by considering its participation, function and construction within the full context of the application could we ultimately answer my questions and solve my problems. 
+We had treated the face pile as a standalone component that we could design and build outside the context of our application. But all the questions and challenges I was facing were caused exactly by this framing. The face pile made no sense in isolation—it couldn't be fully designed and developed on its own. Only by considering its participation, function and construction within the full context of the application could we ultimately answer my questions and solve my problems. 
 
 In phenomenological terms we had made a classic mistake—we had confused a "moment" for a "piece."
 
