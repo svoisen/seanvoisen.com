@@ -5,9 +5,7 @@ tags: ["philosophy", "design"]
 image: "/assets/images/og/laptop_eyes_yeti_iglesias_unsplash@1200x630.jpg"
 ---
 
-This is Part 2 in an ongoing series on philosophy, design and cognitive science. You can also read [Part 1](/blog/phenomenology-and-the-impossibility-of-experience-design/), or learn more about [the reading list and self-study guide behind this series](/notes/philosophy-for-designers/).
-
----
+{blurb, class:information}This is Part 2 in an ongoing series on philosophy, design and cognitive science. You can also read [Part 1](/blog/phenomenology-and-the-impossibility-of-experience-design/), or learn more about [the reading list and self-study guide behind this series](/notes/philosophy-for-designers/).{/blurb}
 
 ## The face pile problem
 

@@ -5,9 +5,7 @@ tags: ["philosophy", "design"]
 image: "/assets/images/og/cezanne_mont_sainte_victoire@1200x630.jpg"
 ---
 
-This is Part 3 in an ongoing series on philosophy, design and cognitive science. You can also read [Part 2](/blog/parts-wholes-moments-oh-my/), or learn more about [the reading list and self-study guide behind this series](/notes/philosophy-for-designers/).
-
----
+{blurb, class:information}This is Part 3 in an ongoing series on philosophy, design and cognitive science. You can also read [Part 2](/blog/parts-wholes-moments-oh-my/), or learn more about [the reading list and self-study guide](/notes/philosophy-for-designers/) behind this series.{/blurb}
 
 Several years ago, not long after my wife and I first started dating, we took a trip to visit her family Philadelphia. It was a cold and rainy December, but I had never been to Philadelphia before so, despite the miserable weather, we tried to make the most of it. We hit all the obligatory tourist stops the city had to offer—Independence Hall, the Liberty Bell, the Italian Market, the cheesesteak stands, of course, the Philadelphia Museum of Art, the steps leading up to which were made famous by the movie *Rocky*. But, the one destination we failed to make time for during that trip was [The Barnes Foundation](https://www.barnesfoundation.org), a unique (and [controversial](https://www.nytimes.com/2023/08/09/arts/design/barnes-foundation-loan-painting-decision.html)) institution that houses and exhibits a massive private collection of art assembled by the chemist and businessman Albert C. Barnes in the early 20th century. Fortunately, we returned to Philadelphia a few months later, this time during a mild and sunny week in June, and soon made our way to the sleek stone and glass building that houses the collection.
 
