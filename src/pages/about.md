@@ -8,14 +8,14 @@ permalink: "/about/"
 
 **Hello!** I’m _Sean_.
 
-My professional mission is to _make computers better tools for supporting human thinking and creativity_. I'm a design technologist and software engineering leader who is deeply interested in creative tools, tools for thought, malleable systems, human-computer interaction, and generally anything related to making computers more inclusive and empowering.
+My professional mission is to _make computers better tools for supporting human thinking and creativity_. I'm a software design and engineering leader who is deeply interested in creative tools, tools for thought, malleable systems, human-computer interaction, and generally anything related to making computers more inclusive and empowering.
 
 I’m originally from California, and live with my wife and kids in the San Francisco bay area. I studied computer science at [UCLA](https://www.ucla.edu) and at the (radically interdisciplinary and sadly now shuttered) Arts Computation Engineering program at [UC Irvine](https://www.uci.edu). 
 
 ![A portrait of the author.](/assets/images/sean_voisen_wide.webp
 "A portrait of the author.")
 
-Currently, I lead teams of front-end engineers and design technologists building design systems and new user experiences for web, mobile and desktop. In the past I have:
+Currently, I lead teams of front-end engineers and design technologists building design systems and new user experiences for web, mobile and desktop at Adobe. In the past I have:
 
 - Built real-time collaboration and accessibility features for [Adobe Express](https://express.adobe.com)
 - Managed layout and accessibility engineering teams working on [Firefox](https://mozilla.org)
