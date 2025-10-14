@@ -1,6 +1,39 @@
 {
     "books": [
         {
+            "title": "Design for Dasein",
+            "author": "Thomas Wendt",
+            "year": 2025,
+            "rating": 3.5,
+            "type": "book",
+            "link": "https://bookshop.org/a/106240/9781506166537",
+            "slug": "design_for_dasein",
+            "isbn_13": 9781506166537,
+            "favorite": false
+        },
+        {
+            "title": "Technology and the Virtues",
+            "author": "Shannon Vallor",
+            "year": 2025,
+            "rating": 2.5,
+            "type": "book",
+            "link": "https://bookshop.org/a/106240/9780190905286",
+            "slug": "technology_and_the_virtues",
+            "isbn_13": 9780190905286,
+            "favorite": false
+        },
+        {
+            "title": "Introduction to Phenomenology",
+            "author": "Robert Sokolowski",
+            "year": 2025,
+            "rating": 3,
+            "type": "book",
+            "link": "https://bookshop.org/a/106240/9780521667920",
+            "slug": "sokolowski_intro_to_phenomenology",
+            "isbn_13": 9780521667920,
+            "favorite": false
+        },
+        {
             "title": "Philosophy of Technology: An Introduction",
             "author": "Don Ihde",
             "year": 2025,
