@@ -5,9 +5,7 @@ tags: ["philosophy", "design"]
 image: "/assets/images/og/laptop_eyes_yeti_iglesias_unsplash@1200x630.jpg"
 ---
 
-{blurb, class:information}This is Part 2 in an ongoing series on philosophy, design and cognitive science. You can also read [Part 1](/blog/phenomenology-and-the-impossibility-of-experience-design/), or learn more about [the reading list and self-study guide behind this series](/notes/philosophy-for-designers/).{/blurb}
-
-## The face pile problem
+{blurb, class:information}This is Part 2 in an ongoing series on philosophy, design and cognitive science. You can also read [Part 1](/blog/phenomenology-and-the-impossibility-of-experience-design/), or check out [the reading list behind this series](/notes/philosophy-for-designers/).{/blurb}
 
 Once, when I was a software engineer working on multiuser collaboration application, I was tasked with building the user interface component that displays the list of users who were currently "present" in the current document. If you've ever used Google Docs, Miro, Figma, or any number of other online, multiuser applications then you might have an idea of the component I'm talking about here. It typically looks like a series of overlapping circles containing a tiny photo or each user's initials, splayed like a hand of circular cards, sitting at the top of the application. When people join the document, a new circle appears. When people leave, their corresponding circle drops away. Internally, we jokingly called this component the "face pile."
 

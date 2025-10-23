@@ -5,6 +5,8 @@ tags: ["philosophy", "design"]
 image: "/assets/images/og/geometric_walking_eyes.jpg"
 ---
 
+{blurb, class:information}This is Part 1 in an ongoing series on philosophy, design and cognitive science. You can also check out [the reading list behind this series](/notes/philosophy-for-designers/).{/blurb}
+
 Let's consider a simple scenario involving two completely different people using the exact same banking app on identical iPhones. The first person is walking down a busy street on their way to work, frantically trying to figure out why they suddenly have a bunch of fraudulent charges on their account, desperately seeking customer support information but their phone is low on battery and keeps losing service. The second person is sitting at home on a Sunday morning, leisurely sipping a cup of coffee, moving money from their checking account into an ever-growing savings cushion. While both of these people are using the same app, viewing the same user interface, exploring the same information architecture, and are even using identical hardware, they are having *vastly* different experiences. 
 
 ![Two geometric shapes with eyes walking towards each other.](/assets/images/geometric_walking_eyes_yeti_iglesias_unsplash.jpg "Illustration by Yeti Iglesias on Unsplash")

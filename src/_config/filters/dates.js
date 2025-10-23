@@ -5,5 +5,5 @@ export const w3Date = (dateObj) => {
 };
 
 export const htmlDate = (dateObj) => {
-  return DateTime.fromJSDate(dateObj, { zone: "utc" }).toFormat('yyyy-LL-dd');
+  return DateTime.fromJSDate(dateObj, { zone: "utc" }).toFormat('MMM d, yyyy');
 };

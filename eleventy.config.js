@@ -16,7 +16,11 @@ export default async function(eleventyConfig) {
   /*
    * plugins
    */
-  eleventyConfig.addPlugin(plugins.wordStats);
+  eleventyConfig.addPlugin(plugins.wordStats, {
+    output: function (stats) {
+      return stats.text;
+    }
+  });
   eleventyConfig.addPlugin(plugins.rss);
   eleventyConfig.addPlugin(plugins.syntaxHighlight, {
     preAttributes: { tabindex: 0 }
