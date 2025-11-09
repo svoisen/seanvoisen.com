@@ -78,6 +78,9 @@
     --theme-toggle-hover-background-color: light-dark(var(--flexoki-50), var(--flexoki-950));
     --theme-toggle-hover-foreground-color: var(--link-hover-color);
 
+    /* Font families */
+    --font-family-body: "Lora", serif;
+    --font-family-heading: "Outfit", sans-serif;
     --font-family-sans-serif: "Inter", -apple-system, BlinkMacSystemFont, avenir next, avenir, segoe ui, helvetica neue, helvetica, Cantarell, Ubuntu, roboto, noto, arial, sans-serif;
     --heading-font-weight: 500;
     --line-height: 1.6;
@@ -97,7 +100,7 @@ html, body {
 
 body {
     line-height: var(--line-height);
-    font-family: var(--font-family-sans-serif);
+    font-family: var(--font-family-heading);
     font-weight: 400;
     font-size: var(--font-size-0);
     font-optical-sizing: auto;
@@ -253,12 +256,14 @@ p {
 }
 
 h1 {
+    font-family: var(--font-family-heading);
     font-size: var(--font-size-3);
     font-weight: var(--heading-font-weight);
     line-height: 1.2;
 }
 
 h2 {
+    font-family: var(--font-family-heading);
     margin-top: var(--space-xl);
     font-size: var(--font-size-2);
     font-weight: var(--heading-font-weight);
@@ -266,6 +271,7 @@ h2 {
 }
 
 h3 {
+    font-family: var(--font-family-heading);
     margin-top: var(--space-l);
     font-size: var(--font-size-1);
     font-weight: var(--heading-font-weight);
@@ -581,9 +587,18 @@ details[open] > summary {
     }
 }
 
-.post-title, 
+.post-title,
 .page-title {
     margin-bottom: var(--space-s);
+}
+
+.post-content {
+    font-family: var(--font-family-body);
+
+    /* Ensure headings in post content still use heading font */
+    & :is(h1, h2, h3, h4, h5, h6) {
+        font-family: var(--font-family-heading);
+    }
 }
 
 .post-list {
