@@ -2,10 +2,8 @@
 layout: page
 permalink: /topics/
 title: Topics
+subtitle: "All topics used in essays, notes, and stream posts."
 showMetadata: false
 ---
 
-{% set description = navigation.items | getDescription(permalink) %}
-
-<p>{{ description }}</p>
 {% include "partials/inline-tag-list.njk" %}
