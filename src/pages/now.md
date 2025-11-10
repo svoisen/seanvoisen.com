@@ -8,7 +8,7 @@ date: git Last Modified
 
 This is my [now page](https://nownownow.com/about), a brief summary of what I'm currently focused on.
 
-## Update: 2025-02-21
+# Update: February 23, 2025
 
 A very wet and cold winter seems to be slowly giving way to spring, and it's warming up here in Northern California. The cherry plum tree in my backyard has started to bloom, and my kids and I just returned from a neighborhood bike ride and trip to the local gelato shop. If it weren't for having to bear witness to the ongoing and rampant destruction of democracy in the United States, life would be pretty good right now.
 

@@ -578,7 +578,7 @@ details[open] > summary {
     border: none !important;
 
     & dl {
-        font-size: var(--font-size--1);
+        font-size: var(--font-size-0);
     }
 
     & dt {
@@ -592,11 +592,6 @@ details[open] > summary {
             content: ': ';
         }
     }
-
-    & dd:not(:first-of-type),
-    & dt:not(:first-of-type) {
-        margin-top: var(--space-3xs);
-    }
 }
 
 .post-title,
@@ -608,6 +603,15 @@ details[open] > summary {
     font-family: var(--font-family-body);
 
     /* Ensure headings in post content still use heading font */
+    & :is(h1, h2, h3, h4, h5, h6) {
+        font-family: var(--font-family-heading);
+    }
+}
+
+.page-content {
+    font-family: var(--font-family-body);
+
+    /* Ensure headings in page content still use heading font */
     & :is(h1, h2, h3, h4, h5, h6) {
         font-family: var(--font-family-heading);
     }
