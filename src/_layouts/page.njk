@@ -5,6 +5,9 @@ layout: base
 <article class="page">
     <header class="page-header">
         <h1 class="page-title">{{ title }}</h1>
+        {% if subtitle %}
+        <div class="page-subtitle">{{ subtitle }}</div>
+        {% endif %}
     </header>
     {% if showMetadata != false %}
     <aside class="page-metadata">
@@ -13,8 +16,10 @@ layout: base
             <dd>
                 <time class="post-timestamp" datetime="{{ page.date | w3Date }}">{{ page.date | htmlDate }}</time>
             </dd>
+            {% if description %}
             <dt>Summary</dt>
             <dd>{{ description }}</dd>
+            {% endif %}
         </dl>
     </aside>
     {% endif %}

@@ -3,7 +3,7 @@
         {
             "title": "Blog",
             "url": "/blog/",
-            "description": "Short essays and personal updates.",
+            "description": "Essays and personal updates.",
             "inNavigation": true,
             "hideOnMobile": true
         },
@@ -23,7 +23,7 @@
         {
             "title": "About",
             "url": "/about/",
-            "description": "About me and this site.",
+            "description": "About Sean Voisen and this site.",
             "inNavigation": true,
             "hideOnMobile": false
         },

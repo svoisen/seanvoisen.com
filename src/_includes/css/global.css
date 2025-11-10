@@ -601,6 +601,13 @@ details[open] > summary {
     margin-bottom: var(--space-xl);
 }
 
+.page-subtitle {
+    font-family: var(--font-family-ui);
+    font-size: var(--font-size-1);
+    color: var(--deemphasized-color);
+    margin: 0;
+}
+
 .post-title,
 .page-title {
     margin-bottom: var(--space-2xs);

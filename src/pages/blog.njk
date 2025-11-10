@@ -2,6 +2,7 @@
 layout: page
 title: "Blog"
 permalink: "/blog/"
+subtitle: "Essays and personal updates."
 showMetadata: false
 ---
 
@@ -9,5 +10,4 @@ showMetadata: false
 {% set blog = collections.blog | reverse %}
 {% set description = navigation.items | getDescription(permalink) %}
 
-<p>{{ description }}</p>
 {{ postList(blog) }}
