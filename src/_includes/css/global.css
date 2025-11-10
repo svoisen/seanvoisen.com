@@ -255,6 +255,12 @@ p {
     margin: var(--space-m) 0;
 }
 
+.hero {
+    font-size: var(--font-size-3);
+    line-height: 1.2;
+    margin-top: 0;
+}
+
 h1 {
     font-family: var(--font-family-heading);
     font-size: var(--font-size-3);
