@@ -81,8 +81,8 @@
     /* Font families */
     --font-family-body: "Lora", serif;
     --font-family-heading: "Outfit", sans-serif;
-    --font-family-sans-serif: "Inter", -apple-system, BlinkMacSystemFont, avenir next, avenir, segoe ui, helvetica neue, helvetica, Cantarell, Ubuntu, roboto, noto, arial, sans-serif;
-    --heading-font-weight: 500;
+    --font-family-ui: "Outfit", sans-serif;
+    --heading-font-weight: 700;
     --line-height: 1.6;
     --width: 40em;
 }
@@ -273,7 +273,6 @@ h2 {
     margin-top: var(--space-xl);
     font-size: var(--font-size-2);
     font-weight: var(--heading-font-weight);
-    line-height: 1.4;
 }
 
 h3 {
@@ -296,6 +295,7 @@ ul, ol {
 }
 
 figcaption {
+    font-family: var(--font-family-ui);
     font-size: var(--font-size--1);
     color: var(--deemphasized-color);
     text-align: right;
@@ -362,19 +362,20 @@ details[open] > summary {
         }
 
         :is(h1, h2, h3):has(+ p, + ul, + ol, + blockquote) {
-            margin-bottom: var(--space-2xs);
+            margin-bottom: var(--space-3xs);
         }
 
         :is(h1, h2, h3) + :is(p, ul, ol, blockquote) {
-            margin-top: var(--space-2x);
+            margin-top: var(--space-3xs);
         }
 
         :is(aside) {
+            font-family: var(--font-family-ui);
             padding: var(--space-s);
             border: 2px solid var(--border-color);
             color: var(--metadata-foreground-color);
             border-radius: 0.25rem;
-            font-size: var(--font-size--1);
+            font-size: var(--font-size-0);
 
             & > p:first-child {
                 margin-top: 0;
@@ -539,7 +540,6 @@ details[open] > summary {
     }
 
     & p {
-        font-size: var(--font-size--1);
         margin: 0;
     }
 }
@@ -562,7 +562,13 @@ details[open] > summary {
     }
 }
 
-.post-metadata, 
+.post-metadata {
+    font-family: var(--font-family-ui);
+    font-size: var(--font-size-0);
+    color: var(--deemphasized-color);
+    margin: 0 0 var(--space-l) 0;
+}
+
 .page-metadata {
     margin: var(--space-m) 0;
     padding: var(--space-s);
@@ -587,7 +593,7 @@ details[open] > summary {
         }
     }
 
-    & dd:not(:first-of-type), 
+    & dd:not(:first-of-type),
     & dt:not(:first-of-type) {
         margin-top: var(--space-3xs);
     }
@@ -595,7 +601,7 @@ details[open] > summary {
 
 .post-title,
 .page-title {
-    margin-bottom: var(--space-s);
+    margin-bottom: var(--space-xs);
 }
 
 .post-content {
@@ -672,6 +678,7 @@ details[open] > summary {
 }
 
 .post-content figure figcaption, .page-content figure figcaption {
+    font-family: var(--font-family-sans-serif);
     text-align: center;
     font-size: var(--font-size--1);
     color: var(--deemphasized-color);

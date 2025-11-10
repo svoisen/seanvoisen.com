@@ -14,18 +14,9 @@ layout: base
 <article class="post">
     <header class="post-header">
         <h1 class="post-title">{{ title }}</h1>
-        <aside class="post-metadata">
-            <dl>
-                <dt>Published</dt>
-                <dd>
-                    <time class="post-timestamp" datetime="{{ page.date | w3Date }}">{{ page.date | htmlDate }}</time>
-                </dd>
-                <dt>Length</dt>
-                <dd>{{ content | wordStats }}</dd>
-                <dt>Tags</dt>
-                <dd>{{ tagList(tags) }}</dd>
-            </dl>
-        </aside>
+        <div class="post-metadata">
+            <time class="post-timestamp" datetime="{{ page.date | w3Date }}">{{ page.date | htmlDate }}</time> &middot; {{ content | wordStats }}
+        </div>
     </header>
     <div class="post-content">
         {{ content | safe }}
