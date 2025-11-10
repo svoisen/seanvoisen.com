@@ -84,6 +84,7 @@
     --font-family-ui: "Outfit", sans-serif;
     --heading-font-weight: 700;
     --line-height: 1.6;
+    --heading-line-height: 1.2;
     --width: 40em;
 }
 
@@ -265,21 +266,23 @@ h1 {
     font-family: var(--font-family-heading);
     font-size: var(--font-size-3);
     font-weight: 800;
-    line-height: 1.2;
+    line-height: var(--heading-line-height);
 }
 
 h2 {
     font-family: var(--font-family-heading);
-    margin-top: var(--space-xl);
+    margin-top: var(--space-2xl);
     font-size: var(--font-size-2);
     font-weight: var(--heading-font-weight);
+    line-height: var(--heading-line-height);
 }
 
 h3 {
     font-family: var(--font-family-heading);
-    margin-top: var(--space-l);
+    margin-top: var(--space-xl);
     font-size: var(--font-size-1);
     font-weight: var(--heading-font-weight);
+    line-height: var(--heading-line-height);
 }
 
 ul, ol {
@@ -347,7 +350,7 @@ details[open] > summary {
     padding-bottom: var(--space-xl);
     margin: 0 auto;
     max-width: var(--width);
-    padding: var(--space-m);
+    padding: var(--space-m) var(--space-xl) var(--space-m) var(--space-xl);
 
     & > :is(article, div) {
 
@@ -362,11 +365,11 @@ details[open] > summary {
         }
 
         :is(h1, h2, h3):has(+ p, + ul, + ol, + blockquote) {
-            margin-bottom: var(--space-3xs);
+            margin-bottom: var(--space-2xs);
         }
 
         :is(h1, h2, h3) + :is(p, ul, ol, blockquote) {
-            margin-top: var(--space-3xs);
+            margin-top: var(--space-2xs);
         }
 
         :is(aside) {
@@ -393,8 +396,8 @@ details[open] > summary {
     line-height: 0;
     max-width: var(--width);
     margin: 0 auto;
-    padding: var(--space-2xl) var(--space-m) var(--space-s) var(--space-m);
-    font-size: var(--font-size--1);
+    padding: var(--space-2xl) var(--space-xl) var(--space-s) var(--space-xl);
+    font-size: var(--font-size-0);
 
     & .logo-wrapper {
         flex: 1;
@@ -532,8 +535,8 @@ details[open] > summary {
 
 .footer {
     max-width: var(--width);
-    margin: var(--space-xl) auto var(--space-l) auto;
-    padding: var(--space-m);
+    margin: var(--space-xl) auto 0 auto;
+    padding: var(--space-xl);
 
     & .external-links {
         margin-bottom: var(--space-s);
@@ -722,7 +725,7 @@ details[open] > summary {
     }
 
     .header {
-        padding-top: var(--space-l);
+        padding-top: var(--space-xl);
     }
 }
 

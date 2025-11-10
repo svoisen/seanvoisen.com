@@ -9,7 +9,7 @@ This is a reading list and self-study journey in philosophy, design and cognitiv
 I've organized this journey into a series of "quests," each building on the last. The overarching goal: To explore theoretical foundations for designing digital technologies that honor both human experience and human values. The readings draw from two philosophical traditions that often stay in separate corners: phenomenology (the philosophy of lived experience) and ethics (the study of right action). I've also mixed in some works from design theory, technology criticism, and the group of theories in cognitive science known as [4E cognition](https://en.wikipedia.org/wiki/4E_cognition). Through all this, I'm aiming to build a theoretical toolkit for the design of technology that's both deeply human and genuinely humane.
 
 <aside>
-⚠️ Fair warning: this is a living document. As I work through these readings, I'll likely discover gaps I need to fill or rabbit holes I need to explore. The path might change as I walk it.
+<strong>Warning:</strong> This is a living document! As I work through these readings, I'll likely discover gaps I need to fill or rabbit holes I need to explore. The path might change as I walk it.
 </aside>
 
 ## Quest №1: Foundations of Phenomenology and Technology
@@ -58,6 +58,12 @@ The readings in this quest remind us that technology is not morally neutral. Eve
 
 ## Quest №3: Embodiment and Ethics in Computation
 
+Coming soon.
+
 ## Quest №4: Interface Design and Moral Mediation
 
+Coming soon.
+
 ## Quest №5: AI and Human Experience
+
+Coming soon.
