@@ -350,7 +350,7 @@ details[open] > summary {
     padding-bottom: var(--space-xl);
     margin: 0 auto;
     max-width: var(--width);
-    padding: var(--space-m) var(--space-xl) var(--space-m) var(--space-xl);
+    padding: var(--space-2xl) var(--space-xl) var(--space-m) var(--space-xl);
 
     & > :is(article, div) {
 
@@ -396,7 +396,7 @@ details[open] > summary {
     line-height: 0;
     max-width: var(--width);
     margin: 0 auto;
-    padding: var(--space-2xl) var(--space-xl) var(--space-s) var(--space-xl);
+    padding: var(--space-2xl) var(--space-xl) 0 var(--space-xl);
     font-size: var(--font-size-0);
 
     & .logo-wrapper {
@@ -597,6 +597,10 @@ details[open] > summary {
     }
 }
 
+.page-header {
+    margin-bottom: var(--space-xl);
+}
+
 .post-title,
 .page-title {
     margin-bottom: var(--space-2xs);
@@ -695,9 +699,9 @@ details[open] > summary {
 }
 
 .post-content figure figcaption, .page-content figure figcaption {
-    font-family: var(--font-family-sans-serif);
+    font-family: var(--font-family-ui);
     text-align: center;
-    font-size: var(--font-size--1);
+    font-size: var(--font-size-0);
     color: var(--deemphasized-color);
     margin-top: var(--space-2xs);
 }

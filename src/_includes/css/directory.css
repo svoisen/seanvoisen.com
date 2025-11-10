@@ -4,11 +4,25 @@
 }
 
 .directory-list-item {
+    position: relative;
     margin-bottom: var(--space-s);
 }
 
 .directory-list-item-title {
-    font-weight: 700;
+    font-family: var(--font-family-heading);
+    font-size: var(--font-size-1);
+    font-weight: var(--heading-font-weight);
     display: block;
+}
+
+.directory-list-item-title::after {
+    content: "";
+    display: block;
+    left: 0;
+    top: 0;
+    position: absolute;
+    z-index: 1;
+    height: 100%;
+    width: 100%;
 }
 
