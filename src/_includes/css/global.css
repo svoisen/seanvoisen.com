@@ -264,7 +264,7 @@ p {
 
 h1 {
     font-family: var(--font-family-heading);
-    font-size: var(--font-size-3);
+    font-size: var(--font-size-4);
     font-weight: 800;
     line-height: var(--heading-line-height);
 }
@@ -272,7 +272,7 @@ h1 {
 h2 {
     font-family: var(--font-family-heading);
     margin-top: var(--space-2xl);
-    font-size: var(--font-size-2);
+    font-size: var(--font-size-3);
     font-weight: var(--heading-font-weight);
     line-height: var(--heading-line-height);
 }
@@ -280,7 +280,7 @@ h2 {
 h3 {
     font-family: var(--font-family-heading);
     margin-top: var(--space-xl);
-    font-size: var(--font-size-1);
+    font-size: var(--font-size-2);
     font-weight: var(--heading-font-weight);
     line-height: var(--heading-line-height);
 }
@@ -567,9 +567,9 @@ details[open] > summary {
 
 .post-metadata {
     font-family: var(--font-family-ui);
-    font-size: var(--font-size-0);
+    font-size: var(--font-size-1);
     color: var(--deemphasized-color);
-    margin: 0 0 var(--space-l) 0;
+    margin: 0 0 var(--space-xl) 0;
 }
 
 .page-metadata {
@@ -599,7 +599,7 @@ details[open] > summary {
 
 .post-title,
 .page-title {
-    margin-bottom: var(--space-xs);
+    margin-bottom: var(--space-2xs);
 }
 
 .post-content {
@@ -609,6 +609,16 @@ details[open] > summary {
     & :is(h1, h2, h3, h4, h5, h6) {
         font-family: var(--font-family-heading);
     }
+}
+
+.post-content > p:first-of-type::first-letter {
+    float: left;
+    font-size: 5.35em;
+    line-height: 0.85;
+    font-weight: 400;
+    margin-right: 0.125em;
+    margin-top: 0;
+    font-family: var(--font-family-body);
 }
 
 .page-content {
