@@ -5,9 +5,11 @@ permalink: "/index.html"
 ---
 
 {% from "macros/postlist.njk" import postList %}
+{% from "macros/featured-posts.njk" import featuredPostList %}
 {% from "macros/taglist.njk" import tagList %}
 {% set maxPosts = 3 %}
 {% set maxMorePosts = 10 %}
+{% set featuredPosts = collections.blog | filter("data.featured", true) | reverse %}
 {% set latestBlogPosts = collections.blog | reverse | head(maxPosts) %}
 {% set latestStreamPosts = collections.stream | reverse | head(maxPosts) %}
 {% set moreBlogPosts = collections.blog | reverse | slice(maxPosts, maxMorePosts) %}
@@ -15,13 +17,20 @@ permalink: "/index.html"
 
 <section>
     <p class="hero">Sean Voisen is a software design and engineering leader interested in <strong>making computers better at supporting human creativity.</strong></p>
-    <p>This site is my blog and "<a href="https://maggieappleton.com/garden-history">digital garden</a>," a collection of <a href="/stream">quick thoughts</a>, <a href="/blog/">short essays</a> and <a href="/notes/">evergreen notes</a> on <a href="/topics/">topics</a> of personal interest.</p>
+<p>This site is my blog and “<a href="https://maggieappleton.com/garden-history">digital garden</a>,” a collection of <a href="/stream">quick thoughts</a>, <a href="/blog/">short essays</a> and <a href="/notes/">evergreen notes</a> on <a href="/topics/">topics</a> of personal interest.</p>
 </section>
-<section>
+{# <section>
     <h2>Topics</h2>
     {% include "partials/inline-tag-list.njk" %}
     </ul>
+</section> #}
+{% if featuredPosts.length > 0 %}
+<section class="featured-posts-section">
+    <h2>Featured Writing</h2>
+    <p>New here? These are some of my favorite and most popular essays.</p>
+    {{ featuredPostList(featuredPosts) }}
 </section>
+{% endif %}
 <section>
     <h2>Blog posts</h2>
     {{ postList(latestBlogPosts) }}

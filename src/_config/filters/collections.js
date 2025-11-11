@@ -19,5 +19,13 @@ export const slice = (array, start, end) => {
 };
 
 export const filter = (array, key, value) => {
-  return array.filter(item => item[key] === value);
+  return array.filter(item => {
+    // Support nested properties like "data.featured"
+    const keys = key.split('.');
+    let val = item;
+    for (const k of keys) {
+      val = val?.[k];
+    }
+    return val === value;
+  });
 }

@@ -3,6 +3,7 @@ title: "Philosophy for Designers 3: Cézanne’s doubts"
 description: How Paul Cézanne's methodological doubt and embodied approach to painting offers a phenomenological framework for design.
 tags: ["philosophy", "design"]
 image: "/assets/images/og/cezanne_mont_sainte_victoire@1200x630.jpg"
+featured: true
 ---
 
 {blurb, class:information}This is Part 3 in an ongoing series on philosophy, design and cognitive science. You can also read [Part 2](/blog/parts-wholes-moments-oh-my/), or check out [the reading list](/notes/philosophy-for-designers/) behind this series.{/blurb}
