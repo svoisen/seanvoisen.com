@@ -199,6 +199,10 @@ a {
     }
 }
 
+a[href*="//"]:not([href^="https://seanvoisen.com"]):not(:has(img)):not(.books-grid-title) {
+    display: inline-block;
+}
+
 a[href*="//"]:not([href^="https://seanvoisen.com"]):not(:has(img)):not(.books-grid-title):after {
     content: "";
     display: inline-block;
@@ -226,6 +230,10 @@ a[href^="http:"]:after {
     white-space: nowrap;
 }
 
+a[href$=".pdf"] {
+    display: inline-block;
+}
+
 a[href$=".pdf"]:after {
     content: "" !important;
     display: inline-block !important;
@@ -239,6 +247,10 @@ a[href$=".pdf"]:after {
     mask-size: contain !important;
     mask-repeat: no-repeat !important;
     mask-position: center !important;
+}
+
+a[href$=".zip"], a[href$=".gz"] {
+    display: inline-block;
 }
 
 a[href$=".zip"]:after, a[href$=".gz"]:after {
