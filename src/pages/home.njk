@@ -7,13 +7,8 @@ permalink: "/index.html"
 {% from "macros/postlist.njk" import postList %}
 {% from "macros/featured-posts.njk" import featuredPostList %}
 {% from "macros/taglist.njk" import tagList %}
-{% set maxPosts = 3 %}
-{% set maxMorePosts = 10 %}
 {% set featuredPosts = collections.blog | filter("data.featured", true) | reverse %}
-{% set latestBlogPosts = collections.blog | reverse | head(maxPosts) %}
-{% set latestStreamPosts = collections.stream | reverse | head(maxPosts) %}
-{% set moreBlogPosts = collections.blog | reverse | slice(maxPosts, maxMorePosts) %}
-{% set moreStreamPosts = collections.stream | reverse | slice(maxPosts, maxMorePosts) %}
+{% set latestBlogPosts = collections.blog | reverse | head(10) %}
 
 <section>
     <p class="hero">Sean Voisen is a software design and engineering leader interested in <strong>making computers better at supporting human creativity.</strong></p>
@@ -32,22 +27,6 @@ permalink: "/index.html"
 </section>
 {% endif %}
 <section>
-    <h2>Blog posts</h2>
+    <h2>Recent Posts</h2>
     {{ postList(latestBlogPosts) }}
-    {% if collections.blog.length > maxPosts %}
-    <details>
-        <summary>Show more…</summary>
-        {{ postList(moreBlogPosts) }}
-    </details>
-    {% endif %}
-</section>
-<section>
-    <h2>Thoughts in the stream</h2>
-    {{ postList(latestStreamPosts) }}
-    {% if collections.stream.length > maxPosts %}
-    <details>
-        <summary>Show more…</summary>
-        {{ postList(moreStreamPosts) }}
-    </details>
-    {% endif %}
 </section>

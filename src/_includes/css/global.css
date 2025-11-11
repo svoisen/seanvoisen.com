@@ -643,16 +643,35 @@ details[open] > summary {
 
 .post-list {
     margin: 0;
+    padding: 0;
     list-style: none;
+    font-family: var(--font-family-ui);
 }
 
 .post-list-item {
     position: relative;
-    margin-bottom: var(--space-s);
+    display: flex;
+    flex-direction: row;
+    gap: var(--space-m);
+    padding: var(--space-s) 0;
+}
+
+.post-list-item:not(:last-child) {
+    border-bottom: 1px solid var(--border-color);
+}
+
+.post-list-item-date {
+    color: var(--deemphasized-color);
+    text-align: right;
+    width: 120px;
+    flex-shrink: 0;
+    order: 1;
 }
 
 .post-list-item-title {
     font-weight: 400;
+    flex: 1;
+    order: 2;
 }
 
 .post-list-item-title::after {
@@ -668,12 +687,8 @@ details[open] > summary {
 
 .post-list-item-description {
     font-size: var(--font-size--1);
-}
-
-.post-list-item-date {
-    color: var(--deemphasized-color);
-    font-size: var(--font-size--1);
-    display: block;
+    flex: 1;
+    order: 3;
 }
 
 .featured-posts {

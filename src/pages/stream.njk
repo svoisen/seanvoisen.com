@@ -2,12 +2,11 @@
 layout: page
 title: "Stream"
 permalink: "/stream/"
+subtitle: "Brief thoughts and comments, mostly about things I've read."
 showMetadata: false
 ---
 
 {% from "macros/postlist.njk" import postList %}
 {% set stream = collections.stream | reverse %}
-{% set description = navigation.items | getDescription(permalink) %}
 
-<p>{{ description }}</p>
 {{ postList(stream) }}
