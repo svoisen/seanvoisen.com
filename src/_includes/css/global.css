@@ -206,6 +206,7 @@ a[href*="//"]:not([href^="https://seanvoisen.com"]):not(:has(img)):not(.books-gr
     height: 0.75em;
     margin-left: 0.2em;
     vertical-align: baseline;
+    white-space: nowrap;
     background-color: currentColor;
     mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='currentColor'%3E%3Cpath d='M6.22 8.72a.75.75 0 0 0 1.06 1.06l5.22-5.22v1.69a.75.75 0 0 0 1.5 0v-3.5a.75.75 0 0 0-.75-.75h-3.5a.75.75 0 0 0 0 1.5h1.69L6.22 8.72z'/%3E%3Cpath d='M3.5 6.75c0-.69.56-1.25 1.25-1.25H7A.75.75 0 0 0 7 4H4.75A2.75 2.75 0 0 0 2 6.75v4.5A2.75 2.75 0 0 0 4.75 14h4.5A2.75 2.75 0 0 0 12 11.25V9a.75.75 0 0 0-1.5 0v2.25c0 .69-.56 1.25-1.25 1.25h-4.5c-.69 0-1.25-.56-1.25-1.25v-4.5z'/%3E%3C/svg%3E");
     mask-size: contain;
@@ -222,6 +223,7 @@ a[href^="http:"]:after {
     mask-image: none !important;
     font-size: 0.75em;
     vertical-align: super;
+    white-space: nowrap;
 }
 
 a[href$=".pdf"]:after {
@@ -231,6 +233,7 @@ a[href$=".pdf"]:after {
     height: 0.75em !important;
     margin-left: 0.2em;
     vertical-align: baseline !important;
+    white-space: nowrap;
     background-color: currentColor !important;
     mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='currentColor'%3E%3Cpath d='M2.75 14A1.75 1.75 0 0 1 1 12.25v-2.5a.75.75 0 0 1 1.5 0v2.5c0 .138.112.25.25.25h10.5a.25.25 0 0 0 .25-.25v-2.5a.75.75 0 0 1 1.5 0v2.5A1.75 1.75 0 0 1 13.25 14Z'/%3E%3Cpath d='M7.25 7.689V2a.75.75 0 0 1 1.5 0v5.689l1.97-1.969a.749.749 0 1 1 1.06 1.06l-3.25 3.25a.749.749 0 0 1-1.06 0L4.22 6.78a.749.749 0 1 1 1.06-1.06l1.97 1.969Z'/%3E%3C/svg%3E") !important;
     mask-size: contain !important;
@@ -245,6 +248,7 @@ a[href$=".zip"]:after, a[href$=".gz"]:after {
     height: 0.75em !important;
     margin-left: 0.2em;
     vertical-align: baseline !important;
+    white-space: nowrap;
     background-color: currentColor !important;
     mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='currentColor'%3E%3Cpath d='M2.75 14A1.75 1.75 0 0 1 1 12.25v-2.5a.75.75 0 0 1 1.5 0v2.5c0 .138.112.25.25.25h10.5a.25.25 0 0 0 .25-.25v-2.5a.75.75 0 0 1 1.5 0v2.5A1.75 1.75 0 0 1 13.25 14Z'/%3E%3Cpath d='M7.25 7.689V2a.75.75 0 0 1 1.5 0v5.689l1.97-1.969a.749.749 0 1 1 1.06 1.06l-3.25 3.25a.749.749 0 0 1-1.06 0L4.22 6.78a.749.749 0 1 1 1.06-1.06l1.97 1.969Z'/%3E%3C/svg%3E") !important;
     mask-size: contain !important;
