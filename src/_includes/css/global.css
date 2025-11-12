@@ -649,6 +649,13 @@ details[open] > summary {
     font-family: var(--font-family-body);
 }
 
+/* Firefox-specific fix for drop cap positioning */
+@supports (-moz-appearance: none) {
+    .post-content > p:first-of-type::first-letter {
+        margin-top: 0.08em;
+    }
+}
+
 .page-content {
     font-family: var(--font-family-body);
 
