@@ -433,7 +433,8 @@ details[open] > summary {
     & svg.logo {
         height: 2em;
         transform: translateY(-0.25em);
-        fill: var(--foreground-color);
+        fill: var(--link-hover-color);
+        transition: transform 0.2s ease;
     }
 
     & a {
@@ -444,7 +445,7 @@ details[open] > summary {
             text-decoration-thickness: 2px;
 
             & svg.logo {
-                fill: var(--link-hover-color);
+                transform: translateY(-0.25em) scale(1.05);
             }
         }
     }
@@ -542,7 +543,8 @@ details[open] > summary {
 @media (prefers-reduced-motion: reduce) {
     .theme-toggle__label,
     .theme-toggle__icon,
-    .theme-toggle__slider {
+    .theme-toggle__slider,
+    svg.logo {
         transition: none;
     }
 }
