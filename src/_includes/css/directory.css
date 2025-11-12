@@ -1,6 +1,7 @@
 .directory-list {
     margin: 0;
     list-style: none;
+    font-family: var(--font-family-ui);
 }
 
 .directory-list-item {
@@ -9,7 +10,6 @@
 }
 
 .directory-list-item-title {
-    font-family: var(--font-family-heading);
     font-size: var(--font-size-1);
     font-weight: var(--heading-font-weight);
     display: block;
