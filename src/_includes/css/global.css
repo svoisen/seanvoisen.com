@@ -433,7 +433,7 @@ details[open] > summary {
     & svg.logo {
         height: 2em;
         transform: translateY(-0.25em);
-        fill: var(--link-hover-color);
+        fill: var(--link-color);
         transition: transform 0.2s ease;
     }
 
@@ -445,7 +445,8 @@ details[open] > summary {
             text-decoration-thickness: 2px;
 
             & svg.logo {
-                transform: translateY(-0.25em) scale(1.05);
+                fill: var(--link-hover-color);
+                transform: translateY(-0.25em) scale(1.1);
             }
         }
     }
