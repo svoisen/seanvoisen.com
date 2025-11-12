@@ -1,6 +1,6 @@
 ---
 title: "Design for lingering"
-description: 'Inspired by the philosophy of Byung-Chul Han, an exploration of design interventions for deeper living.'
+description: 'An exploration of design interventions for deeper living, inspired by the philosophy of Byung-Chul Han.'
 tags: ["philosophy", "design"]
 image: "/assets/images/og/living_room_rifky_nur_setyadi@1200x630.jpg"
 featured: true

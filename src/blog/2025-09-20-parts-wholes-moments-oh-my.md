@@ -1,6 +1,6 @@
 ---
-title: "Philosophy for Designers 2: Parts and wholes and moments, oh my!"
-description: In which we explore how the phenomenology of parts and wholes can help us improve design decisions.
+title: "Parts and wholes and moments, oh my!"
+description: How the phenomenology of parts and wholes can help improve design decisions.
 tags: ["philosophy", "design"]
 image: "/assets/images/og/laptop_eyes_yeti_iglesias_unsplash@1200x630.jpg"
 ---

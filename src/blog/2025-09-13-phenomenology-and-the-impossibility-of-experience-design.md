@@ -1,6 +1,6 @@
 ---
-title: "Philosophy for Designers 1: Phenomenology and the impossibility of experience design"
-description: A brief introduction to phenomenology and its relevance in the practice of user experience design.
+title: "Phenomenology and the impossibility of experience design"
+description: A brief introduction to phenomenology and its relevance to user experience design.
 tags: ["philosophy", "design"]
 image: "/assets/images/og/geometric_walking_eyes.jpg"
 ---
