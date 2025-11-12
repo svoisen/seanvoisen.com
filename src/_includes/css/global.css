@@ -320,6 +320,14 @@ h3 {
     line-height: var(--heading-line-height);
 }
 
+h4 { 
+    font-family: var(--font-family-heading);
+    margin-top: var(--space-l);
+    font-size: var(--font-size-1);
+    font-weight: var(--heading-font-weight);
+    line-height: var(--heading-line-height);
+}
+
 ul, ol {
     margin: var(--space-m) 0 var(--space-m) var(--space-m);
 
@@ -399,11 +407,11 @@ details[open] > summary {
             margin-top: 0;
         }
 
-        :is(h1, h2, h3):has(+ p, + ul, + ol, + blockquote) {
+        :is(h1, h2, h3, h4, h5):has(+ p, + ul, + ol, + blockquote) {
             margin-bottom: var(--space-2xs);
         }
 
-        :is(h1, h2, h3) + :is(p, ul, ol, blockquote) {
+        :is(h1, h2, h3, h4, h5) + :is(p, ul, ol, blockquote) {
             margin-top: var(--space-2xs);
         }
 
