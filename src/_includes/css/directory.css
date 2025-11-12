@@ -6,7 +6,7 @@
 
 .directory-list-item {
     position: relative;
-    margin-bottom: var(--space-s);
+    margin-bottom: var(--space-m);
 }
 
 .directory-list-item-title {
