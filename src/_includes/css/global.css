@@ -109,12 +109,10 @@ html, body {
 
 body {
     line-height: var(--line-height);
-    /* Body uses heading font for UI elements. Post/page content uses body font via .post-content and .page-content classes */
     font-family: var(--font-family-heading);
     font-weight: 400;
     font-size: var(--font-size-0);
     font-optical-sizing: auto;
-    /* Vendor prefixes for improved font rendering across browsers */
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
     -webkit-text-size-adjust: 100%;
@@ -123,7 +121,6 @@ body {
 
 hr {
     border: none;
-    /* Uses content-box so height is exactly 1px, not 1px + border */
     box-sizing: content-box;
     height: 1px;
     overflow: visible;
@@ -237,10 +234,6 @@ a[href^="http:"]:after {
     white-space: nowrap;
 }
 
-/*
- * PDF and archive links use !important to override external link icon styles
- * TODO: Refactor to use more specific selectors instead of !important
- */
 a[href$=".pdf"]:after {
     content: "" !important;
     display: inline-block !important;
@@ -275,33 +268,35 @@ p {
     margin: var(--space-m) 0;
 }
 
-/* Common heading properties */
-:is(h1, h2, h3, h4) {
+h1 {
     font-family: var(--font-family-heading);
+    font-size: var(--font-size-4);
+    font-weight: 800;
     line-height: var(--heading-line-height);
 }
 
-h1 {
-    font-size: var(--font-size-4);
-    font-weight: 800;
-}
-
 h2 {
+    font-family: var(--font-family-heading);
     margin-top: var(--space-2xl);
     font-size: var(--font-size-3);
     font-weight: var(--heading-font-weight);
+    line-height: var(--heading-line-height);
 }
 
 h3 {
+    font-family: var(--font-family-heading);
     margin-top: var(--space-xl);
     font-size: var(--font-size-2);
     font-weight: var(--heading-font-weight);
+    line-height: var(--heading-line-height);
 }
 
-h4 {
+h4 { 
+    font-family: var(--font-family-heading);
     margin-top: var(--space-l);
     font-size: var(--font-size-1);
     font-weight: var(--heading-font-weight);
+    line-height: var(--heading-line-height);
 }
 
 ul, ol {
@@ -365,7 +360,6 @@ details[open] > summary {
     margin-bottom: var(--space-s);
 }
 
-/* Main content uses margin auto for centering, which respects max-width */
 .main {
     margin: 0 auto;
     max-width: var(--width);
@@ -601,7 +595,7 @@ details[open] > summary {
     background-color: var(--metadata-background-color);
     color: var(--metadata-foreground-color);
     border-radius: var(--border-radius-sm);
-    border: none;
+    border: none !important;
 
     & dl {
         font-size: var(--font-size-0);
@@ -772,8 +766,7 @@ details[open] > summary {
     height: auto;
 }
 
-/* Mobile breakpoint */
-@media (max-width: 567px) {
+@media only screen and (max-width: 567px) {
     .nav__item--hidden {
         display: none;
     }
@@ -783,8 +776,7 @@ details[open] > summary {
     }
 }
 
-/* Small tablet breakpoint */
-@media (min-width: 568px) {
+@media only screen and (min-width: 568px) {
     .header {
         font-size: var(--font-size-0);
     }
@@ -794,9 +786,7 @@ details[open] > summary {
     }
 }
 
-/* Tablet and desktop breakpoint */
 @media (min-width: 768px) {
-    /* Figures use left/transform centering to break out of parent width constraints */
     .post-content figure, .page-content figure {
         display: block;
         width: 100vw;
