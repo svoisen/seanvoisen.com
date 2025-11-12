@@ -1,6 +1,6 @@
 ---
-title: "Philosophy for Designers 4: Design for lingering"
-description: 'Inspired by Byung-Chul Han’s "The Scent of Time," this is an exploration of design interventions for contemplation and lingering.'
+title: "Design for lingering"
+description: 'Inspired by the philosophy of Byung-Chul Han, an exploration of design interventions for deeper living.'
 tags: ["philosophy", "design"]
 image: "/assets/images/og/living_room_rifky_nur_setyadi@1200x630.jpg"
 featured: true
