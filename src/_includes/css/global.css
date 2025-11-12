@@ -713,7 +713,6 @@ details[open] > summary {
     list-style: none;
     display: grid;
     grid-template-columns: 1fr;
-    grid-auto-rows: 1fr;
     gap: var(--space-m);
 }
 
@@ -735,7 +734,6 @@ details[open] > summary {
 }
 
 .featured-post-link:hover {
-    border-color: var(--link-hover-color);
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.08),
                 0 8px 16px rgba(0, 0, 0, 0.08);
     transform: translateY(-6px);
@@ -888,6 +886,10 @@ details[open] > summary {
         padding-right: var(--space-m);
     }
 
+    .featured-post-card {
+        display: contents;
+    }
+
     .featured-posts {
         width: 100vw;
         max-width: 48em;
@@ -899,5 +901,6 @@ details[open] > summary {
         padding-left: var(--space-xl);
         padding-right: var(--space-xl);
         grid-template-columns: repeat(3, 1fr);
+        grid-auto-rows: 1fr;
     }
 }
