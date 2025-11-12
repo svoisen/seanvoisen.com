@@ -2,10 +2,9 @@
 layout: page
 title: "Notes"
 permalink: "/notes/"
+subtitle: "Evergreen notes on a variety of topics of personal interest."
 showMetadata: false
 ---
-
-Evergreen notes on a variety of topics of personal interest.
 
 ## Self-study
 - [Philosophy for Designers reading list](/notes/philosophy-for-designers/)

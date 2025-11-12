@@ -2,14 +2,13 @@
 layout: page
 title: Bookshelf
 permalink: "/bookshelf/"
+subtitle: "Books I’ve read, grouped by year."
 showMetadata: false
 localCSS: ["bookshelf"]
 ---
 
 {% from "macros/bookshelf-section.njk" import bookshelfSection %}
-{% set description = navigation.items | getDescription(permalink) %}
 
-<p>{{ description }}</p>
 <aside class="page-metadata">
     <dl>
         <dt>Last updated</dt> 
