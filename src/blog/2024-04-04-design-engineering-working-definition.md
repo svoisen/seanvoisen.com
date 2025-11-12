@@ -2,6 +2,8 @@
 title: Design engineering, a working definition
 description: A few thoughts on how we define the role of design engineer in the tech industry.
 tags: ["work", "design"]
+image: "/assets/images/og/design_engineering_puzzle_creative_unsplash@1200x630.jpg"
+featured: true
 ---
 
 Design engineering seems to be, as [Chris Coyier has noted](https://frontendmasters.com/blog/design-engineers/), "having a moment." 
@@ -14,6 +16,8 @@ It could just be the [frequency illusion](https://en.wikipedia.org/wiki/Frequenc
 - Jim Nielson adding [parts II](https://blog.jim-nielsen.com/2024/the-case-for-design-engineers-pt-ii/) [and III](https://blog.jim-nielsen.com/2024/the-case-for-design-engineers-pt-iii/) to his ongoing [case for design engineers](https://blog.jim-nielsen.com/2022/the-case-for-design-engineers/)
 - Maggie Appleton sharing [a list of public-facing design engineers and their work](https://maggieappleton.com/design-engineers)
 - Chris Coyier giving [his take on design engineers](https://frontendmasters.com/blog/design-engineers/)
+
+![A minimalist illustration depicting a design workspace. The central focus is a stylized landscape image with golden mountains beneath a coral sky and black sun, shown with corner crop marks and a selection box. Surrounding the image are various design tools: a properties panel on the left showing layer thumbnails with different stroke styles, a ruler along the bottom left, geometric shape tools (triangle, circle, square), and on the right side, panels displaying image manipulation options, text tools, a color wheel with coral, yellow, blue and green segments, and a color palette bar.](/assets/images/design_engineering_puzzle_creative_unsplash@1600.jpg "Illustration by Puzzle Creative on Unsplash")
 
 Given that I currently earn my living leading teams of design engineers inside [Adobe's Design organization](https://adobe.design), and that I spent a good chunk of my earlier career working as a design engineer, I have *some thoughts* on the matter. In particular, I have thoughts on how we collectively *define* the design engineering role, and I feel I'd be remiss if I didn't add my voice to the conversation.
 

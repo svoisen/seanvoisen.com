@@ -2,6 +2,8 @@
 title: The imp of optimization
 description: A meditation on what we lose when we excessively measure our lives.
 tags: ["philosophy", "health"]
+image: "/assets/images/og/watch_tri_wiranto_unsplash@1200x630.jpg"
+featured: true
 ---
 
 Most workday afternoons, I leave my desk, set my Slack status to "away," and take a meandering forty-minute walk around my neighborhood. This open secret between me and my coworkers—a habit I stumbled into a few years ago—has proven immensely beneficial to both my psychological and physical well-being. After a walk I think better, I feel better, and I have more energy. So I treat the brief time I dedicate to walking as sacred, blocking out the time on my calendar and ignoring or disabling notifications on my phone.
@@ -11,6 +13,8 @@ I'm certainly not alone in my reverence for ambulatory motion. Walks are, after 
 >I have walked myself into my best thoughts, and I know of no thought so burdensome that one cannot walk away from it ... Health and salvation can only be found in motion.
 
 For any serious thinker, walking is indispensable.
+
+![Illustration of a watch, half analog, half smart watch, on a wrist.](/assets/images/watch_tri_wiranto_unsplash@1600.jpg "Illustration by Tri Wiranto on Unsplash")
 
 I live in California but work with a global team distributed across the Eastern US, Europe, and India. As a result, most of the social activity of my workday—meetings, one-on-ones, emails, Slack messages—is front-loaded during the morning hours. By 2pm things quiet down, the messages slow to a trickle, and I often find I finally have time to sit and think. Strategically placing my walk between these early hours of intense managerial activity and the later hours of deeper, focused work creates a liminal transition zone between my two modes of being. It serves as a means for both clearing my mind and "stirring the pot of ideas" for my more focused afternoon.
 
