@@ -27,7 +27,7 @@
 }
 
 .books-grid-item:hover .books-grid-cover {
-    transform: scale(1.1);
+    transform: scale(1.05);
 }
 
 .books-grid-metadata {
