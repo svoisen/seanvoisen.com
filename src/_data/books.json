@@ -1,10 +1,21 @@
 {
   "books": [
     {
+      "title": "The Question Concerning Technology",
+      "author": "Martin Heidegger",
+      "year": 2025,
+      "rating": 3,
+      "type": "book",
+      "link": "https://bookshop.org/book/9780062290700",
+      "slug": "the_question_concerning_technology",
+      "isbn_13": 9780062290700,
+      "favorite": false
+    },
+    {
       "title": "The Unbearable Lightness of Being",
       "author": "Milan Kundera",
       "year": 2025,
-      "rating": 3,
+      "rating": 4,
       "type": "book",
       "link": "https://bookshop.org/book/9780060932138",
       "slug": "the_unbearable_lightness_of_being",
