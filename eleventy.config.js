@@ -11,7 +11,7 @@ export default async function(eleventyConfig) {
   /*
    * watch targets
    */
-  eleventyConfig.addWatchTarget("./src/assets/**/*.{css,js,webp,svg,png,jpg}");
+  eleventyConfig.addWatchTarget("./src/assets/**/*.{css,js,webp,svg,png,jpg,woff2}");
 
   /*
    * plugins
@@ -80,7 +80,7 @@ export default async function(eleventyConfig) {
   /*
    * passthrough file copy
    */
-  ["src/assets/images"].forEach(path => {
+  ["src/assets/images", "src/assets/fonts"].forEach(path => {
     eleventyConfig.addPassthroughCopy(path)
   });
 
