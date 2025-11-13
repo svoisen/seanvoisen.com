@@ -254,20 +254,21 @@ async function main() {
 
     // Step 4: Prompt for rating
     const ratingResponse = await prompts({
-        type: 'number',
+        type: 'text',
         name: 'rating',
         message: 'Rating (1-5, half stars allowed, e.g., 3.5):',
-        min: 1,
-        max: 5,
         validate: value => {
-            if (value < 1 || value > 5) return 'Rating must be between 1 and 5';
+            const num = parseFloat(value);
+            if (isNaN(num)) return 'Please enter a valid number';
+            if (num < 1 || num > 5) return 'Rating must be between 1 and 5';
             // Check if it's a valid increment (whole or half)
-            const decimal = value % 1;
+            const decimal = num % 1;
             if (decimal !== 0 && decimal !== 0.5) {
                 return 'Rating must be whole or half stars (e.g., 3, 3.5, 4)';
             }
             return true;
-        }
+        },
+        format: value => parseFloat(value)
     });
 
     if (ratingResponse.rating === undefined) {
