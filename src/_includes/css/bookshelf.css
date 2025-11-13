@@ -1,4 +1,5 @@
 .books-grid {
+    font-family: var(--font-family-ui);
     margin: var(--space-l) 0 0 0;
     padding: 0;
     display: grid;

@@ -8,7 +8,8 @@
         "start": "npx @11ty/eleventy --serve --quiet",
         "debug": "cross-env DEBUG=Eleventy* npx @11ty/eleventy",
         "debugstart": "cross-env DEBUG=Eleventy* npx @11ty/eleventy --serve --quiet",
-        "benchmark": "cross-env DEBUG=Eleventy:Benchmark* npx @11ty/eleventy"
+        "benchmark": "cross-env DEBUG=Eleventy:Benchmark* npx @11ty/eleventy",
+        "addbook": "node scripts/addbook.js"
     },
     "author": "Sean Voisen",
     "license": "MIT",
@@ -29,6 +30,9 @@
         "precss": "^4.0.0"
     },
     "dependencies": {
-        "@humanwhocodes/markdown-it-markua-aside": "^0.2.0"
+        "@humanwhocodes/markdown-it-markua-aside": "^0.2.0",
+        "node-fetch": "^3.3.2",
+        "prompts": "^2.4.2",
+        "sharp": "^0.33.5"
     }
 }
