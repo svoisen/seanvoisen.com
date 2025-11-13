@@ -14,25 +14,24 @@
     "author": "Sean Voisen",
     "license": "MIT",
     "devDependencies": {
-        "@11ty/eleventy": "3.0.1-alpha.4",
-        "@11ty/eleventy-img": "^6.0.1",
-        "@11ty/eleventy-plugin-rss": "^2.0.3",
-        "@11ty/eleventy-plugin-syntaxhighlight": "^5.0.0",
+        "@11ty/eleventy": "^3.1.2",
+        "@11ty/eleventy-img": "^6.0.4",
+        "@11ty/eleventy-plugin-rss": "^2.0.4",
+        "@11ty/eleventy-plugin-syntaxhighlight": "^5.0.2",
         "@photogabble/eleventy-plugin-word-stats": "^1.0.1",
-        "autoprefixer": "^10.4.20",
+        "autoprefixer": "^10.4.22",
         "cross-env": "^7.0.3",
-        "cssnano": "^7.0.6",
-        "luxon": "^3.5.0",
+        "cssnano": "^7.1.2",
+        "luxon": "^3.7.2",
         "markdown-it": "^14.1.0",
         "markdown-it-image-figures": "^2.1.1",
-        "postcss": "^8.5.1",
-        "postcss-import": "^16.1.0",
-        "precss": "^4.0.0"
+        "postcss": "^8.5.6",
+        "postcss-import": "^16.1.1"
     },
     "dependencies": {
         "@humanwhocodes/markdown-it-markua-aside": "^0.2.0",
         "node-fetch": "^3.3.2",
         "prompts": "^2.4.2",
-        "sharp": "^0.33.5"
+        "sharp": "^0.34.5"
     }
 }
