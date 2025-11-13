@@ -46,11 +46,19 @@ async function fetchBookData(isbn) {
         }
 
         const book = data.items[0].volumeInfo;
+        const bookId = data.items[0].id;
+
+        // Get thumbnail URL and upgrade to zoom=3 for higher quality
+        let coverUrl = book.imageLinks?.thumbnail?.replace('http:', 'https:') || null;
+        if (coverUrl) {
+            coverUrl = coverUrl.replace('zoom=1', 'zoom=3');
+        }
 
         return {
             title: book.title,
             authors: book.authors ? book.authors.join(', ') : 'Unknown',
-            coverUrl: book.imageLinks?.thumbnail?.replace('http:', 'https:') || null,
+            coverUrl: coverUrl,
+            bookId: bookId,
             isbn13: isbn
         };
     } catch (error) {
@@ -60,22 +68,71 @@ async function fetchBookData(isbn) {
 }
 
 /**
- * Download and process cover image
+ * Try to get the highest quality cover image from multiple sources
  */
-async function downloadAndProcessCover(coverUrl, slug) {
-    if (!coverUrl) {
-        console.warn('No cover image URL provided, skipping image download');
-        return false;
+async function getHighestQualityCover(coverUrl, bookId, isbn) {
+    const sources = [];
+
+    // Source 1: Google Books with zoom=3 (already modified in coverUrl)
+    if (coverUrl) {
+        sources.push({ name: 'Google Books (zoom=3)', url: coverUrl });
     }
 
-    try {
-        // Download the image
-        const response = await fetch(coverUrl);
-        if (!response.ok) {
-            throw new Error(`Failed to download image: ${response.statusText}`);
-        }
+    // Source 2: Google Books publisher content URL with custom dimensions
+    if (bookId) {
+        sources.push({
+            name: 'Google Books (publisher)',
+            url: `https://books.google.com/books/publisher/content/images/frontcover/${bookId}?fife=w800-h1200&source=gbs_api`
+        });
+    }
 
-        const buffer = await response.arrayBuffer();
+    // Source 3: Open Library large cover
+    if (isbn) {
+        sources.push({
+            name: 'Open Library',
+            url: `https://covers.openlibrary.org/b/isbn/${isbn}-L.jpg`
+        });
+    }
+
+    // Try each source until we find a working one
+    for (const source of sources) {
+        try {
+            console.log(`  Trying ${source.name}...`);
+            const response = await fetch(source.url);
+
+            if (response.ok) {
+                const buffer = await response.arrayBuffer();
+
+                // Validate the image is not too small
+                const metadata = await sharp(Buffer.from(buffer)).metadata();
+
+                if (metadata.width >= 400) {
+                    console.log(`  ✓ Success! Using ${source.name} (${metadata.width}x${metadata.height})`);
+                    return { buffer, source: source.name };
+                } else {
+                    console.log(`  ✗ Image too small (${metadata.width}px), trying next source...`);
+                }
+            }
+        } catch (error) {
+            console.log(`  ✗ Failed: ${error.message}`);
+        }
+    }
+
+    return null;
+}
+
+/**
+ * Download and process cover image
+ */
+async function downloadAndProcessCover(coverUrl, slug, bookId, isbn) {
+    try {
+        // Try to get the highest quality cover from multiple sources
+        const result = await getHighestQualityCover(coverUrl, bookId, isbn);
+
+        if (!result) {
+            console.warn('Could not find a high-quality cover image from any source');
+            return false;
+        }
 
         // Ensure the book covers directory exists
         await fs.mkdir(BOOK_COVERS_DIR, { recursive: true });
@@ -86,7 +143,7 @@ async function downloadAndProcessCover(coverUrl, slug) {
         for (const size of sizes) {
             const outputPath = path.join(BOOK_COVERS_DIR, `${slug}@${size}.webp`);
 
-            await sharp(Buffer.from(buffer))
+            await sharp(Buffer.from(result.buffer))
                 .resize(size, null, {
                     fit: 'inside',
                     withoutEnlargement: true
@@ -94,7 +151,7 @@ async function downloadAndProcessCover(coverUrl, slug) {
                 .webp({ quality: 85 })
                 .toFile(outputPath);
 
-            console.log(`Created ${slug}@${size}.webp`);
+            console.log(`  Created ${slug}@${size}.webp`);
         }
 
         return true;
@@ -265,7 +322,7 @@ async function main() {
 
     // Step 8: Download and process cover image
     console.log('\nDownloading and processing cover image...');
-    await downloadAndProcessCover(bookData.coverUrl, slug);
+    await downloadAndProcessCover(bookData.coverUrl, slug, bookData.bookId, isbn);
 
     // Step 9: Create book object and add to books.json
     const newBook = {
