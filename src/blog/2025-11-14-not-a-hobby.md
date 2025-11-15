@@ -1,6 +1,6 @@
 ---
 title: "Not a hobby: Reflections on life habit experiment №2"
-description: "A chance encounter with an old friend on a bike ride through Central Park leads to a deeper question: what's the difference between a hobby and a leisurely pursuit?"
+description: "A visit with an old friend on a bike ride through Central Park leads to a deeper question: what's the difference between a hobby and leisure?"
 tags: ["philosophy", ""]
 image: "/assets/images/og/books_daniel_lee_unsplash@1200x630.jpg"
 ---
