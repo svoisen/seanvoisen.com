@@ -4,7 +4,10 @@
       "Bash(git log:*)",
       "Bash(git add:*)",
       "Bash(git commit:*)",
-      "WebSearch"
+      "WebSearch",
+      "Bash(git lfs ls-files:*)",
+      "Bash(curl:*)",
+      "Bash(git restore:*)"
     ],
     "deny": [],
     "ask": []
