@@ -2,9 +2,9 @@
 layout: base
 ---
 
-{%- if (page.filePathStem.split("/")[1] == "blog") %}
-    {%- set type = "Blog" %}
-    {%- set typelink = "/blog/" %}
+{%- if (page.filePathStem.split("/")[1] == "writing") %}
+    {%- set type = "Writing" %}
+    {%- set typelink = "/writing/" %}
 {%- else %}
     {%- set type = "Stream" %}
     {%- set typelink = "/stream/" %}

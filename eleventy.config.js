@@ -61,7 +61,7 @@ export default async function(eleventyConfig) {
   /*
    * collections
    */
-  eleventyConfig.addCollection("blog", collections.blog);
+  eleventyConfig.addCollection("writing", collections.writing);
   eleventyConfig.addCollection("stream", collections.stream);
   eleventyConfig.addCollection("tags", collections.tags);
   eleventyConfig.addCollection("sitemap", collections.sitemap);
@@ -86,6 +86,7 @@ export default async function(eleventyConfig) {
 
   eleventyConfig.addPassthroughCopy({
     "src/assets/favicon/*": "/",
+    "_redirects": "/",
   });
 }
 

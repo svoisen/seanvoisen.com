@@ -4,9 +4,9 @@ description: A follow-up to my first experiment exploring a new habit of eschewi
 tags: ["habits", "personal"]
 ---
 
-_Note: This is a follow-up to [an earlier post](/blog/habit-experiment-1-analog-evenings/)._
+{blurb, class:information}This is a follow-up to [an earlier post](/writing/habit-experiment-1-analog-evenings/).{/blurb}
 
-About a month ago, I began [an experiment in intentional living](/blog/habit-experiment-1-analog-evenings/) I called "analog evenings." The rules of this experiment were simple: Each night, around two hours before bedtime, I would power down—no phone, no computer, no television, nothing with a backlit screen or network connection. What follows is a brief reflection on this experiment, sharing what I learned and exploring whether and how I want to continue practicing this habit.
+About a month ago, I began [an experiment in intentional living](/writing/habit-experiment-1-analog-evenings/) I called "analog evenings." The rules of this experiment were simple: Each night, around two hours before bedtime, I would power down—no phone, no computer, no television, nothing with a backlit screen or network connection. What follows is a brief reflection on this experiment, sharing what I learned and exploring whether and how I want to continue practicing this habit.
 
 ## The good parts
 

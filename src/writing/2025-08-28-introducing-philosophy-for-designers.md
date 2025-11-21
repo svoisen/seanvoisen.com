@@ -20,7 +20,7 @@ If designing tools truly is akin to designing objects of "love" and "ways of bei
 
 In the world of computer software, we often look to the practice of user experience design to help answer these questions. UX designers draw from a great number of other fields and disciplines to help them navigate the complex challenges of designing digital experiences—psychology, cognitive science, graphic design, and anthropology, just to name a few. The joy and power of UX design lies in its immensely interdisciplinary nature. Yet, in most conversations about design there is one field that seems to be conspicuously absent. Surprisingly, it is also the field that might be most relevant for helping us navigate the challenges designers face in the era of AI. That field, of course, is **philosophy**.
 
-Which brings me to why I'm writing this post. A little over a week ago [I announced](/blog/habit-experiment-2-self-directed-study/) that I plan to begin a new experiment in self-directed study. Now, I'm happy to share the topic of my studies, something I'm calling: [Philosophy for Designers: Ethics, Experience and Cognition](/notes/philosophy-for-designers/).
+Which brings me to why I'm writing this post. A little over a week ago [I announced](/writing/habit-experiment-2-self-directed-study/) that I plan to begin a new experiment in self-directed study. Now, I'm happy to share the topic of my studies, something I'm calling: [Philosophy for Designers: Ethics, Experience and Cognition](/notes/philosophy-for-designers/).
 
 I'll get into the specifics of what *Philosophy for Designers* is all about, but first I hope you'll indulge me in a brief digression.
 

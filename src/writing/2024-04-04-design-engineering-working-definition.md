@@ -6,16 +6,16 @@ image: "/assets/images/og/design_engineering_puzzle_creative_unsplash@1200x630.j
 featured: true
 ---
 
-Design engineering seems to be, as [Chris Coyier has noted](https://frontendmasters.com/blog/design-engineers/), "having a moment." 
+Design engineering seems to be, as [Chris Coyier has noted](https://frontendmasters.com/writing/design-engineers/), "having a moment." 
 
 It could just be the [frequency illusion](https://en.wikipedia.org/wiki/Frequency_illusion) at play, but I've noticed a recent uptick in the number of blog posts discussing the design engineering and its impact on the software design and development process. Here's a sample of some of the articles I've run across in the past few weeks:
 
 - David Hoang describing [the role of the design engineer](https://www.proofofconcept.pub/p/design-engineering) in his newsletter
-- Folks at Vercel writing about [how design engineering works there](https://vercel.com/blog/design-engineering-at-vercel)
+- Folks at Vercel writing about [how design engineering works there](https://vercel.com/writing/design-engineering-at-vercel)
 - Emil Widlund explaining [why a design engineer career is an investment for your future](https://polar.sh/emilwidlund/posts/becoming-a-design-engineer-is-a-career-investment)
 - Jim Nielson adding [parts II](https://blog.jim-nielsen.com/2024/the-case-for-design-engineers-pt-ii/) [and III](https://blog.jim-nielsen.com/2024/the-case-for-design-engineers-pt-iii/) to his ongoing [case for design engineers](https://blog.jim-nielsen.com/2022/the-case-for-design-engineers/)
 - Maggie Appleton sharing [a list of public-facing design engineers and their work](https://maggieappleton.com/design-engineers)
-- Chris Coyier giving [his take on design engineers](https://frontendmasters.com/blog/design-engineers/)
+- Chris Coyier giving [his take on design engineers](https://frontendmasters.com/writing/design-engineers/)
 
 ![A minimalist illustration depicting a design workspace. The central focus is a stylized landscape image with golden mountains beneath a coral sky and black sun, shown with corner crop marks and a selection box. Surrounding the image are various design tools: a properties panel on the left showing layer thumbnails with different stroke styles, a ruler along the bottom left, geometric shape tools (triangle, circle, square), and on the right side, panels displaying image manipulation options, text tools, a color wheel with coral, yellow, blue and green segments, and a color palette bar.](/assets/images/design_engineering_puzzle_creative_unsplash@1600.jpg "Illustration by Puzzle Creative on Unsplash")
 

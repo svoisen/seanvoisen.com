@@ -21,7 +21,7 @@ Experiences are thus *subjective.* And so, in designing experiences, what we act
 
 But is there more to it than this? If we look more deeply at what experience actually is, might this inform and improve the practice of experience design? Could we learn to better wield the tools we have at our disposal in influencing experiences? Could we make smarter choices—both experientially and ethically—in how we design those experiential possibilities? And could we, perhaps, become better experience designers as a result?
 
-These are some of the first questions I want to explore in this series on [Philosophy for Designers](/blog/introducing-philosophy-for-designers/). So, I am beginning our journey by digging into the foundations of something called "phenomenology."
+These are some of the first questions I want to explore in this series on [Philosophy for Designers](/writing/introducing-philosophy-for-designers/). So, I am beginning our journey by digging into the foundations of something called "phenomenology."
 
 ## Introducing phenomenology
 

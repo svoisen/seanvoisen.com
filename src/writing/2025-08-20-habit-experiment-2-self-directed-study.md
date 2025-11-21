@@ -8,7 +8,7 @@ In [The Pleasures of Reading in an Age of Distraction](https://bookshop.org/a/10
 
 > It helps us to make a vital distinction between what I shall call whim and Whim. In its lower-case version, whim is thoughtless, directionless preference that almost invariably leads to boredom or frustration or both. But Whim is something very different: it can guide us because it is based in self-knowledge—it can become for us a gracious Swiss pedagogue of the mind.
 
-[I've written about this topic before.](/blog/read-at-whim/) For most of my adult life, I've chosen what books to read in my leisure hours based on Whim. And I've found this has served me surprisingly well, allowing me to follow my interests and curiosity towards a wide variety of authors and topics, often guided by whatever happens to be going on in my life at the time.
+[I've written about this topic before.](/writing/read-at-whim/) For most of my adult life, I've chosen what books to read in my leisure hours based on Whim. And I've found this has served me surprisingly well, allowing me to follow my interests and curiosity towards a wide variety of authors and topics, often guided by whatever happens to be going on in my life at the time.
 
 Indeed, if you're a naturally curious person, reading at Whim happens to be an excellent strategy for reading broadly and avoiding any kind of boredom. In fact, one of Jacobs' rules of Whim is that you should abandon any book you find doesn't engage you. There are, after all, more good books in existence than one could possibly consume in a lifetime. So, if the book you're reading isn't for you, and you've honestly given it a fair chance, move on.
 
@@ -24,7 +24,7 @@ By many peoples' standards, I don't actually actually own a lot of books. But, o
 
 That said, as much as I'd like to keep spending money spontaneously on (mostly used) books, lately I've realized that I would like to cultivate deep understanding of some very specific topics and subjects. And reading at Whim will not help me achieve this goal. Whim, after all, is about breadth, not depth. So, I'm going to have to get more intentional.
 
-Over a month ago I shared that I'm starting [a new practice in experimenting with new habits and ways of living](/blog/habit-experiment-1-analog-evenings/). This new practice strikes me as a perfect method for exploring reading at depth and figuring out whether I am going to stick with it. 
+Over a month ago I shared that I'm starting [a new practice in experimenting with new habits and ways of living](/writing/habit-experiment-1-analog-evenings/). This new practice strikes me as a perfect method for exploring reading at depth and figuring out whether I am going to stick with it. 
 
 So, that leads me to my second life habit experiment, a practice I'm calling, simply, "self-directed study."
 

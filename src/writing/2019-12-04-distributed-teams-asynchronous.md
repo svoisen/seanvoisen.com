@@ -4,9 +4,7 @@ description: Some thoughts on the nature of distributed teams spurned by reading
 tags: ["management", "work"]
 ---
 
-Inspired by [Ethan Marcotte's excellent talk](https://ethanmarcotte.com/wrote/the-world-wide-work/) on power and justice in tech, I've been reading a lot of [Ursula Franklin](https://en.wikipedia.org/wiki/Ursula_Franklin) recently.
-
-The last chapter of her collection of CBC Massey Lectures, ["The Real World of Technology"](https://houseofanansi.com/products/the-real-world-of-technology-digital) takes a hard look at what she calls the "interface between the biosphere and the bitsphere," the not-totally-physical, not-totally-psychological space where human life is transformed by work, communication, and interaction on the Internet. Her concern, primarily, is how the Internet (i.e. the "bitsphere") introduces asynchronicity into what has historically been the otherwise synchronous nature of normal education, work, and governance. Her concern is asynchronicity both in time, and in space.
+Inspired by [Ethan Marcotte's excellent talk](https://ethanmarcotte.com/wrote/the-world-wide-work/) on power and justice in tech, I've been reading a lot of [Ursula Franklin](https://en.wikipedia.org/wiki/Ursula_Franklin) recently. The last chapter of her collection of CBC Massey Lectures, ["The Real World of Technology"](https://houseofanansi.com/products/the-real-world-of-technology-digital) takes a hard look at what she calls the "interface between the biosphere and the bitsphere," the not-totally-physical, not-totally-psychological space where human life is transformed by work, communication, and interaction on the Internet. Her concern, primarily, is how the Internet (i.e. the "bitsphere") introduces asynchronicity into what has historically been the otherwise synchronous nature of normal education, work, and governance. Her concern is asynchronicity both in time, and in space.
 
 > While the biosphere, existing in real time, encompasses past, present, and future, the bitsphere — a product of human minds — exhibits no tense or temporality, and no roots in physical space.
 

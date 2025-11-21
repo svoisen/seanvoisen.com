@@ -6,7 +6,7 @@ image: "/assets/images/og/living_room_rifky_nur_setyadi@1200x630.jpg"
 featured: true
 ---
 
-{blurb, class:information}This is Part 4 in an ongoing series on philosophy, design and cognitive science. You can also read [Part 3](/blog/cezannes-doubts/), or check out [the reading list](/notes/philosophy-for-designers/) behind this series.{/blurb}
+{blurb, class:information}This is Part 4 in an ongoing series on philosophy, design and cognitive science. You can also read [Part 3](/writing/cezannes-doubts/), or check out [the reading list](/notes/philosophy-for-designers/) behind this series.{/blurb}
 
 The hsiang-yin (香鐘 or, in pinyin, “xiāngzhōng”) is an ancient Chinese timekeeping device first developed during the Song dynasty. Used in China up until the late 19th century, the hsiang-yin (literally “seal of fragrance”) is unlike Western timekeeping devices. It isn't mechanical, and doesn’t measure time in discrete chunks of hours, minutes or seconds. Instead, it measures time through the slow burning of incense. 
 

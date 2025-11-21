@@ -12,10 +12,10 @@ export const notes = (collection) => {
   return [...collection.getFilteredByGlob('./src/notes/*.md')];
 };
 
-export const blog = (collection) => {
-  return [...collection.getFilteredByGlob('./src/blog/*.md')];
+export const writing = (collection) => {
+  return [...collection.getFilteredByGlob('./src/writing/*.md')];
 };
 
-export default { blog, stream, tags, sitemap, notes };
+export default { writing, stream, tags, sitemap, notes };
 
 

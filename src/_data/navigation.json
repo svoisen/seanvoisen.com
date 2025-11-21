@@ -1,8 +1,8 @@
 {
     "items": [
         {
-            "title": "Blog",
-            "url": "/blog/",
+            "title": "Writing",
+            "url": "/writing/",
             "description": "Essays and personal updates.",
             "inNavigation": true,
             "hideOnMobile": true

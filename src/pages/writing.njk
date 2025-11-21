@@ -1,0 +1,13 @@
+---
+layout: page
+title: "Writing"
+permalink: "/writing/"
+subtitle: "Longer essays and personal updates."
+showMetadata: false
+---
+
+{% from "macros/postlist.njk" import postList %}
+{% set writing = collections.writing | reverse %}
+{% set description = navigation.items | getDescription(permalink) %}
+
+{{ postList(writing) }}
