@@ -1,12 +1,12 @@
 ---
 layout: page
-title: "Stream"
-permalink: "/stream/"
+title: "Thinking"
+permalink: "/thinking/"
 subtitle: "Short thoughts and comments, mostly about things I've read."
 showMetadata: false
 ---
 
 {% from "macros/postlist.njk" import postList %}
-{% set stream = collections.stream | reverse %}
+{% set thinking = collections.thinking | reverse %}
 
-{{ postList(stream) }}
+{{ postList(thinking) }}

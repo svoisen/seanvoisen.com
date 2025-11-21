@@ -14,8 +14,8 @@
             "inNavigation": false
         },
         {
-            "title": "Stream",
-            "url": "/stream/",
+            "title": "Thinking",
+            "url": "/thinking/",
             "description": "Brief thoughts and comments, mostly about things I've read in books or on the web.",
             "inNavigation": true,
             "hideOnMobile": true
@@ -49,7 +49,7 @@
         {
             "title": "Topics",
             "url": "/topics/",
-            "description": "Index of all topics used in blog and stream posts.",
+            "description": "Index of all topics used in blog and thinking posts.",
             "inNavigation": false
         },
         {

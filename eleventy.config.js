@@ -62,7 +62,7 @@ export default async function(eleventyConfig) {
    * collections
    */
   eleventyConfig.addCollection("writing", collections.writing);
-  eleventyConfig.addCollection("stream", collections.stream);
+  eleventyConfig.addCollection("thinking", collections.thinking);
   eleventyConfig.addCollection("tags", collections.tags);
   eleventyConfig.addCollection("sitemap", collections.sitemap);
   eleventyConfig.addCollection("notes", collections.notes);

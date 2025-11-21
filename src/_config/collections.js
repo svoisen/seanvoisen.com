@@ -4,8 +4,8 @@ export const sitemap = (collection) => {
   return collection.getFilteredByGlob("./src/**/*.{md,njk}");
 };
 
-export const stream = (collection) => {
-  return [...collection.getFilteredByGlob('./src/stream/*.md')];
+export const thinking = (collection) => {
+  return [...collection.getFilteredByGlob('./src/thinking/*.md')];
 };
 
 export const notes = (collection) => {
@@ -18,10 +18,10 @@ export const writing = (collection) => {
 
 export const unified = (collection) => {
   const writingPosts = collection.getFilteredByGlob('./src/writing/*.md');
-  const streamPosts = collection.getFilteredByGlob('./src/stream/*.md');
-  return [...writingPosts, ...streamPosts].sort((a, b) => a.date - b.date);
+  const thinkingPosts = collection.getFilteredByGlob('./src/thinking/*.md');
+  return [...writingPosts, ...thinkingPosts].sort((a, b) => a.date - b.date);
 };
 
-export default { writing, stream, tags, sitemap, notes, unified };
+export default { writing, thinking, tags, sitemap, notes, unified };
 
 
