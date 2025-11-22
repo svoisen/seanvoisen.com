@@ -15,4 +15,4 @@ The current design is a blend of ideas from older versions of my blog, and uses 
 
 ### Typography
 
-Body copy for all long-form content is set in *IBM Plex Serif*. Headlines and user interface elements are set in *Outfit*.
+Body copy for all long-form content is set in *Source Serif 4*. Headlines and user interface elements are set in *Outfit*.
