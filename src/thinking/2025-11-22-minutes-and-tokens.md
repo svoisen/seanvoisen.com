@@ -4,7 +4,7 @@ description: 'Parallels between the atomization of two scarce "resources," time 
 tags: ["computing", "ai"]
 ---
 
-In [Technology and the Lifeworld](https://bookshop.org/a/106240/9780253205605), philosopher of technology Don Ihde discusses how the invention of the clock radically shifted both humankind’s *perception* of time, as well as what we determine to be most salient in the *measurement* of time. With clocks, rather than “read the heavens” we now read a machine. The invention of the clock redirected our collective focus from the slower, subtly shifting rhythms of nature to the rigid regularity of a mechanical device.
+In [Technology and the Lifeworld](https://bookshop.org/a/106240/9780253205605), philosopher of technology Don Ihde discusses how the invention of the clock radically shifted both humankind’s *perception* of time, as well as what we determined to be most salient in the *measurement* of time. With clocks, rather than “read the heavens” to ascertain the time of day, we now read a machine. The clock thus redirected our collective focus from the slower, subtly shifting rhythms of nature to the rigid regularity of a mechanical device.
 
 Clocks are so ubiquitous in modern life that it’s easy to forget—like any technology—that they have evolved and changed since their original inception. One thing I had never considered before reading Ihde was that the earliest mechanical clocks were one-handed. While dividing the day into twenty-four intervals radically changed things for humanity compared to pre-clock cultures, the introduction of the minute hand further accelerated our collective focus on the now, propelling us closer to what philosopher Byung-Chul Han calls our “temporal crisis.” Ihde writes:
 
