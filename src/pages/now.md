@@ -1,7 +1,6 @@
 ---
 layout: page
 title: Now
-subtitle: What I'm doing now.
 permalink: /now/
 date: git Last Modified
 ---

@@ -1,7 +1,6 @@
 ---
 layout: page
 title: Colophon
-subtitle: How this site is designed and built.
 permalink: /colophon/
 date: git Last Modified
 ---

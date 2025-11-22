@@ -1,7 +1,6 @@
 ---
 layout: "page"
 title: "About"
-subtitle: "A little about Sean Voisen and this site."
 date: git Last Modified
 permalink: "/about/"
 ---
