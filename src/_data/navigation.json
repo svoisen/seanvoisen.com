@@ -30,7 +30,7 @@
         {
             "title": "Directory",
             "url": "/directory/",
-            "description": "A handy dandy sitemap.",
+            "description": "Looking for something? Here’s a handy dandy sitemap.",
             "inNavigation": true,
             "hideOnMobile": false
         },
