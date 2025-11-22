@@ -14,7 +14,7 @@
     {%- for post in collection | reverse | head(10) %}
     {%- set absolutePostUrl %}{{ post.url | htmlBaseUrl(site.base) }}{% endset %}
     {
-      "id": "{{ absolutePostUrl }}",
+      "id": "{{ post | genRSSId(site.base) }}",
       "url": "{{ absolutePostUrl }}",
       "title": "{{ post.data.title }}",
       "content_html": {% if post.content %}{{ post.content | renderTransforms(post.data.page, site.base) | dump | safe }}{% else %}""{% endif %},

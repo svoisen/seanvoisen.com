@@ -57,6 +57,7 @@ export default async function(eleventyConfig) {
   eleventyConfig.addFilter("directoryItems", filters.directoryItems);
   eleventyConfig.addFilter("getDescription", filters.getDescription);
   eleventyConfig.addFilter("stars", filters.stars);
+  eleventyConfig.addFilter("genRSSId", filters.genRSSId);
 
   /*
    * collections

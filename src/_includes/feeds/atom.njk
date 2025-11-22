@@ -15,7 +15,7 @@
     <title>{{ post.data.title }}</title>
     <link href="{{ absolutePostUrl }}" />
     <updated>{{ post.date | dateToRfc3339 }}</updated>
-    <id>{{ absolutePostUrl }}</id>
+    <id>{{ post | genRSSId(site.base) }}</id>
     <content type="html">{{ post.content | renderTransforms(post.data.page, site.base) }}</content>
   </entry>
   {%- endfor %}
