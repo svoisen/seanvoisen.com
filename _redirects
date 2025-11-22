@@ -1,12 +1,12 @@
 # Blog to Writing rename
 /blog/* /writing/:splat 301
-/blog/feed.xml /writing/feed.xml 301
-/blog/feed.json /writing/feed.json 301
+/blog/feed.xml /feed.xml 301
+/blog/feed.json /feed.json 301
 
 # Stream to Thinking rename
 /stream/* /thinking/:splat 301
-/stream/feed.xml /thinking/feed.xml 301
-/stream/feed.json /thinking/feed.json 301
+/stream/feed.xml /feed.xml 301
+/stream/feed.json /feed.json 301
 
 # Oopsies
-/thinking/2026-06-24-dear-ai-help-me-do-less /thinking/2025-06-24-dear-ai-help-me-do-less 301
+/stream/2026-06-24-dear-ai-help-me-do-less /thinking/2025-06-24-dear-ai-help-me-do-less 301
