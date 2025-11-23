@@ -1,5 +1,5 @@
 ---
-title: 'On minutes and tokens'
+title: 'On time and tokens'
 description: 'Parallels between the atomization of two scarce "resources," time and computation.'
 tags: ["computing", "ai"]
 ---
