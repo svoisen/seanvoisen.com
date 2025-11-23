@@ -8,7 +8,7 @@ localCSS: ["home"]
 {% from "macros/postlist.njk" import postList %}
 {% from "macros/featured-posts.njk" import featuredPostList %}
 {% set featuredPosts = collections.writing | filter("data.featured", true) | reverse %}
-{% set latestBlogPosts = collections.writing | reverse | head(10) %}
+{% set latestPosts = collections.unified | reverse | head(10) %}
 
 <section>
     <p class="hero">Sean Voisen is a designer, writer, and software engineer interested in <strong>making computers better for human thinking & creativity.</strong></p>
@@ -23,6 +23,6 @@ localCSS: ["home"]
 {% endif %}
 <section>
     <h2>Recent posts</h2>
-    {{ postList(latestBlogPosts) }}
+    {{ postList(latestPosts, true) }}
     <p><a href="/writing/" class="read-more-link">More posts in the archives</a></p>
 </section>
