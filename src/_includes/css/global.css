@@ -702,11 +702,15 @@ details[open] > summary {
 
 .post-list-item {
     position: relative;
-    display: flex;
-    flex-direction: row;
-    gap: var(--space-m);
+    display: grid;
+    grid-template-columns: 7em 1fr;
     padding: var(--space-s) 0;
+    column-gap: var(--space-m);
     align-items: start;
+}
+
+.post-list-item--with-badges {
+    grid-template-columns: 7em 4.8em 1fr;
 }
 
 .post-list-item:not(:last-child) {
@@ -716,15 +720,10 @@ details[open] > summary {
 .post-list-item-date {
     color: var(--deemphasized-color);
     text-align: right;
-    width: 7em;
-    flex-shrink: 0;
-    order: 1;
 }
 
 .post-list-item-title {
     font-weight: 400;
-    flex: 1;
-    order: 2;
 }
 
 .post-list-item-title::after {
@@ -743,37 +742,45 @@ details[open] > summary {
     padding: 0.125rem 0.375rem;
     border-radius: 0.25rem;
     border: 1px solid var(--border-color);
-    order: 2;
-    flex-shrink: 0;
-    width: 4.8em;
     text-align: center;
     color: var(--deemphasized-color);
 }
 
 @media only screen and (max-width: 567px) {
     .post-list-item {
-        flex-wrap: wrap;
-        gap: 0;
+        grid-template-columns: 1fr;
+        column-gap: var(--space-s);
+    }
+
+    .post-list-item--with-badges {
+        grid-template-columns: 4.8em 1fr;
+        grid-template-rows: auto auto;
     }
 
     .post-list-item-badge {
-        order: 1;
+        grid-column: 1;
+        grid-row: 1;
     }
 
     .post-list-item-title {
-        order: 2;
-        flex: 1;
-        min-width: 0;
-        margin-left: var(--space-s);
+        grid-column: 1;
+        grid-row: 1;
+    }
+
+    .post-list-item--with-badges .post-list-item-title {
+        grid-column: 2;
+        grid-row: 1;
     }
 
     .post-list-item-date {
-        order: 3;
+        grid-column: 1;
+        grid-row: 2;
         text-align: left;
-        width: 100%;
-        flex-basis: 100%;
-        margin-left: calc(4.8em + var(--space-s));
         font-size: var(--font-size--1);
+    }
+
+    .post-list-item--with-badges .post-list-item-date {
+        grid-column: 2;
     }
 }
 

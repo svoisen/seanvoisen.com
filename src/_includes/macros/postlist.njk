@@ -1,7 +1,7 @@
 {% macro postList(items, showBadges = false) %}
 <ul class="post-list">
 {% for item in items %}
-  <li class="post-list-item">
+  <li class="post-list-item{% if showBadges %} post-list-item--with-badges{% endif %}">
     <time class="post-list-item-date" datetime="{{ item.date | w3Date }}">{{ item.date | htmlDate }}</time>
     {% if showBadges %}
       {% if item.url.startsWith('/writing/') %}
