@@ -122,6 +122,11 @@
     /* Border radius */
     --border-radius-sm: 0.25rem;
     --border-radius-md: 0.5rem;
+
+    /* Border and outline */
+    --border-width-default: 2px;
+    --focus-outline: 2px solid var(--link-hover-color);
+    --focus-outline-offset: 2px;
 }
 
 * {
@@ -172,13 +177,16 @@ section {
     }
 }
 
-input[type="text"], input[type="email"], input[type="search"] {
+:is(input[type="text"], input[type="email"], input[type="search"], input[type="submit"], button) {
     font-family: inherit;
     font-size: inherit;
     line-height: inherit;
+}
+
+input[type="text"], input[type="email"], input[type="search"] {
     color: inherit;
     background-color: transparent;
-    border: 2px solid var(--input-border-color);
+    border: var(--border-width-default) solid var(--input-border-color);
     border-radius: var(--border-radius-sm);
     padding: var(--space-2xs) var(--space-2xs);
 
@@ -187,19 +195,16 @@ input[type="text"], input[type="email"], input[type="search"] {
     }
 
     &:focus {
-        outline: 2px solid var(--link-hover-color);
-        outline-offset: 2px;
+        outline: var(--focus-outline);
+        outline-offset: var(--focus-outline-offset);
         background-color: var(--input-focus-background-color);
     }
 }
 
 input[type="submit"], button {
-    font-family: inherit;
-    font-size: inherit;
-    line-height: inherit;
     color: var(--button-foreground-color);
     background-color: var(--button-background-color);
-    border: 2px solid var(--input-border-color);
+    border: var(--border-width-default) solid var(--input-border-color);
     border-radius: var(--border-radius-sm);
     padding: var(--space-2xs) var(--space-xs);
     cursor: pointer;
@@ -210,8 +215,8 @@ input[type="submit"], button {
     }
 
     &:focus {
-        outline: 2px solid var(--link-hover-color);
-        outline-offset: 2px;
+        outline: var(--focus-outline);
+        outline-offset: var(--focus-outline-offset);
     }
 }
 
@@ -250,18 +255,6 @@ a[href*="//"]:not([href^="https://seanvoisen.com"]):not(:has(img)):not(.books-gr
     mask-position: center;
 }
 
-a[href^="http:"]:after {
-    content: "\00A0!" !important;
-    display: inline !important;
-    width: auto !important;
-    height: auto !important;
-    background-color: transparent !important;
-    mask-image: none !important;
-    font-size: 0.75em;
-    vertical-align: super;
-    white-space: nowrap;
-}
-
 a[href$=".pdf"]:after {
     content: "" !important;
     display: inline-block !important;
@@ -296,35 +289,34 @@ p {
     margin: var(--space-m) 0;
 }
 
-h1 {
+:is(h1, h2, h3, h4, h5, h6) {
     font-family: var(--font-family-heading);
+}
+
+:is(h2, h3, h4, h5, h6) {
+    font-weight: var(--heading-font-weight);
+    line-height: var(--heading-line-height);
+}
+
+h1 {
     font-size: var(--font-size-4);
     font-weight: 800;
     line-height: var(--heading-line-height);
 }
 
 h2 {
-    font-family: var(--font-family-heading);
     margin-top: var(--space-2xl);
     font-size: var(--font-size-3);
-    font-weight: var(--heading-font-weight);
-    line-height: var(--heading-line-height);
 }
 
 h3 {
-    font-family: var(--font-family-heading);
     margin-top: var(--space-xl);
     font-size: var(--font-size-2);
-    font-weight: var(--heading-font-weight);
-    line-height: var(--heading-line-height);
 }
 
-h4 { 
-    font-family: var(--font-family-heading);
+h4 {
     margin-top: var(--space-l);
     font-size: var(--font-size-1);
-    font-weight: var(--heading-font-weight);
-    line-height: var(--heading-line-height);
 }
 
 ul, ol {
@@ -416,7 +408,7 @@ details[open] > summary {
         :is(aside) {
             font-family: var(--font-family-ui);
             padding: var(--space-s);
-            border: 2px solid var(--border-color);
+            border: var(--border-width-default) solid var(--border-color);
             color: var(--metadata-foreground-color);
             border-radius: var(--border-radius-sm);
             font-size: var(--font-size-0);
@@ -469,7 +461,6 @@ details[open] > summary {
 .theme-toggle {
     margin-top: -2px;
     margin-left: var(--space-s);
-    align-self: auto;
 }
 
 .theme-toggle__input {
@@ -484,7 +475,7 @@ details[open] > summary {
     display: inline-block;
     width: 40px;
     height: 24px;
-    border: 2px solid var(--theme-toggle-border-color);
+    border: var(--border-width-default) solid var(--theme-toggle-border-color);
     background-color: transparent;
     border-radius: 12px;
     cursor: pointer;
@@ -658,10 +649,11 @@ details[open] > summary {
     margin-bottom: var(--space-2xs);
 }
 
-.post-content {
+.post-content,
+.page-content {
     font-family: var(--font-family-body);
 
-    /* Ensure headings in post content still use heading font */
+    /* Ensure headings in content still use heading font */
     & :is(h1, h2, h3, h4, h5, h6) {
         font-family: var(--font-family-heading);
     }
@@ -681,15 +673,6 @@ details[open] > summary {
 @supports (-moz-appearance: none) {
     .post--writing .post-content > p:first-of-type::first-letter {
         margin-top: 0.08em;
-    }
-}
-
-.page-content {
-    font-family: var(--font-family-body);
-
-    /* Ensure headings in page content still use heading font */
-    & :is(h1, h2, h3, h4, h5, h6) {
-        font-family: var(--font-family-heading);
     }
 }
 
@@ -828,24 +811,23 @@ details[open] > summary {
     display: block;
 }
 
-.float-left {
-    float: left;
+.float-left,
+.float-right {
     margin-top: var(--space-2xs);
-    margin-right: var(--space-m);
     margin-bottom: var(--space-xs);
     max-width: 30% !important;
     min-width: 160px;
     height: auto;
 }
 
+.float-left {
+    float: left;
+    margin-right: var(--space-m);
+}
+
 .float-right {
     float: right;
-    margin-top: var(--space-2xs);
     margin-left: var(--space-m);
-    margin-bottom: var(--space-xs);
-    max-width: 30% !important;
-    min-width: 160px;
-    height: auto;
 }
 
 @media only screen and (max-width: 567px) {
