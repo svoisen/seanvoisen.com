@@ -727,6 +727,14 @@ details[open] > summary {
     border: 1px solid var(--border-color);
     text-align: center;
     color: var(--deemphasized-color);
+    background-color: transparent;
+    transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+.post-list-item:has(.post-list-item-title:hover) .post-list-item-badge,
+.post-list-item:has(.post-list-item-title:focus) .post-list-item-badge {
+    background-color: light-dark(var(--flexoki-50), var(--flexoki-950));
+    color: var(--foreground-color);
 }
 
 @media only screen and (max-width: 767px) {
