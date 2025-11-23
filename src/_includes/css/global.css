@@ -746,7 +746,7 @@ details[open] > summary {
     color: var(--deemphasized-color);
 }
 
-@media only screen and (max-width: 567px) {
+@media only screen and (max-width: 767px) {
     .post-list-item {
         grid-template-columns: 1fr;
         column-gap: var(--space-s);
