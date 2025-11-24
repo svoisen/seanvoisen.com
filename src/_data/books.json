@@ -1,6 +1,17 @@
 {
   "books": [
     {
+      "title": "Phenomenology of Perception",
+      "author": "Maurice Merleau-Ponty",
+      "year": 2025,
+      "rating": 3,
+      "type": "book",
+      "link": "https://bookshop.org/book/9780415834339",
+      "slug": "phenomenology_of_perception",
+      "isbn_13": 9780415834339,
+      "favorite": false
+    },
+    {
       "title": "The Question Concerning Technology",
       "author": "Martin Heidegger",
       "year": 2025,
