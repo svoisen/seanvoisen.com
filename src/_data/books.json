@@ -1,6 +1,17 @@
 {
   "books": [
     {
+      "title": "Technology and the Lifeworld",
+      "author": "Don Ihde",
+      "year": 2025,
+      "rating": 4,
+      "type": "book",
+      "link": "https://bookshop.org/book/9780253205605",
+      "slug": "technology_and_the_lifeworld",
+      "isbn_13": 9780253205605,
+      "favorite": false
+    },
+    {
       "title": "Phenomenology of Perception",
       "author": "Maurice Merleau-Ponty",
       "year": 2025,
