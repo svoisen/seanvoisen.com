@@ -25,11 +25,11 @@ These are some of the first questions I want to explore in this series on [Philo
 
 ## Introducing phenomenology
 
-Phenomenology, as the name implies, is simply the study of "phenomena"—that is, how things appear to us in consciousness. Phenomenology is the school of philosophy concerned with studying and understanding subjective, conscious experience. For designers interested in how philosophy can be practically applied to craft, I feel this is a great place to start.
-
 <a href="https://bookshop.org/a/106240/9780521667920">
 <img class="float-left" src="/assets/images/book_covers/sokolowski_intro_to_phenomenology@320.webp" alt="Cover of Introduction to Phenomenology by Robert Sokolowski."/>
 </a>
+
+Phenomenology, as the name implies, is simply the study of "phenomena"—that is, how things appear to us in consciousness. Phenomenology is the school of philosophy concerned with studying and understanding subjective, conscious experience. For designers interested in how philosophy can be practically applied to craft, I feel this is a great place to start.
 
 While none of the essays in this Philosophy for Designers series will presuppose that you have read—or are currently reading—*any* of the books in [my reading list](/notes/philosophy-for-designers/), if you're following along, for this first set of essays I am primarily drawing from my reading of Robert Sokolowski's [Introduction to Phenomenology](https://bookshop.org/a/106240/9780521667920).
 
