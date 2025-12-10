@@ -693,7 +693,7 @@ details[open] > summary {
 }
 
 .post-list-item--with-badges {
-    grid-template-columns: 7em 4.8em 1fr;
+    grid-template-columns: 7em 4.25em 1fr;
 }
 
 .post-list-item:not(:last-child) {
@@ -744,7 +744,7 @@ details[open] > summary {
     }
 
     .post-list-item--with-badges {
-        grid-template-columns: 4.8em 1fr;
+        grid-template-columns: 4.25em 1fr;
         grid-template-rows: auto auto;
     }
 
