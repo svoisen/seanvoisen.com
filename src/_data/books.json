@@ -1,6 +1,17 @@
 {
   "books": [
     {
+      "title": "Merleau-Ponty",
+      "author": "Taylor Carman",
+      "year": 2025,
+      "rating": 3,
+      "type": "book",
+      "link": "https://bookshop.org/book/9781138689619",
+      "slug": "merleau_ponty",
+      "isbn_13": 9781138689619,
+      "favorite": false
+    },
+    {
       "title": "Technology and the Lifeworld",
       "author": "Don Ihde",
       "year": 2025,

@@ -7,10 +7,10 @@
         <div class="books-grid-metadata">
             <a class="books-grid-title" href="{{ book.link }}">{{ book.title }}</a>
             <span class="books-grid-author">by {{ book.author }}</span>
-            <span class="books-grid-rating">
+            {# <span class="books-grid-rating">
                 <span class="visual-hidden">{{ book.rating }}/5.0 stars</span>
                 <span class="stars" aria-hidden="true">{{ book.rating | stars }}</span>
-            </span>
+            </span> #}
         </div>
 {% endfor %}
 </ul>

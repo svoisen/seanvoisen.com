@@ -14,7 +14,7 @@
     position: relative;
     display: grid;
     list-style: none;
-    grid-template-rows: auto 5em;
+    grid-template-rows: auto 4.8em;
 }
 
 .books-grid-cover {
