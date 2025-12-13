@@ -1,6 +1,17 @@
 {
   "books": [
     {
+      "title": "The City & The City",
+      "author": "China Miéville",
+      "year": 2025,
+      "rating": 4,
+      "type": "book",
+      "link": "https://bookshop.org/book/9780345497529",
+      "slug": "the_city_the_city",
+      "isbn_13": 9780345497529,
+      "favorite": false
+    },
+    {
       "title": "Merleau-Ponty",
       "author": "Taylor Carman",
       "year": 2025,
