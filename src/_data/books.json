@@ -1,6 +1,17 @@
 {
   "books": [
     {
+      "title": "We Computers",
+      "author": "Hamid Ismailov",
+      "year": 2025,
+      "rating": 5,
+      "type": "book",
+      "link": "https://bookshop.org/book/9780300272741",
+      "slug": "we_computers",
+      "isbn_13": 9780300272741,
+      "favorite": false
+    },
+    {
       "title": "The City & The City",
       "author": "China Miéville",
       "year": 2025,
