@@ -1,6 +1,72 @@
 {
   "books": [
     {
+      "title": "Radical Candor",
+      "author": "Kim Scott",
+      "year": 2020,
+      "rating": 3,
+      "type": "book",
+      "link": "https://bookshop.org/book/9781250235374",
+      "slug": "radical_candor",
+      "isbn_13": 9781250235374,
+      "favorite": false
+    },
+    {
+      "title": "Dark Matters",
+      "author": "Simone Browne",
+      "year": 2020,
+      "rating": 3,
+      "type": "book",
+      "link": "https://bookshop.org/book/9780822359388",
+      "slug": "dark_matters",
+      "isbn_13": 9780822359388,
+      "favorite": false
+    },
+    {
+      "title": "Between the World and Me",
+      "author": "Ta-Nehisi Coates",
+      "year": 2020,
+      "rating": 4,
+      "type": "book",
+      "link": "https://bookshop.org/book/9780812983814",
+      "slug": "between_the_world_and_me",
+      "isbn_13": 9780812983814,
+      "favorite": false
+    },
+    {
+      "title": "The Known Citizen",
+      "author": "Sarah E. Igo",
+      "year": 2020,
+      "rating": 3,
+      "type": "book",
+      "link": "https://bookshop.org/book/9780674244795",
+      "slug": "the_known_citizen",
+      "isbn_13": 9780674244795,
+      "favorite": false
+    },
+    {
+      "title": "Digital Minimalism",
+      "author": "Cal Newport",
+      "year": 2020,
+      "rating": 3,
+      "type": "book",
+      "link": "https://bookshop.org/book/9780525536512",
+      "slug": "digital_minimalism",
+      "isbn_13": 9780525536512,
+      "favorite": false
+    },
+    {
+      "title": "Value Sensitive Design",
+      "author": "Batya Friedman, David G. Hendry",
+      "year": 2020,
+      "rating": 3,
+      "type": "book",
+      "link": "https://bookshop.org/book/9780262039536",
+      "slug": "value_sensitive_design",
+      "isbn_13": 9780262039536,
+      "favorite": false
+    },
+    {
       "title": "We Computers",
       "author": "Hamid Ismailov",
       "year": 2025,
