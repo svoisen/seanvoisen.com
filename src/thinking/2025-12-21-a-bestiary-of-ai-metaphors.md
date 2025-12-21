@@ -4,7 +4,7 @@ description: 'Ruminations on the many metaphors used for LLMs, and bit about Bor
 tags: ["ai"]
 ---
 
-Lately, I've been thinking about the rich collection of metaphors we use as shorthand for describing and understanding large language models (LLMs). Has any technology in the history of humankind amassed such a rich and diverse collection in such a short amount of time? 
+Lately, I've been thinking about the many metaphors we use as shorthand for describing and understanding large language models (LLMs). Has any technology in the history of humankind amassed such a rich and diverse collection in such a short amount of time? 
 
 Let's quickly go through the list:
 
@@ -35,7 +35,7 @@ Metaphors are thus cognitive shorthand, offering specific affordances for reason
 
 ---
 
-Recently, I've been re-reading Borges. It has reminded me that some of our best metaphors for technology come from literature. Borges' [Garden of Forking Paths](https://live-cdn-www.nypl.org/s3fs-public/jorge_luis_borges_the_garden_of_forking_paths.pdf), for instance, has long served as a muse for media scholars and technologists, in many ways anticipating the invention of hypertext long before it was invented.
+Recently, I've been re-reading Borges. It has reminded me that some of our best metaphors for technology come from fiction. Borges' [Garden of Forking Paths](https://live-cdn-www.nypl.org/s3fs-public/jorge_luis_borges_the_garden_of_forking_paths.pdf), for instance, has long served as a muse for media scholars and technologists, in many ways anticipating the invention of hypertext long before it was invented.
 
 If you're unfamiliar with the story, here's a quick synopsis: Yu Tsun, a Chinese spy working for German forces during World War I, discovers that British intelligence has discovered his whereabouts. Fleeing for his life, Tsun seeks safety with a man named Stephen Albert, a sinologist who, as it happens, is studying the work of Tsun's ancestor, a provincial Chinese governor named Ts'ui Pên. As the narrative unfolds, we learn that, towards the end of his life, Pên retired from his work in government to undertake a rather enigmatic quest: to write "a novel that would be even more populous than the _[Hung Lu Meng](https://en.wikipedia.org/wiki/Dream_of_the_Red_Chamber "Dream of the Red Chamber")_", and construct "a labyrinth in which all men would become lost."
 
