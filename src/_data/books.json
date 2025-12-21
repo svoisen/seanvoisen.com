@@ -961,6 +961,127 @@
       "open_library": "OL29752648M",
       "slug": "embodied_mind",
       "favorite": true
+    },
+    {
+      "title": "The Loneliest Americans",
+      "author": "Jay Caspian Kang",
+      "year": 2021,
+      "rating": 0,
+      "type": "book",
+      "link": "https://bookshop.org/a/106240/9780525576228",
+      "slug": "the_loneliest_americans",
+      "isbn_13": 9780525576228,
+      "favorite": false
+    },
+    {
+      "title": "Working in Public",
+      "author": "Nadia Eghbal",
+      "year": 2021,
+      "rating": 0,
+      "type": "book",
+      "link": "https://bookshop.org/a/106240/9780578675862",
+      "slug": "working_in_public",
+      "isbn_13": 9780578675862,
+      "favorite": false
+    },
+    {
+      "title": "Platform Ecosystems",
+      "author": "Amrit Tiwana",
+      "year": 2021,
+      "rating": 0,
+      "type": "book",
+      "link": "https://bookshop.org/a/106240/9780124080669",
+      "slug": "platform_ecosystems",
+      "isbn_13": 9780124080669,
+      "favorite": false
+    },
+    {
+      "title": "The Nature of Technology",
+      "author": "W. Brian Arthur",
+      "year": 2021,
+      "rating": 0,
+      "type": "book",
+      "link": "https://bookshop.org/a/106240/9781416544067",
+      "slug": "the_nature_of_technology",
+      "isbn_13": 9781416544067,
+      "favorite": false
+    },
+    {
+      "title": "The Reflective Practitioner",
+      "author": "Donald A. Schön",
+      "year": 2021,
+      "rating": 0,
+      "type": "book",
+      "link": "https://bookshop.org/a/106240/9780465068746",
+      "slug": "the_reflective_practitioner",
+      "isbn_13": 9780465068746,
+      "favorite": false
+    },
+    {
+      "title": "Evocative Objects",
+      "author": "Sherry Turkle",
+      "year": 2021,
+      "rating": 0,
+      "type": "book",
+      "link": "https://bookshop.org/a/106240/9780262516778",
+      "slug": "evocative_objects",
+      "isbn_13": 9780262516778,
+      "favorite": false
+    },
+    {
+      "title": "What Technology Wants",
+      "author": "Kevin Kelly",
+      "year": 2021,
+      "rating": 0,
+      "type": "book",
+      "link": "https://bookshop.org/a/106240/9780143120179",
+      "slug": "what_technology_wants",
+      "isbn_13": 9780143120179,
+      "favorite": false
+    },
+    {
+      "title": "Weaving the Web",
+      "author": "Tim Berners-Lee",
+      "year": 2021,
+      "rating": 0,
+      "type": "book",
+      "link": "https://bookshop.org/a/106240/9780062515865",
+      "slug": "weaving_the_web",
+      "isbn_13": 9780062515865,
+      "favorite": false
+    },
+    {
+      "title": "How To Take Smart Notes",
+      "author": "Sönke Ahrens",
+      "year": 2021,
+      "rating": 0,
+      "type": "book",
+      "link": "https://bookshop.org/a/106240/9781542866507",
+      "slug": "how_to_take_smart_notes",
+      "isbn_13": 9781542866507,
+      "favorite": false
+    },
+    {
+      "title": "Permutation City",
+      "author": "Greg Egan",
+      "year": 2021,
+      "rating": 0,
+      "type": "book",
+      "link": "https://bookshop.org/a/106240/9781597805391",
+      "slug": "permutation_city",
+      "isbn_13": 9781597805391,
+      "favorite": false
+    },
+    {
+      "title": "Red Mars",
+      "author": "Kim Stanley Robinson",
+      "year": 2021,
+      "rating": 0,
+      "type": "book",
+      "link": "https://bookshop.org/a/106240/9780553560732",
+      "slug": "red_mars",
+      "isbn_13": 9780553560732,
+      "favorite": false
     }
   ]
 }
