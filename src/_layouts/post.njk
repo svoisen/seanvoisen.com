@@ -10,7 +10,10 @@ layout: base
     {%- set typelink = "/thinking/" %}
 {%- endif %}
 
-<article class="post post--{{ type | lower }}">
+{# Default dropCap to true if not specified #}
+{%- set hasDropCap = dropCap if dropCap !== undefined else true %}
+
+<article class="post post--{{ type | lower }}{% if not hasDropCap %} post--no-dropcap{% endif %}">
     <header class="post-header">
         <h1 class="post-title">{{ title }}</h1>
         <div class="post-metadata">

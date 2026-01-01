@@ -659,7 +659,7 @@ details[open] > summary {
     }
 }
 
-.post--writing .post-content > p:first-of-type::first-letter {
+.post--writing:not(.post--no-dropcap) .post-content > p:first-of-type::first-letter {
     float: left;
     font-size: 5.35em;
     line-height: 0.85;
@@ -671,7 +671,7 @@ details[open] > summary {
 
 /* Firefox-specific fix for drop cap positioning */
 @supports (-moz-appearance: none) {
-    .post--writing .post-content > p:first-of-type::first-letter {
+    .post--writing:not(.post--no-dropcap) .post-content > p:first-of-type::first-letter {
         margin-top: 0.08em;
     }
 }
