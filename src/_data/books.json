@@ -1,6 +1,17 @@
 {
   "books": [
     {
+      "title": "The Complete Cosmicomics",
+      "author": "Italo Calvino",
+      "year": 2026,
+      "rating": 4,
+      "type": "book",
+      "link": "https://bookshop.org/book/9780544577879",
+      "slug": "cosmicomics",
+      "isbn_13": 9780544577879,
+      "favorite": false
+    },
+    {
       "title": "Klara and the Sun",
       "author": "Kazuo Ishiguro",
       "year": 2026,
