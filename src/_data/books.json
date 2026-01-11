@@ -1,6 +1,28 @@
 {
   "books": [
     {
+      "title": "Klara and the Sun",
+      "author": "Kazuo Ishiguro",
+      "year": 2026,
+      "rating": 4,
+      "type": "book",
+      "link": "https://bookshop.org/book/9780593311295",
+      "slug": "klara_and_the_sun",
+      "isbn_13": 9780593311295,
+      "favorite": false
+    },
+    {
+      "title": "Ficciones",
+      "author": "Jorge Luis Borges",
+      "year": 2025,
+      "rating": 5,
+      "type": "book",
+      "link": "https://bookshop.org/book/9780802130303",
+      "slug": "ficciones",
+      "isbn_13": 9780802130303,
+      "favorite": false
+    },
+    {
       "title": "Radical Candor",
       "author": "Kim Scott",
       "year": 2020,
