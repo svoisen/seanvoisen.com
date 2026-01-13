@@ -2,6 +2,7 @@
 title: "Cosmotechnics and AI: Reading Hamid Ismailov's We Computers"
 description: A novel about a computer that writes poetry offers a glimpse into new ways to think about relationships with AI.
 tags: ["philosophy", "ai"]
+image: "/assets/images/og/we_computers@1200x630.jpg"
 ---
 
 For decades after [Racter](https://en.wikipedia.org/wiki/Racter) first composed [The Policeman's Beard is Half-Constructed](https://archive.org/details/policemansbeardi0000unse) (and likely for decades before that), the creation of machines that compose poetry has served as a quixotic pursuit for a small subset of artist-computer scientists enthralled with the challenges of computational linguistics.
