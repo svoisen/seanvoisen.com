@@ -1,6 +1,6 @@
 ---
 title: "Cosmotechnics and AI: Reading Hamid Ismailov's We Computers"
-description: A novel about AI that composes Persian poetry might offer a glimpse into new ways to think about our own relationship with AI.
+description: A novel about a computer that writes poetry offers a glimpse into new ways to think about relationships with AI.
 tags: ["philosophy", "ai"]
 ---
 
