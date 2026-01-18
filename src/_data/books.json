@@ -1,6 +1,17 @@
 {
   "books": [
     {
+      "title": "Invisible Cities",
+      "author": "Italo Calvino",
+      "year": 2026,
+      "rating": 4,
+      "type": "book",
+      "link": "https://bookshop.org/book/9780156453806",
+      "slug": "invisible_cities",
+      "isbn_13": 9780156453806,
+      "favorite": false
+    },
+    {
       "title": "The Complete Cosmicomics",
       "author": "Italo Calvino",
       "year": 2026,
