@@ -1,0 +1,19 @@
+---
+layout: base
+---
+
+{# Default dropCap to true if not specified #}
+{%- set hasDropCap = dropCap if dropCap !== undefined else true %}
+
+<article class="post post--moonpointing{% if not hasDropCap %} post--no-dropcap{% endif %}">
+    <header class="post-header">
+        <h1 class="post-title">{{ title }}</h1>
+        <div class="post-metadata">
+            <span class="post-metadata-label">From:</span> Sean Voisen<br />
+            <span class="post-metadata-label">Sent:</span> <time class="post-timestamp" datetime="{{ page.date | w3Date }}">{{ page.date | htmlDate }}</time>
+        </div>
+    </header>
+    <div class="post-content">
+        {{ content | safe }}
+    </div>
+</article>

@@ -68,6 +68,7 @@ export default async function(eleventyConfig) {
   eleventyConfig.addCollection("sitemap", collections.sitemap);
   eleventyConfig.addCollection("notes", collections.notes);
   eleventyConfig.addCollection("unified", collections.unified);
+  eleventyConfig.addCollection("moonpointing", collections.moonpointing);
 
   /*
    * layout aliases

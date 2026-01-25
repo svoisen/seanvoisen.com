@@ -113,6 +113,7 @@
     --heading-font-weight: 700;
     --line-height: 1.6;
     --heading-line-height: 1.2;
+    --metadata-line-height: 1.4;
     --width: 40em;
 
     /* Icons */
@@ -606,6 +607,11 @@ details[open] > summary {
     font-size: var(--font-size-1);
     color: var(--deemphasized-color);
     margin: 0 0 var(--space-xl) 0;
+    line-height: var(--metadata-line-height);
+}
+
+.post-metadata-label {
+    font-weight: 700;
 }
 
 .page-metadata {
@@ -875,5 +881,13 @@ details[open] > summary {
         margin-right: 0;
         padding-left: var(--space-m);
         padding-right: var(--space-m);
+    }
+
+    .post-content figure.narrow, .page-content figure.narrow {
+        width: 100%;
+        left: 0;
+        transform: none;
+        padding-left: 0;
+        padding-right: 0;
     }
 }

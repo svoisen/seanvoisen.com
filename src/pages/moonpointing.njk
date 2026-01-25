@@ -1,0 +1,12 @@
+---
+layout: page
+title: "Moonpointing"
+permalink: "/moonpointing/"
+showMetadata: false
+---
+
+{% from "macros/postlist.njk" import postList %}
+{% set moonpointing = collections.moonpointing | reverse %}
+{% set description = navigation.items | getDescription(permalink) %}
+
+{{ postList(moonpointing) }}

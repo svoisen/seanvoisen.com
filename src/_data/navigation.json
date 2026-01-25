@@ -21,6 +21,12 @@
             "hideOnMobile": true
         },
         {
+            "title": "Moonpointing",
+            "url": "/moonpointing/",
+            "description": "My wide-ranging monthly newsletter on reading, writing, philosophy, technology & other things.",
+            "inNavigation": false
+        },
+        {
             "title": "About",
             "url": "/about/",
             "description": "About Sean Voisen and this site.",

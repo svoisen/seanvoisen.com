@@ -22,6 +22,7 @@
         "@11ty/eleventy-plugin-syntaxhighlight": "^5.0.2",
         "@photogabble/eleventy-plugin-word-stats": "^1.0.1",
         "autoprefixer": "^10.4.22",
+        "baseline-browser-mapping": "^2.9.17",
         "cross-env": "^7.0.3",
         "cssnano": "^7.1.2",
         "luxon": "^3.7.2",
