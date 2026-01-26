@@ -340,6 +340,7 @@ figcaption {
 }
 
 blockquote {
+    margin-top: var(--space-m);
     color: var(--deemphasized-color);
     border-left: 8px solid var(--blockquote-border-color);
     padding-left: var(--space-s);
