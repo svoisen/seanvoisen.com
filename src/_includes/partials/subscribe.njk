@@ -1,6 +1,6 @@
 <div class="subscribe">
-    <h2>Liked this post?</h2>
-    <p><strong>You might also enjoy my newsletter!</strong> <em>Moonpointing</em> is my wide-ranging monthly newsletter about reading, writing, philosophy & technology. A bit more casual than my blog, it always sounds like a letter from a friend.</p>
+    <h2>{{ subscribeHeader | default("Liked this post?") }}</h2>
+    <p>{{ subscribeText | default("<strong>You might also enjoy my newsletter!</strong> <em>Moonpointing</em> is my wide-ranging monthly newsletter about <strong>philosophy, technology, reading & other things.</strong> A bit more casual than my blog, it always sounds like a letter from a friend.") | safe }}</p>
     <form
     action="https://buttondown.com/api/emails/embed-subscribe/seanvoisen"
     method="post"

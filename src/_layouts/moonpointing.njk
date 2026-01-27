@@ -17,3 +17,7 @@ layout: base
         {{ content | safe }}
     </div>
 </article>
+
+{%- set subscribeHeader = "Not a subscriber?" %}
+{%- set subscribeText = "Subscribe below. <em>Moonpointing</em> is my wide-ranging monthly newsletter about <strong>philosophy, technology, reading & other things.</strong>" %}
+{%- include "partials/subscribe.njk" %}
