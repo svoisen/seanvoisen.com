@@ -13,6 +13,10 @@
 
         <link rel="me" href="https://front-end.social/@svoisen">
 
+        {%- if page.url.startsWith("/moonpointing/") %}
+        <link rel="alternate" href="/moonpointing/feed.xml" type="application/atom+xml" title="Moonpointing Atom Feed">
+        <link rel="alternate" href="/moonpointing/feed.json" type="application/json" title="Moonpointing JSON Feed">
+        {%- endif %}
         <link rel="alternate" href="/feed.xml" type="application/atom+xml" title="Atom Feed">
         <link rel="alternate" href="/feed.json" type="application/json" title="JSON Feed">
 
