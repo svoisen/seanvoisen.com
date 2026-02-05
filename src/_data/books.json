@@ -1,6 +1,17 @@
 {
   "books": [
     {
+      "title": "The Long Way to a Small, Angry Planet",
+      "author": "Becky Chambers",
+      "year": 2026,
+      "rating": 4,
+      "type": "book",
+      "link": "https://bookshop.org/book/9780062444134",
+      "slug": "the_long_way_to_a_small_angry_planet",
+      "isbn_13": 9780062444134,
+      "favorite": false
+    },
+    {
       "title": "Invisible Cities",
       "author": "Italo Calvino",
       "year": 2026,
