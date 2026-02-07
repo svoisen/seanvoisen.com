@@ -1,6 +1,17 @@
 {
   "books": [
     {
+      "title": "A Closed and Common Orbit",
+      "author": "Becky Chambers",
+      "year": 2026,
+      "rating": 4,
+      "type": "book",
+      "link": "https://bookshop.org/book/9780062569400",
+      "slug": "a_closed_and_common_orbit",
+      "isbn_13": 9780062569400,
+      "favorite": false
+    },
+    {
       "title": "The Long Way to a Small, Angry Planet",
       "author": "Becky Chambers",
       "year": 2026,
@@ -9,6 +20,17 @@
       "link": "https://bookshop.org/book/9780062444134",
       "slug": "the_long_way_to_a_small_angry_planet",
       "isbn_13": 9780062444134,
+      "favorite": false
+    },
+    {
+      "title": "If on a winter's night a traveler",
+      "author": "Italo Calvino",
+      "year": 2026,
+      "rating": 5,
+      "type": "book",
+      "link": "https://bookshop.org/book/9780156439619",
+      "slug": "if_on_a_winters_night",
+      "isbn_13": 9780156439619,
       "favorite": false
     },
     {
