@@ -1,6 +1,6 @@
 ---
 title: 'Eighty eight keys and a blinking cursor'
-description: 'What pianos, Photoshop and conversational AI have in common.'
+description: 'What pianos, Photoshop and chat bots have in common.'
 tags: ["ai"]
 ---
 
