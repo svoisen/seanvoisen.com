@@ -14,7 +14,8 @@
       "Bash(for file in 2025-11-14-not-a-hobby.md 2025-10-13-design-for-lingering.md 2025-10-02-cezannes-doubts.md 2025-09-20-parts-wholes-moments-oh-my.md 2025-09-13-phenomenology-and-the-impossibility-of-experience-design.md 2024-04-04-design-engineering-working-definition.md 2025-08-31-recently-2-august-2025.md 2025-07-06-habit-experiment-1-analog-evenings.md 2025-08-28-introducing-philosophy-for-designers.md 2025-08-20-habit-experiment-2-self-directed-study.md 2025-07-27-recently-1-july-2025.md 2025-04-29-vibe-coding-more-design-engineers.md 2025-03-01-programming-is-a-feeling-ai-is-changing-it.md 2025-01-02-2024-year-in-review.md 2024-04-14-design-engineering-resources.md 2024-12-13-hybrid-tools.md 2023-01-15-promises-perils-ai-ghostwriters.md 2018-09-01-on-joining-mozilla.md)",
       "Bash(do sed -i '' 's|/blog/|/writing/|g' \"$file\")",
       "Bash(done)",
-      "Bash(find:*)"
+      "Bash(find:*)",
+      "Bash(sips:*)"
     ],
     "deny": [],
     "ask": []
