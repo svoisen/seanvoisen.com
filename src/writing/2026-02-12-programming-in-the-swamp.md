@@ -1,6 +1,6 @@
 ---
 title: Programming in the swamp
-description: 'Umwelts, oozification and the changing phenomenology of programming at the "hands" of AI.'
+description: 'Umwelts, oozification and the changing experience of programming at the "hands" of AI.'
 tags: ["ai", "programming"]
 image: "/assets/images/og/anna_unsplash@1200x630.jpg"
 ---
