@@ -1,6 +1,17 @@
 {
   "books": [
     {
+      "title": "Language Machines",
+      "author": "Leif Weatherby",
+      "year": 2026,
+      "rating": 4,
+      "type": "book",
+      "link": "https://bookshop.org/book/9781517919320",
+      "slug": "language_machines",
+      "isbn_13": 9781517919320,
+      "favorite": true
+    },
+    {
       "title": "A Closed and Common Orbit",
       "author": "Becky Chambers",
       "year": 2026,
