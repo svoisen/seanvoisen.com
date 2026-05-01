@@ -1,6 +1,28 @@
 {
   "books": [
     {
+      "title": "The Score",
+      "author": "C. Thi Nguyen",
+      "year": 2026,
+      "rating": 3.5,
+      "type": "book",
+      "link": "https://bookshop.org/book/9780593655658",
+      "slug": "the_score",
+      "isbn_13": 9780593655658,
+      "favorite": false
+    },
+    {
+      "title": "Rise of the Machines: A Cybernetic History",
+      "author": "Thomas Rid",
+      "year": 2026,
+      "rating": 3,
+      "type": "book",
+      "link": "https://bookshop.org/book/9780393354959",
+      "slug": "rise_of_the_machines_a_cybernetic_history",
+      "isbn_13": 9780393354959,
+      "favorite": false
+    },
+    {
       "title": "Language Machines",
       "author": "Leif Weatherby",
       "year": 2026,
