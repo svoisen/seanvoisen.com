@@ -14,7 +14,7 @@ If you're an ambitious maker with well-honed software engineering skills and int
 
 ---
 
-I'm not the only one to notice the bill coming coming due. I suspect there are many more out there [amassing lists of genuinely impressive things built with AI and then abandoned](https://thoughts.hmmz.org/2026-05-31.html); almost none of them useful, none of them maintained. Those of us on side-project frenzies are rapidly discovering that attention is *not* just all you need; it is all you *have.* It's both one thing AI can't generate for us, and one thing it is most eager to spend on our behalf.
+I'm not the only one to notice the bill coming coming due. I suspect there are many more out there [amassing lists of genuinely impressive things built with AI and then abandoned](https://thoughts.hmmz.org/2026-05-31.html); almost none of them useful, none of them maintained. Those of us on side-project frenzies are rapidly discovering that attention is not just all you need; it is all you *have.* It's both one thing AI can't generate for us, and one thing it is most eager to spend on our behalf.
 
 On evenings when I had the opportunity to choose between spending a precious few hours making software, or devote that same time to the much slower, harder work of thinking and writing, I always chose building. This was a mistake. I can feel the atrophy of my (already weak) writing muscles as I type these very words. Everything is coming out slower, more stilted. And if my writing has declined, so too has my thinking. I need to write to think.
 
