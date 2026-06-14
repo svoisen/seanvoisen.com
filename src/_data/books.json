@@ -1,6 +1,28 @@
 {
   "books": [
     {
+      "title": "The Dispossessed",
+      "author": "Ursula K. Le Guin",
+      "year": 2026,
+      "rating": 5,
+      "type": "book",
+      "link": "https://bookshop.org/book/9780063382930",
+      "slug": "the_dispossessed",
+      "isbn_13": 9780063382930,
+      "favorite": true
+    },
+    {
+      "title": "Embassytown",
+      "author": "China Miéville",
+      "year": 2026,
+      "rating": 4.5,
+      "type": "book",
+      "link": "https://bookshop.org/book/9780345524508",
+      "slug": "embassytown",
+      "isbn_13": 9780345524508,
+      "favorite": false
+    },
+    {
       "title": "The Score",
       "author": "C. Thi Nguyen",
       "year": 2026,
