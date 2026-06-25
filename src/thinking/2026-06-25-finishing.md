@@ -1,6 +1,6 @@
 ---
 title: 'Finishing'
-description: 'On perserverance and care as anti-slop.'
+description: 'On perseverance and care as anti-slop.'
 tags: ["creativity", "productivity"]
 ---
 
