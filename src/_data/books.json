@@ -1,6 +1,28 @@
 {
   "books": [
     {
+      "title": "Philosophy of Walking",
+      "author": "Frédéric Gros, John Howe",
+      "year": 2026,
+      "rating": 3,
+      "type": "book",
+      "link": "https://bookshop.org/book/9781804290446",
+      "slug": "philosophy_of_walking",
+      "isbn_13": 9781804290446,
+      "favorite": false
+    },
+    {
+      "title": "On the Calculation of Volume (Book I)",
+      "author": "Solvej Balle",
+      "year": 2026,
+      "rating": 4,
+      "type": "book",
+      "link": "https://bookshop.org/book/9780811237253",
+      "slug": "on_the_calculation_of_volume_book_i",
+      "isbn_13": 9780811237253,
+      "favorite": false
+    },
+    {
       "title": "The Dispossessed",
       "author": "Ursula K. Le Guin",
       "year": 2026,
