@@ -10,9 +10,17 @@ import sharp from 'sharp';
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 
+// Load .env if present; unkeyed requests get rate-limited aggressively
+try {
+    process.loadEnvFile(path.join(__dirname, '../.env'));
+} catch {
+    // No .env file — fall back to whatever is already in the environment
+}
+
 const BOOKS_JSON_PATH = path.join(__dirname, '../src/_data/books.json');
 const BOOK_COVERS_DIR = path.join(__dirname, '../src/assets/images/book_covers');
 const GOOGLE_BOOKS_API = 'https://www.googleapis.com/books/v1/volumes';
+const GOOGLE_BOOKS_API_KEY = process.env.GOOGLE_BOOKS_API_KEY;
 
 /**
  * Generate a URL-friendly slug from a title
@@ -155,7 +163,12 @@ async function fetchBookDataOpenLibrary(isbn) {
  * Fetch book data from Google Books API
  */
 async function fetchBookData(isbn) {
-    const url = `${GOOGLE_BOOKS_API}?q=isbn:${isbn}`;
+    let url = `${GOOGLE_BOOKS_API}?q=isbn:${isbn}`;
+    if (GOOGLE_BOOKS_API_KEY) {
+        url += `&key=${encodeURIComponent(GOOGLE_BOOKS_API_KEY)}`;
+    } else {
+        console.log('  No GOOGLE_BOOKS_API_KEY set — requests are rate-limited by IP');
+    }
 
     try {
         const response = await fetchWithRetry(url);
