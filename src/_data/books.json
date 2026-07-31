@@ -1,6 +1,39 @@
 {
   "books": [
     {
+      "title": "Travels with Epicurus",
+      "author": "Daniel Klein",
+      "year": 2026,
+      "rating": 3.5,
+      "type": "book",
+      "link": "https://bookshop.org/book/9780143126621",
+      "slug": "travels_with_epicurus",
+      "isbn_13": 9780143126621,
+      "favorite": false
+    },
+    {
+      "title": "The Socrates Express",
+      "author": "Eric Weiner",
+      "year": 2026,
+      "rating": 4.5,
+      "type": "book",
+      "link": "https://bookshop.org/book/9781501129025",
+      "slug": "the_socrates_express",
+      "isbn_13": 9781501129025,
+      "favorite": false
+    },
+    {
+      "title": "The Order of Time",
+      "author": "Carlo Rovelli",
+      "year": 2026,
+      "rating": 4,
+      "type": "book",
+      "link": "https://bookshop.org/book/9780735216112",
+      "slug": "the_order_of_time",
+      "isbn_13": 9780735216112,
+      "favorite": false
+    },
+    {
       "title": "Philosophy of Walking",
       "author": "Frédéric Gros, John Howe",
       "year": 2026,
