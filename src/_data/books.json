@@ -1,6 +1,28 @@
 {
   "books": [
     {
+      "title": "Walden",
+      "author": "Henry David Thoreau",
+      "year": 2026,
+      "rating": 5,
+      "type": "book",
+      "link": "https://bookshop.org/book/9780300104660",
+      "slug": "walden",
+      "isbn_13": 9780300104660,
+      "favorite": true
+    },
+    {
+      "title": "The Trial and Death of Socrates",
+      "author": "Plato",
+      "year": 2026,
+      "rating": 4,
+      "type": "book",
+      "link": "https://bookshop.org/book/9780872205543",
+      "slug": "the_trial_and_death_of_socrates_third_edition",
+      "isbn_13": 9780872205543,
+      "favorite": false
+    },
+    {
       "title": "Travels with Epicurus",
       "author": "Daniel Klein",
       "year": 2026,
