@@ -15,3 +15,10 @@
 /thinking/feed.xml /feed.xml 301
 /thinking/feed.json /feed.json 301
 /stream/* /thinking/:splat 301
+
+# Moonpointing moved to its own domain
+/moonpointing/feed.xml https://moonpointing.org/feed.xml 301
+/moonpointing/feed.json https://moonpointing.org/feed.json 301
+/moonpointing https://moonpointing.org/newsletter/ 301
+/moonpointing/* https://moonpointing.org/newsletter/:splat 301
+/topics/newsletter/ https://moonpointing.org/newsletter/ 301
