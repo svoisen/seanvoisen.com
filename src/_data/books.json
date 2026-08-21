@@ -1,6 +1,17 @@
 {
   "books": [
     {
+      "title": "How to Live",
+      "author": "Sarah Bakewell",
+      "year": 2026,
+      "rating": 5,
+      "type": "book",
+      "link": "https://bookshop.org/book/9781590514832",
+      "slug": "how_to_live",
+      "isbn_13": 9781590514832,
+      "favorite": true
+    },
+    {
       "title": "Walden",
       "author": "Henry David Thoreau",
       "year": 2026,
