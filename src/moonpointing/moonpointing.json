@@ -1,4 +1,0 @@
-{
-    "layout": "moonpointing",
-    "permalink": "/{{ page.filePathStem }}/index.html"
-}
