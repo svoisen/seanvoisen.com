@@ -15,7 +15,9 @@
       "Bash(do sed -i '' 's|/blog/|/writing/|g' \"$file\")",
       "Bash(done)",
       "Bash(find:*)",
-      "Bash(sips:*)"
+      "Bash(sips:*)",
+      "Bash(magick identify:*)",
+      "Bash(magick:*)"
     ],
     "deny": [],
     "ask": []
