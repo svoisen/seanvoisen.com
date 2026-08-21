@@ -557,20 +557,6 @@ details[open] > summary {
     }
 }
 
-.subscribe {
-    margin-top: var(--space-3xl);
-}
-
-.subscribe-form {
-    display: flex;
-    gap: var(--space-xs);
-    max-width: 95%;
-    
-    & input[type="text"], & input[type="email"] {
-        flex: 1;
-    }
-}
-
 .footer {
     max-width: var(--width);
     margin: var(--space-xl) auto 0 auto;
@@ -863,10 +849,6 @@ details[open] > summary {
 @media only screen and (min-width: 568px) {
     .header {
         font-size: var(--font-size-0);
-    }
-
-    .subscribe-form {
-        max-width: 80%;
     }
 }
 
