@@ -93,6 +93,10 @@
     --faint-color: light-dark(var(--grey-300), var(--grey-700));
     --border-color: light-dark(var(--grey-100), var(--grey-800));
     --surface-color: light-dark(var(--grey-50), var(--grey-900));
+    /* One step further from the page than --surface-color: the raised state
+       a surface takes on hover. Shares the border ramp step by coincidence,
+       not by role, so it is its own token rather than an alias. */
+    --surface-raised-color: light-dark(var(--grey-100), var(--grey-800));
 
     --link-color: var(--foreground-color);
     --link-underline-color: var(--faint-color);
@@ -101,16 +105,16 @@
     --blockquote-border-color: var(--border-color);
     --metadata-background-color: var(--surface-color);
     --metadata-foreground-color: var(--foreground-color);
-    --input-border-color: light-dark(var(--grey-300), var(--grey-700));
+    --input-border-color: var(--faint-color);
     --input-focus-background-color: var(--surface-color);
 
     --button-background-color: var(--surface-color);
     --button-foreground-color: var(--foreground-color);
-    --button-hover-background-color: light-dark(var(--grey-100), var(--grey-800));
+    --button-hover-background-color: var(--surface-raised-color);
     --button-hover-foreground-color: var(--foreground-color);
 
     --theme-toggle-slider-color: var(--surface-color);
-    --theme-toggle-slider-hover-color: light-dark(var(--grey-100), var(--grey-800));
+    --theme-toggle-slider-hover-color: var(--surface-raised-color);
     --theme-toggle-border-color: var(--border-color);
     --theme-toggle-hover-background-color: var(--surface-color);
     --theme-toggle-hover-foreground-color: var(--link-hover-color);
@@ -271,6 +275,10 @@ a {
     &:focus-visible {
         color: var(--link-hover-color);
         text-decoration-color: var(--link-hover-color);
+
+        &:after {
+            color: var(--link-hover-color);
+        }
     }
 }
 
