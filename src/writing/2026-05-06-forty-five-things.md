@@ -2,7 +2,6 @@
 title: 45 things
 description: 'A list, in no particular order, of things I think more people should try or know about.'
 tags: ["personal", "philosophy", "habits"]
-dropCap: false
 ---
 
 A list, in no particular order, of things I think more people should try or know about.
