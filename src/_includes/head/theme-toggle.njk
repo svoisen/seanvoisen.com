@@ -45,7 +45,6 @@
         // Read the resolved background rather than hardcoding a pair, so the
         // browser chrome can never drift from the palette.
         const background = getComputedStyle(document.body).backgroundColor;
-        if (!background) return;
 
         // Remove existing theme-color meta tags
         const existingThemeColorTags = document.querySelectorAll('meta[name="theme-color"]');

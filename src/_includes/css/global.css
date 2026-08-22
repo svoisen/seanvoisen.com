@@ -266,10 +266,9 @@ a {
 
     /* Hover carries the only hue on the site, so keyboard and touch need
        an equivalent. Without this links have a hover state and no focus
-       state at all. */
+       state at all. The ring itself comes from the :focus-visible floor;
+       only the hue is added here. */
     &:focus-visible {
-        outline: var(--focus-outline);
-        outline-offset: var(--focus-outline-offset);
         color: var(--link-hover-color);
         text-decoration-color: var(--link-hover-color);
     }
