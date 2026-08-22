@@ -11,8 +11,8 @@ This site is built using [Eleventy](https://11ty.dev) and served using [Netlify]
 
 ## Design
 
-The current design is a blend of ideas from older versions of my blog, and uses [Steph Ango's](https://stephango.com) excellent [Flexoki color scheme](https://stephango.com/flexoki).
+The current design is a blend of ideas from older versions of my blog, set in greyscale. Colour appears in exactly one place: a link you are hovering, or an element you have reached by keyboard.
 
 ### Typography
 
-Body copy for all long-form content is set in *Source Serif 4*. Headlines and user interface elements are set in *Outfit*.
+Body copy for all long-form content is set in *IBM Plex Sans*. Headlines and user interface elements are set in *Outfit*.
