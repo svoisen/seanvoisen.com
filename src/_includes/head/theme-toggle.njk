@@ -16,7 +16,7 @@
         toggle.checked = isDark;
         
         // Update theme color meta tag to match current theme
-        updateThemeColor(isDark);
+        updateThemeColor();
         
         // Listen for toggle changes
         toggle.addEventListener('change', function() {
@@ -38,23 +38,24 @@
         document.documentElement.style.colorScheme = isDark ? 'dark' : 'light';
         
         // Update Safari toolbar theme color
-        updateThemeColor(isDark);
+        updateThemeColor();
     }
     
-    function updateThemeColor(isDark) {
-        // Define theme colors (matching your Flexoki palette)
-        const lightColor = '#FFFCF0'; // flexoki-paper
-        const darkColor = '#100F0F';  // flexoki-black
-        
+    function updateThemeColor() {
+        // Read the resolved background rather than hardcoding a pair, so the
+        // browser chrome can never drift from the palette.
+        const background = getComputedStyle(document.body).backgroundColor;
+        if (!background) return;
+
         // Remove existing theme-color meta tags
         const existingThemeColorTags = document.querySelectorAll('meta[name="theme-color"]');
         existingThemeColorTags.forEach(tag => tag.remove());
-        
+
         // Create new theme-color meta tag
         const themeColorMeta = document.createElement('meta');
         themeColorMeta.name = 'theme-color';
-        themeColorMeta.content = isDark ? darkColor : lightColor;
-        
+        themeColorMeta.content = background;
+
         // Insert the new meta tag
         document.head.appendChild(themeColorMeta);
     }

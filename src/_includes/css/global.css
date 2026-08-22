@@ -29,38 +29,32 @@
 :root {
     color-scheme: light dark;
 
-    --flexoki-black: #100F0F;
-    --flexoki-paper: #FFFCF0;
-    --flexoki-50: #F2F0E5;
-    --flexoki-100: #E6E4D9;
-    --flexoki-150: #DAD8CE;
-    --flexoki-200: #CECDC3;
-    --flexoki-300: #B7B5AC;
-    --flexoki-400: #9F9D96;
-    --flexoki-500: #878580;
-    --flexoki-600: #6F6E69;
-    --flexoki-700: #575653;
-    --flexoki-800: #403E3C;
-    --flexoki-850: #343331;
-    --flexoki-900: #282726;
-    --flexoki-950: #1C1B1A;
+    /*
+     * Palette layer. Raw values only — components never reference these
+     * directly, they go through the semantic layer below. Adding a second
+     * colour scheme later means redefining the semantic layer under a
+     * selector, not touching this block or any component.
+     */
+    --grey-0: #FFFFFF;
+    --grey-50: #F2F2F2;
+    --grey-100: #E4E4E4;
+    --grey-300: #8F8F8F;
+    --grey-500: #666666;
+    --grey-600: #909090;
+    --grey-700: #6A6A6A;
+    --grey-800: #262626;
+    --grey-900: #171717;
+    --grey-1000: #0C0C0C;
+    --ink: #111111;
+    --paper: #E8E8E8;
 
-    --flexoki-red-400: #D14D41;
-    --flexoki-red-600: #AF3029;
-    --flexoki-orange-400: #DA702C;
-    --flexoki-orange-600: #BC5215;
-    --flexoki-yellow-400: #D0A215;
-    --flexoki-yellow-600: #AD8301;
-    --flexoki-green-400: #879A39;
-    --flexoki-green-600: #66800B;
-    --flexoki-cyan-400: #3AA99F;
-    --flexoki-cyan-600: #24837B;
-    --flexoki-blue-400: #4385BE;
-    --flexoki-blue-600: #205EA6;
-    --flexoki-purple-400: #8B7EC8;
-    --flexoki-purple-600: #5E409D;
-    --flexoki-magenta-400: #CE5D97;
-    --flexoki-magenta-600: #A02F6F;
+    /*
+     * The only two hues on the site. Bound to link hover and keyboard focus
+     * and nothing else. Contrast against their own background: blue 5.17:1,
+     * yellow 12.77:1.
+     */
+    --accent-light: #2563EB;
+    --accent-dark: #FACC15;
 
     --font-size--2: clamp(0.72rem, 0.8145rem + -0.122vi, 0.7901rem);
     --font-size--1: clamp(0.8889rem, 0.885rem + 0.0193vi, 0.9rem);
@@ -81,29 +75,44 @@
     --space-2xl: clamp(3rem, 2.8696rem + 0.6522vi, 3.375rem);
     --space-3xl: clamp(4rem, 3.8261rem + 0.8696vi, 4.5rem);
 
+    /*
+     * Semantic layer. Everything on the site reads from here and nowhere
+     * else, so a future named scheme overrides this block alone:
+     *
+     *   html[data-scheme="flexoki"] { --background-color: ...; ... }
+     *
+     * Contrast against their own background — light / dark:
+     *   foreground      18.9:1 / 16.0:1
+     *   deemphasized     5.7:1 /  6.1:1   (lowest tier carrying text)
+     *   link underline   3.2:1 /  3.6:1   (non-text, 3:1 minimum)
+     * No text uses a tier fainter than deemphasized.
+     */
+    --background-color: light-dark(var(--grey-0), var(--grey-1000));
+    --foreground-color: light-dark(var(--ink), var(--paper));
+    --deemphasized-color: light-dark(var(--grey-500), var(--grey-600));
+    --faint-color: light-dark(var(--grey-300), var(--grey-700));
+    --border-color: light-dark(var(--grey-100), var(--grey-800));
+    --surface-color: light-dark(var(--grey-50), var(--grey-900));
+
     --link-color: var(--foreground-color);
-    --link-underline-color: light-dark(var(--flexoki-200), var(--flexoki-700));
-    --link-hover-color: light-dark(var(--flexoki-blue-600), var(--flexoki-yellow-400));
+    --link-underline-color: var(--faint-color);
+    --link-hover-color: light-dark(var(--accent-light), var(--accent-dark));
 
-    --background-color: light-dark(var(--flexoki-paper), var(--flexoki-black));
-    --foreground-color: light-dark(var(--flexoki-black), var(--flexoki-200));
-    --deemphasized-color: light-dark(var(--flexoki-600), var(--flexoki-500));
-    --border-color: light-dark(var(--flexoki-150), var(--flexoki-800));
-    --blockquote-border-color: light-dark(var(--flexoki-100), var(--flexoki-800));
-    --metadata-background-color: light-dark(var(--flexoki-100), var(--flexoki-900));
+    --blockquote-border-color: var(--border-color);
+    --metadata-background-color: var(--surface-color);
     --metadata-foreground-color: var(--foreground-color);
-    --input-border-color: light-dark(var(--flexoki-300), var(--flexoki-700));
-    --input-focus-background-color: light-dark(var(--flexoki-50), var(--flexoki-850));
+    --input-border-color: light-dark(var(--grey-300), var(--grey-700));
+    --input-focus-background-color: var(--surface-color);
 
-    --button-background-color: light-dark(var(--flexoki-100), var(--flexoki-900));
-    --button-foreground-color: light-dark(var(--flexoki-black), var(--flexoki-200));
-    --button-hover-background-color: light-dark(var(--flexoki-150), var(--flexoki-800));
-    --button-hover-foreground-color: light-dark(var(--flexoki-900), var(--flexoki-100));
+    --button-background-color: var(--surface-color);
+    --button-foreground-color: var(--foreground-color);
+    --button-hover-background-color: light-dark(var(--grey-100), var(--grey-800));
+    --button-hover-foreground-color: var(--foreground-color);
 
-    --theme-toggle-slider-color: light-dark(var(--flexoki-100), var(--flexoki-850));
-    --theme-toggle-slider-hover-color: light-dark(var(--flexoki-200), var(--flexoki-700));
-    --theme-toggle-border-color: light-dark(var(--flexoki-200), var(--flexoki-800));
-    --theme-toggle-hover-background-color: light-dark(var(--flexoki-50), var(--flexoki-950));
+    --theme-toggle-slider-color: var(--surface-color);
+    --theme-toggle-slider-hover-color: light-dark(var(--grey-100), var(--grey-800));
+    --theme-toggle-border-color: var(--border-color);
+    --theme-toggle-hover-background-color: var(--surface-color);
     --theme-toggle-hover-foreground-color: var(--link-hover-color);
 
     /* Font families */
@@ -184,6 +193,16 @@ section {
     line-height: inherit;
 }
 
+/* Hue is hover-only, so every focusable element needs a keyboard equivalent
+   or it has no affordance at all. This is the floor; the rules below add
+   colour changes on top of it. Without it, elements with no bespoke focus
+   rule — summary chief among them — fall back to the browser's own ring,
+   which is a system hue rather than the site's accent. */
+:focus-visible {
+    outline: var(--focus-outline);
+    outline-offset: var(--focus-outline-offset);
+}
+
 input[type="text"], input[type="email"], input[type="search"] {
     color: inherit;
     background-color: transparent;
@@ -238,6 +257,16 @@ a {
         &:after {
             color: var(--link-hover-color);
         }
+    }
+
+    /* Hover carries the only hue on the site, so keyboard and touch need
+       an equivalent. Without this links have a hover state and no focus
+       state at all. */
+    &:focus-visible {
+        outline: var(--focus-outline);
+        outline-offset: var(--focus-outline-offset);
+        color: var(--link-hover-color);
+        text-decoration-color: var(--link-hover-color);
     }
 }
 
@@ -470,6 +499,13 @@ details[open] > summary {
     opacity: 0;
     width: 0;
     height: 0;
+}
+
+/* The input is visually hidden but still focusable, so the ring has to be
+   drawn on the label it controls. */
+.theme-toggle__input:focus-visible + .theme-toggle__label {
+    outline: var(--focus-outline);
+    outline-offset: var(--focus-outline-offset);
 }
 
 .theme-toggle__label {
@@ -726,7 +762,7 @@ details[open] > summary {
 
 .post-list-item:has(.post-list-item-title:hover) .post-list-item-badge,
 .post-list-item:has(.post-list-item-title:focus) .post-list-item-badge {
-    background-color: light-dark(var(--flexoki-50), var(--flexoki-950));
+    background-color: var(--surface-color);
     color: var(--foreground-color);
 }
 
