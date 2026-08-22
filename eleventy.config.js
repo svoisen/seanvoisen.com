@@ -1,6 +1,7 @@
 import filters from "./src/_config/filters.js";
 import collections from "./src/_config/collections.js";
 import plugins from "./src/_config/plugins.js";
+import images from "./src/_config/images.js";
 
 export default async function(eleventyConfig) {
   /*
@@ -28,8 +29,7 @@ export default async function(eleventyConfig) {
 
   eleventyConfig.addPlugin(plugins.eleventyImageTransformPlugin, {
     extensions: 'html',
-    formats: ['webp', 'jpeg'],
-    widths: ['auto', 1280, 800, 640],
+    ...images.imageOptions,
     htmlOptions: {
       imgAttributes: {
         loading: 'lazy',
@@ -37,6 +37,11 @@ export default async function(eleventyConfig) {
       },
     },
   });
+
+  /*
+   * images referenced only by already-delivered newsletter emails
+   */
+  eleventyConfig.on("eleventy.before", images.generateOrphanedImages);
 
   /*
    * bundles
