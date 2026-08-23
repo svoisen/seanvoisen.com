@@ -118,10 +118,7 @@
     --button-hover-background-color: var(--surface-raised-color);
     --button-hover-foreground-color: var(--foreground-color);
 
-    --theme-toggle-slider-color: var(--surface-color);
-    --theme-toggle-slider-hover-color: var(--surface-raised-color);
-    --theme-toggle-border-color: var(--border-color);
-    --theme-toggle-hover-background-color: var(--surface-color);
+    --theme-toggle-foreground-color: var(--deemphasized-color);
     --theme-toggle-hover-foreground-color: var(--link-hover-color);
 
     /* Font families */
@@ -480,43 +477,63 @@ details[open] > summary {
 .header {
     display: flex;
     flex-direction: row;
-    align-content: center;
     align-items: center;
-    line-height: 0;
     max-width: var(--width);
     margin: 0 auto;
     padding: var(--space-2xl) var(--space-xl) 0 var(--space-xl);
     font-size: var(--font-size-0);
 
-    & .logo-wrapper {
-        flex: 1;
+    & a {
+        text-decoration: none;
     }
+}
+
+.wordmark {
+    flex: 1;
+}
+
+/*
+ * Monogram and name are one home link. The underline on hover is drawn on
+ * the name rather than the link, because the link is a flex box and the
+ * decoration would otherwise run under the monogram too.
+ */
+.wordmark__link {
+    display: inline-flex;
+    align-items: center;
+    gap: var(--space-2xs);
 
     & svg.logo {
-        height: 2em;
-        transform: translateY(-0.25em);
+        display: block;
+        height: 1.75em;
         fill: var(--link-color);
         transition: transform 0.2s ease;
     }
 
-    & a {
-        text-decoration: none;
+    &:hover,
+    &:focus-visible {
+        & svg.logo {
+            fill: var(--link-hover-color);
+            transform: scale(1.1);
+        }
 
-        &:hover {
+        & .wordmark__name {
+            color: var(--link-hover-color);
             text-decoration: underline;
             text-decoration-thickness: 2px;
-
-            & svg.logo {
-                fill: var(--link-hover-color);
-                transform: translateY(-0.25em) scale(1.1);
-            }
+            text-decoration-color: var(--link-hover-color);
         }
     }
 }
 
+.wordmark__name {
+    font-family: var(--font-family-ui);
+    font-weight: 500;
+    letter-spacing: -0.0125em;
+}
+
 .theme-toggle {
-    margin-top: -2px;
     margin-left: var(--space-s);
+    line-height: 0;
 }
 
 .theme-toggle__input {
@@ -533,42 +550,36 @@ details[open] > summary {
     outline-offset: var(--focus-outline-offset);
 }
 
+/*
+ * Design H's control is a bare glyph rather than a pill. The label keeps
+ * the 40x24 box the pill occupied, so dropping the track does not shrink
+ * the target down to the glyph's own bounds.
+ */
 .theme-toggle__label {
     position: relative;
-    display: inline-block;
+    display: block;
     width: 40px;
     height: 24px;
-    border: var(--border-width-default) solid var(--theme-toggle-border-color);
-    background-color: transparent;
-    border-radius: 12px;
+    border-radius: var(--border-radius-sm);
     cursor: pointer;
-    transition: background-color 0.2s ease;
 
-    &:hover {
-        background-color: var(--theme-toggle-hover-background-color);
-
-        & .theme-toggle__icon {
-            background: var(--theme-toggle-hover-foreground-color);
-        }
-
-        & .theme-toggle__slider {
-            background-color: var(--theme-toggle-slider-hover-color);
-        }
+    &:hover .theme-toggle__icon {
+        background-color: var(--theme-toggle-hover-foreground-color);
     }
 }
 
 .theme-toggle__icon {
     position: absolute;
-    top: 0;
-    width: 20px;
-    height: 20px;
-    background-color: var(--foreground-color);
-    transition: background-color 0.2s ease;
-    z-index: 2;
+    top: 50%;
+    left: 50%;
+    width: 1rem;
+    height: 1rem;
+    transform: translate(-50%, -50%);
+    background-color: var(--theme-toggle-foreground-color);
+    transition: background-color 0.2s ease, opacity 0.2s ease;
 }
 
 .theme-toggle__icon--sun {
-    left: 0;
     opacity: 1;
     mask-image: url("data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%2020%2020'%20fill='currentColor'%20%3E%3Cpath%20fill-rule='evenodd'%20d='M10%202a1%201%200%20011%201v1a1%201%200%2011-2%200V3a1%201%200%20011-1zm4%208a4%204%200%2011-8%200%204%204%200%20018%200zm-.464%204.95l.707.707a1%201%200%20001.414-1.414l-.707-.707a1%201%200%2000-1.414%201.414zm2.12-10.607a1%201%200%20010%201.414l-.706.707a1%201%200%2011-1.414-1.414l.707-.707a1%201%200%20011.414%200zM17%2011a1%201%200%20100-2h-1a1%201%200%20100%202h1zm-7%204a1%201%200%20011%201v1a1%201%200%2011-2%200v-1a1%201%200%20011-1zM5.05%206.464A1%201%200%20106.465%205.05l-.708-.707a1%201%200%2000-1.414%201.414l.707.707zm1.414%208.486l-.707.707a1%201%200%2001-1.414-1.414l.707-.707a1%201%200%20011.414%201.414zM4%2011a1%201%200%20100-2H3a1%201%200%20000%202h1z'%20clip-rule='evenodd'%20/%3E%3C/svg%3E");
     mask-size: contain;
@@ -577,7 +588,6 @@ details[open] > summary {
 }
 
 .theme-toggle__icon--moon {
-    right: 0;
     opacity: 0;
     mask-image: url("data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20fill='currentColor'%20viewBox='0%200%2024%2024'%20%3E%3Cpath%20d='M20.354%2015.354A9%209%200%20018.646%203.646%209.003%209.003%200%200012%2021a9.003%209.003%200%20008.354-5.646z'%20/%3E%3C/svg%3E");
     mask-size: contain;
@@ -593,26 +603,9 @@ details[open] > summary {
     opacity: 1;
 }
 
-.theme-toggle__slider {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 20px;
-    height: 20px;
-    background-color: var(--theme-toggle-slider-color);
-    border-radius: 50%;
-    transition: transform 0.2s ease, background-color 0.2s ease;
-    z-index: 1;
-}
-
-.theme-toggle__input:checked + .theme-toggle__label .theme-toggle__slider {
-    transform: translateX(16px);
-}
-
 @media (prefers-reduced-motion: reduce) {
     .theme-toggle__label,
     .theme-toggle__icon,
-    .theme-toggle__slider,
     svg.logo {
         transition: none;
     }
@@ -622,13 +615,45 @@ details[open] > summary {
     max-width: var(--width);
     margin: var(--space-xl) auto 0 auto;
     padding: var(--space-xl);
-
-    & .external-links {
-        margin-bottom: var(--space-s);
-    }
+    font-family: var(--font-family-ui);
+    font-size: var(--font-size--1);
 
     & p {
         margin: 0;
+    }
+
+    /* Where the licence notice belongs once the footer is one row is still
+       open. It sits under the row until that is answered. */
+    & .footer__licence {
+        margin-top: var(--space-2xs);
+        color: var(--deemphasized-color);
+    }
+}
+
+.footer__row {
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+    gap: var(--space-s);
+    border-top: 1px solid var(--border-color);
+    padding-top: var(--space-s);
+}
+
+.footer__copyright {
+    color: var(--deemphasized-color);
+    white-space: nowrap;
+}
+
+/* The footer is chrome, so its links sit in the deemphasized tier rather
+   than carrying the full weight of body links. Hover and focus still take
+   the accent, so the rule has to restate them — it outranks the global
+   a:hover it would otherwise leave in place. */
+.footer__links a {
+    color: var(--deemphasized-color);
+
+    &:hover,
+    &:focus-visible {
+        color: var(--link-hover-color);
     }
 }
 
@@ -647,6 +672,15 @@ details[open] > summary {
         & .nav__item.active {
             font-weight: 700;
         }
+    }
+
+    /* .header a clears the underline for the whole header, so restoring it
+       on hover has to happen here rather than through the global a rule. */
+    & a:hover,
+    & a:focus-visible {
+        text-decoration: underline;
+        text-decoration-thickness: 2px;
+        text-decoration-color: currentColor;
     }
 }
 

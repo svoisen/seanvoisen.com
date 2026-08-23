@@ -21,16 +21,16 @@
             "hideOnMobile": true
         },
         {
-            "title": "About",
-            "url": "/about/",
-            "description": "About Sean Voisen and this site.",
+            "title": "Directory",
+            "url": "/directory/",
+            "description": "Looking for something? Here’s a handy dandy sitemap.",
             "inNavigation": true,
             "hideOnMobile": false
         },
         {
-            "title": "Directory",
-            "url": "/directory/",
-            "description": "Looking for something? Here’s a handy dandy sitemap.",
+            "title": "About",
+            "url": "/about/",
+            "description": "About Sean Voisen and this site.",
             "inNavigation": true,
             "hideOnMobile": false
         },

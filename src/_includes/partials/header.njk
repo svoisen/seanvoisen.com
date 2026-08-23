@@ -1,7 +1,8 @@
 <header class="header">
-    <div class="logo-wrapper">
-        <a href="/" class="home-link" title="Return home.">
+    <div class="wordmark">
+        <a href="/" class="wordmark__link" title="Return home.">
             {% include "partials/logo.njk" %}
+            <span class="wordmark__name">{{ site.author.name }}</span>
         </a>
     </div>
     <nav class="nav">
@@ -23,7 +24,6 @@
         <label for="theme-toggle" class="theme-toggle__label">
             <span class="theme-toggle__icon theme-toggle__icon--sun"></span>
             <span class="theme-toggle__icon theme-toggle__icon--moon"></span>
-            <span class="theme-toggle__slider"></span>
         </label>
     </div>
 </header>
