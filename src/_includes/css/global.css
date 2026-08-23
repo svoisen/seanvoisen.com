@@ -616,10 +616,13 @@ details[open] > summary {
     margin: var(--space-xl) auto 0 auto;
     padding: var(--space-xl);
     font-family: var(--font-family-ui);
-    font-size: var(--font-size--1);
 
+    /* The size goes on the children, not here: --width is in em, so a
+       font-size on this element would shrink the column and pull the footer
+       out of line with the rest of the page. */
     & p {
         margin: 0;
+        font-size: var(--font-size--1);
     }
 
     /* Where the licence notice belongs once the footer is one row is still
