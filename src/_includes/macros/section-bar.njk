@@ -1,0 +1,20 @@
+{#
+    The section bar: a hairline, a tracked-caps label, and an optional
+    right-hand item. Used as a section heading on composed pages and as the
+    page heading on the list-shaped index pages, which is why the heading
+    level is a parameter rather than fixed — a page needs exactly one h1.
+
+    The right-hand item is a link when `linkHref` is given and plain text
+    when it is not, so a bar can carry a fact (a count, a date) as easily as
+    a destination.
+#}
+{% macro sectionBar(label, linkLabel = null, linkHref = null, level = 2) %}
+<div class="section-bar">
+    <h{{ level }} class="section-bar__label">{{ label }}</h{{ level }}>
+    {%- if linkHref %}
+    <a class="section-bar__link" href="{{ linkHref }}">{{ linkLabel }}<span class="section-bar__arrow" aria-hidden="true">&rarr;</span></a>
+    {%- elif linkLabel %}
+    <span class="section-bar__note">{{ linkLabel }}</span>
+    {%- endif %}
+</div>
+{% endmacro %}

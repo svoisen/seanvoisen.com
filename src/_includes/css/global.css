@@ -139,6 +139,14 @@
     --prose-line-height: 1.75;
     --width: 40em;
 
+    /* The gutter grid's one alignment line. Every list that uses it starts
+       its titles at --gutter-width + --gutter-gap from the column edge,
+       whatever the gutter itself carries, so sections line up down the
+       page. Tokens rather than literals because the narrow-width answer
+       changes them in one place. */
+    --gutter-width: 6rem;
+    --gutter-gap: var(--space-l);
+
     /* Icons */
     --icon-size: 0.75em;
     --icon-margin: 0.2em;
@@ -705,6 +713,73 @@ details[open] > summary {
     & :is(h1, h2, h3, h4, h5, h6) {
         font-family: var(--font-family-heading);
     }
+}
+
+/*
+ * Section bar. One hairline-and-label primitive for every section heading
+ * on the site, and for the heading of the list-shaped index pages. The
+ * label is uppercased here rather than in the macro so the text stays in
+ * sentence case for assistive technology.
+ */
+.section-bar {
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+    gap: var(--space-s);
+    border-top: 1px solid var(--border-color);
+    padding-top: var(--space-s);
+    margin-bottom: var(--space-l);
+    font-family: var(--font-family-ui);
+}
+
+.section-bar__label {
+    margin: 0;
+    font-size: var(--font-size--2);
+    font-weight: 400;
+    line-height: var(--metadata-line-height);
+    letter-spacing: 0.112em;
+    text-transform: uppercase;
+    color: var(--deemphasized-color);
+}
+
+.section-bar__link,
+.section-bar__note {
+    font-size: var(--font-size--1);
+    color: var(--deemphasized-color);
+    white-space: nowrap;
+}
+
+.section-bar__arrow {
+    margin-left: 0.35em;
+}
+
+/*
+ * Gutter grid. A fixed gutter column and an entry column, per row rather
+ * than one grid over the whole list, so a row can stand alone and a list
+ * can be any element. What the gutter carries differs by section — an
+ * organisation, a kind, nothing at all — but the alignment line does not.
+ */
+.gutter-grid {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    font-family: var(--font-family-ui);
+}
+
+.gutter-grid__row {
+    display: grid;
+    grid-template-columns: var(--gutter-width) 1fr;
+    column-gap: var(--gutter-gap);
+    align-items: baseline;
+}
+
+.gutter-grid__row:not(:last-child) {
+    margin-bottom: var(--space-m);
+}
+
+.gutter-grid__gutter {
+    font-size: var(--font-size--1);
+    color: var(--deemphasized-color);
 }
 
 .post-list {
