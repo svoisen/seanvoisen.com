@@ -1,9 +1,15 @@
 ---
 layout: base
 ---
+{% from "macros/section-bar.njk" import sectionBar %}
 {% set pageSubtitle = subtitle or (navigation.items | getDescription(permalink)) %}
 
-<article class="page">
+{# The list-shaped index pages are headed by a section bar; prose pages keep
+   the title, subtitle, and metadata treatment. #}
+<article class="page{% if groupHeadings %} page--group-headings{% endif %}">
+    {%- if listPage %}
+    {{ sectionBar(title, barLink, barHref, 1) }}
+    {%- else %}
     <header class="page-header">
         <h1 class="page-title">{{ title }}</h1>
         {% if pageSubtitle %}
@@ -24,6 +30,7 @@ layout: base
         </dl>
     </aside>
     {% endif %}
+    {%- endif %}
     <div class="page-content">
         {{ content | safe }}
     </div>

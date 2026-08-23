@@ -757,26 +757,43 @@ details[open] > summary {
  * on the site, and for the heading of the list-shaped index pages. The
  * label is uppercased here rather than in the macro so the text stays in
  * sentence case for assistive technology.
+ *
+ * The Notes page's groupings are hand-authored markdown headings, so they
+ * join these selectors instead of being rewritten into macro calls. The
+ * scoping class is load-bearing: an unscoped content-heading rule would
+ * also restyle About, Colophon, and Now, which keep their prose treatment.
  */
+.section-bar,
+.page--group-headings .page-content h2 {
+    border-top: 1px solid var(--border-color);
+    padding-top: var(--space-s);
+    font-family: var(--font-family-ui);
+}
+
 .section-bar {
     display: flex;
     align-items: baseline;
     justify-content: space-between;
     gap: var(--space-s);
-    border-top: 1px solid var(--border-color);
-    padding-top: var(--space-s);
     margin-bottom: var(--space-l);
-    font-family: var(--font-family-ui);
 }
 
-.section-bar__label {
-    margin: 0;
+.section-bar__label,
+.page--group-headings .page-content h2 {
     font-size: var(--font-size--2);
     font-weight: 400;
     line-height: var(--metadata-line-height);
     letter-spacing: 0.112em;
     text-transform: uppercase;
     color: var(--deemphasized-color);
+}
+
+.section-bar__label {
+    margin: 0;
+}
+
+.page--group-headings .page-content h2 {
+    margin: var(--space-2xl) 0 var(--space-l) 0;
 }
 
 .section-bar__link,

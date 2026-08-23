@@ -2,6 +2,8 @@
 layout: page
 title: "Notes"
 permalink: "/notes/"
+listPage: true
+groupHeadings: true
 showMetadata: false
 ---
 

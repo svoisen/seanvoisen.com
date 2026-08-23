@@ -8,6 +8,10 @@ const booksYmlPath = path.join(__dirname, '../_data/books.json');
 const stats = fs.statSync(booksYmlPath);
 
 export default {
-  date: stats.mtime
+  date: stats.mtime,
+  eleventyComputed: {
+    // The one fact worth keeping from the metadata aside the section bar
+    // replaces. It rides in the bar's right-hand slot.
+    barLink: (data) => `${data.books.books.length} books`
+  }
 };
-

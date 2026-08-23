@@ -2,22 +2,12 @@
 layout: page
 title: Bookshelf
 permalink: "/bookshelf/"
+listPage: true
 showMetadata: false
 localCSS: ["bookshelf"]
 ---
 
 {% from "macros/bookshelf-section.njk" import bookshelfSection %}
-
-<aside class="page-metadata">
-    <dl>
-        <dt>Last updated</dt> 
-        <dd>
-            <time datetime="{{ page.date | w3Date }}">{{ page.date | htmlDate }}</time>
-        </dd>
-        <dt>Total books</dt>
-        <dd>{{ books.books.length }}</dd>
-    </dl>
-</aside>
 
 {{ bookshelfSection(books.books, 2026) }}
 {{ bookshelfSection(books.books, 2025) }}
