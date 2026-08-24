@@ -136,23 +136,17 @@
     --prose-line-height: 1.75;
     --width: 40em;
 
-    /* --width is the outer bound of the column; the page padding sits inside
-       it, so this is what an element has to match to run the full width of
-       the chrome. Both terms resolve against the using element's font size,
-       which is why it is a token rather than a literal. */
-    --column-width: calc(var(--width) - var(--space-xl) * 2);
-
     /* Design H sets prose at 656 inside a 720 column and the standfirst at
-       600. The same proportions of the column, so the ratio survives even
-       though the pixel values do not. */
-    --prose-measure: calc(var(--column-width) * 0.91);
-    --standfirst-measure: calc(var(--column-width) * 0.83);
+       600. Proportions rather than pixels, so the measure narrows with the
+       column instead of overshooting it at in-between widths. */
+    --prose-measure: 91%;
+    --standfirst-measure: 83%;
 
     /* The gutter grid's one alignment line. Every list that uses it starts
        its titles at --gutter-width + --gutter-gap from the column edge,
-       whatever the gutter itself carries, so sections line up down the
-       page. Tokens rather than literals because the narrow-width answer
-       changes them in one place. */
+       whatever the gutter itself carries, so sections line up down the page.
+       Below the one breakpoint the gutter stops being a column entirely — see
+       the narrow-width block at the foot of this file. */
     --gutter-width: 6rem;
     --gutter-gap: var(--space-l);
 
@@ -788,12 +782,23 @@ details[open] > summary {
     }
 }
 
-/* The measure lives on the container, not on each block, so the em resolves
-   against the prose size rather than against whichever heading happens to be
-   inside. Figures and pull quotes break back out to the full column. */
+/* The measure is set on the container and applied to its blocks rather than
+   to the container itself, so the container keeps the full column for the
+   things that are supposed to have it. */
 .post-content {
-    max-width: var(--prose-measure);
     margin-top: var(--space-2xl);
+
+    & > * {
+        max-width: var(--prose-measure);
+    }
+
+    /* Figures and pull quotes are interruptions: they leave the measure and
+       take the full column, growing rightward so their left edge stays on the
+       alignment line every other element shares. */
+    & > :is(figure, .pullquote) {
+        max-width: none;
+        width: 100%;
+    }
 }
 
 .post-footer {
@@ -825,8 +830,8 @@ details[open] > summary {
     }
 }
 
-/* A pull quote is an interruption, so it leaves the measure and takes the
-   full column, held between hairlines rather than indented like a citation. */
+/* Held between hairlines rather than indented like a citation, which is what
+   separates a pull quote from the block quotes around it. */
 .post-content .pullquote {
     margin: var(--space-2xl) 0;
     padding: var(--space-l) 0;
@@ -1036,6 +1041,12 @@ details[open] > summary {
     box-shadow: rgba(0,0,0,.09) 0px 2px 1px, rgba(0,0,0,.09) 0px 4px 2px, rgba(0,0,0,.09) 0px 8px 4px, rgba(0,0,0,.09) 0px 16px 8px, rgba(0,0,0,.09) 0px 32px 16px;
 }
 
+/*
+ * Narrow widths. There is one breakpoint on the site and this is it: above
+ * it the column is capped by --width and everything holds its desktop shape;
+ * below it the column is the viewport minus its padding and the two-column
+ * grid has nowhere left to stand.
+ */
 @media only screen and (max-width: 567px) {
     .nav__item--hidden {
         display: none;
@@ -1044,29 +1055,72 @@ details[open] > summary {
     .header {
         padding-top: var(--space-xl);
     }
+
+    /* 96px of gutter against a 318px column leaves a title two words a line,
+       so the gutter stops being a column and becomes an eyebrow above the
+       entry — the same tracked caps the section bars use. */
+    .gutter-grid__row {
+        grid-template-columns: 1fr;
+        row-gap: var(--space-3xs);
+    }
+
+    .gutter-grid__row > * {
+        grid-column: 1;
+    }
+
+    .gutter-grid__gutter {
+        font-size: var(--font-size--2);
+        line-height: var(--metadata-line-height);
+        letter-spacing: 0.112em;
+        text-transform: uppercase;
+    }
+
+    /* The reading section's gutters are empty by design; stacked, an empty
+       one would spend a line saying nothing. */
+    .gutter-grid__gutter:empty {
+        display: none;
+    }
+
+    /* With the gutter stacked there is no column left to carry the grouping,
+       so a repeated organisation comes back. Suppressing it here would leave
+       the second and third items of a run with nothing filing them at all —
+       which is why the value stayed in the markup rather than being dropped
+       from the template. */
+    .gutter-grid__gutter--quiet {
+        position: static;
+        width: auto;
+        height: auto;
+        overflow: visible;
+        white-space: normal;
+        clip-path: none;
+    }
+
+    .gutter-grid__row:not(:last-child) {
+        margin-bottom: var(--space-m);
+    }
+
+    .gutter-grid__row:has(.gutter-grid__entry):not(:last-child) {
+        margin-bottom: var(--space-l);
+    }
+
+    /* No column to spare, so prose and standfirst take all of it. */
+    .post-content {
+        --prose-measure: 100%;
+    }
+
+    .post-standfirst {
+        max-width: none;
+    }
+
+    .footer__row {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: var(--space-2xs);
+    }
 }
 
 @media only screen and (min-width: 568px) {
     .header {
         font-size: var(--font-size-0);
-    }
-}
-
-@media (min-width: 768px) {
-    /* Figures and pull quotes break out of the prose measure to the width of
-       the chrome. They grow rightward rather than centring, so the left edge
-       stays on the alignment line every other element shares — the previous
-       rule centred them on the viewport and overshot the column by 144px,
-       which read as a bleed rather than as an interruption. */
-    .post-content figure, .page-content figure, .post-content .pullquote {
-        display: block;
-        width: var(--column-width);
-        max-width: none;
-        margin-left: 0;
-        margin-right: 0;
-    }
-
-    .post-content figure.narrow, .page-content figure.narrow {
-        width: 100%;
     }
 }
