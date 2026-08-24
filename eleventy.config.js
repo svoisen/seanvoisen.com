@@ -57,6 +57,7 @@ export default async function(eleventyConfig) {
   eleventyConfig.addFilter("head", filters.head);
   eleventyConfig.addFilter("slice", filters.slice);
   eleventyConfig.addFilter("filter", filters.filter);
+  eleventyConfig.addFilter("reject", filters.reject);
   eleventyConfig.addFilter("postcss", filters.postCssFilter);
   eleventyConfig.addFilter("titlecase", filters.titlecase);
   eleventyConfig.addFilter("navigationItems", filters.navigationItems);

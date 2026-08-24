@@ -1,23 +1,56 @@
 ---
 layout: base
 ---
+{% from "macros/section-bar.njk" import sectionBar %}
+{% from "macros/gutter-list.njk" import postRow %}
+{% from "macros/taglist.njk" import tagList %}
 
 {%- if (page.filePathStem.split("/")[1] == "writing") %}
     {%- set type = "Writing" %}
     {%- set typelink = "/writing/" %}
+    {%- set siblings = collections.writing %}
+    {%- set moreLabel = "More writing" %}
+    {%- set moreLink = "All essays" %}
 {%- else %}
     {%- set type = "Thinking" %}
     {%- set typelink = "/thinking/" %}
+    {%- set siblings = collections.thinking %}
+    {%- set moreLabel = "More thinking" %}
+    {%- set moreLink = "All posts" %}
 {%- endif %}
+{%- set more = siblings | reverse | reject("url", page.url) | head(3) %}
 
+{#
+    The reading view: chrome at the full column, prose at a narrower measure
+    inside it, sharing the same left edge. Topics belong at the foot rather
+    than in the meta row — you choose what to read next after reading, not
+    before.
+#}
 <article class="post post--{{ type | lower }}">
     <header class="post-header">
+        <a class="post-back" href="{{ typelink }}"><span class="post-back__arrow" aria-hidden="true">&larr;</span>{{ type }}</a>
         <h1 class="post-title">{{ title }}</h1>
+        {%- if description %}
+        <p class="post-standfirst">{{ description }}</p>
+        {%- endif %}
         <div class="post-metadata">
-            <time class="post-timestamp" datetime="{{ page.date | w3Date }}">{{ page.date | htmlDate }}</time> &middot; {{ content | wordStats }}
+            <time class="post-timestamp" datetime="{{ page.date | w3Date }}">{{ page.date | monthYear }}</time>
+            <span class="post-metadata__separator" aria-hidden="true">·</span>
+            <span>{{ content | wordStats }}</span>
         </div>
     </header>
     <div class="post-content">
         {{ content | safe }}
     </div>
+    <footer class="post-footer">
+        {%- if tags %}
+        <p class="taglist">{{ tagList(tags) }}</p>
+        {%- endif %}
+        {{ sectionBar(moreLabel, moreLink, typelink) }}
+        <ul class="gutter-grid">
+        {%- for item in more %}
+        {{ postRow(item, item.date | monthYear) }}
+        {%- endfor %}
+        </ul>
+    </footer>
 </article>

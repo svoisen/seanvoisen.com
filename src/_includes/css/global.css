@@ -136,6 +136,18 @@
     --prose-line-height: 1.75;
     --width: 40em;
 
+    /* --width is the outer bound of the column; the page padding sits inside
+       it, so this is what an element has to match to run the full width of
+       the chrome. Both terms resolve against the using element's font size,
+       which is why it is a token rather than a literal. */
+    --column-width: calc(var(--width) - var(--space-xl) * 2);
+
+    /* Design H sets prose at 656 inside a 720 column and the standfirst at
+       600. The same proportions of the column, so the ratio survives even
+       though the pixel values do not. */
+    --prose-measure: calc(var(--column-width) * 0.91);
+    --standfirst-measure: calc(var(--column-width) * 0.83);
+
     /* The gutter grid's one alignment line. Every list that uses it starts
        its titles at --gutter-width + --gutter-gap from the column edge,
        whatever the gutter itself carries, so sections line up down the
@@ -353,10 +365,15 @@ p {
     line-height: var(--heading-line-height);
 }
 
+/* Lighter than the headings below it, which is not a mistake: at 44px the
+   board's weight is 600, and 800 at that size reads as shouting where 600
+   reads as scale. The smaller headings keep 700 because they have to hold
+   their own against 18px prose. */
 h1 {
     font-size: var(--font-size-4);
-    font-weight: 800;
-    line-height: var(--heading-line-height);
+    font-weight: 600;
+    line-height: 1.15;
+    letter-spacing: -0.0275em;
 }
 
 h2 {
@@ -671,16 +688,51 @@ details[open] > summary {
     }
 }
 
-.post-metadata {
+/*
+ * Reading view. The chrome — back link, title, standfirst, meta row, foot —
+ * runs the full column; the prose sits at a narrower measure inside it and
+ * shares its left edge. That single offset is the whole of design H's essay
+ * layout, and it is why nothing here is centred.
+ */
+.post-back {
+    display: inline-block;
+    margin-bottom: var(--space-l);
     font-family: var(--font-family-ui);
-    font-size: var(--font-size-1);
+    font-size: var(--font-size--1);
     color: var(--deemphasized-color);
-    margin: 0 0 var(--space-xl) 0;
-    line-height: var(--metadata-line-height);
+    text-decoration: none;
+
+    &:hover,
+    &:focus-visible {
+        text-decoration: underline;
+        text-decoration-color: currentColor;
+    }
 }
 
-.post-metadata-label {
-    font-weight: 700;
+.post-back__arrow {
+    margin-right: 0.35em;
+}
+
+.post-standfirst {
+    max-width: var(--standfirst-measure);
+    margin: var(--space-s) 0 0 0;
+    font-family: var(--font-family-body);
+    font-size: var(--font-size-1);
+    line-height: var(--line-height);
+    color: var(--deemphasized-color);
+}
+
+.post-metadata {
+    display: flex;
+    align-items: baseline;
+    gap: 0.7em;
+    margin: var(--space-l) 0 0 0;
+    font-family: var(--font-family-ui);
+    font-size: var(--font-size--2);
+    line-height: var(--metadata-line-height);
+    letter-spacing: 0.112em;
+    text-transform: uppercase;
+    color: var(--deemphasized-color);
 }
 
 .page-metadata {
@@ -734,6 +786,60 @@ details[open] > summary {
     & :is(h1, h2, h3, h4, h5, h6) {
         font-family: var(--font-family-heading);
     }
+}
+
+/* The measure lives on the container, not on each block, so the em resolves
+   against the prose size rather than against whichever heading happens to be
+   inside. Figures and pull quotes break back out to the full column. */
+.post-content {
+    max-width: var(--prose-measure);
+    margin-top: var(--space-2xl);
+}
+
+.post-footer {
+    margin-top: var(--space-3xl);
+}
+
+/* Topics read as a caption on the essay just finished, in the same tracked
+   caps as the meta row that opened it. */
+.taglist {
+    margin: 0 0 var(--space-3xl) 0;
+    padding-top: var(--space-s);
+    border-top: 1px solid var(--border-color);
+    font-family: var(--font-family-ui);
+    font-size: var(--font-size--2);
+    line-height: var(--metadata-line-height);
+    letter-spacing: 0.112em;
+    text-transform: uppercase;
+    color: var(--deemphasized-color);
+}
+
+.taglist__tag {
+    color: var(--deemphasized-color);
+    text-decoration: none;
+
+    &:hover,
+    &:focus-visible {
+        text-decoration: underline;
+        text-decoration-color: currentColor;
+    }
+}
+
+/* A pull quote is an interruption, so it leaves the measure and takes the
+   full column, held between hairlines rather than indented like a citation. */
+.post-content .pullquote {
+    margin: var(--space-2xl) 0;
+    padding: var(--space-l) 0;
+    border-top: 1px solid var(--border-color);
+    border-bottom: 1px solid var(--border-color);
+    border-left: none;
+    padding-left: 0;
+    font-family: var(--font-family-heading);
+    font-size: var(--font-size-2);
+    font-weight: 500;
+    line-height: 1.35;
+    letter-spacing: -0.022em;
+    color: var(--foreground-color);
 }
 
 /*
@@ -869,13 +975,6 @@ details[open] > summary {
     color: var(--deemphasized-color);
 }
 
-.inline-tag-list-tag:not(:last-child):after {
-    content: ",";
-    vertical-align: baseline;
-    color: var(--foreground-color);
-    font-size: 1em;
-}
-
 .tag-list {
     margin: 0;
     list-style: none;
@@ -954,24 +1053,20 @@ details[open] > summary {
 }
 
 @media (min-width: 768px) {
-    .post-content figure, .page-content figure {
+    /* Figures and pull quotes break out of the prose measure to the width of
+       the chrome. They grow rightward rather than centring, so the left edge
+       stays on the alignment line every other element shares — the previous
+       rule centred them on the viewport and overshot the column by 144px,
+       which read as a bleed rather than as an interruption. */
+    .post-content figure, .page-content figure, .post-content .pullquote {
         display: block;
-        width: 100vw;
-        max-width: 48em;
-        position: relative;
-        left: 50%;
-        transform: translateX(-50%);
+        width: var(--column-width);
+        max-width: none;
         margin-left: 0;
         margin-right: 0;
-        padding-left: var(--space-m);
-        padding-right: var(--space-m);
     }
 
     .post-content figure.narrow, .page-content figure.narrow {
         width: 100%;
-        left: 0;
-        transform: none;
-        padding-left: 0;
-        padding-right: 0;
     }
 }

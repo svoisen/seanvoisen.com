@@ -1,5 +1,10 @@
+{#
+    The topics at the foot of a post. The separator sits outside the links so
+    that hovering a topic colours the topic and not the punctuation after it.
+#}
 {% macro tagList(tags) %}
-{% for tag in tags %}
-<a class="inline-tag-list-tag" href="/topics/{{ tag | slug }}/">{{ tag }}</a>
-{% endfor %}
+{%- for tag in tags -%}
+<a class="taglist__tag" href="/topics/{{ tag | slug }}/">{{ tag }}</a>
+{%- if not loop.last %}<span class="taglist__separator" aria-hidden="true"> · </span>{% endif -%}
+{%- endfor %}
 {% endmacro %}
