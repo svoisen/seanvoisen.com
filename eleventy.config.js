@@ -53,6 +53,7 @@ export default async function(eleventyConfig) {
    */
   eleventyConfig.addFilter("w3Date", filters.w3Date);
   eleventyConfig.addFilter("htmlDate", filters.htmlDate);
+  eleventyConfig.addFilter("monthYear", filters.monthYear);
   eleventyConfig.addFilter("head", filters.head);
   eleventyConfig.addFilter("slice", filters.slice);
   eleventyConfig.addFilter("filter", filters.filter);

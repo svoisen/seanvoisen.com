@@ -3,7 +3,6 @@ title: Design engineering, a working definition
 description: A few thoughts on how we define the role of design engineer in the tech industry.
 tags: ["work", "design"]
 image: "/assets/images/og/design_engineering_puzzle_creative_unsplash@1200x630.jpg"
-featured: true
 ---
 
 Design engineering seems to be, as [Chris Coyier has noted](https://frontendmasters.com/writing/design-engineers/), "having a moment." 

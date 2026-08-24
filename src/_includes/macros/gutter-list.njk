@@ -8,6 +8,10 @@
     page of its own renders as plain text rather than as a dead link.
     `quietGutter` keeps the gutter's text in the accessibility tree while
     taking it out of the visual column; see the work list for why.
+
+    `postRow` is the one-line form: a date in the gutter and a linked title.
+    The date arrives already formatted, because the archives want the day and
+    the home page has 96px to spend.
 #}
 {% macro entryRow(gutter, title, summary = null, href = null, quietGutter = false) %}
 <li class="gutter-grid__row">
@@ -18,5 +22,12 @@
         <span class="gutter-grid__summary">{{ summary }}</span>
         {%- endif %}
     </span>
+</li>
+{% endmacro %}
+
+{% macro postRow(item, date) %}
+<li class="gutter-grid__row">
+    <time class="gutter-grid__gutter" datetime="{{ item.date | w3Date }}">{{ date }}</time>
+    <span class="gutter-grid__title"><a href="{{ item.url }}">{{ item.data.title }}</a></span>
 </li>
 {% endmacro %}

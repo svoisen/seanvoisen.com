@@ -199,7 +199,10 @@ section {
         margin-bottom: 0;
     }
 
-    &:not(:first-child) {
+    /* The rule between sections, except where a section bar already draws one
+       — two hairlines with a gap between them read as a mistake, which is
+       what a composed page like the home page would otherwise get. */
+    &:not(:first-child):not(:has(.section-bar)) {
         margin-top: var(--space-xl);
         padding-top: var(--space-xl);
         border-top: 1px solid var(--border-color);
@@ -792,13 +795,24 @@ details[open] > summary {
     align-items: baseline;
 }
 
+/* A one-line row of dated titles sits tighter than a two-line row carrying a
+   summary — the difference the design draws between a list of posts and a
+   list of roles. */
 .gutter-grid__row:not(:last-child) {
+    margin-bottom: var(--space-s);
+}
+
+.gutter-grid__row:has(.gutter-grid__entry):not(:last-child) {
     margin-bottom: var(--space-m);
 }
 
-/* Both children are placed explicitly. The gutter is taken out of flow when
-   its value repeats, and without a named column the entry would slide left
+/* Every child is placed explicitly. The gutter leaves the flow when its value
+   repeats, and without a named column the entry beside it would slide left
    into the empty track and break the alignment line. */
+.gutter-grid__row > * {
+    grid-column: 2;
+}
+
 .gutter-grid__gutter {
     grid-column: 1;
     font-size: var(--font-size--1);
@@ -825,7 +839,6 @@ details[open] > summary {
 }
 
 .gutter-grid__entry {
-    grid-column: 2;
     display: flex;
     flex-direction: column;
     gap: var(--space-3xs);
@@ -854,105 +867,6 @@ details[open] > summary {
     font-size: var(--font-size--1);
     line-height: var(--metadata-line-height);
     color: var(--deemphasized-color);
-}
-
-.post-list {
-    margin: 0;
-    padding: 0;
-    list-style: none;
-    font-family: var(--font-family-ui);
-}
-
-.post-list-item {
-    position: relative;
-    display: grid;
-    grid-template-columns: 7em 1fr;
-    padding: var(--space-s) 0;
-    column-gap: var(--space-m);
-    align-items: start;
-}
-
-.post-list-item--with-badges {
-    grid-template-columns: 7em 4.25em 1fr;
-}
-
-.post-list-item:not(:last-child) {
-    border-bottom: 1px solid var(--border-color);
-}
-
-.post-list-item-date {
-    color: var(--deemphasized-color);
-    text-align: right;
-}
-
-.post-list-item-title {
-    font-weight: 400;
-}
-
-.post-list-item-title::after {
-    content: "";
-    display: block;
-    left: 0;
-    top: 0;
-    position: absolute;
-    z-index: 1;
-    height: 100%;
-    width: 100%;
-}
-
-.post-list-item-badge {
-    font-size: var(--font-size--1);
-    padding: 0.125rem 0.375rem;
-    border-radius: 0.25rem;
-    border: 1px solid var(--border-color);
-    text-align: center;
-    color: var(--deemphasized-color);
-    background-color: transparent;
-    transition: background-color 0.2s ease, color 0.2s ease;
-}
-
-.post-list-item:has(.post-list-item-title:hover) .post-list-item-badge,
-.post-list-item:has(.post-list-item-title:focus) .post-list-item-badge {
-    background-color: var(--surface-color);
-    color: var(--foreground-color);
-}
-
-@media only screen and (max-width: 767px) {
-    .post-list-item {
-        grid-template-columns: 1fr;
-        column-gap: var(--space-s);
-    }
-
-    .post-list-item--with-badges {
-        grid-template-columns: 4.25em 1fr;
-        grid-template-rows: auto auto;
-    }
-
-    .post-list-item-badge {
-        grid-column: 1;
-        grid-row: 1;
-    }
-
-    .post-list-item-title {
-        grid-column: 1;
-        grid-row: 1;
-    }
-
-    .post-list-item--with-badges .post-list-item-title {
-        grid-column: 2;
-        grid-row: 1;
-    }
-
-    .post-list-item-date {
-        grid-column: 1;
-        grid-row: 2;
-        text-align: left;
-        font-size: var(--font-size--1);
-    }
-
-    .post-list-item--with-badges .post-list-item-date {
-        grid-column: 2;
-    }
 }
 
 .inline-tag-list-tag:not(:last-child):after {

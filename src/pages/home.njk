@@ -5,24 +5,57 @@ permalink: "/index.html"
 localCSS: ["home"]
 ---
 
-{% from "macros/postlist.njk" import postList %}
-{% from "macros/featured-posts.njk" import featuredPostList %}
-{% set featuredPosts = collections.writing | filter("data.featured", true) | reverse %}
-{% set latestPosts = collections.unified | reverse | head(10) %}
+{% from "macros/section-bar.njk" import sectionBar %}
+{% from "macros/gutter-list.njk" import entryRow, postRow %}
+{% from "macros/work-list.njk" import workList %}
 
-<section>
-    <p class="hero">Sean Voisen is a writer and software engineer interested in <strong>making computers better for human thinking & creativity.</strong></p>
-    <p>This site is my blog and "<a href="https://maggieappleton.com/garden-history">digital garden</a>," a collection of <a href="/writing/">essays</a> and <a href="/thinking">quick thoughts</a> on <a href="/topics/">topics</a> of personal interest.</p>
+{#
+    Four practices, one alignment line. Every section is a bar and a gutter
+    list, and every title in every list starts at the same horizontal position
+    — which is the whole device the page has, there being no images.
+
+    WORK lists the roles that have a page of their own; the résumé carries the
+    rest. WRITING and THINKING read their own collections newest-first, so
+    publishing is what changes this page. Nothing here is hand-ordered.
+#}
+{% set roles = collections.workHistory | selectattr("url") %}
+{% set essays = collections.writing | reverse | head(6) %}
+{% set thoughts = collections.thinking | reverse | head(4) %}
+
+<section class="hero">
+    <p class="hero__statement">Sean Voisen is a writer and software engineer interested in <strong>making computers better for human thinking &amp; creativity.</strong></p>
+    <p class="hero__sub">Engineering leader by trade. The rest of the time I write about design, philosophy, and the tools we think with.</p>
 </section>
-{% if featuredPosts.length > 0 %}
-<section class="featured-posts-section">
-    <h2>Featured essays</h2>
-    <p>New here? These are some of my favorite and most popular essays.</p>
-    {{ featuredPostList(featuredPosts) }}
+
+<section class="home-section">
+    {{ sectionBar("Work", "Résumé", "/work/") }}
+    {{ workList(roles) }}
 </section>
-{% endif %}
-<section>
-    <h2>Recent posts</h2>
-    {{ postList(latestPosts, true) }}
-    <p>Looking for more?<br><a href="/writing/">Read more essays</a> or <a href="/thinking/" class="read-more-link">explore my thoughts</a></p>
+
+<section class="home-section">
+    {{ sectionBar("Writing", "All essays", "/writing/") }}
+    <ul class="gutter-grid">
+    {%- for post in essays %}
+    {{ postRow(post, post.date | monthYear) }}
+    {%- endfor %}
+    </ul>
+</section>
+
+<section class="home-section">
+    {{ sectionBar("Thinking", "All posts", "/thinking/") }}
+    <ul class="gutter-grid">
+    {%- for post in thoughts %}
+    {{ postRow(post, post.date | monthYear) }}
+    {%- endfor %}
+    </ul>
+</section>
+
+{# No right-hand link: there is no "all reading" page to point at, and the
+   Directory is already in the header. #}
+<section class="home-section">
+    {{ sectionBar("Reading") }}
+    <ul class="gutter-grid">
+        {{ entryRow("", "Bookshelf", "Books I've read, grouped by year.", "/bookshelf/") }}
+        {{ entryRow("", "Philosophy for Designers", "A reading list and a self-study journey.", "/philosophy-for-designers/") }}
+    </ul>
 </section>

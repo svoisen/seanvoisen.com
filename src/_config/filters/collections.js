@@ -20,7 +20,7 @@ export const slice = (array, start, end) => {
 
 export const filter = (array, key, value) => {
   return array.filter(item => {
-    // Support nested properties like "data.featured"
+    // Support nested properties like "data.title"
     const keys = key.split('.');
     let val = item;
     for (const k of keys) {

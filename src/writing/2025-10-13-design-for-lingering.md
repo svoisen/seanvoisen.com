@@ -3,7 +3,6 @@ title: "Design for lingering"
 description: 'An exploration of design interventions for deeper living, inspired by the philosophy of Byung-Chul Han.'
 tags: ["philosophy", "design"]
 image: "/assets/images/og/living_room_rifky_nur_setyadi@1200x630.jpg"
-featured: true
 ---
 
 {blurb, class:information}This is Part 4 in an ongoing series on philosophy, design and cognitive science. You can also read [Part 3](/writing/cezannes-doubts/), or check out [the reading list](/philosophy-for-designers/) behind this series.{/blurb}
