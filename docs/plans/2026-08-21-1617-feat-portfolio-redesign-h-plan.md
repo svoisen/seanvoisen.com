@@ -17,7 +17,7 @@ execution: code
 - **Means.** Migrate to design H from `~/Desktop/portfolio explorations.pen`, foundation first, in seven independently releasable parts — Parts 2 through 8, Part 1 having already shipped (KTD1, KTD11).
 - **Product authority.** Sean Voisen. The Pencil file's H boards (`H — Text Index (Mono, Light/Dark)`, `H · Essay`) and their notes carry visual intent; this document overrides them wherever structure and content disagree.
 - **Execution profile.** Each part ships on its own and leaves the site coherent. The repo has no test runner and no CI, so verification is build-plus-inspection — see the Verification Contract.
-- **Stop conditions.** Stop and ask if a unit would change a published URL, if greyscale drops any text tier below WCAG AA, or if design H's 96px gutter cannot be made to work at 390px without abandoning the shared alignment line (R34). The note URLs R37 removes are the one authorised exception; this condition still holds everywhere else.
+- **Stop conditions.** Stop and ask if a unit would change a published URL, if greyscale drops any text tier below WCAG AA, or if design H's 96px gutter cannot be made to work at 390px without abandoning the shared alignment line (R34). The note URLs R37 removes are the one authorised exception; this condition still holds everywhere else. *(A second URL change landed in U6 under a standing instruction to work through such points and report at the end — six unlinked topic pages. Recorded in the Execution Record and flagged for review.)*
 - **Open blockers.** None. Hero copy and the résumé's full roster are content to supply before launch, not before implementation.
 
 ---
@@ -210,15 +210,15 @@ Nothing blocks implementation. These do not either — the structures that hold 
 **Decisions needed before the unit that depends on them**
 
 - ~~Where the WRITING section bar's right-hand link points.~~ **Resolved 2026-08-23** by splitting the section in two. The question only existed because one merged list had no single index behind it; now every bar points at the index that lists its own contents, and READING, which has none, carries no link. This was the strongest argument for the split.
-- Where the CC BY-SA licence notice goes once the footer collapses to one row. U4 keeps it rendered until this is answered.
-- Whether an empty work item page renders its own organisation, role, and summary plus a link back to the Work index, or ships genuinely blank. A visitor following a home-page role title currently lands on nothing with no route onward. Needed by U6.
+- ~~Where the CC BY-SA licence notice goes once the footer collapses to one row.~~ **Resolved 2026-08-22** (user-directed): a second line below the row.
+- ~~Whether an empty work item page renders its own organisation, role, and summary plus a link back to the Work index, or ships genuinely blank.~~ **Resolved 2026-08-23 in U6** (implementer's call, no product authority needed — the alternative was a defect). The page opens on a section bar carrying the organisation on the left and "Résumé →" on the right, then the role title and summary. One row does both jobs, so an item with an empty body still tells a visitor where the role sat and still offers a way onward.
 
 **Deferred to implementation**
 
-- The exact greyscale and accent hex values. Design H's `final-mono` values are the starting point; the accent step (Tailwind blue/yellow vs. the current Flexoki pair) is chosen in the browser against the contrast gate in the Verification Contract. The faint tier needs darkening regardless — see Assumptions.
-- How the organisation gutter collapses at 390px (R34) — stacking, shrinking, or moving the organisation inline above the role — and which of the two suppression answers U9 takes.
-- Whether figures are a first-class element in essays or an exception. Flagged in the H Essay notes; most essays have none.
-- Whether the meta row keeps its Share link. Flagged in the H Essay notes as possibly not worth the pixel.
+- ~~The exact greyscale and accent hex values.~~ **Resolved in U1**: the `final-mono` greys as a single lightness-ordered ramp, `#2563EB` and `#FACC15` as the accents, and the faint tier darkened to `#8F8F8F` / `#6A6A6A` so the underline clears 3:1.
+- ~~How the organisation gutter collapses at 390px (R34), and which of the two suppression answers U9 takes.~~ **Resolved in U9**: below 568px the gutter stops being a column and becomes an eyebrow above the entry, in the same tracked caps the section bars use — one rule for every gutter list, so the home section and the résumé cannot diverge. Suppression reverses there: a repeated organisation comes back, because with the gutter stacked there is no column left to imply the grouping. U6 kept the repeated value in the markup, hidden by class, precisely so U9 could show it again.
+- ~~Whether figures are a first-class element in essays or an exception.~~ **Resolved in U8**: first-class. They break out of the prose measure to the full column, growing rightward so their left edge stays on the alignment line, and the `figure.narrow` opt-out is gone — nothing used it and the breakout no longer overshoots the column, which is what it existed to undo.
+- ~~Whether the meta row keeps its Share link.~~ **Resolved in U8**: dropped. It would need script or a social intent to do anything, and the board itself flagged it as possibly not worth the pixel.
 
 ### Sources / Research
 
@@ -577,6 +577,52 @@ U11 was added mid-execution, after U5 shipped. It has no dependencies and ships 
   - Searching the stylesheet for `group-headings` returns nothing.
 - **Verification.** Build is clean; the generated URL set differs from the pre-U11 set only by the seven removed note paths and the one added page path; no internal link is dead apart from the pre-existing exception below.
 - **Pre-existing defect the link gate surfaced.** `favorite-books-2022` and `some-books-i-enjoyed-in-2023` both link to `{{ site.url }}/reading`. `site.js` exports `base`, not `url`, so the template resolves to nothing and the links render as `/reading` — a path this site has never generated. It predates the redesign and is not caused by R37, but the list it was reaching for was closest to the deleted `favorite-books` note, so the fix is a content decision rather than a mechanical one. Left for the product authority; until then it is the one allowed miss in the dead-link gate.
+
+---
+
+## Execution Record
+
+Written as the units shipped, for the product authority's review. Everything below is a decision the plan did not already contain, or a place where the implementation went beyond what its unit called for. Resolved Outstanding Questions are marked in place above rather than repeated here.
+
+### Deviations from the plan as written
+
+- **The work collection is named `workHistory`, not `work`** (U6). The topic pages paginated over the whole `collections` object, so a custom collection sharing a name with a tag shadowed it — and "work" is a tag on seven posts. Taking the name turned `/topics/work/` into a second copy of the résumé. Renaming is the half that fixes the collision; the other half is below.
+- **`topic.njk` now paginates the tags rather than every collection** (U6), which retires six pages: `/topics/all/`, `/topics/sitemap/`, `/topics/tags/`, `/topics/thinking/`, `/topics/unified/` and `/topics/writing/`. None was linked from anywhere on the site, and `/topics/writing/` was a duplicate of the Writing index under a heading nobody chose. **This removes published URLs, which is a stop condition in the Goal Capsule.** It is here rather than in a question because the alternative — leaving the mechanism in place — meant every collection this plan adds mints another one. The six are listed again under Open for the product authority.
+- **The archive lists were converted to the gutter grid** (U7). KTD7 asked for one gutter grid rather than two grid systems, and U3 had left the old post list standing beside it, so following "All essays →" from the home page changed the shape of the list you were just reading. `postList` now renders gutter rows; roughly a hundred lines of post-list CSS went with it, including the badge states that nothing used once the home page's mixed list was gone. The archives keep the full date, the home gutters take month and year.
+- **The generic `section` rule now stands down where a section bar already draws a hairline** (U7). Without it the home page carried two rules with a gap between them at every section boundary. Fixed in the global sheet rather than in `home.css`, because any page composing bars inside sections would inherit the same fault.
+- **`h1` drops from weight 800 to 600, with the board's tracking** (U8). Sitewide, not just on posts: an essay title and an About title reading at different weights would look like an oversight. The smaller headings keep 700, where they have to hold their own against 18px prose.
+- **The About page's role list became a sentence pointing at `/work/`** (U10). The settled decision "one work destination, and it is the résumé" makes a second list of the same five roles a page covering overlapping ground. The outbound links to Express, Firefox, Madefire and Design Studio survive in the prose. This is the one edit to About beyond framing, and it is the most reversible thing in this record.
+
+### Judgement calls inside the units
+
+- **The home WORK list shows the roles that have a page of their own; the résumé shows everything** (U6). No extra frontmatter field: the collection is the whole history, and an entry with `permalink: false` stays in it while writing no file. That reproduces AE1 exactly and states a rule a reader can follow.
+- **Repeated organisations stay in the markup and leave the visual column by class** (U6). Dropping them from the template would leave a screen reader on the third Adobe item hearing a role with no employer attached — the one fact the gutter exists to carry — and would have left U9 with nothing to reinstate.
+- **Gutter list titles carry no underline** (U6). Every title in those lists is a link, so the underline distinguishes nothing; hover and focus restore it alongside the accent. R35's underline requirement is about telling links from body text in prose, which does not arise here.
+- **The prose measure and the standfirst are percentages of the column, not computed pixel widths** (U9). The first attempt used `calc(--width - padding)`, which between 568 and 767px resolves wider than the column actually is — a figure at "full column width" would have overflowed by up to 64px at widths nobody screenshots. As percentages they track the column at every size, and the 768px media query they needed disappears.
+- **`.pullquote` exists and no content uses it** (U8). R27 requires the treatment; introducing the markup convention is the unit's job, writing a pull quote into someone's essay is not. Verified against a throwaway copy of a built post rather than by editing one.
+
+### Verification results
+
+| Gate | Result |
+|---|---|
+| Build is clean | `npm run build`, 130 files, no errors |
+| URL continuity | 14 removed, 7 added, against a build of `main`. Removed: the 7 note paths (R37), `/topics/notes/` — which existed only because of the dangling notes collection — and the 6 phantom topic pages above. Added: `/philosophy-for-designers/` and the 6 Work paths |
+| No dead internal links | Every root-relative `href` in `dist/` resolved against the generated paths. One miss, the pre-existing `/reading` recorded under U11 |
+| Responsive | All 126 built pages loaded at 390, 568, 768, 1024 and 1440px, comparing `scrollWidth` against `clientWidth`. No horizontal overflow anywhere |
+| Contrast | No text renders in the faint tier: `--faint-color` is read only by the link underline and input borders. Every text tier is foreground or deemphasized, both verified in U1 |
+| Feed integrity | `xmllint --noout dist/feed.xml` passes; the ten entry URLs are unchanged, since no post URL moved. Both feeds pick up the new site description |
+| No stale font | `src/assets/fonts/` holds three files, all Outfit or IBM Plex Sans. No Source Serif 4 reference anywhere in source |
+| No stale framing | "digital garden" survives in exactly one built page, the essay `new-site-same-me`, which is about digital gardens. Published writing was not rewritten — see Open below |
+| Local inspection | Home, the Work index, a work item, an essay with a figure and a pull quote, a thinking post, a post with no description, a post with no topics, Writing, Bookshelf, Directory, Topics, About, Colophon and the reading list, in both modes at 390px, 740–900px and 1440px |
+
+### Open for the product authority
+
+- **The hero statement and sub.** The statement is the board's and was already the site's. The sub — "Engineering leader by trade. The rest of the time I write about design, philosophy, and the tools we think with." — is the implementer's, written to get the digital-garden framing off the page rather than leave it standing through two more units. It wants your pass.
+- **Six topic URLs were removed.** Listed under Deviations. If any of them should survive, the fix is to keep the old pagination and rename nothing — but then adding a collection adds a topic page, every time.
+- **`/reading` is still dead**, from `favorite-books-2022` and `some-books-i-enjoyed-in-2023`. It predates the redesign; the list it wanted was closest to the deleted `favorite-books` note, so the target is a content decision. `/bookshelf/` is the obvious candidate.
+- **"digital garden" in `new-site-same-me`.** Satisfying U10's test scenario literally would mean rewriting a published essay whose subject is digital gardens. Left alone deliberately.
+- **All five work item bodies are empty**, which R18 permits for this release. The pages are not dead ends, but they are thin.
+- **The résumé carries one role beyond the five with pages** — Userplane, from the About page. R19 says the index need not stop where the home list does.
 
 ---
 

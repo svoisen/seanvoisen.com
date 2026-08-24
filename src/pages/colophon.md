@@ -11,7 +11,7 @@ This site is built using [Eleventy](https://11ty.dev) and served using [Netlify]
 
 ## Design
 
-The current design is a blend of ideas from older versions of my blog, set in greyscale. Colour appears in exactly one place: a link you are hovering, or an element you have reached by keyboard.
+The current design is a text index: no images, no cards, and one alignment line running down every page, so that a list of roles and a list of essays are read the same way. It is set in greyscale, and colour appears in exactly one place — a link you are hovering, or an element you have reached by keyboard.
 
 ### Typography
 

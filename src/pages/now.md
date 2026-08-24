@@ -22,7 +22,7 @@ Beyond growing the team, I'm currently focused on exploring the future of UX eng
 
 ### Writing and working on this site
 
-Most of my spare time for side projects has been focused on getting a new version of this site/blog/"digital garden" both redesigned, migrated from Jekyll to [Eleventy](https://www.11ty.dev/), and ported over to a new domain. If you're reading this, it means I finally got it to the point where I'm comfortable sharing it publicly. I anticipate I'll be continuing to tweak the design and adding new features or refactoring in the months to come.
+Most of my spare time for side projects has been focused on getting a new version of this site both redesigned, migrated from Jekyll to [Eleventy](https://www.11ty.dev/), and ported over to a new domain. If you're reading this, it means I finally got it to the point where I'm comfortable sharing it publicly. I anticipate I'll be continuing to tweak the design and adding new features or refactoring in the months to come.
 
 ### Parenting and outdoors-focused travel
 
