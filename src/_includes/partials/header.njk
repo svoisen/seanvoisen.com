@@ -2,7 +2,10 @@
     <div class="wordmark">
         <a href="/" class="wordmark__link" title="Return home.">
             {% include "partials/logo.njk" %}
-            <span class="wordmark__name">{{ site.author.name }}</span>
+            {# The monogram carries the wordmark on its own. The name stays in
+               the accessibility tree so the home link is not an unlabelled
+               graphic — the logo SVG is aria-hidden. #}
+            <span class="visual-hidden">{{ site.author.name }}</span>
         </a>
     </div>
     <nav class="nav">

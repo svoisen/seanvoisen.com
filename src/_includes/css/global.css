@@ -492,15 +492,11 @@ details[open] > summary {
     flex: 1;
 }
 
-/*
- * Monogram and name are one home link. The underline on hover is drawn on
- * the name rather than the link, because the link is a flex box and the
- * decoration would otherwise run under the monogram too.
- */
+/* The home link is the monogram alone; the name beside it is visually
+   hidden, so the whole affordance lives in the mark. */
 .wordmark__link {
     display: inline-flex;
     align-items: center;
-    gap: var(--space-2xs);
 
     & svg.logo {
         display: block;
@@ -509,26 +505,11 @@ details[open] > summary {
         transition: transform 0.2s ease;
     }
 
-    &:hover,
-    &:focus-visible {
-        & svg.logo {
-            fill: var(--link-hover-color);
-            transform: scale(1.1);
-        }
-
-        & .wordmark__name {
-            color: var(--link-hover-color);
-            text-decoration: underline;
-            text-decoration-thickness: 2px;
-            text-decoration-color: var(--link-hover-color);
-        }
+    &:hover svg.logo,
+    &:focus-visible svg.logo {
+        fill: var(--link-hover-color);
+        transform: scale(1.1);
     }
-}
-
-.wordmark__name {
-    font-family: var(--font-family-ui);
-    font-weight: 500;
-    letter-spacing: -0.0125em;
 }
 
 .theme-toggle {
