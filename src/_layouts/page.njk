@@ -6,7 +6,7 @@ layout: base
 
 {# The list-shaped index pages are headed by a section bar; prose pages keep
    the title, subtitle, and metadata treatment. #}
-<article class="page{% if groupHeadings %} page--group-headings{% endif %}">
+<article class="page">
     {%- if listPage %}
     {{ sectionBar(title, barLink, barHref, 1) }}
     {%- else %}

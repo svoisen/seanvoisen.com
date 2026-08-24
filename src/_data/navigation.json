@@ -8,9 +8,9 @@
             "hideOnMobile": true
         },
         {
-            "title": "Notes",
-            "url": "/notes/",
-            "description": "Evergreen notes on a variety of topics of personal interest.",
+            "title": "Philosophy for Designers",
+            "url": "/philosophy-for-designers/",
+            "description": "A reading list and self-study journey in philosophy, design and cognitive science.",
             "inNavigation": false
         },
         {
@@ -49,7 +49,7 @@
         {
             "title": "Topics",
             "url": "/topics/",
-            "description": "All topics used in essays, notes and thinking posts.",
+            "description": "All topics used in essays and thinking posts.",
             "inNavigation": false
         },
         {

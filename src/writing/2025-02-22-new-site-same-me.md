@@ -18,7 +18,7 @@ I want to make my site to feel more like a home.
 This will take time, but this redesign on top of new technical infrastructure is my first step in this direction. If you poke around the place you may notice several changes and new additions:
 
 1. The new design is intentionally minimal and lightweight. There are few images and no web fonts. Some readers might think it’s objectively worse than the old design, but I feel this better reflects my own minimalist personal aesthetic, and forces me to focus on content above all else.
-2. I have added a new [notes section](/notes) for evergreen notes. The collection of notes is currently rather meager, but I have several notes buried in Obsidian that I plan clean up and publish over time.
+2. I have added a new notes section for evergreen notes. The collection of notes is currently rather meager, but I have several notes buried in Obsidian that I plan clean up and publish over time.
 3. I have a [now page](/now), now.
 
 While I like where I ended up, right now it still feels like I just moved into the place. I imagine there will be plenty of redecorating and rearranging the furniture in the coming months. But, for now, I’m enjoying this new web “home.”

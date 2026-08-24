@@ -8,10 +8,6 @@ export const thinking = (collection) => {
   return [...collection.getFilteredByGlob('./src/thinking/*.md')];
 };
 
-export const notes = (collection) => {
-  return [...collection.getFilteredByGlob('./src/notes/*.md')];
-};
-
 export const writing = (collection) => {
   return [...collection.getFilteredByGlob('./src/writing/*.md')];
 };
@@ -22,6 +18,6 @@ export const unified = (collection) => {
   return [...writingPosts, ...thinkingPosts].sort((a, b) => a.date - b.date);
 };
 
-export default { writing, thinking, tags, sitemap, notes, unified };
+export default { writing, thinking, tags, sitemap, unified };
 
 

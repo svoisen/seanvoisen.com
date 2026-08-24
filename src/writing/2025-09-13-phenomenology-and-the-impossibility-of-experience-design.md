@@ -5,7 +5,7 @@ tags: ["philosophy", "design"]
 image: "/assets/images/og/geometric_walking_eyes.jpg"
 ---
 
-{blurb, class:information}This is Part 1 in an ongoing series on philosophy, design and cognitive science. You can also check out [the reading list behind this series](/notes/philosophy-for-designers/).{/blurb}
+{blurb, class:information}This is Part 1 in an ongoing series on philosophy, design and cognitive science. You can also check out [the reading list behind this series](/philosophy-for-designers/).{/blurb}
 
 Let's consider a simple scenario involving two completely different people using the exact same banking app on identical iPhones. The first person is walking down a busy street on their way to work, frantically trying to figure out why they suddenly have a bunch of fraudulent charges on their account, desperately seeking customer support information but their phone is low on battery and keeps losing service. The second person is sitting at home on a Sunday morning, leisurely sipping a cup of coffee, moving money from their checking account into an ever-growing savings cushion. While both of these people are using the same app, viewing the same user interface, exploring the same information architecture, and are even using identical hardware, they are having *vastly* different experiences. 
 
@@ -31,7 +31,7 @@ These are some of the first questions I want to explore in this series on [Philo
 
 Phenomenology, as the name implies, is simply the study of "phenomena"—that is, how things appear to us in consciousness. Phenomenology is the school of philosophy concerned with studying and understanding subjective, conscious experience. For designers interested in how philosophy can be practically applied to craft, I feel this is a great place to start.
 
-While none of the essays in this Philosophy for Designers series will presuppose that you have read—or are currently reading—*any* of the books in [my reading list](/notes/philosophy-for-designers/), if you're following along, for this first set of essays I am primarily drawing from my reading of Robert Sokolowski's [Introduction to Phenomenology](https://bookshop.org/a/106240/9780521667920).
+While none of the essays in this Philosophy for Designers series will presuppose that you have read—or are currently reading—*any* of the books in [my reading list](/philosophy-for-designers/), if you're following along, for this first set of essays I am primarily drawing from my reading of Robert Sokolowski's [Introduction to Phenomenology](https://bookshop.org/a/106240/9780521667920).
 
 The literature on phenomenology and its relation to technology—specifically the philosophy of technology—is rich and varied. Sokolowski's book, however, does not discuss technology at all. Rather, it is intended to be an introduction to "pure" phenomenology, which means I'll have to do some work here to show how it's relevant to the practice of design. But I'm starting with this book anyway because I really want to build a foundation on theoretical basics before moving onto specific thinkers and works that build upon phenomenological foundations.
 
