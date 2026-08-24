@@ -69,9 +69,9 @@ export default async function(eleventyConfig) {
    */
   eleventyConfig.addCollection("writing", collections.writing);
   eleventyConfig.addCollection("thinking", collections.thinking);
+  eleventyConfig.addCollection("workHistory", collections.workHistory);
   eleventyConfig.addCollection("tags", collections.tags);
   eleventyConfig.addCollection("sitemap", collections.sitemap);
-  eleventyConfig.addCollection("notes", collections.notes);
   eleventyConfig.addCollection("unified", collections.unified);
 
   /*
@@ -81,7 +81,7 @@ export default async function(eleventyConfig) {
   eleventyConfig.addLayoutAlias("page", "page.njk");
   eleventyConfig.addLayoutAlias("post", "post.njk");
   eleventyConfig.addLayoutAlias("home", "home.njk");
-  eleventyConfig.addLayoutAlias("note", "note.njk");
+  eleventyConfig.addLayoutAlias("work", "work.njk");
   eleventyConfig.addLayoutAlias("atom", "atom.njk");
 
   /*

@@ -12,12 +12,26 @@ export const writing = (collection) => {
   return [...collection.getFilteredByGlob('./src/writing/*.md')];
 };
 
+// The whole professional history, in the explicit order the frontmatter sets
+// rather than by date or filename. Entries that set `permalink: false` stay in
+// the collection and write no page — the résumé lists them, the home page
+// links only the ones that have somewhere to go.
+//
+// Not named `work`: the topic pages paginate over the whole `collections`
+// object, so a custom collection sharing a name with a tag shadows it. "work"
+// is a tag on seven posts, and taking the name would quietly turn
+// /topics/work/ into a second copy of the résumé.
+export const workHistory = (collection) => {
+  return [...collection.getFilteredByGlob('./src/work/*.md')]
+    .sort((a, b) => a.data.order - b.data.order);
+};
+
 export const unified = (collection) => {
   const writingPosts = collection.getFilteredByGlob('./src/writing/*.md');
   const thinkingPosts = collection.getFilteredByGlob('./src/thinking/*.md');
   return [...writingPosts, ...thinkingPosts].sort((a, b) => a.date - b.date);
 };
 
-export default { writing, thinking, tags, sitemap, unified };
+export default { writing, thinking, workHistory, tags, sitemap, unified };
 
 

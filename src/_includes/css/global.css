@@ -785,6 +785,7 @@ details[open] > summary {
 }
 
 .gutter-grid__row {
+    position: relative;
     display: grid;
     grid-template-columns: var(--gutter-width) 1fr;
     column-gap: var(--gutter-gap);
@@ -795,8 +796,63 @@ details[open] > summary {
     margin-bottom: var(--space-m);
 }
 
+/* Both children are placed explicitly. The gutter is taken out of flow when
+   its value repeats, and without a named column the entry would slide left
+   into the empty track and break the alignment line. */
 .gutter-grid__gutter {
+    grid-column: 1;
     font-size: var(--font-size--1);
+    color: var(--deemphasized-color);
+}
+
+/* The gutter carries a date on the post lists and an organisation on the work
+   lists. A date is reference material; an organisation is the thing the row is
+   filed under, so it takes the full foreground weight the design gives it. */
+.gutter-grid__gutter--strong {
+    color: var(--foreground-color);
+}
+
+/* A repeated organisation leaves the visual column but stays in the
+   accessibility tree. The grid track sets the column width, not this item, so
+   taking it out of flow costs the alignment line nothing. */
+.gutter-grid__gutter--quiet {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+    white-space: nowrap;
+    clip-path: inset(50%);
+}
+
+.gutter-grid__entry {
+    grid-column: 2;
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-3xs);
+}
+
+.gutter-grid__title {
+    font-size: var(--font-size-0);
+    line-height: var(--heading-line-height);
+    letter-spacing: -0.012em;
+
+    /* Every title in these lists is a link, so an underline distinguishes
+       nothing and only adds noise to a page built to read as an index. Hover
+       and focus put it back, next to the accent the global rules supply. */
+    & a {
+        text-decoration: none;
+
+        &:hover,
+        &:focus-visible {
+            text-decoration: underline;
+            text-decoration-color: currentColor;
+        }
+    }
+}
+
+.gutter-grid__summary {
+    font-size: var(--font-size--1);
+    line-height: var(--metadata-line-height);
     color: var(--deemphasized-color);
 }
 

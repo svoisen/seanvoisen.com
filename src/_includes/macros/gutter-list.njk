@@ -1,0 +1,22 @@
+{#
+    Rows for the gutter grid. Every list on the site that puts a short fact in
+    the left column and an entry in the right one is built from these, so the
+    titles line up down the page whatever the gutter happens to carry.
+
+    `entryRow` is the two-line form: a title with a summary under it, used by
+    the work lists and the reading section. `href` is optional — a role with no
+    page of its own renders as plain text rather than as a dead link.
+    `quietGutter` keeps the gutter's text in the accessibility tree while
+    taking it out of the visual column; see the work list for why.
+#}
+{% macro entryRow(gutter, title, summary = null, href = null, quietGutter = false) %}
+<li class="gutter-grid__row">
+    <span class="gutter-grid__gutter gutter-grid__gutter--strong{% if quietGutter %} gutter-grid__gutter--quiet{% endif %}">{{ gutter }}</span>
+    <span class="gutter-grid__entry">
+        <span class="gutter-grid__title">{% if href %}<a href="{{ href }}">{{ title }}</a>{% else %}{{ title }}{% endif %}</span>
+        {%- if summary %}
+        <span class="gutter-grid__summary">{{ summary }}</span>
+        {%- endif %}
+    </span>
+</li>
+{% endmacro %}

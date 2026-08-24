@@ -1,0 +1,25 @@
+{#
+    The work list, shared by the home page's WORK section and the Work index so
+    that the two cannot drift apart — including when the narrow-width layout
+    changes how the gutter behaves.
+
+    An organisation shows once per consecutive run. The comparison is against
+    the previous item by index rather than a flag carried across iterations: a
+    variable set inside a Nunjucks loop does not survive the loop frame, so a
+    flag silently resets on every pass.
+
+    The repeated ones are still written into the markup and hidden by class.
+    Dropping them outright would leave a screen reader on the third Adobe item
+    hearing a role with no employer attached, which is the one fact the gutter
+    is there to carry.
+#}
+{% from "macros/gutter-list.njk" import entryRow %}
+
+{% macro workList(items) %}
+<ul class="gutter-grid">
+    {%- for item in items %}
+    {%- set repeated = loop.index0 > 0 and items[loop.index0 - 1].data.organisation == item.data.organisation %}
+    {{ entryRow(item.data.organisation, item.data.title, item.data.summary, item.url, repeated) }}
+    {%- endfor %}
+</ul>
+{% endmacro %}

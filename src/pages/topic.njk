@@ -1,11 +1,19 @@
 ---
 layout: "base"
 pagination:
-    data: collections
+    data: collections.tags
     size: 1
     alias: tag
 permalink: /topics/{{ tag | slug }}/index.html
 ---
+{#
+    Paginate the tags, not the whole `collections` object. Paginating
+    `collections` gave a topic page to every custom collection as well —
+    /topics/writing/, /topics/all/, /topics/sitemap/ and friends — none of them
+    linked from anywhere, and /topics/writing/ was a second copy of the Writing
+    index under a heading nobody chose. Adding the work collection would have
+    minted another one.
+#}
 
 {% from "macros/section-bar.njk" import sectionBar %}
 {% from "macros/postlist.njk" import postList %}

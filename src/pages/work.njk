@@ -1,0 +1,11 @@
+---
+layout: page
+title: "Work"
+permalink: "/work/"
+listPage: true
+showMetadata: false
+---
+
+{% from "macros/work-list.njk" import workList %}
+
+{{ workList(collections.workHistory) }}
