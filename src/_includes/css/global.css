@@ -157,8 +157,16 @@
        its titles at --gutter-width + --gutter-gap from the column edge,
        whatever the gutter itself carries, so sections line up down the page.
        Below the one breakpoint the gutter stops being a column entirely — see
-       the narrow-width block at the foot of this file. */
-    --gutter-width: 6rem;
+       the narrow-width block at the foot of this file.
+
+       Measured from the face it carries rather than fixed, because the widest
+       thing it has to hold is an archive date: "May 20, 2008" is 6.23em of
+       Outfit, and 6.75 leaves it about 8% of clear air at every step of the
+       fluid scale. A flat 6rem was right against the old type scale and
+       wrapped every two-digit date the moment --font-size--1 grew to 16.5px.
+       Tying the track to the same token the gutter is set in is what stops
+       the two drifting apart again. */
+    --gutter-width: calc(var(--font-size--1) * 6.75);
     --gutter-gap: var(--space-l);
 
     /* Icons */
