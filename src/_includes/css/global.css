@@ -136,7 +136,7 @@
     --font-family-ui: "Outfit", -apple-system, BlinkMacSystemFont, "Segoe UI", system-ui, sans-serif;
     /* One weight for every heading on the site, h1 included: the ranks are
        told apart by size, not by a second axis of weight. */
-    --heading-font-weight: 600;
+    --heading-font-weight: 800;
     --line-height: 1.6;
     --heading-line-height: 1.2;
     /* Tracked caps and the two-line summaries in the gutter lists. Tight
@@ -381,27 +381,30 @@ p {
  * and reads loose at display sizes, so the tracking tightens as the size
  * grows and has all but let go by the time a heading is close to prose size.
  *
- * The values are set for 600, not for the scale alone: at that weight the
- * stems are thick enough to close the counters and the gaps on their own, so
- * every rank wants roughly a quarter less tightening than the same size does
- * at 400. Change --heading-font-weight and these want re-reading.
+ * The values are set for 800, not for the scale alone: the heavier the stems,
+ * the less of the fit is left to take out, because thick strokes and small
+ * counters already close the gaps on their own. Each 200 of weight above 400
+ * costs a rank about a quarter of its tightening, which puts 800 at half of
+ * what the same size wants at 400 — the 600 values, carried over unchanged,
+ * pinched every double letter in a title. Change --heading-font-weight and
+ * these want re-reading again.
  */
 h1 {
     font-size: var(--font-size-4);
     line-height: 1.15;
-    letter-spacing: -0.02em;
+    letter-spacing: -0.013em;
 }
 
 h2 {
     margin-top: var(--space-2xl);
     font-size: var(--font-size-3);
-    letter-spacing: -0.014em;
+    letter-spacing: -0.009em;
 }
 
 h3 {
     margin-top: var(--space-xl);
     font-size: var(--font-size-2);
-    letter-spacing: -0.01em;
+    letter-spacing: -0.007em;
 }
 
 /* Near enough to prose size that the font's own fit is already right; this
@@ -409,7 +412,7 @@ h3 {
 h4 {
     margin-top: var(--space-l);
     font-size: var(--font-size-1);
-    letter-spacing: -0.005em;
+    letter-spacing: -0.003em;
 }
 
 /* Below h4 the scale has run out of room above the prose it sits in, so the
@@ -844,7 +847,8 @@ details[open] > summary {
     font-size: var(--font-size-2);
     font-weight: var(--heading-font-weight);
     line-height: 1.35;
-    letter-spacing: -0.01em;
+    /* Heading face at heading weight and h3's size, so it takes h3's fit. */
+    letter-spacing: -0.007em;
     color: var(--foreground-color);
 }
 
