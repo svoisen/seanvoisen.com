@@ -24,9 +24,34 @@
     }
 }
 
+/*
+ * The hero's second line is a binary, so it is set as two run-in lines
+ * rather than as one sentence with "By day:" and "By night:" buried in it.
+ * The lead-in is the only new mark — sentence case, one weight up — and the
+ * clause stays in the summary tier the sentence was already set in. The pair
+ * costs one line more than the paragraph it replaces and draws nothing else:
+ * no rule, no column, no tracked caps, no glyph.
+ */
 .hero__sub {
     margin: var(--space-m) 0 0 0;
     font-family: var(--font-family-ui);
-    font-size: var(--font-size-0);
+    font-size: var(--font-size--1);
+}
+
+/* Inline, so the clause runs on after the lead-in rather than sitting under
+   it, and a line too long to hold wraps beneath the pair. No tracking: at
+   this size nothing else on the site carries any. */
+.hero__sub-label {
+    display: inline;
+    font-weight: 600;
+    color: var(--foreground-color);
+}
+
+/* dd carries a browser indent, and inline it would open a 40px hole between
+   the lead-in and the clause. This is the whole of the space between them —
+   the two are adjacent in the markup, so nothing else contributes. */
+.hero__sub-text {
+    display: inline;
+    margin: 0 0 0 0.5em;
     color: var(--deemphasized-color);
 }

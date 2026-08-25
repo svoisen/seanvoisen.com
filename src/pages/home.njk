@@ -24,7 +24,26 @@ localCSS: ["home"]
 
 <section class="hero">
     <p class="hero__statement">Sean Voisen is a software design and engineering leader interested in <strong>making computers better for human thinking &amp; creativity.</strong></p>
-    <p class="hero__sub">By day: Shipping code and building teams. By night: Pen plotter art and <a href="https://moonpointing.org">essays on philosophy</a>.</p>
+    {#
+        The sub is a binary, so it is set as two run-in lines — a bold
+        lead-in and its clause — rather than as one sentence with "By day:"
+        and "By night:" buried in it. A description list is what that is: a
+        term and its description, twice, run in rather than stacked.
+
+        dt and dd are both inline here, so the div around each pair is what
+        holds the two lines apart. They are also adjacent in the source on
+        purpose: run in, the whitespace between them would collapse to a word
+        space on top of the gap the CSS sets, and the space between lead-in
+        and clause would not be the one that is declared.
+    #}
+    <dl class="hero__sub">
+        <div class="hero__sub-line">
+            <dt class="hero__sub-label">By day</dt><dd class="hero__sub-text">Shipping code and building teams.</dd>
+        </div>
+        <div class="hero__sub-line">
+            <dt class="hero__sub-label">By night</dt><dd class="hero__sub-text">Plotter drawings and <a href="https://moonpointing.org">essays on philosophy</a>.</dd>
+        </div>
+    </dl>
 </section>
 
 <section class="home-section">
