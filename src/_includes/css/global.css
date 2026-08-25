@@ -871,13 +871,25 @@ details[open] > summary {
  */
 .section-bar {
     display: flex;
-    align-items: baseline;
+    align-items: center;
     justify-content: space-between;
     gap: var(--space-s);
     border-top: 1px solid var(--border-color);
     padding-top: var(--space-s);
     margin-bottom: var(--space-l);
     font-family: var(--font-family-ui);
+
+    /*
+     * Both sides of the bar share one line box, given as a length so it does
+     * not rescale with the right-hand item's larger type, and they are
+     * aligned by that box rather than by baseline. A bar is a fixed row
+     * whether or not it carries a right-hand item: on baseline alignment the
+     * taller right item set the shared baseline and dropped the label — and
+     * everything under the bar with it — by a few pixels wherever there was
+     * one, which is why the Bookshelf's bar sat below the Directory's and
+     * the home page's Reading bar sat above the three sections over it.
+     */
+    --section-bar-line: calc(var(--font-size--2) * var(--metadata-line-height));
 }
 
 /* A rule divides one thing from another, so a bar that opens the page has
@@ -894,7 +906,7 @@ details[open] > summary {
     margin: 0;
     font-size: var(--font-size--2);
     font-weight: 400;
-    line-height: var(--metadata-line-height);
+    line-height: var(--section-bar-line);
     letter-spacing: 0.112em;
     text-transform: uppercase;
     color: var(--deemphasized-color);
@@ -903,6 +915,7 @@ details[open] > summary {
 .section-bar__link,
 .section-bar__note {
     font-size: var(--font-size--1);
+    line-height: var(--section-bar-line);
     color: var(--deemphasized-color);
     white-space: nowrap;
 }
