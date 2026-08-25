@@ -9,10 +9,18 @@
     margin-bottom: var(--space-m);
 }
 
+/* Size and the underline carry the entry on their own; there is no weight
+   here, matching every other list of links on the site. */
 .directory-list-item-title {
     font-size: var(--font-size-1);
     font-weight: var(--heading-font-weight);
     display: block;
+}
+
+/* The description is a gloss on the path above it, so it sits in the same
+   deemphasized tier the gutter lists give their summaries. */
+.directory-list-item-description {
+    color: var(--deemphasized-color);
 }
 
 .directory-list-item-title::after {

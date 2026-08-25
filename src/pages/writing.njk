@@ -3,10 +3,16 @@ layout: page
 title: "Writing"
 permalink: "/writing/"
 listPage: true
-showMetadata: false
 ---
 
 {% from "macros/postlist.njk" import postList %}
 {% set writing = collections.writing | reverse %}
+{% set intro = navigation.items | getDescription(page.url) %}
+
+{# The page's own line, read from the directory data rather than written here,
+   so the index and the sitemap cannot end up describing it differently. #}
+{%- if intro %}
+<p class="list-intro">{{ intro }}</p>
+{%- endif %}
 
 {{ postList(writing) }}

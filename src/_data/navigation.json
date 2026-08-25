@@ -4,7 +4,7 @@
             "title": "Work",
             "url": "/work/",
             "description": "Where I've worked, and what I did there.",
-            "inNavigation": true,
+            "inNavigation": false,
             "hideOnMobile": false
         },
         {
@@ -18,7 +18,8 @@
             "title": "Philosophy for Designers",
             "url": "/philosophy-for-designers/",
             "description": "A reading list and self-study journey in philosophy, design and cognitive science.",
-            "inNavigation": false
+            "inNavigation": false,
+            "inDirectory": false
         },
         {
             "title": "Thinking",

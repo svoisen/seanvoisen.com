@@ -3,6 +3,8 @@ layout: "page"
 title: "About"
 date: git Last Modified
 permalink: "/about/"
+lastUpdated: 2026-08-24
+showUpdated: true
 ---
 
 **Hello!** I’m _Sean_. My professional mission is to _make computers better for human thinking and creativity_. I'm a writer and software engineer who is deeply interested in the intersections between design, philosophy, cognitive science and computing.
