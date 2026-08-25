@@ -115,6 +115,12 @@
 
     --link-color: var(--foreground-color);
     --link-underline-color: var(--faint-color);
+    /* Thicker than the font's own underline, which is a hairline at this size
+       and reads as an artefact rather than a decision. Every link on the site
+       carries this one, so the places that clear an underline and put it back
+       on hover do it with text-decoration-line — the text-decoration shorthand
+       resets the thickness to auto, and the underline returns as a hairline. */
+    --link-underline-thickness: 2px;
     --link-hover-color: light-dark(var(--accent-light), var(--accent-dark));
 
     --blockquote-border-color: var(--border-color);
@@ -290,7 +296,7 @@ input[type="submit"], button {
 a {
     color: var(--link-color);
     text-decoration-style: solid;
-    text-decoration-thickness: 2px;
+    text-decoration-thickness: var(--link-underline-thickness);
     text-decoration-color: var(--link-underline-color);
 
     &:after {
@@ -538,7 +544,7 @@ details[open] > summary {
     font-size: var(--font-size-0);
 
     & a {
-        text-decoration: none;
+        text-decoration-line: none;
     }
 }
 
@@ -734,11 +740,12 @@ details[open] > summary {
     }
 
     /* .header a clears the underline for the whole header, so restoring it
-       on hover has to happen here rather than through the global a rule. */
+       on hover has to happen here rather than through the global a rule. The
+       thickness still comes from the global rule: clearing the line alone
+       leaves it in place. */
     & a:hover,
     & a:focus-visible {
-        text-decoration: underline;
-        text-decoration-thickness: 2px;
+        text-decoration-line: underline;
         text-decoration-color: currentColor;
     }
 }
@@ -825,11 +832,11 @@ details[open] > summary {
 
 .taglist__tag {
     color: var(--deemphasized-color);
-    text-decoration: none;
+    text-decoration-line: none;
 
     &:hover,
     &:focus-visible {
-        text-decoration: underline;
+        text-decoration-line: underline;
         text-decoration-color: currentColor;
     }
 }
@@ -1009,11 +1016,11 @@ details[open] > summary {
        nothing and only adds noise to a page built to read as an index. Hover
        and focus put it back, next to the accent the global rules supply. */
     & a {
-        text-decoration: none;
+        text-decoration-line: none;
 
         &:hover,
         &:focus-visible {
-            text-decoration: underline;
+            text-decoration-line: underline;
             text-decoration-color: currentColor;
         }
     }
