@@ -1,6 +1,6 @@
 ---
 title: Firefox
 organisation: Mozilla
-summary: CSS layout, rendering, and accessibility engineering teams.
-order: 4
+summary: CSS layout, rendering, and accessibility engineering leadership.
+order: 5
 ---

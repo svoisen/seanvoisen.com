@@ -1,6 +1,6 @@
 ---
 title: Adobe Express
 organisation: Adobe
-summary: Real-time collaboration and accessibility features, and web browser technical partnerships.
+summary: Real-time collaboration features, accessibility, and technical partnerships with web browsers.
 order: 2
 ---

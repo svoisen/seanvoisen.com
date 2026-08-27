@@ -1,6 +1,6 @@
 ---
-title: Design Studio
+title: Design studio and digital publishing
 organisation: Adobe
-summary: Prototype engineering inside Adobe's in-house design organisation.
-order: 3
+summary: iPad magazine publishing tools and new product incubation.
+order: 4
 ---
