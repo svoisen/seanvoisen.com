@@ -7,18 +7,22 @@ localCSS: ["home"]
 
 {% from "macros/section-bar.njk" import sectionBar %}
 {% from "macros/gutter-list.njk" import entryRow, postRow %}
-{% from "macros/work-list.njk" import workList %}
+{# {% from "macros/work-list.njk" import workList %} #}
 
 {#
-    Four practices, one alignment line. Every section is a bar and a gutter
+    Three practices, one alignment line. Every section is a bar and a gutter
     list, and every title in every list starts at the same horizontal position
     — which is the whole device the page has, there being no images.
 
-    WORK lists the roles that have a page of their own; the résumé carries the
-    rest. WRITING and THINKING read their own collections newest-first, so
+    WRITING and THINKING read their own collections newest-first, so
     publishing is what changes this page. Nothing here is hand-ordered.
+
+    WORK is held back from launch: the section below is commented out, and so
+    are the macro import and the `roles` set that only it used. The files it
+    reads are ignored in eleventy.config.js, so uncommenting here on its own
+    would put a bar over an empty list — lift the ignores at the same time.
 #}
-{% set roles = collections.workHistory | selectattr("url") %}
+{# {% set roles = collections.workHistory | selectattr("url") %} #}
 {% set essays = collections.writing | reverse | head(6) %}
 {% set thoughts = collections.thinking | reverse | head(4) %}
 
@@ -46,10 +50,12 @@ localCSS: ["home"]
     </dl>
 </section>
 
+{# Held back from launch — see the note above.
 <section class="home-section">
     {{ sectionBar("Work", "Résumé", "/work/") }}
     {{ workList(roles) }}
 </section>
+#}
 
 <section class="home-section">
     {{ sectionBar("Writing", "All essays", "/writing/") }}

@@ -15,6 +15,27 @@ export default async function(eleventyConfig) {
   eleventyConfig.addWatchTarget("./src/assets/**/*.{css,js,webp,svg,png,jpg,woff2}");
 
   /*
+   * held back from launch
+   *
+   * The work section — the /work/ résumé index and the page each role gets —
+   * is written but not shipping yet. Ignoring the templates keeps every file
+   * in the repo and out of the build: `collections.workHistory` comes back
+   * empty, so nothing that reads it can render, and the sitemap, which globs
+   * the input directory for its collection, cannot list what was never built.
+   *
+   * The collection, the layout and the work-list macro are all left
+   * registered. They cost nothing while the glob finds no files, and leaving
+   * them means bringing the section back is a deletion rather than a rebuild.
+   *
+   * To bring it back: delete the two `ignores` lines below, uncomment the WORK
+   * section in src/pages/home.njk, drop `"inDirectory": false` from the Work
+   * entry in src/_data/navigation.json, and restore the résumé link in the
+   * last paragraph of src/pages/about.md.
+   */
+  eleventyConfig.ignores.add("src/work/*.md");
+  eleventyConfig.ignores.add("src/pages/work.njk");
+
+  /*
    * plugins
    */
   eleventyConfig.addPlugin(plugins.wordStats, {

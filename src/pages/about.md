@@ -14,7 +14,7 @@ I’m originally from California, and live with my wife and kids in the San Fran
 ![A portrait of the author.](/assets/images/sean_voisen_wide.webp
 "A portrait of the author.")
 
-Currently, I lead teams of engineers and design technologists building design systems and new user experiences for web, mobile and desktop at Adobe. Before that I built collaboration and accessibility features for [Adobe Express](https://express.adobe.com), managed CSS layout, rendering and accessibility engineering teams working on [Firefox](https://mozilla.org), and made web-based tools for animated comics at [Madefire](https://techcrunch.com/2022/04/29/madefire-shuts-down/). More detailed work history can be found on my [résumé](/work/).
+Currently, I lead teams of engineers and design technologists building design systems and new user experiences for web, mobile and desktop at Adobe. Before that I built collaboration and accessibility features for [Adobe Express](https://express.adobe.com), managed CSS layout, rendering and accessibility engineering teams working on [Firefox](https://mozilla.org), and made web-based tools for animated comics at [Madefire](https://techcrunch.com/2022/04/29/madefire-shuts-down/).
 
 ---
 

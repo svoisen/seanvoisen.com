@@ -5,6 +5,7 @@
             "url": "/work/",
             "description": "Where I've worked, and what I did there.",
             "inNavigation": false,
+            "inDirectory": false,
             "hideOnMobile": false
         },
         {
