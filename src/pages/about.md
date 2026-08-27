@@ -22,16 +22,6 @@ Currently, I lead teams of engineers and design technologists building design sy
 
 If anything I write resonates with you, please feel free to <a href="#" class="eml-protected">send me a note</a> or find me on [Mastodon](https://front-end.social/@svoisen) or [Bluesky](https://bsky.app/profile/seanvoisen.com).
 
-## Privacy and analytics
-
-- This site does not use any third party tracking scripts. 
-- This site does not collect any data. 
-- I am a [Bookshop.org](https://bookshop.org) affiliate. Links to books on this site typically use my affiliate link, which means I may receive a small commission on any purchases made through the link.
-
-## Design and production 
-
-If you're curious about how this site is designed or built, [check out the colophon](/colophon/).
-
 ## Disclaimer
 
 _Views and opinions expressed on this site are purely my own and not representative of those of my employer._
