@@ -1,6 +1,6 @@
 ---
 layout: page
-title: "Philosophy for Designers: Ethics, Experience and Cognition"
+title: "Philosophy for designers: ethics, experience and cognition"
 permalink: "/philosophy-for-designers/"
 description: A self-study journey for thoughtful designers and technologists.
 date: git Last Modified
