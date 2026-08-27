@@ -4,8 +4,6 @@ description: 'A list, in no particular order, of things I think more people shou
 tags: ["personal", "philosophy", "habits"]
 ---
 
-A list, in no particular order, of things I think more people should try or know about.
-
 1. [Mindfulness in plain english](https://www.vipassana.com/meditation/mindfulness_in_plain_english.html)
 2. Hiking north of the Arctic Circle along Sweden's [Kungsleden](https://en.wikipedia.org/wiki/Kungsleden)
 3. [How to start and feed a sourdough starter](https://www.theperfectloaf.com/guides/sourdough-starter/)
