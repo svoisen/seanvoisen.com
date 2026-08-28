@@ -2,6 +2,13 @@
 /stream/2026-06-24-dear-ai-help-me-do-less /thinking/2025-06-24-dear-ai-help-me-do-less 301
 /thinking/2026-06-24-dear-ai-help-me-do-less /thinking/2025-06-24-dear-ai-help-me-do-less 301
 
+# "The imp of optimization" moved to Moonpointing. It was published at /blog/
+# and only reached /writing/ through the rename rule below, so the /blog/ path
+# is the one most of the inbound links use. Netlify takes the first match, so
+# both entries have to sit above that rule to save those links a second hop.
+/blog/the-imp-of-optimization https://moonpointing.org/blog/the-imp-of-optimization/ 301
+/writing/the-imp-of-optimization https://moonpointing.org/blog/the-imp-of-optimization/ 301
+
 # Blog to Writing rename
 /blog/feed.xml /feed.xml 301
 /blog/feed.json /feed.json 301

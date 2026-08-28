@@ -12,13 +12,14 @@ export const imageOptions = {
 };
 
 /*
- * Images no page links to any more, but that already-delivered Moonpointing
- * emails still hotlink at their original /img/ URLs.
+ * Images no page links to any more, but that something outside this site —
+ * an already-delivered Moonpointing email, an archived feed copy — still
+ * hotlinks at their original /img/ URLs.
  *
  * The transform plugin only processes <img> tags it finds in built HTML, so
- * removing the newsletter posts also stopped these from being generated —
- * breaking the images in anyone's archived copy of an email. Building them
- * directly keeps the URLs alive without putting the posts back on the site.
+ * removing the post that carried an image also stops it being generated —
+ * breaking it wherever it is still referenced. Building them directly keeps
+ * the URLs alive without putting the posts back on the site.
  *
  * An output filename is a hash of the source bytes plus the sharp options
  * (which we never set), so the restored originals reproduce byte-identical
@@ -26,6 +27,9 @@ export const imageOptions = {
  * 2026-02-24 email.
  */
 const orphanedImages = [
+  // "The imp of optimization" moved to moonpointing.org, but it was the most
+  // linked-to essay here and its /img/ URLs outlive it in feeds and elsewhere.
+  "src/assets/images/watch_tri_wiranto_unsplash@1600.jpg",
   "src/assets/images/the_magpie@1600.webp",
   "src/assets/images/finger_moon_puzzle_creative.jpg",
   "src/assets/images/moon_over_trees.jpg",
