@@ -5,4 +5,12 @@ title: Topics
 listPage: true
 ---
 
+{% set intro = navigation.items | getDescription(page.url) %}
+
+{# The page's own line, read from the directory data rather than written here,
+   so the index and the sitemap cannot end up describing it differently. #}
+{%- if intro %}
+<p class="list-intro">{{ intro }}</p>
+{%- endif %}
+
 {% include "partials/inline-tag-list.njk" %}
