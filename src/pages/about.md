@@ -14,13 +14,17 @@ I’m originally from California, and live with my wife and kids in the San Fran
 ![A portrait of the author.](/assets/images/sean_voisen_wide.webp
 "A portrait of the author.")
 
-Currently, I lead teams of engineers and design technologists building design systems and new user experiences for web, mobile and desktop at Adobe. Before that I built collaboration and accessibility features for [Adobe Express](https://express.adobe.com), managed CSS layout, rendering and accessibility engineering teams working on [Firefox](https://mozilla.org), and made web-based tools for animated comics at [Madefire](https://techcrunch.com/2022/04/29/madefire-shuts-down/).
+Currently, I lead teams of engineers and design technologists building design systems and new user experiences for web, mobile and desktop at Adobe. Before that I built collaboration and accessibility features for [Adobe Express](https://express.adobe.com), managed CSS layout, rendering and accessibility engineering teams working on [Firefox](https://mozilla.org), and made web-based tools for animated comics at [Madefire](https://techcrunch.com/2021/04/29/madefire-shuts-down/).
 
 ---
 
 ## Contact me
 
 If anything I write resonates with you, please feel free to <a href="#" class="eml-protected">send me a note</a> or find me on [Mastodon](https://front-end.social/@svoisen) or [Bluesky](https://bsky.app/profile/seanvoisen.com).
+
+## Affiliate links
+
+I'm a [Bookshop.org](https://bookshop.org) affiliate. Links to books on this site typically use my affiliate link, which means I may receive a small commission on any purchases made through it.
 
 ## Disclaimer
 
