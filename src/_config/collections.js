@@ -1,7 +1,14 @@
 import { tags } from "./collections/tags.js";
 
+// Every generated page, not every source file. The glob this replaced returned
+// one item per template, so `topic.njk` — which paginates the tags into 22
+// pages — contributed a single entry pointing at the first of them, and the
+// other 21 topic pages never reached the sitemap. `getAll()` expands pagination.
+// Feeds, robots and the sitemap itself stay out through
+// `eleventyExcludeFromCollections`, and the template filters on
+// `excludeFromSitemap` besides.
 export const sitemap = (collection) => {
-  return collection.getFilteredByGlob("./src/**/*.{md,njk}");
+  return collection.getAll();
 };
 
 export const thinking = (collection) => {

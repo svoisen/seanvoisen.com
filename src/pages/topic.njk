@@ -4,7 +4,19 @@ pagination:
     data: collections.tags
     size: 1
     alias: tag
+    # Without this Eleventy puts only the first page of a paginated template
+    # into collections, so the sitemap saw /topics/ai/ and none of the other
+    # 21 topic pages. Safe here: `tags` is built from the `tags` field on
+    # writing and thinking posts, and these pages carry none, so adding them
+    # to collections cannot feed back into the set they paginate.
+    addAllPagesToCollections: true
 permalink: /topics/{{ tag | slug }}/index.html
+# There is no navigation.json entry for a topic — there are 22 of them and they
+# come and go with the tags — so the page describes itself from the tag it is.
+# It has to be eleventyComputed: a plain frontmatter string is not rendered as
+# a template, so `description:` here would ship the literal {{ tag }}.
+eleventyComputed:
+    description: "Essays and thinking posts about {{ tag }}."
 ---
 {#
     Paginate the tags, not the whole `collections` object. Paginating
@@ -19,6 +31,8 @@ permalink: /topics/{{ tag | slug }}/index.html
 {% from "macros/postlist.njk" import postList %}
 <article class="page">
     {{ sectionBar(tag | titlecase, "All topics", "/topics/", 1) }}
-    <p>There {% if collections[tag].length == 1 %}is {{ collections[tag].length }} entry{% else %}are {{ collections[tag].length }} entries{% endif %} about this topic:</p>
+    {# Same treatment as every other index's standfirst. This page is built on
+       `base` rather than `page`, which is why it opts in by hand. #}
+    <p class="list-intro">There {% if collections[tag].length == 1 %}is {{ collections[tag].length }} entry{% else %}are {{ collections[tag].length }} entries{% endif %} about this topic:</p>
     {{ postList(collections[tag].reverse()) }}
 </article>

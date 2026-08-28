@@ -1,4 +1,14 @@
-        <meta name="description" content="{{ description or site.description }}">
+        {#
+            Description resolution, in order: the page's own frontmatter; then
+            the line navigation.json already holds for this route — the same
+            source the page header and the Directory read, so one route cannot
+            describe itself three different ways; then the site description as
+            a floor. Before this, every index and prose page fell straight
+            through to the floor, leaving them indistinguishable in search
+            results and link previews.
+        #}
+        {%- set metaDescription = description or (navigation.items | getDescription(page.url)) or site.description %}
+        <meta name="description" content="{{ metaDescription }}">
         <meta name="generator" content="{{ eleventy.generator }}">
         <meta name="format-detection" content="telephone=no">
         <meta name="color-scheme" content="light dark">
@@ -16,13 +26,14 @@
         <link rel="alternate" href="/feed.json" type="application/json" title="JSON Feed">
 
         <meta property="og:url" content="{{ site.base }}{{ page.url | url }}">
-        <meta property="og:type" content="website">
+        {# Posts are articles; everything else is a page. #}
+        <meta property="og:type" content="{% if layout == 'post' %}article{% else %}website{% endif %}">
         <meta property="og:title" content="{{ title or site.title }}">
         <meta property="og:image" content="{{ site.base }}{{ image or site.og.image }}">
         <meta property="og:image:alt" content="{{ title or site.title }}">
         <meta property="og:image:width" content="{{ site.og.width }}">
         <meta property="og:image:height" content="{{ site.og.height }}">
-        <meta property="og:description" content="{{ description or site.description }}">
+        <meta property="og:description" content="{{ metaDescription }}">
         <meta property="og:site_name" content="{{ site.title }}">
         <meta property="og:locale" content="{{ site.locale }}">
         <meta property="article:author" content="{{ site.author.name }}">
