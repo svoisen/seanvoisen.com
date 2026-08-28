@@ -1,6 +1,39 @@
 {
   "books": [
     {
+      "title": "Noticing",
+      "author": "Richard Louv",
+      "year": 2026,
+      "rating": 4,
+      "type": "book",
+      "link": "https://bookshop.org/book/9781643753034",
+      "slug": "noticing",
+      "isbn_13": 9781643753034,
+      "favorite": false
+    },
+    {
+      "title": "Leisure",
+      "author": "Josef Pieper",
+      "year": 2026,
+      "rating": 4.5,
+      "type": "book",
+      "link": "https://bookshop.org/book/9781586172565",
+      "slug": "leisure",
+      "isbn_13": 9781586172565,
+      "favorite": false
+    },
+    {
+      "title": "The Senses of Walden",
+      "author": "Stanley Cavell",
+      "year": 2026,
+      "rating": 3.5,
+      "type": "book",
+      "link": "https://bookshop.org/book/9780226098135",
+      "slug": "the_senses_of_walden",
+      "isbn_13": 9780226098135,
+      "favorite": false
+    },
+    {
       "title": "How to Live",
       "author": "Sarah Bakewell",
       "year": 2026,
