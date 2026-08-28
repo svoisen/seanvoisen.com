@@ -7,22 +7,21 @@ localCSS: ["home"]
 
 {% from "macros/section-bar.njk" import sectionBar %}
 {% from "macros/gutter-list.njk" import entryRow, postRow %}
-{# {% from "macros/work-list.njk" import workList %} #}
+{% from "macros/work-list.njk" import workList %}
 
 {#
-    Three practices, one alignment line. Every section is a bar and a gutter
+    Four practices, one alignment line. Every section is a bar and a gutter
     list, and every title in every list starts at the same horizontal position
     — which is the whole device the page has, there being no images.
 
     WRITING and THINKING read their own collections newest-first, so
     publishing is what changes this page. Nothing here is hand-ordered.
 
-    WORK is held back from launch: the section below is commented out, and so
-    are the macro import and the `roles` set that only it used. The files it
-    reads are ignored in eleventy.config.js, so uncommenting here on its own
-    would put a bar over an empty list — lift the ignores at the same time.
+    WORKING comes last and reads src/_data/roles.js. It is the one section
+    whose rows link nowhere, because no role has a page: the history is short
+    enough to be the section rather than an index of one, and the bar sends
+    anyone who wants the long form to LinkedIn.
 #}
-{# {% set roles = collections.workHistory | selectattr("url") %} #}
 {% set essays = collections.writing | reverse | head(6) %}
 {% set thoughts = collections.thinking | reverse | head(4) %}
 
@@ -39,13 +38,6 @@ localCSS: ["home"]
     </dl>
     #}
 </section>
-
-{# Held back from launch — see the note above.
-<section class="home-section">
-    {{ sectionBar("Work", "Résumé", "/work/") }}
-    {{ workList(roles) }}
-</section>
-#}
 
 <section class="home-section">
     {{ sectionBar("Writing", "All essays", "/writing/") }}
@@ -73,4 +65,9 @@ localCSS: ["home"]
         {{ entryRow("", "Bookshelf", "Books I've read, grouped by year.", "/bookshelf/") }}
         {{ entryRow("", "Philosophy for designers", "A reading list and a self-study journey.", "/philosophy-for-designers/") }}
     </ul>
+</section>
+
+<section class="home-section">
+    {{ sectionBar("Working", "LinkedIn", "https://www.linkedin.com/in/svoisen/") }}
+    {{ workList(roles) }}
 </section>

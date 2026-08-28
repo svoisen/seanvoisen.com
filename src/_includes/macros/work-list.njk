@@ -1,7 +1,8 @@
 {#
-    The work list, shared by the home page's WORK section and the Work index so
-    that the two cannot drift apart — including when the narrow-width layout
-    changes how the gutter behaves.
+    The work list: the home page's WORKING section, and the only list on the
+    site whose rows link nowhere. No role has a page, so every title is plain
+    text — the section is the whole of the work history, not a way in to more
+    of it. The one link the section carries is on its bar, and it leaves.
 
     An organisation shows once per consecutive run. The comparison is against
     the previous item by index rather than a flag carried across iterations: a
@@ -18,8 +19,8 @@
 {% macro workList(items) %}
 <ul class="gutter-grid">
     {%- for item in items %}
-    {%- set repeated = loop.index0 > 0 and items[loop.index0 - 1].data.organisation == item.data.organisation %}
-    {{ entryRow(item.data.organisation, item.data.title, item.data.summary, item.url, repeated) }}
+    {%- set repeated = loop.index0 > 0 and items[loop.index0 - 1].organisation == item.organisation %}
+    {{ entryRow(item.organisation, item.title, item.summary, null, repeated) }}
     {%- endfor %}
 </ul>
 {% endmacro %}
