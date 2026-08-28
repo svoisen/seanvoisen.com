@@ -18,7 +18,7 @@ export default [
     {
         organisation: "Adobe",
         title: "Adobe Express",
-        summary: "Real-time collaboration and accessibility engineering, and web platform technical partnerships."
+        summary: "Real-time collaboration engineering, a11y engineering, and web platform technical partnerships."
     },
     {
         organisation: "Adobe",
@@ -27,13 +27,13 @@ export default [
     },
     {
         organisation: "Adobe",
-        title: "Design studio and digital publishing",
+        title: "Design Studio and Digital Publishing Suite",
         summary: "iPad magazine publishing tools and new product incubation."
     },
     {
         organisation: "Mozilla",
         title: "Firefox",
-        summary: "CSS layout, graphics rendering, and accessibility engineering leadership."
+        summary: "Leadership for CSS layout, graphics, animation, and a11y engineering."
     },
     {
         organisation: "Madefire",
