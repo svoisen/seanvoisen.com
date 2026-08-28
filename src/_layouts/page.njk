@@ -1,29 +1,39 @@
 ---
 layout: base
 ---
+{% from "macros/section-bar.njk" import sectionBar %}
 {% set pageSubtitle = subtitle or (navigation.items | getDescription(permalink)) %}
 
+{# The list-shaped index pages are headed by a section bar; prose pages keep
+   the title and subtitle treatment. #}
 <article class="page">
+    {%- if listPage %}
+    {{ sectionBar(title, barLink, barHref, 1) }}
+    {%- else %}
     <header class="page-header">
         <h1 class="page-title">{{ title }}</h1>
         {% if pageSubtitle %}
         <div class="page-subtitle">{{ pageSubtitle }}</div>
         {% endif %}
+        {#
+            When a page is worth dating, the date is a line of reference under
+            the header — the same tracked caps a post opens with — rather than
+            a boxed aside beside it. It is opt-in, because on most pages here
+            the fact is noise: a colophon is not truer for having been edited
+            last week.
+
+            `lastUpdated` wins over `page.date` where it is given. `page.date`
+            is git's last-modified, which moves whenever any commit touches the
+            file, so a typo fix or a site-wide restyle restamps a page whose
+            content has not changed in a year. The sitemap prefers the same
+            field for the same reason.
+        #}
+        {%- if showUpdated %}
+        {%- set updated = lastUpdated or page.date %}
+        <p class="page-updated">Updated <time datetime="{{ updated | w3Date }}">{{ updated | htmlDate }}</time></p>
+        {%- endif %}
     </header>
-    {% if showMetadata != false %}
-    <aside class="page-metadata">
-        <dl>
-            <dt>Last updated</dt>
-            <dd>
-                <time class="post-timestamp" datetime="{{ page.date | w3Date }}">{{ page.date | htmlDate }}</time>
-            </dd>
-            {% if description %}
-            <dt>Summary</dt>
-            <dd>{{ description }}</dd>
-            {% endif %}
-        </dl>
-    </aside>
-    {% endif %}
+    {%- endif %}
     <div class="page-content">
         {{ content | safe }}
     </div>

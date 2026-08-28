@@ -16,7 +16,7 @@
         toggle.checked = isDark;
         
         // Update theme color meta tag to match current theme
-        updateThemeColor(isDark);
+        updateThemeColor();
         
         // Listen for toggle changes
         toggle.addEventListener('change', function() {
@@ -38,23 +38,30 @@
         document.documentElement.style.colorScheme = isDark ? 'dark' : 'light';
         
         // Update Safari toolbar theme color
-        updateThemeColor(isDark);
+        updateThemeColor();
     }
     
-    function updateThemeColor(isDark) {
-        // Define theme colors (matching your Flexoki palette)
-        const lightColor = '#FFFCF0'; // flexoki-paper
-        const darkColor = '#100F0F';  // flexoki-black
-        
+    function updateThemeColor() {
+        // Read the resolved background rather than hardcoding a pair, so the
+        // tag this function writes can never drift from the palette. The
+        // static pair in meta.njk is still maintained by hand — it has to be,
+        // since it serves first paint and every no-JS visitor.
+        const background = getComputedStyle(document.body).backgroundColor;
+
+        // A browser without light-dark() support resolves --background-color
+        // to transparent. Leaving the static media-keyed pair in place beats
+        // replacing it with a transparent value, so bail before removing them.
+        if (!background || /^(transparent$|rgba\(.*,\s*0\s*\)$)/.test(background)) return;
+
         // Remove existing theme-color meta tags
         const existingThemeColorTags = document.querySelectorAll('meta[name="theme-color"]');
         existingThemeColorTags.forEach(tag => tag.remove());
-        
+
         // Create new theme-color meta tag
         const themeColorMeta = document.createElement('meta');
         themeColorMeta.name = 'theme-color';
-        themeColorMeta.content = isDark ? darkColor : lightColor;
-        
+        themeColorMeta.content = background;
+
         // Insert the new meta tag
         document.head.appendChild(themeColorMeta);
     }

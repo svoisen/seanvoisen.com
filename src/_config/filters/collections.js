@@ -18,14 +18,13 @@ export const slice = (array, start, end) => {
   return array.slice(start, end);
 };
 
+// Support nested properties like "data.title"
+const valueAt = (item, key) => key.split('.').reduce((val, k) => val?.[k], item);
+
 export const filter = (array, key, value) => {
-  return array.filter(item => {
-    // Support nested properties like "data.featured"
-    const keys = key.split('.');
-    let val = item;
-    for (const k of keys) {
-      val = val?.[k];
-    }
-    return val === value;
-  });
+  return array.filter(item => valueAt(item, key) === value);
+}
+
+export const reject = (array, key, value) => {
+  return array.filter(item => valueAt(item, key) !== value);
 }

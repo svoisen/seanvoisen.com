@@ -1,17 +1,15 @@
-{% macro postList(items, showBadges = false) %}
-<ul class="post-list">
-{% for item in items %}
-  <li class="post-list-item{% if showBadges %} post-list-item--with-badges{% endif %}">
-    <time class="post-list-item-date" datetime="{{ item.date | w3Date }}">{{ item.date | htmlDate }}</time>
-    {% if showBadges %}
-      {% if item.url.startsWith('/writing/') %}
-        <span class="post-list-item-badge">Writing</span>
-      {% elif item.url.startsWith('/thinking/') %}
-        <span class="post-list-item-badge">Thinking</span>
-      {% endif %}
-    {% endif %}
-    <a class="post-list-item-title" href="{{ item.url }}">{{ item.data.title }}</a>
-  </li>
-{% endfor %}
+{#
+    The archive list: every post, full date in the gutter. Built from the same
+    rows as the home page's sections so that following "All essays →" does not
+    change the shape of the list you were just reading. The archives keep the
+    day because two posts in a month are otherwise indistinguishable in order.
+#}
+{% from "macros/gutter-list.njk" import postRow %}
+
+{% macro postList(items) %}
+<ul class="gutter-grid">
+{%- for item in items %}
+{{ postRow(item, item.date | htmlDate) }}
+{%- endfor %}
 </ul>
 {% endmacro %}

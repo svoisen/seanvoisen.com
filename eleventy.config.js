@@ -53,9 +53,11 @@ export default async function(eleventyConfig) {
    */
   eleventyConfig.addFilter("w3Date", filters.w3Date);
   eleventyConfig.addFilter("htmlDate", filters.htmlDate);
+  eleventyConfig.addFilter("monthYear", filters.monthYear);
   eleventyConfig.addFilter("head", filters.head);
   eleventyConfig.addFilter("slice", filters.slice);
   eleventyConfig.addFilter("filter", filters.filter);
+  eleventyConfig.addFilter("reject", filters.reject);
   eleventyConfig.addFilter("postcss", filters.postCssFilter);
   eleventyConfig.addFilter("titlecase", filters.titlecase);
   eleventyConfig.addFilter("navigationItems", filters.navigationItems);
@@ -71,7 +73,6 @@ export default async function(eleventyConfig) {
   eleventyConfig.addCollection("thinking", collections.thinking);
   eleventyConfig.addCollection("tags", collections.tags);
   eleventyConfig.addCollection("sitemap", collections.sitemap);
-  eleventyConfig.addCollection("notes", collections.notes);
   eleventyConfig.addCollection("unified", collections.unified);
 
   /*
@@ -81,7 +82,6 @@ export default async function(eleventyConfig) {
   eleventyConfig.addLayoutAlias("page", "page.njk");
   eleventyConfig.addLayoutAlias("post", "post.njk");
   eleventyConfig.addLayoutAlias("home", "home.njk");
-  eleventyConfig.addLayoutAlias("note", "note.njk");
   eleventyConfig.addLayoutAlias("atom", "atom.njk");
 
   /*

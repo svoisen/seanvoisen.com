@@ -25,7 +25,7 @@ In 1985, the software company Mindscape released a commercial edition of Racter 
 
 For anyone following the ongoing development of large language models (LLMs) like GPT-3 or the soon-to-be-release GPT-4, the historical trajectory of Racter may sound strangely familiar—a precursor, déjà vu if you will—a small piece of computing history repeating itself on an industrial scale. A system is developed for generating narratives and prose. It gains a some fame and notoriety, and is later commercialized as a chatbot. 
 
-In this case, of course, I’m talking about [ChatGPT](https://openai.com/writing/chatgpt/).
+In this case, of course, I’m talking about [ChatGPT](https://openai.com/index/chatgpt/).
 
 LLMs exhibit far more sophistication than the simple algorithms of Racter, and can now spit out far more sophisticated and provocative poetry, and with far greater variation. These systems have absolutely astonishing facility with the English language, to the point that they now write far better than many humans. They can compose not just poetry, but also original narratives, philosophical essays, article summaries, legal briefs, screenplays, code snippets, and on and on.
 
@@ -71,7 +71,7 @@ In a rather provocative tweet, [Stephan Ango](https://twitter.com/kepano/status/
 
 > The test for a good AI-assisted writing tool is simple: Would this tool help the world's best writers write even better?
 
-By no means do I claim to be one of the world’s best writers, nor even a good one. But, I’ve now spent time with a number of these tools: [Lex](lex.page/), [Copysmith](https://copysmith.ai/), [Jasper](https://www.jasper.ai/), [Sudowrite](https://www.sudowrite.com/), [ParagraphAI](https://paragraphai.com/), to name just a few. Counter to the effusive praise many of these tools receive on social media, I found my experience of all of them to be rather … wanting. I don’t believe _any_ of these tools will help the world’s best writers write better. But that’s not to say they won’t in the future. These are early, heady days—it’s clear that we’re still figuring out just how to integrate this technology into tooling to make it genuinely useful and less of a gimmick. Maybe the seed of a promise is there, and we just need to help it grow.
+By no means do I claim to be one of the world’s best writers, nor even a good one. But, I’ve now spent time with a number of these tools: [Lex](https://lex.page/), [Copysmith](https://copysmith.ai/), [Jasper](https://www.jasper.ai/), [Sudowrite](https://www.sudowrite.com/), [ParagraphAI](https://paragraphai.com/), to name just a few. Counter to the effusive praise many of these tools receive on social media, I found my experience of all of them to be rather … wanting. I don’t believe _any_ of these tools will help the world’s best writers write better. But that’s not to say they won’t in the future. These are early, heady days—it’s clear that we’re still figuring out just how to integrate this technology into tooling to make it genuinely useful and less of a gimmick. Maybe the seed of a promise is there, and we just need to help it grow.
 
 In the meantime, allow me to enumerate a few of the obstacles to germination, as well as some possible paths forward.
 

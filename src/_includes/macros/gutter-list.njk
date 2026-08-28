@@ -1,0 +1,33 @@
+{#
+    Rows for the gutter grid. Every list on the site that puts a short fact in
+    the left column and an entry in the right one is built from these, so the
+    titles line up down the page whatever the gutter happens to carry.
+
+    `entryRow` is the two-line form: a title with a summary under it, used by
+    the working and reading sections. `href` is optional — the work list passes
+    none, so a role renders as plain text rather than as a link to nowhere.
+    `quietGutter` keeps the gutter's text in the accessibility tree while
+    taking it out of the visual column; see the work list for why.
+
+    `postRow` is the one-line form: a date in the gutter and a linked title.
+    The date arrives already formatted, because the archives want the day and
+    the home page has 96px to spend.
+#}
+{% macro entryRow(gutter, title, summary = null, href = null, quietGutter = false) %}
+<li class="gutter-grid__row">
+    <span class="gutter-grid__gutter gutter-grid__gutter--strong{% if quietGutter %} gutter-grid__gutter--quiet{% endif %}">{{ gutter }}</span>
+    <span class="gutter-grid__entry">
+        <span class="gutter-grid__title">{% if href %}<a href="{{ href }}">{{ title }}</a>{% else %}{{ title }}{% endif %}</span>
+        {%- if summary %}
+        <span class="gutter-grid__summary">{{ summary }}</span>
+        {%- endif %}
+    </span>
+</li>
+{% endmacro %}
+
+{% macro postRow(item, date) %}
+<li class="gutter-grid__row">
+    <time class="gutter-grid__gutter" datetime="{{ item.date | w3Date }}">{{ date }}</time>
+    <span class="gutter-grid__title"><a href="{{ item.url }}">{{ item.data.title }}</a></span>
+</li>
+{% endmacro %}

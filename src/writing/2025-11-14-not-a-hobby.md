@@ -39,7 +39,7 @@ Back when I lived with Evan, despite the academic workload, I recall having plen
 
 ## Revisiting my autodidactic experiment
 
-Earlier this year I kicked off a series of “life habit experiments,” small trials of new ways of living to explore alternative ways towards living a deeper or more fulfilling life. In late August, I embarked on [the second](blog/habit-experiment-2-self-directed-study/) of my [life habit experiments](/writing/habit-experiment-2-self-directed-study/), something I called “self-directed study.”
+Earlier this year I kicked off a series of “life habit experiments,” small trials of new ways of living to explore alternative ways towards living a deeper or more fulfilling life. In late August, I embarked on [the second](/writing/habit-experiment-2-self-directed-study/) of my [life habit experiments](/writing/habit-experiment-2-self-directed-study/), something I called “self-directed study.”
 
 For this second experiment, I created a reading list and pledged ([on this blog](/writing/habit-experiment-2-self-directed-study/)) that I would spend at least the next 60 days following the list and writing about what I learned. That experiment has become a multi-month autodidactic adventure teaching myself philosophy and reflecting on how my learnings apply to software design practice. I have since read multiple books—mostly on phenomenology—digging into the works of philosophers like Edmund Husserl, Martin Heidegger, Maurice Merleau-Ponty, even Byung-Chul Han.
 

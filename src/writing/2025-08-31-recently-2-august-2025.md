@@ -12,7 +12,7 @@ As a last hurrah before the summer break ended, we visited my parents in San Die
 
 Outside of work and parenting, I've directed my remaining time and energy to my studies in philosophy (and any adjacent reading). A former colleague and I reconnected over a shared interest in philosophy, and we recently began practicing what he calls "pair reading." He describes it as "pair programming for intellectual exploration." Basically, it's a book club of two people.
 
-For our first book, we are reading Shannon Vallor's [Technology and the Virtues](https://academic.oup.com/book/25951), which is also part of Quest №2 in my [Philosophy for Designers](/notes/philosophy-for-designers/) self-study journey. Since I'm only starting Quest №1 this month, digging into *Technology and the Virtues* means I'm reading this book out of my intended order, slightly ahead of my schedule. But that's fine—my reading list was always meant to serve as a guide, not a prescription.
+For our first book, we are reading Shannon Vallor's [Technology and the Virtues](https://academic.oup.com/book/25951), which is also part of Quest №2 in my [Philosophy for Designers](/philosophy-for-designers/) self-study journey. Since I'm only starting Quest №1 this month, digging into *Technology and the Virtues* means I'm reading this book out of my intended order, slightly ahead of my schedule. But that's fine—my reading list was always meant to serve as a guide, not a prescription.
 
 What I love about pair reading so far is the sharing of different perspectives and reflections on the reading, without the overhead and group dynamics of a book club. It feels more intimate.
 

@@ -25,5 +25,5 @@ I cannot possibly hope to capture my thoughts on this book in a few sentences. I
 
 There are multitudes of editions and translations. I'm reading the annotated edition by Robin Waterfield, which is abundant with notes providing historical context and commentary. If you're going to read Meditations, get this one.
 
-### [Stories of Your Life and Others by Ted Chiang](https://bookshop.org/p/books/stories-of-your-life-and-others-lib-e-ted-chiang/1668783://bookshop.org/p/books/stories-of-your-life-and-others-lib-e-ted-chiang/16687839)
+### [Stories of Your Life and Others by Ted Chiang](https://bookshop.org/p/books/stories-of-your-life-and-others-lib-e-ted-chiang/16687839)
 I've been reading Chiang's collection of short stories intermittently, one at a time at a whim, and haven't finished yet. But "The Tower of Babylon," which envisions the biblical story in a world where ancient cosmology is accurate, was so brilliant I can't get it out of my head. I'm looking forward to finishing the remaining stories.

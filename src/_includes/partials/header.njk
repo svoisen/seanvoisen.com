@@ -1,7 +1,25 @@
 <header class="header">
-    <div class="logo-wrapper">
-        <a href="/" class="home-link" title="Return home.">
+    <div class="wordmark">
+        <a href="/" class="wordmark__link" title="Return home.">
             {% include "partials/logo.njk" %}
+            {#
+                The monogram carries the wordmark on its own. The name stays
+                in the accessibility tree so the home link is not an
+                unlabelled graphic — the logo SVG is aria-hidden.
+
+                On the home page the name is also the page's h1. The text
+                index has no visible title of its own — the hero is a
+                statement, not a heading — so without this it is the one
+                page on the site with no h1 at all. Everywhere else the page
+                carries its own h1 in the main column, so the name stays a
+                span: a second h1 in the header would trade one defect for
+                another.
+            #}
+            {%- if page.url == "/" %}
+            <h1 class="visual-hidden">{{ site.author.name }}</h1>
+            {%- else %}
+            <span class="visual-hidden">{{ site.author.name }}</span>
+            {%- endif %}
         </a>
     </div>
     <nav class="nav">
@@ -23,7 +41,6 @@
         <label for="theme-toggle" class="theme-toggle__label">
             <span class="theme-toggle__icon theme-toggle__icon--sun"></span>
             <span class="theme-toggle__icon theme-toggle__icon--moon"></span>
-            <span class="theme-toggle__slider"></span>
         </label>
     </div>
 </header>
