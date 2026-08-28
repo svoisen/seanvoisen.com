@@ -660,8 +660,17 @@ details[open] > summary {
     opacity: 1;
 }
 
+/*
+ * The one reduced-motion block in this file, sited after the last transition
+ * it has to answer for. Everything in global.css that moves is listed here —
+ * the disclosure caret, the toggle's two icons, the monogram — so a transition
+ * added anywhere above has exactly one place to be registered. It is far from
+ * most of what it covers, which is why it names its subjects rather than
+ * leaving them to be found: the caret was declared 180 lines up and went
+ * unlisted here for as long as it existed.
+ */
 @media (prefers-reduced-motion: reduce) {
-    .theme-toggle__label,
+    summary::before,
     .theme-toggle__icon,
     svg.logo {
         transition: none;
