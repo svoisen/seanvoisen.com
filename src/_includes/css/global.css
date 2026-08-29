@@ -159,6 +159,22 @@
        the full width of it — the same edges the images use. */
     --width: 38em;
 
+    /* The page's side gutter: the left and right air on the three elements
+       that bound the column — masthead, main, footer — so they cannot drift
+       apart. Because --width is a border-box cap, spending more here narrows
+       the measure rather than widening the page.
+
+       Not to be confused with --gutter-width below, which is the width of
+       the gutter grid's left-hand track. This one is the page's edge; that
+       one is a column inside it.
+
+       --space-m rather than the --space-xl it was: at phone widths 32px a
+       side read as more air than the page wanted. On a 393px phone the
+       column is 353px against the 328px --space-xl left it. Set from the
+       rendered page at that width, not off the scale. moonpointing.org
+       carries the same token at the same value. */
+    --page-gutter: var(--space-m);
+
     /* The gutter grid's one alignment line. Every list that uses it starts
        its titles at --gutter-width + --gutter-gap from the column edge,
        whatever the gutter itself carries, so sections line up down the page.
@@ -496,7 +512,7 @@ details[open] > summary {
 .main {
     margin: 0 auto;
     max-width: var(--width);
-    padding: var(--space-2xl) var(--space-xl) var(--space-m) var(--space-xl);
+    padding: var(--space-2xl) var(--page-gutter) var(--space-m) var(--page-gutter);
 
     & > :is(article, div) {
 
@@ -540,7 +556,7 @@ details[open] > summary {
     align-items: center;
     max-width: var(--width);
     margin: 0 auto;
-    padding: var(--space-2xl) var(--space-xl) 0 var(--space-xl);
+    padding: var(--space-2xl) var(--page-gutter) 0 var(--page-gutter);
     font-size: var(--font-size-0);
 
     & a {
@@ -680,7 +696,9 @@ details[open] > summary {
 .footer {
     max-width: var(--width);
     margin: var(--space-xl) auto 0 auto;
-    padding: var(--space-xl);
+    /* Vertical stays --space-xl: the air above and below the footer is its
+       own decision, not the page's edge. */
+    padding: var(--space-xl) var(--page-gutter);
     font-family: var(--font-family-ui);
 
     /* The size goes on the children, not here: --width is in em, so a
