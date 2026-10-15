@@ -1,6 +1,17 @@
 {
   "books": [
     {
+      "title": "Dealers of Lightning",
+      "author": "Michael A. Hiltzik",
+      "year": 2026,
+      "rating": 4,
+      "type": "book",
+      "link": "https://bookshop.org/book/9780887309892",
+      "slug": "dealers_of_lightning",
+      "isbn_13": 9780887309892,
+      "favorite": false
+    },
+    {
       "title": "The Machine Stops",
       "author": "E M Forster",
       "year": 2026,
