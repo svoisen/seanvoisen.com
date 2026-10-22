@@ -1,6 +1,17 @@
 {
   "books": [
     {
+      "title": "Flights",
+      "author": "Olga Tokarczuk",
+      "year": 2026,
+      "rating": 3.5,
+      "type": "book",
+      "link": "https://bookshop.org/book/9780525534204",
+      "slug": "flights",
+      "isbn_13": 9780525534204,
+      "favorite": false
+    },
+    {
       "title": "Dealers of Lightning",
       "author": "Michael A. Hiltzik",
       "year": 2026,
