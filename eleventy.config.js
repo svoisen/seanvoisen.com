@@ -92,6 +92,7 @@ export default async function(eleventyConfig) {
    */
   eleventyConfig.addPassthroughCopy({"src/assets/fonts": "assets/fonts"});
   eleventyConfig.addPassthroughCopy({"src/assets/images/og": "assets/images/og"});
+  eleventyConfig.addPassthroughCopy({"src/assets/video": "assets/video"});
 
   eleventyConfig.addPassthroughCopy({
     "src/assets/favicon/*": "/",

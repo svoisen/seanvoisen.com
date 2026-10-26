@@ -90,6 +90,14 @@
     margin: var(--space-xl) 0;
 }
 
+/* Video sits at the full column with the corners the photographs use. */
+.project .post-content video {
+    display: block;
+    width: 100%;
+    height: auto;
+    border-radius: var(--border-radius-md);
+}
+
 /* A tall photo at the full column would fill the screen, so a portrait
    figure runs narrower and lets its caption sit beside it, foot to foot. */
 .post-content .figure--portrait {
