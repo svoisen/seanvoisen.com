@@ -8,6 +8,7 @@ link:
   label: "The story at SFMOMA"
   url: "https://www.sfmoma.org/read/on-collaboration-sfmoma-adobe-rethink-selfie/"
 cover: "/assets/images/making/self-composed/self-composed-booths.jpg"
+thumbnail: "/assets/images/making/self-composed/self-composed-visitors.jpg"
 coverAlt: "Two Self-Composed booths in a wood-panelled gallery room, each a tall screen showing a black-and-white composite portrait above a glass-topped plinth."
 ---
 
