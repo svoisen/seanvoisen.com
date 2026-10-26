@@ -1,0 +1,85 @@
+/*
+ * Making: the project page, and the thumbnail rows that list projects on the
+ * home page and the Making index.
+ */
+
+/*
+ * Project page. Everything above the prose is the post's own header; this
+ * adds the cover and the two things a project's meta row carries that a
+ * post's does not.
+ */
+
+/* The disciplines run on from the date in the meta row's tracked caps. The
+   link is the one way off the page to the thing itself, so it sits apart at
+   the right edge, in sentence case like every other link. */
+.project-metadata {
+    flex-wrap: wrap;
+    justify-content: space-between;
+    row-gap: var(--space-2xs);
+}
+
+.project-metadata__facts {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: baseline;
+    gap: 0.7em;
+}
+
+.project-metadata__link {
+    font-size: var(--font-size--1);
+    letter-spacing: 0;
+    text-transform: none;
+}
+
+/* The cover is the page's picture rather than an illustration of a passage,
+   so it sits between the header and the prose at the full column, with the
+   same corners the figures below it use. */
+.project-cover {
+    display: block;
+    width: 100%;
+    height: auto;
+    margin-top: var(--space-2xl);
+    border-radius: var(--border-radius-md);
+}
+
+/* A tall photo at the full column would fill the screen, so a portrait
+   figure runs narrower and lets its caption sit beside it, foot to foot. */
+.post-content .figure--portrait {
+    display: grid;
+    grid-template-columns: 58% 1fr;
+    column-gap: var(--space-l);
+    align-items: end;
+
+    & picture {
+        display: block;
+    }
+
+    & figcaption {
+        margin-top: 0;
+        text-align: left;
+    }
+}
+
+@media only screen and (max-width: 567px) {
+    /* Beside a 353px column the link would wrap a word a line, so it takes
+       a line of its own under the date. */
+    .project-metadata__link {
+        flex-basis: 100%;
+    }
+
+    /* Beside the image the caption would run a word or two a line, so it
+       goes underneath, and the image stays narrower than the column. */
+    .post-content .figure--portrait {
+        display: block;
+
+        & img {
+            width: 75%;
+            margin: 0 auto;
+        }
+
+        & figcaption {
+            margin-top: var(--space-2xs);
+            text-align: center;
+        }
+    }
+}
