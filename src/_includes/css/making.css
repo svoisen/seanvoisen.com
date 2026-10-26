@@ -12,32 +12,26 @@
     align-items: start;
 }
 
-.gutter-grid__thumb {
+/* Qualified by the grid so the image rule outranks the main column's
+   rounded-corner rule for images. */
+.gutter-grid .gutter-grid__thumb {
     display: block;
 
     & picture {
         display: block;
     }
 
-    /* Greyscale until the row is pointed at or focused, the way hover is the
-       only hue the rest of the site allows. It switches rather than fades:
-       nothing on the site moves for decoration. */
+    /* Square-cornered, unlike the figures: the global rule rounds every image
+       in the main column, and on a picture this small the curve reads as a
+       button rather than a photograph. */
     & img {
         display: block;
         width: 100%;
         height: auto;
         aspect-ratio: 3 / 2;
         object-fit: cover;
-        /* The figures' 8px corner would round a 100px picture into a pill;
-           the small radius keeps the family resemblance at this size. */
-        border-radius: var(--border-radius-sm);
-        filter: grayscale(1);
+        border-radius: 0;
     }
-}
-
-.gutter-grid__row--project:hover .gutter-grid__thumb img,
-.gutter-grid__row--project:focus-within .gutter-grid__thumb img {
-    filter: none;
 }
 
 /* The year the gutter would have carried, moved up over the title in the

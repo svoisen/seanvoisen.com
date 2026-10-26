@@ -37,7 +37,7 @@ The design H migration turned the site from a blog into a portfolio and blog, bu
 
 - **"Making" names the section everywhere, URLs included.** (session-settled: user-directed — chosen over a `/projects/` URL behind a "Making" label, with or without a nav entry: one name for one section.) Governs R6, R8, R13.
 - **The year is required and the month is optional. The home page shows only the year.** (session-settled: user-directed — chosen over requiring both, or showing month and year on the home page: many old projects have no reliable month.) Governs R2, R3, R5.
-- **Thumbnails are greyscale and turn to full colour on hover or keyboard focus.** (session-settled: user-directed — chosen over always greyscale and always colour: it keeps the home page monochrome and makes colour a response to interaction, the same way hover is the only hue on links.) Governs R7.
+- **Thumbnails are full colour with square corners.** (session-settled: user-directed — chosen over greyscale that turns to colour on hover, after seeing it built: reversed during implementation.) Governs R7.
 - **Project pages have no link back to their index.** (session-settled: user-directed — chosen over a "← Making" breadcrumb: how every section's pages point back to their index is to be reviewed across the whole site, not decided for one section.) Governs R11.
 - **Nothing goes live until two or three projects exist.** (session-settled: user-directed — chosen over launching with one row or hiding the section until three exist: a one-row section undersells the work.) Governs R16.
 - **Projects stay out of the feeds.** (session-settled: user-approved — a dated 2011 project would sink deep into a date-sorted feed, and a feed entry for an old project reads as news.) Governs R14.
@@ -57,7 +57,7 @@ The design H migration turned the site from a blog into a portfolio and blog, bu
 - R4. A Making section sits between Thinking and Reading, so the order becomes Writing, Thinking, Making, Reading, Working.
 - R5. Making lists up to three of the newest projects, per R2. Each row puts the thumbnail in the gutter and shows the year, the linked title and the summary beside it, following H/1.
 - R6. The Making bar's right-hand link reads "All projects →" and goes to `/making/`.
-- R7. Thumbnails show a crop of the cover in greyscale and switch to full colour while their row is hovered or has keyboard focus.
+- R7. Thumbnails show a crop of the cover in full colour, with square corners.
 
 - R19. On phones, each Making row puts its thumbnail above the year, title and summary, running the full column width at a 2:1 crop.
 
@@ -97,10 +97,6 @@ The design H migration turned the site from a blog into a portfolio and blog, bu
   - **Given:** only two projects exist.
   - **When:** the site builds.
   - **Then:** Making and `/making/` each show two rows, with no placeholders or empty slots.
-- AE3. Thumbnail colour. Covers R7.
-  - **Given:** the home page in either mode.
-  - **When:** a Making row is hovered, or its link has keyboard focus.
-  - **Then:** that row's thumbnail is in full colour and every other thumbnail stays greyscale.
 - AE4. Date on the project page. Covers R3, R9.
   - **Given:** a project with year 2011 and no month.
   - **When:** its page renders.
@@ -115,7 +111,6 @@ The design H migration turned the site from a blog into a portfolio and blog, bu
 - A dark-mode project board in the Pen file.
 - The 2012 date shown for Bluenumi on the H/1 board. The content says 2011.
 - A per-project focal point for thumbnail crops. Considered and not built: every crop is centred, which suits Bluenumi. Add a focal point when a cover's subject sits off-centre.
-- A fade on the thumbnail's colour change. Considered and not built: the switch is instant, in line with the site's stance against decorative motion.
 - Per-project share images. Project pages use the site's default 1200×630 share image.
 
 ### Dependencies / Assumptions
@@ -130,7 +125,7 @@ The design H migration turned the site from a blog into a portfolio and blog, bu
 - `src/_includes/macros/gutter-list.njk`: the existing `entryRow` and `postRow` forms that the Making row sits beside.
 - `src/_layouts/post.njk`: the reading view that the project page builds on, which already has no back link and nothing after the prose.
 - `src/_config/collections.js`: how the writing and thinking collections and the unified feed are defined.
-- `portfolio explorations.pen`, boards `H/1 — Thumbs in gutter (Mono, Light)` (Projects section, row metrics, greyscale blend on thumbnails) and `H · Project (Light)`. The Bluenumi images the board references were copied to `Blog Designs/portfolio-assets/bluenumi/`.
+- `portfolio explorations.pen`, boards `H/1 — Thumbs in gutter (Mono, Light)` (Projects section and row metrics) and `H · Project (Light)`. The Bluenumi images the board references were copied to `Blog Designs/portfolio-assets/bluenumi/`.
 
 ---
 
@@ -143,7 +138,7 @@ The design H migration turned the site from a blog into a portfolio and blog, bu
 - KTD3. **The front matter fields are `title`, `description`, `year`, `month`, `disciplines`, `link` (`label` and `url`), `cover` and `coverAlt`.** `description` serves as both the summary and the standfirst, as it does on posts. The labels are deliberately not called `tags`, because `src/_config/collections/tags.js` collects `tags` from every item and would make topic pages from them. Governs R1, R9.
 - KTD4. **A `projectDate` filter in `src/_config/filters/dates.js` formats the year and optional month.** Governs R3.
 - KTD5. **The Making row is a new `projectRow` macro in `src/_includes/macros/gutter-list.njk`, with the thumbnail in the gutter cell.** Below 568px, the existing narrow-width rule in `global.css` already moves the gutter above the entry. The phone layout therefore only needs a full-width 2:1 thumbnail at that same breakpoint. On desktop the thumbnail is a 3:2 crop at the gutter width. Both crops come from the one cover image using centred `object-fit: cover`. The macro wraps the `<img>` in its gutter `<span>`, because the transform wraps every image in an unclassed `<picture>` that would otherwise fall into the entry column. Making rows align to `start` rather than the grid's `baseline`, so the year lines up with the top of the thumbnail. Governs R5, R7, R19.
-- KTD6. **Greyscale is a CSS `filter`, removed when the row is hovered or contains focus, with no transition.** The row's stretched link already makes the whole row the hover target. Nothing moves, so nothing needs adding to the reduced-motion block. Touch screens have no hover, so phone thumbnails stay greyscale. That was confirmed during planning. Governs R7.
+- KTD6. **Thumbnails override the main column's rounded-image rule with a more specific selector.** The global rule rounds every image in an article by 8px. Governs R7.
 - KTD7. **Project images live in `src/assets/images/making/<project>/` and go through the existing eleventy-img transform.** For a template-written `<img>` with several widths, the transform needs an explicit `sizes`, otherwise it falls back to `sizes="auto"` on lazy images. So the cover and the thumbnail each set their own `sizes`.
 - KTD8. **Portrait figures are written as raw `<figure class="figure--portrait">` HTML in the project Markdown.** The Markdown config has `html: true`, and the transform processes every `<img>` in the built HTML. From 568px up, CSS sets the caption beside the image. Below that, the caption goes under it. Governs R10.
 - KTD9. **Making styles live in a new `src/_includes/css/making.css`, loaded through `localCSS` on the home page, the Making index and the project layout.** The project layout reuses the post's header, standfirst, meta-row and content classes. Governs R9, R12.
@@ -279,7 +274,7 @@ flowchart TB
 
 **Test scenarios:**
 - Covers AE2. With two projects (Bluenumi plus a temporary fixture), the home section and the index each show two rows and no empty slots.
-- Covers AE3. Hovering a row, or tabbing to its title, turns only that row's thumbnail to colour.
+- Thumbnails render in full colour with square corners in both themes.
 - The home sections run Writing, Thinking, Making, Reading, Working.
 - At 390px the thumbnail sits above the year at full column width and 2:1. At desktop width it sits in the gutter at 3:2, and the title lines up with the titles in the other sections.
 - The Directory lists `/making`, and the header nav doesn't.
