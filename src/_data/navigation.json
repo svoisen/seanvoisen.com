@@ -22,6 +22,12 @@
             "hideOnMobile": true
         },
         {
+            "title": "Making",
+            "url": "/making/",
+            "description": "Things I’ve made: hardware, installations, and plotter art.",
+            "inNavigation": false
+        },
+        {
             "title": "Directory",
             "url": "/directory/",
             "description": "Looking for something? Here’s a handy dandy sitemap.",

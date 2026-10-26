@@ -4,6 +4,53 @@
  */
 
 /*
+ * Thumbnail rows. A picture takes the gutter's place, so the row aligns to
+ * the top rather than the baseline: an image's baseline is its bottom edge,
+ * and the year would otherwise drop to the foot of the thumbnail.
+ */
+.gutter-grid__row--project {
+    align-items: start;
+}
+
+.gutter-grid__thumb {
+    display: block;
+
+    & picture {
+        display: block;
+    }
+
+    /* Greyscale until the row is pointed at or focused, the way hover is the
+       only hue the rest of the site allows. It switches rather than fades:
+       nothing on the site moves for decoration. */
+    & img {
+        display: block;
+        width: 100%;
+        height: auto;
+        aspect-ratio: 3 / 2;
+        object-fit: cover;
+        /* The figures' 8px corner would round a 100px picture into a pill;
+           the small radius keeps the family resemblance at this size. */
+        border-radius: var(--border-radius-sm);
+        filter: grayscale(1);
+    }
+}
+
+.gutter-grid__row--project:hover .gutter-grid__thumb img,
+.gutter-grid__row--project:focus-within .gutter-grid__thumb img {
+    filter: none;
+}
+
+/* The year the gutter would have carried, moved up over the title in the
+   tracked caps the meta rows use. */
+.gutter-grid__eyebrow {
+    font-size: var(--font-size--2);
+    line-height: var(--metadata-line-height);
+    letter-spacing: 0.112em;
+    text-transform: uppercase;
+    color: var(--deemphasized-color);
+}
+
+/*
  * Project page. Everything above the prose is the post's own header; this
  * adds the cover and the two things a project's meta row carries that a
  * post's does not.
@@ -42,6 +89,13 @@
     border-radius: var(--border-radius-md);
 }
 
+/* Figures come one after another on a project page, so each takes room
+   above and below; without it a caption runs straight into the next
+   picture. */
+.project .post-content figure {
+    margin: var(--space-xl) 0;
+}
+
 /* A tall photo at the full column would fill the screen, so a portrait
    figure runs narrower and lets its caption sit beside it, foot to foot. */
 .post-content .figure--portrait {
@@ -61,6 +115,18 @@
 }
 
 @media only screen and (max-width: 567px) {
+    /* The gutter stacks above the entry at this width, so the thumbnail
+       becomes a full-width picture over its row — cropped wide, so three of
+       them do not take three screens. Text beside a thumbnail never lined
+       up with both of its edges. */
+    .gutter-grid__thumb {
+        margin-bottom: var(--space-2xs);
+
+        & img {
+            aspect-ratio: 2 / 1;
+        }
+    }
+
     /* Beside a 353px column the link would wrap a word a line, so it takes
        a line of its own under the date. */
     .project-metadata__link {

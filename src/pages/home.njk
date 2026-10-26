@@ -2,11 +2,11 @@
 layout: "home"
 date: Last Modified
 permalink: "/index.html"
-localCSS: ["home"]
+localCSS: ["home", "making"]
 ---
 
 {% from "macros/section-bar.njk" import sectionBar %}
-{% from "macros/gutter-list.njk" import entryRow, postRow %}
+{% from "macros/gutter-list.njk" import entryRow, postRow, projectRow %}
 {% from "macros/work-list.njk" import workList %}
 
 {#
@@ -14,7 +14,7 @@ localCSS: ["home"]
     list, and every title in every list starts at the same horizontal position
     — which is the whole device the page has, there being no images.
 
-    WRITING and THINKING read their own collections newest-first, so
+    WRITING, THINKING and MAKING read their own collections newest-first, so
     publishing is what changes this page. Nothing here is hand-ordered.
 
     WORKING comes last and reads src/_data/roles.js. It is the one section
@@ -24,6 +24,7 @@ localCSS: ["home"]
 #}
 {% set essays = collections.writing | reverse | head(6) %}
 {% set thoughts = collections.thinking | reverse | head(4) %}
+{% set projects = collections.making | reverse | head(3) %}
 
 <section class="hero">
     <p class="hero__statement">Sean Voisen is a software design and engineering leader working on <strong>making computers better for human thinking &amp; creativity.</strong></p>
@@ -53,6 +54,15 @@ localCSS: ["home"]
     <ul class="gutter-grid">
     {%- for post in thoughts %}
     {{ postRow(post, post.date | monthYear) }}
+    {%- endfor %}
+    </ul>
+</section>
+
+<section class="home-section">
+    {{ sectionBar("Making", "All projects", "/making/") }}
+    <ul class="gutter-grid">
+    {%- for project in projects %}
+    {{ projectRow(project) }}
     {%- endfor %}
     </ul>
 </section>
