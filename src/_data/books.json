@@ -1,6 +1,17 @@
 {
   "books": [
     {
+      "title": "The Worlds I See",
+      "author": "Fei-Fei Li",
+      "year": 2026,
+      "rating": 3,
+      "type": "book",
+      "link": "https://bookshop.org/book/9781250898104",
+      "slug": "the_worlds_i_see",
+      "isbn_13": 9781250898104,
+      "favorite": false
+    },
+    {
       "title": "Flights",
       "author": "Olga Tokarczuk",
       "year": 2026,
