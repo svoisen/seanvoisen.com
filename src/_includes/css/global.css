@@ -1111,6 +1111,52 @@ details[open] > summary {
     display: block;
 }
 
+/* A wide figure steps out past both edges of the column by up to
+   --space-2xl, so a screen recording gets a little more room than the prose.
+   The outset is whatever space the viewport has left beside the column, so
+   it shrinks smoothly and reaches zero as the viewport narrows to the column
+   width. On a phone the figure runs exactly the prose edges, with no extra
+   breakpoint. */
+.post-content .figure--wide, .page-content .figure--wide {
+    --figure-outset: clamp(0px, (100vw - var(--width)) / 2, var(--space-2xl));
+    margin-inline: calc(-1 * var(--figure-outset));
+}
+
+.post-content figure video, .page-content figure video {
+    display: block;
+    width: 100%;
+    height: auto;
+    border-radius: var(--border-radius-md);
+    background-color: var(--border-color);
+}
+
+/* Footnotes close the essay in the body face a step down, set off by the
+   same rule the topics use. */
+.footnotes-sep {
+    display: none;
+}
+
+.footnotes {
+    margin-top: var(--space-xl);
+    padding-top: var(--space-s);
+    border-top: 1px solid var(--border-color);
+    font-family: var(--font-family-body);
+    font-size: var(--font-size--1);
+    color: var(--deemphasized-color);
+
+    & ol {
+        margin-left: var(--space-s);
+    }
+
+    & p {
+        margin: 0;
+    }
+}
+
+.footnote-ref a, .footnote-backref {
+    text-decoration: none;
+}
+
 .float-left,
 .float-right {
     margin-top: var(--space-m);

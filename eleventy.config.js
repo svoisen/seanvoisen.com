@@ -2,6 +2,7 @@ import filters from "./src/_config/filters.js";
 import collections from "./src/_config/collections.js";
 import plugins from "./src/_config/plugins.js";
 import images from "./src/_config/images.js";
+import shortcodes from "./src/_config/shortcodes.js";
 
 export default async function(eleventyConfig) {
   /*
@@ -12,7 +13,7 @@ export default async function(eleventyConfig) {
   /*
    * watch targets
    */
-  eleventyConfig.addWatchTarget("./src/assets/**/*.{css,js,webp,svg,png,jpg,woff2}");
+  eleventyConfig.addWatchTarget("./src/assets/**/*.{css,js,webp,svg,png,jpg,woff2,mp4}");
 
   /*
    * plugins
@@ -67,6 +68,11 @@ export default async function(eleventyConfig) {
   eleventyConfig.addFilter("genRSSId", filters.genRSSId);
 
   /*
+   * shortcodes
+   */
+  eleventyConfig.addShortcode("video", shortcodes.video);
+
+  /*
    * collections
    */
   eleventyConfig.addCollection("writing", collections.writing);
@@ -89,6 +95,7 @@ export default async function(eleventyConfig) {
    */
   eleventyConfig.addPassthroughCopy({"src/assets/fonts": "assets/fonts"});
   eleventyConfig.addPassthroughCopy({"src/assets/images/og": "assets/images/og"});
+  eleventyConfig.addPassthroughCopy({"src/assets/videos": "assets/videos"});
 
   eleventyConfig.addPassthroughCopy({
     "src/assets/favicon/*": "/",
