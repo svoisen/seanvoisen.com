@@ -1,6 +1,6 @@
 ---
 title: "Personal software as research platform"
-description: "I thought I was building my own research library. I ended up with a platform for experimenting in interfaces for reading."
+description: "Small tools made by one person, for one person. Maybe this is where new interface ideas are born."
 tags: ["software", "ai", "reading", "design"]
 image: "/assets/images/og/cartena_personal_software@1200x630.png"
 ---
@@ -51,6 +51,6 @@ I read papers out of intellectual curiosity, but also to search for ideas that m
 
 The beauty of personal software is that—if you make it malleable enough—the possibilities are endless. It truly can become a personal research platform for weird or wild ideas that may never have commercial viability but still work for you.
 
-When it comes to interface innovation, Matuschak wants new answers, new questions, and ideally both at once. Cartena may yield both, or neither. I can’t promise either way. But for the first time in my life I have a reading surface and library that’s mine to bend, where trying out some half-formed idea costs me only an evening or two. (OK, that and a lot of tokens.) If the pace of invention in user interfaces is going to pick up, I suspect some of it will happen in places just like this: small tools made by one person, for one person. Many of those ideas may never leave the machine they were built on, but some ... well, some just might.
+When it comes to interface innovation, Matuschak wants new answers, new questions, and ideally both at once. Cartena may yield both, or neither. I can’t promise either way, and I freely admit wild ideas don’t come easily to me. But for the first time in my life I have a reading surface and library that’s mine to bend, where trying out some half-formed idea costs me only an evening or two. (OK, that and a lot of tokens.) If the pace of invention in user interfaces is going to pick up, I suspect some of it will happen in places just like this: small tools made by one person, for one person. Many of those ideas may never leave the machine they were built on, but some ... well, some just might.
 
 [^1]: *Carta*: paper; *catena*: a chain of references.
