@@ -1,0 +1,41 @@
+<script>
+/*
+ * Plays each inline video while it is at least half on screen and pauses it
+ * once it leaves. Readers who ask for reduced motion keep click-to-play, and
+ * a video the reader paused stays paused until they press play again.
+ */
+(function() {
+    'use strict';
+
+    var videos = document.querySelectorAll('.figure--video video');
+    if (!videos.length || !('IntersectionObserver' in window)) return;
+
+    var reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
+
+    videos.forEach(function(video) {
+        video.addEventListener('pause', function() {
+            if (!video._autoPausing) video._userPaused = true;
+            video._autoPausing = false;
+        });
+        video.addEventListener('play', function() {
+            video._userPaused = false;
+        });
+    });
+
+    var observer = new IntersectionObserver(function(entries) {
+        entries.forEach(function(entry) {
+            var video = entry.target;
+            if (entry.isIntersecting) {
+                if (reducedMotion.matches || video._userPaused) return;
+                var playing = video.play();
+                if (playing) playing.catch(function() {});
+            } else if (!video.paused) {
+                video._autoPausing = true;
+                video.pause();
+            }
+        });
+    }, { threshold: 0.5 });
+
+    videos.forEach(function(video) { observer.observe(video); });
+})();
+</script>

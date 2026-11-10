@@ -29,3 +29,6 @@ layout: base
         {{ content | safe }}
     </div>
 </article>
+{%- if "figure--video" in content %}
+{%- include "partials/video-autoplay.njk" %}
+{%- endif %}
