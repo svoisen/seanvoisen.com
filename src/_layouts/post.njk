@@ -20,7 +20,7 @@ layout: base
         <p class="post-standfirst">{{ description }}</p>
         {%- endif %}
         <div class="post-metadata">
-            <time class="post-timestamp" datetime="{{ page.date | w3Date }}">{{ page.date | monthYear }}</time>
+            <time class="post-timestamp" datetime="{{ page.date | w3Date }}">{{ page.date | htmlDate }}</time>
             <span class="post-metadata__separator" aria-hidden="true">·</span>
             <span>{{ content | wordStats }}</span>
         </div>

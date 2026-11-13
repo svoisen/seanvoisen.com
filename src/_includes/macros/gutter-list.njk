@@ -10,8 +10,8 @@
     taking it out of the visual column; see the work list for why.
 
     `postRow` is the one-line form: a date in the gutter and a linked title.
-    The date arrives already formatted, because the archives want the day and
-    the home page has 96px to spend.
+    The date is month and year only, in the same tracked caps as every other
+    date on the site; the full date is kept for the post itself.
 #}
 {% macro entryRow(gutter, title, summary = null, href = null, quietGutter = false) %}
 <li class="gutter-grid__row">
@@ -25,9 +25,9 @@
 </li>
 {% endmacro %}
 
-{% macro postRow(item, date) %}
+{% macro postRow(item) %}
 <li class="gutter-grid__row">
-    <time class="gutter-grid__gutter" datetime="{{ item.date | w3Date }}">{{ date }}</time>
+    <time class="gutter-grid__gutter gutter-grid__gutter--date" datetime="{{ item.date | w3Date }}">{{ item.date | monthYear }}</time>
     <span class="gutter-grid__title"><a href="{{ item.url }}">{{ item.data.title }}</a></span>
 </li>
 {% endmacro %}

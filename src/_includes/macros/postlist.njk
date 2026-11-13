@@ -1,15 +1,14 @@
 {#
-    The archive list: every post, full date in the gutter. Built from the same
+    The archive list: every post, month and year in the gutter. Built from the same
     rows as the home page's sections so that following "All essays →" does not
-    change the shape of the list you were just reading. The archives keep the
-    day because two posts in a month are otherwise indistinguishable in order.
+    change the shape of the list you were just reading.
 #}
 {% from "macros/gutter-list.njk" import postRow %}
 
 {% macro postList(items) %}
 <ul class="gutter-grid">
 {%- for item in items %}
-{{ postRow(item, item.date | htmlDate) }}
+{{ postRow(item) }}
 {%- endfor %}
 </ul>
 {% endmacro %}

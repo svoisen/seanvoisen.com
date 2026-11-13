@@ -43,7 +43,7 @@ localCSS: ["home"]
     {{ sectionBar("Writing", "All essays", "/writing/") }}
     <ul class="gutter-grid">
     {%- for post in essays %}
-    {{ postRow(post, post.date | monthYear) }}
+    {{ postRow(post) }}
     {%- endfor %}
     </ul>
 </section>
@@ -52,7 +52,7 @@ localCSS: ["home"]
     {{ sectionBar("Thinking", "All posts", "/thinking/") }}
     <ul class="gutter-grid">
     {%- for post in thoughts %}
-    {{ postRow(post, post.date | monthYear) }}
+    {{ postRow(post) }}
     {%- endfor %}
     </ul>
 </section>

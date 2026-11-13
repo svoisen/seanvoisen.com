@@ -181,13 +181,11 @@
        Below the one breakpoint the gutter stops being a column entirely — see
        the narrow-width block at the foot of this file.
 
-       Measured from the face it carries rather than fixed, because the widest
-       thing it has to hold is an archive date: "May 20, 2008" is 6.23em of
-       Outfit, and 6.75 leaves it about 8% of clear air at every step of the
-       fluid scale. A flat 6rem was right against the old type scale and
-       wrapped every two-digit date the moment --font-size--1 grew to 16.5px.
-       Tying the track to the same token the gutter is set in is what stops
-       the two drifting apart again. */
+       Measured from the type it carries rather than fixed, so it scales with
+       the fluid type scale instead of wrapping when the scale grows. The
+       widest date it holds, "MAY 2008" in tracked caps, is 5.69em of Outfit at
+       --font-size--2, well inside the track; the width is kept at what it has
+       always been so the alignment line does not move. */
     --gutter-width: calc(var(--font-size--1) * 6.75);
     --gutter-gap: var(--space-l);
 
@@ -1005,6 +1003,15 @@ details[open] > summary {
     grid-column: 1;
     font-size: var(--font-size--1);
     color: var(--deemphasized-color);
+}
+
+/* Dates take the same tracked caps as the post and page metadata, so a date
+   reads as the same kind of fact wherever it appears. */
+.gutter-grid__gutter--date {
+    font-size: var(--font-size--2);
+    line-height: var(--metadata-line-height);
+    letter-spacing: 0.112em;
+    text-transform: uppercase;
 }
 
 /* The gutter carries a date on the post lists and an organisation on the work
