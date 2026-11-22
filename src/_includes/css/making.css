@@ -4,12 +4,34 @@
  */
 
 /*
- * Thumbnail rows. A picture takes the gutter's place, so the row aligns to
- * the top rather than the baseline: an image's baseline is its bottom edge,
- * and the year would otherwise drop to the foot of the thumbnail.
+ * Thumbnail rows. The picture sits in the main column beside the title and
+ * summary, and the year sits in the margin where every other list keeps its
+ * date. The row is laid out on the frame's tracks with the thumbnail cut
+ * out of the main column's start, so the year still lines up with the dates
+ * in the sections above and below.
  */
 .gutter-grid__row--project {
-    align-items: start;
+    --thumb-width: clamp(7rem, 12vw, 10.5rem);
+    grid-template-columns:
+        var(--thumb-width)
+        var(--space-l)
+        minmax(0, calc(var(--measure) - var(--thumb-width) - var(--space-l)))
+        var(--column-gap)
+        var(--margin-width);
+    column-gap: 0;
+
+    & > .gutter-grid__thumb {
+        grid-column: 1;
+        align-self: start;
+    }
+
+    & > .gutter-grid__entry {
+        grid-column: 3;
+    }
+
+    & > .gutter-grid__gutter {
+        grid-column: 5;
+    }
 }
 
 /* Qualified by the grid so the image rule outranks the main column's
@@ -35,14 +57,35 @@
     }
 }
 
-/* The year the gutter would have carried, moved up over the title in the
-   tracked caps the meta rows use. */
-.gutter-grid__eyebrow {
-    font-size: var(--font-size--2);
-    line-height: var(--metadata-line-height);
-    letter-spacing: 0.112em;
-    text-transform: uppercase;
-    color: var(--deemphasized-color);
+@media only screen and (max-width: 719px) {
+    /* The margin has folded away, so the row stacks: the thumbnail becomes a
+       full-width picture over its row — cropped to a thin strip, so three of
+       them do not take three screens — then the year, then the title. A
+       project can move the crop off-centre with `thumbnailFocus`. */
+    .gutter-grid__row.gutter-grid__row--project {
+        grid-template-columns: minmax(0, 1fr);
+
+        & > * {
+            grid-column: 1;
+        }
+
+        & > .gutter-grid__thumb {
+            grid-row: 1;
+            margin-bottom: var(--space-2xs);
+        }
+
+        & > .gutter-grid__gutter {
+            grid-row: 2;
+        }
+
+        & > .gutter-grid__entry {
+            grid-row: 3;
+        }
+    }
+
+    .gutter-grid .gutter-grid__thumb img {
+        aspect-ratio: 3 / 1;
+    }
 }
 
 /*
@@ -63,6 +106,13 @@
     height: auto;
     margin-top: var(--space-2xl);
     border-radius: var(--border-radius-md);
+}
+
+/* Held to the main column with the prose, like every figure under it. The
+   global rule that caps images at their container would otherwise let the
+   cover run on across the margin column. */
+.post > .project-cover {
+    max-width: var(--main-width);
 }
 
 /* Figures come one after another on a project page, so each takes room
@@ -99,19 +149,6 @@
 }
 
 @media only screen and (max-width: 567px) {
-    /* The gutter stacks above the entry at this width, so the thumbnail
-       becomes a full-width picture over its row — cropped to a thin strip, so
-       three of them do not take three screens. A project can move the crop
-       off-centre with `thumbnailFocus`. Text beside a thumbnail never lined
-       up with both of its edges. */
-    .gutter-grid__thumb {
-        margin-bottom: var(--space-2xs);
-
-        & img {
-            aspect-ratio: 3 / 1;
-        }
-    }
-
     /* Every figure takes the full column here, so its caption starts at
        the picture's left edge rather than floating centred under it. */
     .project .post-content figure figcaption {

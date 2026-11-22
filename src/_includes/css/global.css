@@ -147,21 +147,36 @@
        the tighter --line-height. */
     --prose-line-height: 1.75;
 
-    /* In em, so the column is a measure rather than a pixel width: it tracks
-       --font-size-0 and holds the same character count at every step of the
-       fluid scale. 38em lands on ~720px at the wide end, and prose now runs
-       the full width of it — the same edges the images use. */
-    --width: 38em;
+    /*
+     * The page frame. Two columns anchored at the left edge rather than one
+     * centred: the main column, where everything is read, and a narrower
+     * margin column beside it for what is about the text rather than the
+     * text itself — dates, organisations, a post's publication details.
+     * Masthead, main and footer all span both, so the frame reads from the
+     * top of the page to the foot.
+     */
 
-    /* The page's side gutter: the left and right air on the three elements
-       that bound the column — masthead, main, footer — so they cannot drift
-       apart. Because --width is a border-box cap, spending more here narrows
-       the measure rather than widening the page.
+    /* The reading measure. In em, so it tracks --font-size-0 and holds the
+       same character count at every step of the fluid scale: 676px at the
+       wide end, the column the site has always had. */
+    --measure: 35.6em;
 
-       Not to be confused with --gutter-width below, which is the width of
-       the gutter grid's left-hand track. This one is the page's edge; that
-       one is a column inside it.
+    /* The margin column and the gap before it. Both shrink with the
+       viewport so the main column keeps its measure for as long as it can;
+       below 720px the margin folds into the main column (see the
+       narrow-width block at the foot of this file). */
+    --margin-width: clamp(12rem, 20vw, 17.5rem);
+    --column-gap: clamp(2rem, 4.5vw, 4rem);
 
+    /* The width the main column actually gets: the full measure when the
+       viewport has room for it and the margin, less when it does not. The
+       percentage resolves against whatever spans the frame, so any element
+       sitting in the frame can cap itself to the main column with it. */
+    --main-width: min(var(--measure), 100% - var(--column-gap) - var(--margin-width));
+    --frame-columns: minmax(0, var(--measure)) var(--margin-width);
+    --frame-width: calc(var(--measure) + var(--column-gap) + var(--margin-width));
+
+    /* The page's right-hand edge, and its left edge on narrow screens.
        --space-m rather than the --space-xl it was: at phone widths 32px a
        side read as more air than the page wanted. On a 393px phone the
        column is 353px against the 328px --space-xl left it. Set from the
@@ -169,20 +184,11 @@
        carries the same token at the same value. */
     --page-gutter: var(--space-m);
 
-    /* The gutter grid's one alignment line. Every list that uses it starts
-       its titles at --gutter-width + --gutter-gap from the column edge,
-       whatever the gutter itself carries, so sections line up down the page.
-       Below the one breakpoint the gutter stops being a column entirely — see
-       the narrow-width block at the foot of this file.
-
-       Measured from the type it carries rather than fixed, so it scales with
-       the fluid type scale instead of wrapping when the scale grows. The
-       widest date it holds, "MAY 2008" in tracked caps, is about 7.6em of
-       Plex Sans at --font-size--2 (109px against a 111px track at the wide
-       end), so it fits with almost nothing to spare; the width is kept at
-       what it has always been so the alignment line does not move. */
-    --gutter-width: calc(var(--font-size--1) * 6.75);
-    --gutter-gap: var(--space-l);
+    /* The left edge the frame hangs from: 96px at the wide end, closing to
+       the page gutter as the viewport narrows. It stops growing there, so
+       on a very wide screen the frame stays anchored left with the open
+       space to its right. */
+    --page-inset: clamp(var(--page-gutter), 10vw - 3rem, 6rem);
 
     /* Icons */
     --icon-size: 0.75em;
@@ -499,10 +505,36 @@ details[open] > summary {
     margin-bottom: var(--space-s);
 }
 
+/* Masthead, main and footer hang from the same left edge and span the same
+   frame, so the logo, the first title and the footer rule share one line. */
+.main,
+.header,
+.footer {
+    max-width: calc(var(--page-inset) + var(--frame-width) + var(--page-gutter));
+    padding-left: var(--page-inset);
+    padding-right: var(--page-gutter);
+}
+
+/* Everything in the frame reads in the main column unless it says otherwise. */
+.page > *,
+.post > *,
+.page-content > * {
+    max-width: var(--main-width);
+}
+
+/* What spans the frame: section bars, the home page's sections, the lists
+   whose facts sit in the margin, and the post header, which puts the
+   publication details there. A page's content wrapper spans too, so that a
+   list inside it can; its own children are capped by the rule above. */
+.page > :is(.section-bar, section, .page-content, .gutter-grid),
+.post > .post-header,
+.page-content > :is(.gutter-grid, .books-grid) {
+    max-width: none;
+}
+
 .main {
-    margin: 0 auto;
-    max-width: var(--width);
-    padding: var(--space-2xl) var(--page-gutter) var(--space-m) var(--page-gutter);
+    padding-top: var(--space-2xl);
+    padding-bottom: var(--space-m);
 
     & > :is(article, div) {
 
@@ -544,9 +576,7 @@ details[open] > summary {
     display: flex;
     flex-direction: row;
     align-items: center;
-    max-width: var(--width);
-    margin: 0 auto;
-    padding: var(--space-2xl) var(--page-gutter) 0 var(--page-gutter);
+    padding-top: var(--space-2xl);
     font-size: var(--font-size-0);
 
     & a {
@@ -684,15 +714,15 @@ details[open] > summary {
 }
 
 .footer {
-    max-width: var(--width);
-    margin: var(--space-xl) auto 0 auto;
+    margin-top: var(--space-xl);
     /* Vertical stays --space-xl: the air above and below the footer is its
        own decision, not the page's edge. */
-    padding: var(--space-xl) var(--page-gutter);
+    padding-top: var(--space-xl);
+    padding-bottom: var(--space-xl);
     font-family: var(--font-family-ui);
 
-    /* The size goes on the children, not here: --width is in em, so a
-       font-size on this element would shrink the column and pull the footer
+    /* The size goes on the children, not here: --measure is in em, so a
+       font-size on this element would shrink the frame and pull the footer
        out of line with the rest of the page. */
     & p {
         margin: 0;
@@ -768,10 +798,35 @@ details[open] > summary {
 }
 
 /*
- * Reading view. Title, standfirst, meta row, prose, and foot all share one
- * left edge and one right edge — the column's. There is no back link at the
- * top of a post: every route off the page is already in the header.
+ * Reading view. Title, standfirst and prose share the main column's edges;
+ * the publication details sit beside the title in the margin column, set on
+ * the title's first baseline. There is no back link at the top of a post:
+ * every route off the page is already in the header.
  */
+.post-header {
+    display: grid;
+    grid-template-columns: var(--frame-columns);
+    column-gap: var(--column-gap);
+    align-items: first baseline;
+
+    & > * {
+        grid-column: 1;
+    }
+
+    & > .post-metadata {
+        grid-column: 2;
+        grid-row: 1 / span 2;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: var(--space-3xs);
+        margin-top: 0;
+    }
+
+    & .post-metadata__separator {
+        display: none;
+    }
+}
+
 .post-standfirst {
     margin: var(--space-s) 0 0 0;
     font-family: var(--font-family-body);
@@ -826,9 +881,9 @@ details[open] > summary {
     }
 }
 
-/* Prose runs the full column, the same edges the figures use. The measure is
-   held by --width instead: it is in em, so the column itself is a character
-   count rather than a pixel width. */
+/* Prose runs the full main column, the same edges the figures use. The
+   measure is held by --measure: it is in em, so the column itself is a
+   character count rather than a pixel width. */
 .post-content {
     margin-top: var(--space-2xl);
 }
@@ -940,7 +995,6 @@ details[open] > summary {
     color: var(--deemphasized-color);
 }
 
-.section-bar__link,
 .section-bar__note {
     font-size: var(--font-size--1);
     line-height: var(--section-bar-line);
@@ -948,15 +1002,42 @@ details[open] > summary {
     white-space: nowrap;
 }
 
-.section-bar__arrow {
+/*
+ * The way on from a list: "All essays", "All posts", the full work history.
+ * It closes the list it belongs to rather than sitting in the bar above it,
+ * so it reads as the list continuing, in the summary tier and without the
+ * underline the body links carry; hover and focus put it back.
+ */
+.list-more {
+    margin: var(--space-m) 0 0 0;
+    font-family: var(--font-family-ui);
+    font-size: var(--font-size--1);
+    line-height: 1.5;
+
+    & a {
+        color: var(--deemphasized-color);
+        text-decoration-line: none;
+
+        &:hover,
+        &:focus-visible {
+            color: var(--link-hover-color);
+            text-decoration-line: underline;
+            text-decoration-color: currentColor;
+        }
+    }
+}
+
+.list-more__arrow {
     margin-left: 0.35em;
 }
 
 /*
- * Gutter grid. A fixed gutter column and an entry column, per row rather
- * than one grid over the whole list, so a row can stand alone and a list
- * can be any element. What the gutter carries differs by section — an
- * organisation, a kind, nothing at all — but the alignment line does not.
+ * Gutter grid. Each row lays itself out on the page frame's two columns —
+ * the entry in the main column, its fact (a date, an organisation) in the
+ * margin column — per row rather than one grid over the whole list, so a
+ * row can stand alone and a list can be any element. The fact comes after
+ * the entry in the markup, so a screen reader hears the title first, as the
+ * eye reads it.
  */
 .gutter-grid {
     margin: 0;
@@ -968,8 +1049,8 @@ details[open] > summary {
 .gutter-grid__row {
     position: relative;
     display: grid;
-    grid-template-columns: var(--gutter-width) 1fr;
-    column-gap: var(--gutter-gap);
+    grid-template-columns: var(--frame-columns);
+    column-gap: var(--column-gap);
     align-items: baseline;
 }
 
@@ -984,15 +1065,16 @@ details[open] > summary {
     margin-bottom: var(--space-m);
 }
 
-/* Every child is placed explicitly. The gutter leaves the flow when its value
-   repeats, and without a named column the entry beside it would slide left
+/* Every child is placed explicitly, on one row. The gutter leaves the flow
+   when its value repeats, and without named placement the entry could slide
    into the empty track and break the alignment line. */
 .gutter-grid__row > * {
-    grid-column: 2;
+    grid-column: 1;
+    grid-row: 1;
 }
 
 .gutter-grid__gutter {
-    grid-column: 1;
+    grid-column: 2;
     font-size: var(--font-size--1);
     color: var(--deemphasized-color);
 }
@@ -1006,11 +1088,11 @@ details[open] > summary {
     text-transform: uppercase;
 }
 
-/* The gutter carries a date on the post lists and an organisation on the work
-   lists. A date is reference material; an organisation is the thing the row is
-   filed under, so it takes the full foreground weight the design gives it. */
+/* The margin carries a date on the post lists and an organisation on the
+   work list. Both are facts about the entry, so both sit in the deemphasized
+   tier the margin column uses for everything. */
 .gutter-grid__gutter--strong {
-    color: var(--foreground-color);
+    color: var(--deemphasized-color);
 }
 
 /* A repeated organisation leaves the visual column but stays in the
@@ -1110,15 +1192,12 @@ details[open] > summary {
     display: block;
 }
 
-/* A wide figure steps out past both edges of the column by up to
-   --space-2xl, so a screen recording gets a little more room than the prose.
-   The outset is whatever space the viewport has left beside the column, so
-   it shrinks smoothly and reaches zero as the viewport narrows to the column
-   width. On a phone the figure runs exactly the prose edges, with no extra
-   breakpoint. */
+/* A wide figure runs on across the margin column, so a screen recording
+   gets the whole frame rather than the measure. The left edge stays on the
+   column's line. When the margin folds away on narrow screens both widths
+   go to zero, and the figure runs exactly the prose edges. */
 .post-content .figure--wide, .page-content .figure--wide {
-    --figure-outset: clamp(0px, (100vw - var(--width)) / 2, var(--space-2xl));
-    margin-inline: calc(-1 * var(--figure-outset));
+    margin-inline-end: calc(-1 * (var(--column-gap) + var(--margin-width)));
 }
 
 .post-content figure video, .page-content figure video {
@@ -1181,33 +1260,30 @@ details[open] > summary {
 }
 
 /*
- * Narrow widths. There is one breakpoint on the site and this is it: above
- * it the column is capped by --width and everything holds its desktop shape;
- * below it the column is the viewport minus its padding and the two-column
- * grid has nowhere left to stand.
+ * Narrow screens. Below 720px the margin column would leave the main column
+ * a few words a line, so it folds away: the frame becomes one column, and
+ * each fact the margin carried moves above the entry it belongs to as a
+ * line of tracked caps — the date over the title, the organisation over the
+ * role, the publication details under the standfirst.
  */
-@media only screen and (max-width: 567px) {
-    .nav__item--hidden {
-        display: none;
+@media only screen and (max-width: 719px) {
+    :root {
+        --margin-width: 0px;
+        --column-gap: 0px;
     }
 
-    .header {
-        padding-top: var(--space-xl);
-    }
-
-    /* 96px of gutter against a 318px column leaves a title two words a line,
-       so the gutter stops being a column and becomes an eyebrow above the
-       entry — the same tracked caps the section bars use. */
     .gutter-grid__row {
-        grid-template-columns: 1fr;
+        grid-template-columns: minmax(0, 1fr);
         row-gap: var(--space-3xs);
     }
 
     .gutter-grid__row > * {
         grid-column: 1;
+        grid-row: 2;
     }
 
-    .gutter-grid__gutter {
+    .gutter-grid__row > .gutter-grid__gutter {
+        grid-row: 1;
         font-size: var(--font-size--2);
         line-height: var(--metadata-line-height);
         letter-spacing: 0.112em;
@@ -1240,6 +1316,31 @@ details[open] > summary {
 
     .gutter-grid__row:has(.gutter-grid__entry):not(:last-child) {
         margin-bottom: var(--space-l);
+    }
+
+    .post-header {
+        display: block;
+
+        & > .post-metadata {
+            flex-direction: row;
+            align-items: baseline;
+            gap: 0.7em;
+            margin-top: var(--space-l);
+        }
+
+        & .post-metadata__separator {
+            display: inline;
+        }
+    }
+}
+
+@media only screen and (max-width: 567px) {
+    .nav__item--hidden {
+        display: none;
+    }
+
+    .header {
+        padding-top: var(--space-xl);
     }
 
     .footer__row {

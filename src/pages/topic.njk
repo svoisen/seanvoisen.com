@@ -27,12 +27,13 @@ eleventyComputed:
     minted another one.
 #}
 
-{% from "macros/section-bar.njk" import sectionBar %}
+{% from "macros/section-bar.njk" import sectionBar, listMore %}
 {% from "macros/postlist.njk" import postList %}
 <article class="page">
-    {{ sectionBar(tag | titlecase, "All topics", "/topics/", 1) }}
+    {{ sectionBar(tag | titlecase, null, 1) }}
     {# Same treatment as every other index's standfirst. This page is built on
        `base` rather than `page`, which is why it opts in by hand. #}
     <p class="list-intro">There {% if collections[tag].length == 1 %}is {{ collections[tag].length }} entry{% else %}are {{ collections[tag].length }} entries{% endif %} about this topic:</p>
     {{ postList(collections[tag].reverse()) }}
+    {{ listMore("All topics", "/topics/") }}
 </article>

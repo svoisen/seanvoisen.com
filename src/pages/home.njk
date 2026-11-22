@@ -5,22 +5,24 @@ permalink: "/index.html"
 localCSS: ["home", "making"]
 ---
 
-{% from "macros/section-bar.njk" import sectionBar %}
+{% from "macros/section-bar.njk" import sectionBar, listMore %}
 {% from "macros/gutter-list.njk" import entryRow, postRow, projectRow %}
 {% from "macros/work-list.njk" import workList %}
 
 {#
-    Four practices, one alignment line. Every section is a bar and a gutter
-    list, and every title in every list starts at the same horizontal position
-    — which is the whole device the page has, there being no images.
+    Five practices on one frame. Every section is a bar and a list, every
+    title starts on the main column's edge, and every fact about an entry —
+    a date, a year, an organisation — sits beside it in the margin column.
+    A section that leads somewhere ends on its way on, as the list's last
+    line.
 
     WRITING, THINKING and MAKING read their own collections newest-first, so
     publishing is what changes this page. Nothing here is hand-ordered.
 
     WORKING comes last and reads src/_data/roles.js. It is the one section
     whose rows link nowhere, because no role has a page: the history is short
-    enough to be the section rather than an index of one, and the bar sends
-    anyone who wants the long form to LinkedIn.
+    enough to be the section rather than an index of one, and its last line
+    sends anyone who wants the long form to LinkedIn.
 #}
 {% set essays = collections.writing | reverse | head(6) %}
 {% set thoughts = collections.thinking | reverse | head(4) %}
@@ -31,34 +33,37 @@ localCSS: ["home", "making"]
 </section>
 
 <section class="home-section">
-    {{ sectionBar("Writing", "All essays", "/writing/") }}
+    {{ sectionBar("Writing") }}
     <ul class="gutter-grid">
     {%- for post in essays %}
     {{ postRow(post) }}
     {%- endfor %}
     </ul>
+    {{ listMore("All essays", "/writing/") }}
 </section>
 
 <section class="home-section">
-    {{ sectionBar("Thinking", "All posts", "/thinking/") }}
+    {{ sectionBar("Thinking") }}
     <ul class="gutter-grid">
     {%- for post in thoughts %}
     {{ postRow(post) }}
     {%- endfor %}
     </ul>
+    {{ listMore("All posts", "/thinking/") }}
 </section>
 
 <section class="home-section">
-    {{ sectionBar("Making", "All projects", "/making/") }}
+    {{ sectionBar("Making") }}
     <ul class="gutter-grid">
     {%- for project in projects %}
     {{ projectRow(project) }}
     {%- endfor %}
     </ul>
+    {{ listMore("All projects", "/making/") }}
 </section>
 
-{# No right-hand link: there is no "all reading" page to point at, and the
-   Directory is already in the header. #}
+{# No way on: there is no "all reading" page to point at, and the Directory
+   is already in the header. #}
 <section class="home-section">
     {{ sectionBar("Reading") }}
     <ul class="gutter-grid">
@@ -68,6 +73,7 @@ localCSS: ["home", "making"]
 </section>
 
 <section class="home-section">
-    {{ sectionBar("Working", "LinkedIn", "https://www.linkedin.com/in/svoisen/") }}
+    {{ sectionBar("Working") }}
     {{ workList(roles) }}
+    {{ listMore("Full work history on LinkedIn", "https://www.linkedin.com/in/svoisen/") }}
 </section>
