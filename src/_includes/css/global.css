@@ -528,7 +528,7 @@ details[open] > summary {
    list inside it can; its own children are capped by the rule above. */
 .page > :is(.section-bar, section, .page-content, .gutter-grid),
 .post > .post-header,
-.page-content > :is(.gutter-grid, .books-grid) {
+.page-content > .gutter-grid {
     max-width: none;
 }
 

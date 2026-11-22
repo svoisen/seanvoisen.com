@@ -1,14 +1,87 @@
+/*
+ * The shelf reads in the main column like every other page, and its counts
+ * sit in the margin: the total beside the intro, each year's beside its
+ * heading. The counts are the same description list a post's facts use, so
+ * below 720px they fold into the same line of tracked caps.
+ */
+.page-content > :is(.bookshelf-intro, .bookshelf-year) {
+    max-width: none;
+}
+
+.bookshelf-intro,
+.bookshelf-year {
+    display: grid;
+    grid-template-columns: var(--frame-columns);
+    grid-template-rows: auto 1fr;
+    column-gap: var(--column-gap);
+    align-items: start;
+
+    & > * {
+        grid-column: 1;
+    }
+
+    & > .post-facts {
+        grid-column: 2;
+        grid-row: 1 / -1;
+    }
+}
+
+/* Each list is moved down so its label's cap height meets the cap height
+   of the line beside it (see the post header in global.css for the terms:
+   0.477em for the intro at 1.6 leading, 0.277em for an h2 at 1.2, 0.402em
+   for the label). */
+.bookshelf-intro > .list-intro {
+    margin-bottom: 0;
+}
+
+.bookshelf-intro > .post-facts {
+    margin-top: calc(0.477 * var(--font-size-0) - 0.402 * var(--font-size--2));
+}
+
+/* The heading's distance from the shelf above moves to the section, so the
+   heading starts the grid and the count can be measured from its top. */
+.bookshelf-year {
+    margin-top: var(--space-2xl);
+
+    & > h2 {
+        margin-top: 0;
+    }
+
+    & > .post-facts {
+        margin-top: calc(0.277 * var(--font-size-3) - 0.402 * var(--font-size--2));
+    }
+}
+
+@media only screen and (max-width: 719px) {
+    .bookshelf-intro,
+    .bookshelf-year {
+        display: block;
+
+        & > .post-facts {
+            flex-direction: row;
+            margin-top: 0;
+        }
+    }
+
+    .bookshelf-intro > .list-intro {
+        margin-bottom: var(--space-2xs);
+    }
+
+    .bookshelf-year > .post-facts {
+        margin-top: var(--space-2xs);
+    }
+}
+
 .books-grid {
     font-family: var(--font-family-ui);
     margin: var(--space-l) 0 0 0;
     padding: 0;
     display: grid;
-    /* The covers are 320px files, a few as narrow as 257px. A 170px floor
-       sets five across the full frame and four on a tablet, and stays at two
-       on a phone rather than dropping to one. Wherever two or more fit, a
-       column tops out near the narrowest file; the item cap covers the
-       rest. */
-    grid-template-columns: repeat(auto-fill, minmax(min(170px, calc((100% - var(--space-m)) / 2)), 1fr));
+    /* The covers are 320px files, a few as narrow as 257px. A 140px floor
+       sets four across the main column at its widest and two on a phone,
+       never one. Wherever two or more fit, a column stays under the
+       narrowest file; the item cap covers the rest. */
+    grid-template-columns: repeat(auto-fill, minmax(min(140px, calc((100% - var(--space-m)) / 2)), 1fr));
     grid-template-rows: auto;
     gap: var(--space-m);
     row-gap: var(--space-m);
