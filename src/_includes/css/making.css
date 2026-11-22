@@ -89,13 +89,9 @@
 }
 
 /*
- * Project page. Everything above the prose is the post's own header; this
- * adds the cover, and lets the meta row's date and disciplines wrap.
+ * Project page. Everything above the prose is the post's own header,
+ * facts list included; this adds the cover.
  */
-
-.project-metadata {
-    flex-wrap: wrap;
-}
 
 /* The cover is the page's picture rather than an illustration of a passage,
    so it sits between the header and the prose at the full column, with the
@@ -145,6 +141,15 @@
     & figcaption {
         margin-top: 0;
         text-align: left;
+    }
+}
+
+/* Once the margin column is there, a portrait figure's caption moves into it
+   like any other (see the figure rules in global.css). The picture keeps its
+   narrower width so a tall photo does not fill the screen. */
+@media only screen and (min-width: 720px) {
+    .post-content .figure--portrait > picture {
+        width: 58%;
     }
 }
 

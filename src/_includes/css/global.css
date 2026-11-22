@@ -799,31 +799,35 @@ details[open] > summary {
 
 /*
  * Reading view. Title, standfirst and prose share the main column's edges;
- * the publication details sit beside the title in the margin column, set on
- * the title's first baseline. There is no back link at the top of a post:
- * every route off the page is already in the header.
+ * the post's facts sit beside the title in the margin column. There is no
+ * back link at the top of a post: every route off the page is already in the
+ * header.
  */
 .post-header {
     display: grid;
     grid-template-columns: var(--frame-columns);
+    /* Title and standfirst take the first two rows. The facts span all three,
+       and when they run longer than the title and standfirst the flexible
+       third row takes up the difference, rather than the title's row growing
+       and pushing the standfirst away from it. */
+    grid-template-rows: auto auto 1fr;
     column-gap: var(--column-gap);
-    align-items: first baseline;
+    align-items: start;
 
     & > * {
         grid-column: 1;
     }
 
-    & > .post-metadata {
+    /* Top-aligned with the title, then moved down so the first label's cap
+       height meets the title's. Each term is that line's cap top below its
+       line box: half the leading plus the room above the capitals, from
+       Plex Sans's metrics (ascent 1.025em, descent 0.275em, cap height
+       0.698em). For the title at 1.15 leading that is 0.252em; for the label
+       at --metadata-line-height (1.45) it is 0.402em. */
+    & > .post-facts {
         grid-column: 2;
-        grid-row: 1 / span 2;
-        flex-direction: column;
-        align-items: flex-start;
-        gap: var(--space-3xs);
-        margin-top: 0;
-    }
-
-    & .post-metadata__separator {
-        display: none;
+        grid-row: 1 / -1;
+        margin-top: calc(0.252 * var(--font-size-4) - 0.402 * var(--font-size--2));
     }
 }
 
@@ -835,11 +839,9 @@ details[open] > summary {
     color: var(--deemphasized-color);
 }
 
-/* A post always carries this row; a page carries it only when it opts in
-   with `showUpdated`. Same treatment either way — a date under a header is
-   the same kind of fact whichever kind of page it heads — so one rule serves
-   both and they cannot drift apart. */
-.post-metadata,
+/* A page's last-updated line, when it opts in with `showUpdated`: the same
+   tracked caps a post's facts take on narrow screens, so a date under a
+   header reads as the same kind of fact whichever kind of page it heads. */
 .page-updated {
     display: flex;
     align-items: baseline;
@@ -851,6 +853,62 @@ details[open] > summary {
     letter-spacing: 0.112em;
     text-transform: uppercase;
     color: var(--deemphasized-color);
+}
+
+/*
+ * A post's facts: a description list, so each value is announced with its
+ * name. Beside the title they are set as pairs, the name in tracked caps
+ * over its value. A name with several values (topics, disciplines) runs its
+ * values on in one line, comma-separated. The commas are generated, with
+ * empty alternative text so assistive technology does not read them out:
+ * the list structure already separates the values.
+ */
+.post-facts {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-s);
+    margin: 0;
+    font-family: var(--font-family-ui);
+
+    & dt {
+        flex-basis: 100%;
+        font-size: var(--font-size--2);
+        line-height: var(--metadata-line-height);
+        letter-spacing: 0.112em;
+        text-transform: uppercase;
+        color: var(--deemphasized-color);
+    }
+
+    & dd {
+        margin: 0;
+        font-size: var(--font-size--1);
+        line-height: 1.5;
+    }
+}
+
+.post-facts__item {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: baseline;
+    column-gap: 0.35em;
+}
+
+.post-facts__item--list dd:not(:last-child)::after {
+    content: "," / "";
+}
+
+/* Topic links sit in the value tier, like the list titles: the underline
+   comes back on hover and focus rather than marking every topic. */
+.post-facts__item--topics a {
+    color: inherit;
+    text-decoration-line: none;
+
+    &:hover,
+    &:focus-visible {
+        color: var(--link-hover-color);
+        text-decoration-line: underline;
+        text-decoration-color: currentColor;
+    }
 }
 
 .page-header {
@@ -1200,6 +1258,33 @@ details[open] > summary {
     margin-inline-end: calc(-1 * (var(--column-gap) + var(--margin-width)));
 }
 
+/* A captioned figure takes the margin column for its caption: the picture
+   stays on the main column, and the figure runs on across the gap and the
+   margin so the caption can sit beside it, set on the picture's foot. The
+   markup is untouched — the figcaption still follows the picture inside its
+   figure — so the reading order is the same in every layout. Wide figures
+   already fill both columns and keep the caption underneath; below 720px
+   every caption goes back under its picture. */
+@media only screen and (min-width: 720px) {
+    .post-content figure:has(> figcaption):not(.figure--wide) {
+        display: grid;
+        grid-template-columns: minmax(0, 1fr) var(--margin-width);
+        column-gap: var(--column-gap);
+        align-items: end;
+        margin-inline-end: calc(-1 * (var(--column-gap) + var(--margin-width)));
+
+        & > :not(figcaption) {
+            grid-column: 1;
+        }
+
+        & > figcaption {
+            grid-column: 2;
+            margin-top: 0;
+            text-align: left;
+        }
+    }
+}
+
 .post-content figure video, .page-content figure video {
     display: block;
     width: 100%;
@@ -1318,19 +1403,54 @@ details[open] > summary {
         margin-bottom: var(--space-l);
     }
 
+    /* The facts become one line of tracked caps under the standfirst. The
+       names leave the visual line but stay in the accessibility tree, so a
+       screen reader still hears "Published" before the date; the dots
+       between the groups are generated with empty alternative text. Topics
+       need the margin column to have room, so they go entirely here. */
     .post-header {
         display: block;
 
-        & > .post-metadata {
+        & > .post-facts {
             flex-direction: row;
+            flex-wrap: wrap;
             align-items: baseline;
-            gap: 0.7em;
+            column-gap: 0.7em;
             margin-top: var(--space-l);
         }
+    }
 
-        & .post-metadata__separator {
-            display: inline;
+    .post-facts {
+        & dt {
+            position: absolute;
+            width: 1px;
+            height: 1px;
+            overflow: hidden;
+            white-space: nowrap;
+            clip-path: inset(50%);
         }
+
+        & dd {
+            font-size: var(--font-size--2);
+            line-height: var(--metadata-line-height);
+            letter-spacing: 0.112em;
+            text-transform: uppercase;
+            color: var(--deemphasized-color);
+        }
+    }
+
+    /* Set in the values' type, so the dot shares their line box and
+       baseline rather than the body size the group would otherwise give it. */
+    .post-facts__item + .post-facts__item::before {
+        content: "·" / "";
+        margin-right: 0.35em;
+        font-size: var(--font-size--2);
+        line-height: var(--metadata-line-height);
+        color: var(--deemphasized-color);
+    }
+
+    .post-facts__item--topics {
+        display: none;
     }
 }
 

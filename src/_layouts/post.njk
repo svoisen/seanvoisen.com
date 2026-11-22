@@ -8,8 +8,8 @@ layout: base
 {%- endif %}
 
 {#
-    The reading view. Title, standfirst, meta row, and prose all run the full
-    column. There is no back link at the top: the header nav already carries
+    The reading view. Title, standfirst and prose run the main column; the
+    post's facts sit beside them in the margin column. There is no back link at the top: the header nav already carries
     every route off this page. Nothing follows the prose either — no topics,
     no more-like-this — so a post ends where the writing ends.
 #}
@@ -19,11 +19,32 @@ layout: base
         {%- if description %}
         <p class="post-standfirst">{{ description }}</p>
         {%- endif %}
-        <div class="post-metadata">
-            <time class="post-timestamp" datetime="{{ page.date | w3Date }}">{{ page.date | htmlDate }}</time>
-            <span class="post-metadata__separator" aria-hidden="true">·</span>
-            <span>{{ content | wordStats }}</span>
-        </div>
+        {#
+            The post's facts, as a description list so each value is announced
+            with its name. Each name-value group is wrapped in a div, which a
+            dl permits, so a group can be laid out as a unit. Topics are one
+            name with several values, so each topic is its own dd. Where the
+            facts sit and how they look is entirely the stylesheet's: beside
+            the title in the margin column, or one line under the standfirst.
+        #}
+        <dl class="post-facts">
+            <div class="post-facts__item">
+                <dt>Published</dt>
+                <dd><time datetime="{{ page.date | w3Date }}">{{ page.date | htmlDate }}</time></dd>
+            </div>
+            <div class="post-facts__item">
+                <dt>Reading time</dt>
+                <dd>{{ content | wordStats | replace(" read", "") }}</dd>
+            </div>
+            {%- if tags and tags.length %}
+            <div class="post-facts__item post-facts__item--list post-facts__item--topics">
+                <dt>Topics</dt>
+                {%- for tag in tags %}
+                <dd><a href="/topics/{{ tag | slug }}/" rel="tag">{{ tag }}</a></dd>
+                {%- endfor %}
+            </div>
+            {%- endif %}
+        </dl>
     </header>
     <div class="post-content">
         {{ content | safe }}
