@@ -445,11 +445,15 @@ ul, ol {
     }
 }
 
+/* A caption is a sentence or two, so a last word left alone on its line
+   shows. Browsers that support it rewrap the end of the caption to avoid
+   that; the rest wrap as before. */
 figcaption {
     font-family: var(--font-family-ui);
     font-size: var(--font-size--1);
     color: var(--deemphasized-color);
     text-align: right;
+    text-wrap: pretty;
 }
 
 blockquote {

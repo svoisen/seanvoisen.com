@@ -1,0 +1,131 @@
+/*
+ * Making: the project page, and the thumbnail rows that list projects on the
+ * home page and the Making index.
+ */
+
+/*
+ * Thumbnail rows. A picture takes the gutter's place, so the row aligns to
+ * the top rather than the baseline: an image's baseline is its bottom edge,
+ * and the year would otherwise drop to the foot of the thumbnail.
+ */
+.gutter-grid__row--project {
+    align-items: start;
+}
+
+/* Qualified by the grid so the image rule outranks the main column's
+   rounded-corner rule for images. */
+.gutter-grid .gutter-grid__thumb {
+    display: block;
+
+    & picture {
+        display: block;
+    }
+
+    /* Square-cornered, unlike the figures: the global rule rounds every image
+       in the main column, and on a picture this small the curve reads as a
+       button rather than a photograph. */
+    & img {
+        display: block;
+        width: 100%;
+        height: auto;
+        aspect-ratio: 3 / 2;
+        object-fit: cover;
+        object-position: var(--thumb-focus, 50% 50%);
+        border-radius: 0;
+    }
+}
+
+/* The year the gutter would have carried, moved up over the title in the
+   tracked caps the meta rows use. */
+.gutter-grid__eyebrow {
+    font-size: var(--font-size--2);
+    line-height: var(--metadata-line-height);
+    letter-spacing: 0.112em;
+    text-transform: uppercase;
+    color: var(--deemphasized-color);
+}
+
+/*
+ * Project page. Everything above the prose is the post's own header; this
+ * adds the cover, and lets the meta row's date and disciplines wrap.
+ */
+
+.project-metadata {
+    flex-wrap: wrap;
+}
+
+/* The cover is the page's picture rather than an illustration of a passage,
+   so it sits between the header and the prose at the full column, with the
+   same corners the figures below it use. */
+.project-cover {
+    display: block;
+    width: 100%;
+    height: auto;
+    margin-top: var(--space-2xl);
+    border-radius: var(--border-radius-md);
+}
+
+/* Figures come one after another on a project page, so each takes room
+   above and below; without it a caption runs straight into the next
+   picture. */
+.project .post-content figure {
+    margin: var(--space-xl) 0;
+}
+
+/* Video sits at the full column with the corners the photographs use. */
+.project .post-content video {
+    display: block;
+    width: 100%;
+    height: auto;
+    border-radius: var(--border-radius-md);
+}
+
+/* A tall photo at the full column would fill the screen, so a portrait
+   figure runs narrower and lets its caption sit beside it, foot to foot. */
+.post-content .figure--portrait {
+    display: grid;
+    grid-template-columns: 58% 1fr;
+    column-gap: var(--space-l);
+    align-items: end;
+
+    & picture {
+        display: block;
+    }
+
+    & figcaption {
+        margin-top: 0;
+        text-align: left;
+    }
+}
+
+@media only screen and (max-width: 567px) {
+    /* The gutter stacks above the entry at this width, so the thumbnail
+       becomes a full-width picture over its row — cropped to a thin strip, so
+       three of them do not take three screens. A project can move the crop
+       off-centre with `thumbnailFocus`. Text beside a thumbnail never lined
+       up with both of its edges. */
+    .gutter-grid__thumb {
+        margin-bottom: var(--space-2xs);
+
+        & img {
+            aspect-ratio: 3 / 1;
+        }
+    }
+
+    /* Every figure takes the full column here, so its caption starts at
+       the picture's left edge rather than floating centred under it. */
+    .project .post-content figure figcaption {
+        text-align: left;
+    }
+
+    /* Beside the image the caption would run a word or two a line, so it
+       goes underneath. At this width even the full column leaves a tall
+       photo short of the screen, so it takes the column like any figure. */
+    .post-content .figure--portrait {
+        display: block;
+
+        & figcaption {
+            margin-top: var(--space-2xs);
+        }
+    }
+}

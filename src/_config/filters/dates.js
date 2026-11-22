@@ -19,3 +19,13 @@ export const htmlDate = (dateObj) => {
 export const monthYear = (dateObj) => {
   return DateTime.fromJSDate(dateObj, { zone: "utc" }).toFormat('MMM yyyy');
 };
+
+// A project's date is a year with an optional month, so it reads "Mar 2011"
+// when the month is known and "2011" when it is not — never a guessed month.
+export const projectDate = (year, month) => {
+  if (!month) {
+    return String(year);
+  }
+
+  return DateTime.fromObject({ year, month }, { zone: "utc" }).toFormat('MMM yyyy');
+};
