@@ -179,7 +179,7 @@ async function fetchBookData(isbn) {
         const data = await response.json();
 
         if (!data.items || data.items.length === 0) {
-            return null;
+            throw new Error('No results');
         }
 
         const book = data.items[0].volumeInfo;
