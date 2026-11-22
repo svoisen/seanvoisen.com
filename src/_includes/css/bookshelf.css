@@ -3,7 +3,12 @@
     margin: var(--space-l) 0 0 0;
     padding: 0;
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
+    /* The covers are 320px files, a few as narrow as 257px. A 170px floor
+       sets five across the full frame and four on a tablet, and stays at two
+       on a phone rather than dropping to one. Wherever two or more fit, a
+       column tops out near the narrowest file; the item cap covers the
+       rest. */
+    grid-template-columns: repeat(auto-fill, minmax(min(170px, calc((100% - var(--space-m)) / 2)), 1fr));
     grid-template-rows: auto;
     gap: var(--space-m);
     row-gap: var(--space-m);
@@ -15,6 +20,7 @@
     display: grid;
     list-style: none;
     grid-template-rows: auto 4.8em;
+    max-width: 16rem;
 }
 
 .books-grid-cover {
