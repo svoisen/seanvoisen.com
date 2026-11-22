@@ -528,6 +528,7 @@ details[open] > summary {
    list inside it can; its own children are capped by the rule above. */
 .page > :is(.section-bar, section, .page-content, .gutter-grid),
 .post > .post-header,
+.page > .post-header,
 .page-content > .gutter-grid {
     max-width: none;
 }
@@ -836,22 +837,6 @@ details[open] > summary {
     font-family: var(--font-family-body);
     font-size: var(--font-size-1);
     line-height: var(--line-height);
-    color: var(--deemphasized-color);
-}
-
-/* A page's last-updated line, when it opts in with `showUpdated`: the same
-   tracked caps a post's facts take on narrow screens, so a date under a
-   header reads as the same kind of fact whichever kind of page it heads. */
-.page-updated {
-    display: flex;
-    align-items: baseline;
-    gap: 0.7em;
-    margin: var(--space-l) 0 0 0;
-    font-family: var(--font-family-ui);
-    font-size: var(--font-size--2);
-    line-height: var(--metadata-line-height);
-    letter-spacing: 0.112em;
-    text-transform: uppercase;
     color: var(--deemphasized-color);
 }
 
@@ -1437,6 +1422,18 @@ details[open] > summary {
             text-transform: uppercase;
             color: var(--deemphasized-color);
         }
+    }
+
+    /* A fact that is ambiguous without its name — a page's "Updated" date,
+       which would otherwise read as a publication date — keeps the name on
+       the line, in the same tracked caps as the value. */
+    .post-facts--labelled dt {
+        position: static;
+        width: auto;
+        height: auto;
+        overflow: visible;
+        clip-path: none;
+        flex-basis: auto;
     }
 
     /* Set in the values' type, so the dot shares their line box and

@@ -10,27 +10,29 @@ layout: base
     {%- if listPage %}
     {{ sectionBar(title, barNote, 1) }}
     {%- else %}
-    <header class="page-header">
+    {#
+        A prose page takes the post's header: title and subtitle in the main
+        column, its facts in the margin beside the title. A page dates itself
+        only when it opts in with `showUpdated`, because on most pages here
+        the fact is noise: a colophon is not truer for having been edited
+        last week.
+
+        `lastUpdated` wins over `page.date` where it is given. `page.date`
+        is git's last-modified, which moves whenever any commit touches the
+        file, so a typo fix or a site-wide restyle restamps a page whose
+        content has not changed in a year. The sitemap prefers the same
+        field for the same reason.
+    #}
+    <header class="page-header post-header">
         <h1 class="page-title">{{ title }}</h1>
         {% if pageSubtitle %}
         <div class="page-subtitle">{{ pageSubtitle }}</div>
         {% endif %}
-        {#
-            When a page is worth dating, the date is a line of reference under
-            the header — the same tracked caps a post opens with — rather than
-            a boxed aside beside it. It is opt-in, because on most pages here
-            the fact is noise: a colophon is not truer for having been edited
-            last week.
-
-            `lastUpdated` wins over `page.date` where it is given. `page.date`
-            is git's last-modified, which moves whenever any commit touches the
-            file, so a typo fix or a site-wide restyle restamps a page whose
-            content has not changed in a year. The sitemap prefers the same
-            field for the same reason.
-        #}
         {%- if showUpdated %}
         {%- set updated = lastUpdated or page.date %}
-        <p class="page-updated">Updated <time datetime="{{ updated | w3Date }}">{{ updated | htmlDate }}</time></p>
+        <dl class="post-facts post-facts--labelled">
+            <div class="post-facts__item"><dt>Updated</dt><dd><time datetime="{{ updated | w3Date }}">{{ updated | htmlDate }}</time></dd></div>
+        </dl>
         {%- endif %}
     </header>
     {%- endif %}
