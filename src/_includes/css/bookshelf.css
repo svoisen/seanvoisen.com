@@ -1,74 +1,23 @@
 /*
- * The shelf reads in the main column like every other page, and its counts
- * sit in the margin: the total beside the intro, each year's beside its
- * heading. The counts are the same description list a post's facts use, so
- * below 720px they fold into the same line of tracked caps.
+ * The shelf reads in the main column like every other page. Each year is a
+ * margin grid (global.css): its heading and covers in the main column, the
+ * year's count in the margin beside the heading.
  */
-.page-content > :is(.bookshelf-intro, .bookshelf-year) {
-    max-width: none;
-}
-
-.bookshelf-intro,
-.bookshelf-year {
-    display: grid;
-    grid-template-columns: var(--frame-columns);
-    grid-template-rows: auto 1fr;
-    column-gap: var(--column-gap);
-    align-items: start;
-
-    & > * {
-        grid-column: 1;
-    }
-
-    & > .post-facts {
-        grid-column: 2;
-        grid-row: 1 / -1;
-    }
-}
-
-/* Each list is moved down so its label's cap height meets the cap height
-   of the line beside it (see the post header in global.css for the terms:
-   0.477em for the intro at 1.6 leading, 0.277em for an h2 at 1.2, 0.402em
-   for the label). */
-.bookshelf-intro > .list-intro {
-    margin-bottom: 0;
-}
-
-.bookshelf-intro > .post-facts {
-    margin-top: calc(0.477 * var(--font-size-0) - 0.402 * var(--font-size--2));
-}
-
-/* The heading's distance from the shelf above moves to the section, so the
-   heading starts the grid and the count can be measured from its top. */
 .bookshelf-year {
     margin-top: var(--space-2xl);
 
+    /* The heading's distance from the shelf above moves to the section, so
+       the heading starts the grid and the count can be measured from its
+       top: 0.277em is an h2's cap top at 1.2 leading, 0.402em the label's. */
     & > h2 {
         margin-top: 0;
     }
 
-    & > .post-facts {
-        margin-top: calc(0.277 * var(--font-size-3) - 0.402 * var(--font-size--2));
-    }
 }
 
-@media only screen and (max-width: 719px) {
-    .bookshelf-intro,
-    .bookshelf-year {
-        display: block;
-
-        & > .post-facts {
-            flex-direction: row;
-            margin-top: 0;
-        }
-    }
-
-    .bookshelf-intro > .list-intro {
-        margin-bottom: var(--space-2xs);
-    }
-
-    .bookshelf-year > .post-facts {
-        margin-top: var(--space-2xs);
+@media only screen and (min-width: 720px) {
+    .bookshelf-year > .facts {
+        margin-top: calc(0.277 * var(--font-size-3) - 0.402 * var(--font-size--2));
     }
 }
 
@@ -96,12 +45,12 @@
     max-width: 16rem;
 }
 
-.books-grid-cover {
+.main img.books-grid-cover {
     max-width: 100%;
     width: 100%;
     display: block;
-    border-radius: 0 !important;
-    box-shadow: rgba(0,0,0,.09) 0px 2px 1px, rgba(0,0,0,.09) 0px 4px 2px, rgba(0,0,0,.09) 0px 8px 4px, rgba(0,0,0,.09) 0px 16px 8px, rgba(0,0,0,.09) 0px 32px 16px;
+    border-radius: 0;
+    box-shadow: var(--book-shadow);
     transition: transform 0.2s ease;
 }
 
@@ -136,7 +85,7 @@
 }
 
 @media (prefers-reduced-motion: reduce) {
-    .books-grid-cover {
+    .main img.books-grid-cover {
         transition: none;
     }
 }

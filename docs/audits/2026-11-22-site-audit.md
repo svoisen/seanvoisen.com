@@ -2,7 +2,7 @@
 title: Site audit — CSS, HTML semantics, design consistency, code health
 date: 2026-11-22
 branch: feat/layout-a
-status: findings only, nothing fixed yet
+status: fixed in three commits on feat/layout-a; see "Left as is" at the end
 ---
 
 # Site audit (feat/layout-a)
@@ -128,3 +128,23 @@ Maintainability:
   the email-obfuscation script loads on every page for one link on About.
 - `body` uses `--font-family-heading` instead of `--font-family-body`.
 - Feeds hard-code `title: "Sean Voisen"`; sitemap loop variable shadows `page`.
+
+## Left as is
+
+Fixed in `fix: audit bugs and dead code`, `fix(content): …` and
+`refactor: …` on feat/layout-a, except:
+
+- **Directory and Topics list styles** — different content (a sitemap with
+  descriptions, a run of tags) that the margin rows do not fit; kept.
+- **External-link selector** still names `https://seanvoisen.com`: CSS cannot
+  read `site.base`. Absolute links to the site are rare.
+- **Uncaptioned figures** (Flash post screenshot, the March 2024 video) and
+  the About caption repeating its alt text — need words from the author.
+- **philosophy-for-designers.md** callout and italic subtitles — authored
+  content, left to the author.
+- **2015-10-23-lessons-year-engineering-manager.md** is still pasted HTML;
+  `<br>` inside poems and transcripts is legitimate and stays.
+- **Dependencies**: `node-fetch` (addbook.js imports it; Node's global
+  `fetch` would do), the markua-aside plugin under `dependencies` rather
+  than `devDependencies`, and `scripts/generate-favicons.sh` pointing at
+  old paths — package and script changes deferred to their own commit.

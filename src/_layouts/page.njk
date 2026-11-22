@@ -2,13 +2,35 @@
 layout: base
 ---
 {% from "macros/section-bar.njk" import sectionBar %}
-{% set pageSubtitle = subtitle or (navigation.items | getDescription(permalink)) %}
+{% set pageSubtitle = subtitle or (navigation.items | getDescription(page.url)) %}
 
-{# The list-shaped index pages are headed by a section bar; prose pages keep
-   the title and subtitle treatment. #}
+{#
+    The list-shaped index pages are headed by a section bar, then the page's
+    own line and any facts about the list beside it in the margin. The line
+    is the page's Directory description, read from the navigation data so
+    the two cannot describe the page differently; a page without an entry
+    there (a topic) gives its own `description`. `listFacts` is an array of
+    { label, value } pairs set in the page's data, such as the bookshelf's
+    total. Prose pages keep the title and subtitle treatment.
+#}
 <article class="page">
     {%- if listPage %}
     {{ sectionBar(title, 1) }}
+    {%- set listIntro = (navigation.items | getDescription(page.url)) or description %}
+    {%- if listIntro or listFacts %}
+    <div class="list-header margin-grid">
+        {%- if listIntro %}
+        <p class="list-intro">{{ listIntro }}</p>
+        {%- endif %}
+        {%- if listFacts %}
+        <dl class="facts">
+            {%- for fact in listFacts %}
+            <div class="facts__item"><dt>{{ fact.label }}</dt><dd>{{ fact.value }}</dd></div>
+            {%- endfor %}
+        </dl>
+        {%- endif %}
+    </div>
+    {%- endif %}
     {%- else %}
     {#
         A prose page takes the post's header: title and subtitle in the main
@@ -26,12 +48,12 @@ layout: base
     <header class="page-header post-header">
         <h1 class="page-title">{{ title }}</h1>
         {% if pageSubtitle %}
-        <div class="page-subtitle">{{ pageSubtitle }}</div>
+        <p class="page-subtitle">{{ pageSubtitle }}</p>
         {% endif %}
         {%- if showUpdated %}
         {%- set updated = lastUpdated or page.date %}
-        <dl class="post-facts">
-            <div class="post-facts__item post-facts__item--labelled"><dt>Updated</dt><dd><time datetime="{{ updated | w3Date }}">{{ updated | htmlDate }}</time></dd></div>
+        <dl class="facts">
+            <div class="facts__item facts__item--labelled"><dt>Updated</dt><dd><time datetime="{{ updated | w3Date }}">{{ updated | htmlDate }}</time></dd></div>
         </dl>
         {%- endif %}
     </header>

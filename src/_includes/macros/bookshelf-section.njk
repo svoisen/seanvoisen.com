@@ -5,10 +5,10 @@
 #}
 {% macro bookshelfSection(books, year) %}
 {%- set yearBooks = books | filter("year", year) %}
-<section class="bookshelf-year" aria-labelledby="year-{{ year }}">
+<section class="bookshelf-year margin-grid" aria-labelledby="year-{{ year }}">
     <h2 id="year-{{ year }}">{{ year }}</h2>
-    <dl class="post-facts">
-        <div class="post-facts__item"><dt>Read</dt><dd>{{ yearBooks.length }} {{ "book" if yearBooks.length == 1 else "books" }}</dd></div>
+    <dl class="facts">
+        <div class="facts__item"><dt>Read</dt><dd>{{ yearBooks.length }} {{ "book" if yearBooks.length == 1 else "books" }}</dd></div>
     </dl>
     <ul class="books-grid">
     {%- for book in yearBooks %}

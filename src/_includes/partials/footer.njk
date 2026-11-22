@@ -7,4 +7,7 @@
        row rather than disappearing while that is decided. #}
     <p class="footer__licence" xmlns:cc="http://creativecommons.org/ns#">All content licensed under <a href="https://creativecommons.org/licenses/by-sa/4.0" target="_blank" rel="license noopener noreferrer">CC BY-SA 4.0</a>.</p>
 </footer>
+{#- Only a page with a protected address needs the script that reveals it. #}
+{%- if "eml-protected" in content %}
 {%- include "partials/email-script.njk" %}
+{%- endif %}

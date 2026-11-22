@@ -21,8 +21,8 @@ layout: base
             facts sit and how they look is entirely the stylesheet's: beside
             the title in the margin column, or one line under the standfirst.
         #}
-        <dl class="post-facts">
-            <div class="post-facts__item">
+        <dl class="facts">
+            <div class="facts__item">
                 <dt>Published</dt>
                 <dd><time datetime="{{ page.date | w3Date }}">{{ page.date | htmlDate }}</time></dd>
             </div>
@@ -30,17 +30,17 @@ layout: base
                 last changed. Opt-in by setting `lastUpdated`, for the reason
                 page.njk gives: git's date moves on edits that change nothing. #}
             {%- if lastUpdated %}
-            <div class="post-facts__item post-facts__item--labelled">
+            <div class="facts__item facts__item--labelled">
                 <dt>Updated</dt>
                 <dd><time datetime="{{ lastUpdated | w3Date }}">{{ lastUpdated | htmlDate }}</time></dd>
             </div>
             {%- endif %}
-            <div class="post-facts__item">
+            <div class="facts__item">
                 <dt>Reading time</dt>
                 <dd>{{ content | wordStats | replace(" read", "") }}</dd>
             </div>
             {%- if tags and tags.length %}
-            <div class="post-facts__item post-facts__item--list post-facts__item--topics">
+            <div class="facts__item facts__item--list facts__item--topics">
                 <dt>Topics</dt>
                 {%- for tag in tags %}
                 <dd><a href="/topics/{{ tag | slug }}/" rel="tag">{{ tag }}</a></dd>

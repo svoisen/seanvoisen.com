@@ -11,13 +11,13 @@
 
     The repeated ones are still written into the markup and hidden by class.
     Dropping them outright would leave a screen reader on the third Adobe item
-    hearing a role with no employer attached, which is the one fact the gutter
+    hearing a role with no employer attached, which is the one fact the margin
     is there to carry.
 #}
-{% from "macros/gutter-list.njk" import entryRow %}
+{% from "macros/margin-list.njk" import entryRow %}
 
 {% macro workList(items) %}
-<ul class="gutter-grid">
+<ul class="margin-list">
     {%- for item in items %}
     {%- set repeated = loop.index0 > 0 and items[loop.index0 - 1].organisation == item.organisation %}
     {{ entryRow(item.organisation, item.title, item.summary, null, repeated) }}

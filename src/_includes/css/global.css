@@ -139,7 +139,7 @@
     --heading-font-weight: 600;
     --line-height: 1.6;
     --heading-line-height: 1.2;
-    /* Tracked caps and the two-line summaries in the gutter lists. Tight
+    /* Tracked caps and the two-line summaries in the margin lists. Tight
        enough to hold a label together, open enough that a summary wrapping
        to a second line does not close up. */
     --metadata-line-height: 1.45;
@@ -154,6 +154,13 @@
      * text itself — dates, organisations, a post's publication details.
      * Masthead, main and footer all span both, so the frame reads from the
      * top of the page to the foot.
+     *
+     * Two breakpoints, used in every stylesheet (custom properties cannot
+     * name a media query, so they are repeated as literals):
+     *   720px — the margin column exists at min-width: 720px and folds away
+     *           at max-width: 719px.
+     *   568px — the phone layout of the masthead and footer, at
+     *           max-width: 567px.
      */
 
     /* The reading measure. In em, so it tracks --font-size-0 and holds the
@@ -197,6 +204,8 @@
     /* Border radius */
     --border-radius-sm: 0.25rem;
     --border-radius-md: 0.5rem;
+    /* The layered shadow book covers sit on, here and on the bookshelf. */
+    --book-shadow: rgba(0,0,0,.09) 0px 2px 1px, rgba(0,0,0,.09) 0px 4px 2px, rgba(0,0,0,.09) 0px 8px 4px, rgba(0,0,0,.09) 0px 16px 8px, rgba(0,0,0,.09) 0px 32px 16px;
 
     /* Border and outline */
     --border-width-default: 2px;
@@ -217,7 +226,7 @@ html, body {
 
 body {
     line-height: var(--line-height);
-    font-family: var(--font-family-heading);
+    font-family: var(--font-family-body);
     font-weight: 400;
     font-size: var(--font-size-0);
     font-optical-sizing: auto;
@@ -341,7 +350,10 @@ a {
     }
 }
 
-a[href*="//"]:not([href^="https://seanvoisen.com"]):not(:has(img)):not(.books-grid-title):after {
+/* Wrapped in :where so the rule carries an element's specificity only: the
+   download icons below, and any component that owns its link's ::after,
+   win without !important. */
+a:where([href*="//"]:not([href^="https://seanvoisen.com"]):not(:has(img)):not(.books-grid-title))::after {
     content: "";
     display: inline-block;
     width: var(--icon-size);
@@ -356,34 +368,21 @@ a[href*="//"]:not([href^="https://seanvoisen.com"]):not(:has(img)):not(.books-gr
     mask-position: center;
 }
 
-a[href$=".pdf"]:after {
-    content: "" !important;
-    display: inline-block !important;
-    width: var(--icon-size) !important;
-    height: var(--icon-size) !important;
+/* A download, on-site or off, takes the download mark in place of the
+   external-link one. */
+a:is([href$=".pdf"], [href$=".zip"], [href$=".gz"])::after {
+    content: "";
+    display: inline-block;
+    width: var(--icon-size);
+    height: var(--icon-size);
     margin-left: var(--icon-margin);
-    vertical-align: baseline !important;
+    vertical-align: baseline;
     white-space: nowrap;
-    background-color: currentColor !important;
-    mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='currentColor'%3E%3Cpath d='M2.75 14A1.75 1.75 0 0 1 1 12.25v-2.5a.75.75 0 0 1 1.5 0v2.5c0 .138.112.25.25.25h10.5a.25.25 0 0 0 .25-.25v-2.5a.75.75 0 0 1 1.5 0v2.5A1.75 1.75 0 0 1 13.25 14Z'/%3E%3Cpath d='M7.25 7.689V2a.75.75 0 0 1 1.5 0v5.689l1.97-1.969a.749.749 0 1 1 1.06 1.06l-3.25 3.25a.749.749 0 0 1-1.06 0L4.22 6.78a.749.749 0 1 1 1.06-1.06l1.97 1.969Z'/%3E%3C/svg%3E") !important;
-    mask-size: contain !important;
-    mask-repeat: no-repeat !important;
-    mask-position: center !important;
-}
-
-a[href$=".zip"]:after, a[href$=".gz"]:after {
-    content: "" !important;
-    display: inline-block !important;
-    width: var(--icon-size) !important;
-    height: var(--icon-size) !important;
-    margin-left: var(--icon-margin);
-    vertical-align: baseline !important;
-    white-space: nowrap;
-    background-color: currentColor !important;
-    mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='currentColor'%3E%3Cpath d='M2.75 14A1.75 1.75 0 0 1 1 12.25v-2.5a.75.75 0 0 1 1.5 0v2.5c0 .138.112.25.25.25h10.5a.25.25 0 0 0 .25-.25v-2.5a.75.75 0 0 1 1.5 0v2.5A1.75 1.75 0 0 1 13.25 14Z'/%3E%3Cpath d='M7.25 7.689V2a.75.75 0 0 1 1.5 0v5.689l1.97-1.969a.749.749 0 1 1 1.06 1.06l-3.25 3.25a.749.749 0 0 1-1.06 0L4.22 6.78a.749.749 0 1 1 1.06-1.06l1.97 1.969Z'/%3E%3C/svg%3E") !important;
-    mask-size: contain !important;
-    mask-repeat: no-repeat !important;
-    mask-position: center !important;
+    background-color: currentColor;
+    mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='currentColor'%3E%3Cpath d='M2.75 14A1.75 1.75 0 0 1 1 12.25v-2.5a.75.75 0 0 1 1.5 0v2.5c0 .138.112.25.25.25h10.5a.25.25 0 0 0 .25-.25v-2.5a.75.75 0 0 1 1.5 0v2.5A1.75 1.75 0 0 1 13.25 14Z'/%3E%3Cpath d='M7.25 7.689V2a.75.75 0 0 1 1.5 0v5.689l1.97-1.969a.749.749 0 1 1 1.06 1.06l-3.25 3.25a.749.749 0 0 1-1.06 0L4.22 6.78a.749.749 0 1 1 1.06-1.06l1.97 1.969Z'/%3E%3C/svg%3E");
+    mask-size: contain;
+    mask-repeat: no-repeat;
+    mask-position: center;
 }
 
 p {
@@ -454,11 +453,13 @@ ul, ol {
 /* A caption is a sentence or two, so a last word left alone on its line
    shows. Browsers that support it rewrap the end of the caption to avoid
    that; the rest wrap as before. */
+/* Left-aligned wherever it sits, under its picture or beside it in the
+   margin, so a caption always starts on the same edge as the text. */
 figcaption {
     font-family: var(--font-family-ui);
     font-size: var(--font-size--1);
     color: var(--deemphasized-color);
-    text-align: right;
+    text-align: left;
     text-wrap: pretty;
 }
 
@@ -490,10 +491,10 @@ blockquote {
    whose facts sit in the margin, and the post header, which puts the
    publication details there. A page's content wrapper spans too, so that a
    list inside it can; its own children are capped by the rule above. */
-.page > :is(.section-bar, section, .page-content, .gutter-grid),
+.page > :is(.section-bar, section, .page-content, .margin-list, .list-header),
 .post > .post-header,
 .page > .post-header,
-.page-content > .gutter-grid {
+.page-content > :is(.margin-list, .margin-grid) {
     max-width: none;
 }
 
@@ -789,7 +790,7 @@ blockquote {
        Plex Sans's metrics (ascent 1.025em, descent 0.275em, cap height
        0.698em). For the title at 1.15 leading that is 0.252em; for the label
        at --metadata-line-height (1.45) it is 0.402em. */
-    & > .post-facts {
+    & > .facts {
         grid-column: 2;
         grid-row: 1 / -1;
         margin-top: calc(0.252 * var(--font-size-4) - 0.402 * var(--font-size--2));
@@ -812,7 +813,7 @@ blockquote {
  * empty alternative text so assistive technology does not read them out:
  * the list structure already separates the values.
  */
-.post-facts {
+.facts {
     display: flex;
     flex-direction: column;
     gap: var(--space-s);
@@ -835,20 +836,20 @@ blockquote {
     }
 }
 
-.post-facts__item {
+.facts__item {
     display: flex;
     flex-wrap: wrap;
     align-items: baseline;
     column-gap: 0.35em;
 }
 
-.post-facts__item--list dd:not(:last-child)::after {
+.facts__item--list dd:not(:last-child)::after {
     content: "," / "";
 }
 
 /* Topic links sit in the value tier, like the list titles: the underline
    comes back on hover and focus rather than marking every topic. */
-.post-facts__item--topics a {
+.facts__item--topics a {
     color: inherit;
     text-decoration-line: none;
 
@@ -908,6 +909,46 @@ blockquote {
     font-size: var(--font-size-0);
     line-height: var(--line-height);
     color: var(--deemphasized-color);
+}
+
+/*
+ * Margin grid. A block laid out on the frame's two columns: its content in
+ * the main column, its facts list in the margin beside it, spanning every
+ * row so a long list of facts does not push the content apart. Used for a
+ * list page's header and the bookshelf's years; the post header is the same
+ * idea with its own rows. Below 720px it is an ordinary block and the facts
+ * fold into a line under the content (see the facts rules).
+ */
+.margin-grid {
+    display: grid;
+    grid-template-columns: var(--frame-columns);
+    grid-template-rows: auto 1fr;
+    column-gap: var(--column-gap);
+    align-items: start;
+
+    & > * {
+        grid-column: 1;
+    }
+
+    & > .facts {
+        grid-column: 2;
+        grid-row: 1 / -1;
+    }
+}
+
+/* A list page's intro and the facts about the list. The facts are moved
+   down so the label's cap height meets the intro's: 0.477em is the intro's
+   cap top at 1.6 leading, 0.402em the label's at 1.45. */
+.list-header {
+    margin-bottom: var(--space-xl);
+
+    & > .list-intro {
+        margin-bottom: 0;
+    }
+
+    & > .facts {
+        margin-top: calc(0.477 * var(--font-size-0) - 0.402 * var(--font-size--2));
+    }
 }
 
 /*
@@ -976,21 +1017,21 @@ blockquote {
 }
 
 /*
- * Gutter grid. Each row lays itself out on the page frame's two columns —
+ * Margin list. Each row lays itself out on the page frame's two columns —
  * the entry in the main column, its fact (a date, an organisation) in the
  * margin column — per row rather than one grid over the whole list, so a
  * row can stand alone and a list can be any element. The fact comes after
  * the entry in the markup, so a screen reader hears the title first, as the
  * eye reads it.
  */
-.gutter-grid {
+.margin-list {
     margin: 0;
     padding: 0;
     list-style: none;
     font-family: var(--font-family-ui);
 }
 
-.gutter-grid__row {
+.margin-list__row {
     position: relative;
     display: grid;
     grid-template-columns: var(--frame-columns);
@@ -1001,23 +1042,23 @@ blockquote {
 /* A one-line row of dated titles sits tighter than a two-line row carrying a
    summary — the difference the design draws between a list of posts and a
    list of roles. */
-.gutter-grid__row:not(:last-child) {
+.margin-list__row:not(:last-child) {
     margin-bottom: var(--space-s);
 }
 
-.gutter-grid__row:has(.gutter-grid__entry):not(:last-child) {
+.margin-list__row:has(.margin-list__entry):not(:last-child) {
     margin-bottom: var(--space-m);
 }
 
-/* Every child is placed explicitly, on one row. The gutter leaves the flow
+/* Every child is placed explicitly, on one row. The fact leaves the flow
    when its value repeats, and without named placement the entry could slide
    into the empty track and break the alignment line. */
-.gutter-grid__row > * {
+.margin-list__row > * {
     grid-column: 1;
     grid-row: 1;
 }
 
-.gutter-grid__gutter {
+.margin-list__fact {
     grid-column: 2;
     font-size: var(--font-size--1);
     color: var(--deemphasized-color);
@@ -1025,7 +1066,7 @@ blockquote {
 
 /* Dates take the same tracked caps as the post and page metadata, so a date
    reads as the same kind of fact wherever it appears. */
-.gutter-grid__gutter--date {
+.margin-list__fact--date {
     font-size: var(--font-size--2);
     line-height: var(--metadata-line-height);
     letter-spacing: 0.112em;
@@ -1035,14 +1076,14 @@ blockquote {
 /* The margin carries a date on the post lists and an organisation on the
    work list. Both are facts about the entry, so both sit in the deemphasized
    tier the margin column uses for everything. */
-.gutter-grid__gutter--strong {
+.margin-list__fact--strong {
     color: var(--deemphasized-color);
 }
 
 /* A repeated organisation leaves the visual column but stays in the
    accessibility tree. The grid track sets the column width, not this item, so
    taking it out of flow costs the alignment line nothing. */
-.gutter-grid__gutter--quiet {
+.margin-list__fact--quiet {
     position: absolute;
     width: 1px;
     height: 1px;
@@ -1051,13 +1092,13 @@ blockquote {
     clip-path: inset(50%);
 }
 
-.gutter-grid__entry {
+.margin-list__entry {
     display: flex;
     flex-direction: column;
     gap: var(--space-3xs);
 }
 
-.gutter-grid__title {
+.margin-list__title {
     font-size: var(--font-size-0);
     /* Looser than a heading's: these are full sentences that wrap, not
        display type, and --heading-line-height closes a wrapped title up. */
@@ -1086,14 +1127,14 @@ blockquote {
 
    ::before, not ::after: the global rule that hangs an icon off an external
    link owns ::after, and a row whose entry points off-site would fight it. */
-.gutter-grid__title a::before {
+.margin-list__title a::before {
     content: "";
     position: absolute;
     inset: 0;
     z-index: 1;
 }
 
-.gutter-grid__summary {
+.margin-list__summary {
     font-size: var(--font-size--1);
     line-height: 1.5;
     color: var(--deemphasized-color);
@@ -1113,19 +1154,15 @@ blockquote {
 }
 
 .visual-hidden {
-    clip:rect(1px, 1px, 1px, 1px);
-    height:1px;
-    overflow:hidden;
-    position:absolute !important;
-    white-space:nowrap;
-    width:1px
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+    white-space: nowrap;
+    clip-path: inset(50%);
 }
 
 .post-content figure figcaption, .page-content figure figcaption {
-    font-family: var(--font-family-ui);
-    text-align: center;
-    font-size: var(--font-size--1);
-    color: var(--deemphasized-color);
     margin-top: var(--space-2xs);
 }
 
@@ -1227,11 +1264,13 @@ blockquote {
     text-decoration: none;
 }
 
-.float-left,
-.float-right {
+/* Qualified enough to outrank the main column's image rule
+   (`.main > :is(article, div) img`), which would otherwise let a floated
+   picture take the full width and round its corners. */
+.main img:is(.float-left, .float-right) {
     margin-top: var(--space-m);
     margin-bottom: var(--space-xs);
-    max-width: 30% !important;
+    max-width: 30%;
     min-width: 160px;
     height: auto;
 }
@@ -1246,9 +1285,11 @@ blockquote {
     margin-left: var(--space-m);
 }
 
-.book-cover {
-    border-radius: 0 !important;
-    box-shadow: rgba(0,0,0,.09) 0px 2px 1px, rgba(0,0,0,.09) 0px 4px 2px, rgba(0,0,0,.09) 0px 8px 4px, rgba(0,0,0,.09) 0px 16px 8px, rgba(0,0,0,.09) 0px 32px 16px;
+/* A book cover is a printed object, so it keeps square corners and sits on
+   the shelf's shadow rather than taking the photographs' rounding. */
+.main img.book-cover {
+    border-radius: 0;
+    box-shadow: var(--book-shadow);
 }
 
 /*
@@ -1264,17 +1305,17 @@ blockquote {
         --column-gap: 0px;
     }
 
-    .gutter-grid__row {
+    .margin-list__row {
         grid-template-columns: minmax(0, 1fr);
         row-gap: var(--space-3xs);
     }
 
-    .gutter-grid__row > * {
+    .margin-list__row > * {
         grid-column: 1;
         grid-row: 2;
     }
 
-    .gutter-grid__row > .gutter-grid__gutter {
+    .margin-list__row > .margin-list__fact {
         grid-row: 1;
         font-size: var(--font-size--2);
         line-height: var(--metadata-line-height);
@@ -1282,18 +1323,18 @@ blockquote {
         text-transform: uppercase;
     }
 
-    /* The reading section's gutters are empty by design; stacked, an empty
+    /* The reading section's facts are empty by design; stacked, an empty
        one would spend a line saying nothing. */
-    .gutter-grid__gutter:empty {
+    .margin-list__fact:empty {
         display: none;
     }
 
-    /* With the gutter stacked there is no column left to carry the grouping,
+    /* With the fact stacked there is no column left to carry the grouping,
        so a repeated organisation comes back. Suppressing it here would leave
        the second and third items of a run with nothing filing them at all —
        which is why the value stayed in the markup rather than being dropped
        from the template. */
-    .gutter-grid__gutter--quiet {
+    .margin-list__fact--quiet {
         position: static;
         width: auto;
         height: auto;
@@ -1302,11 +1343,11 @@ blockquote {
         clip-path: none;
     }
 
-    .gutter-grid__row:not(:last-child) {
+    .margin-list__row:not(:last-child) {
         margin-bottom: var(--space-m);
     }
 
-    .gutter-grid__row:has(.gutter-grid__entry):not(:last-child) {
+    .margin-list__row:has(.margin-list__entry):not(:last-child) {
         margin-bottom: var(--space-l);
     }
 
@@ -1318,7 +1359,7 @@ blockquote {
     .post-header {
         display: block;
 
-        & > .post-facts {
+        & > .facts {
             flex-direction: row;
             flex-wrap: wrap;
             align-items: baseline;
@@ -1327,7 +1368,7 @@ blockquote {
         }
     }
 
-    .post-facts {
+    .facts {
         & dt {
             position: absolute;
             width: 1px;
@@ -1349,7 +1390,7 @@ blockquote {
     /* A fact that is ambiguous without its name — a page's "Updated" date,
        which would otherwise read as a publication date — keeps the name on
        the line, in the same tracked caps as the value. */
-    .post-facts__item--labelled dt {
+    .facts__item--labelled dt {
         position: static;
         width: auto;
         height: auto;
@@ -1360,7 +1401,7 @@ blockquote {
 
     /* Set in the values' type, so the dot shares their line box and
        baseline rather than the body size the group would otherwise give it. */
-    .post-facts__item + .post-facts__item::before {
+    .facts__item + .facts__item::before {
         content: "·" / "";
         margin-right: 0.35em;
         font-size: var(--font-size--2);
@@ -1368,8 +1409,17 @@ blockquote {
         color: var(--deemphasized-color);
     }
 
-    .post-facts__item--topics {
+    .facts__item--topics {
         display: none;
+    }
+
+    .margin-grid {
+        display: block;
+
+        & > .facts {
+            flex-direction: row;
+            margin-top: var(--space-2xs);
+        }
     }
 }
 

@@ -13,6 +13,8 @@ export default {
   eleventyComputed: {
     // Every year with a book in it, newest first, so a new year's shelf
     // appears as soon as its first book is added.
-    bookYears: (data) => [...new Set(data.books.books.map((book) => book.year))].sort((a, b) => b - a)
+    bookYears: (data) => [...new Set(data.books.books.map((book) => book.year))].sort((a, b) => b - a),
+    // Beside the page's intro, in the margin (see page.njk).
+    listFacts: (data) => [{ label: "Total", value: `${data.books.books.length} books` }]
   }
 };

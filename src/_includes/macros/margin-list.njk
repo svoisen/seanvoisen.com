@@ -1,0 +1,55 @@
+{#
+    Rows for the margin list. Every list on the site that pairs an entry in
+    the main column with a short fact in the margin column is built from
+    these, so the titles line up down the page and the facts line up beside
+    them. The fact comes after the entry in the markup: a screen reader hears
+    the title first, as the eye reads it, and the CSS places each in its
+    column.
+
+    `entryRow` is the two-line form: a title with a summary under it, used by
+    the working and reading sections. `href` is optional — the work list passes
+    none, so a role renders as plain text rather than as a link to nowhere.
+    `quietFact` keeps the fact's text in the accessibility tree while
+    taking it out of the visual column; see the work list for why.
+
+    `postRow` is the one-line form: a linked title and its date. The date is
+    month and year only, in the same tracked caps as every other date on the
+    site; the full date is kept for the post itself.
+
+    `projectRow` leads with a picture: a crop of the project's cover, or of
+    its `thumbnail` when the cover is too dark to read that small, beside the
+    title and summary, with the year in the margin where every other list
+    keeps its date. The thumbnail's alt is empty because the title beside it
+    already names the project. `thumbnailFocus` is an optional
+    object-position for the crop (say "50% 15%"), for a picture whose subject
+    sits off-centre in the phone strip.
+#}
+{% macro entryRow(fact, title, summary = null, href = null, quietFact = false) %}
+<li class="margin-list__row">
+    <span class="margin-list__entry">
+        <span class="margin-list__title">{% if href %}<a href="{{ href }}">{{ title }}</a>{% else %}{{ title }}{% endif %}</span>
+        {%- if summary %}
+        <span class="margin-list__summary">{{ summary }}</span>
+        {%- endif %}
+    </span>
+    <span class="margin-list__fact margin-list__fact--strong{% if quietFact %} margin-list__fact--quiet{% endif %}">{{ fact }}</span>
+</li>
+{% endmacro %}
+
+{% macro projectRow(item) %}
+<li class="margin-list__row margin-list__row--project">
+    <span class="margin-list__thumb"{% if item.data.thumbnailFocus %} style="--thumb-focus: {{ item.data.thumbnailFocus }}"{% endif %}><img src="{{ item.data.thumbnail or item.data.cover }}" alt="" eleventy:widths="240,480,800" sizes="(min-width: 720px) 11rem, 100vw"></span>
+    <span class="margin-list__entry">
+        <span class="margin-list__title"><a href="{{ item.url }}">{{ item.data.title }}</a></span>
+        <span class="margin-list__summary">{{ item.data.description }}</span>
+    </span>
+    <span class="margin-list__fact margin-list__fact--date">{{ item.data.year | projectDate }}</span>
+</li>
+{% endmacro %}
+
+{% macro postRow(item) %}
+<li class="margin-list__row">
+    <span class="margin-list__title"><a href="{{ item.url }}">{{ item.data.title }}</a></span>
+    <time class="margin-list__fact margin-list__fact--date" datetime="{{ item.date | w3Date }}">{{ item.date | monthYear }}</time>
+</li>
+{% endmacro %}

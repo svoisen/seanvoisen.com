@@ -19,13 +19,13 @@ layout: base
         <p class="post-standfirst">{{ description }}</p>
         {%- endif %}
         {# The post's facts list (see post.njk), with a project's own facts. #}
-        <dl class="post-facts">
-            <div class="post-facts__item">
+        <dl class="facts">
+            <div class="facts__item">
                 <dt>Date</dt>
                 <dd>{{ year | projectDate(month) }}</dd>
             </div>
             {%- if disciplines and disciplines.length %}
-            <div class="post-facts__item post-facts__item--list">
+            <div class="facts__item facts__item--list">
                 <dt>Disciplines</dt>
                 {%- for discipline in disciplines %}
                 <dd>{{ discipline }}</dd>
@@ -35,7 +35,7 @@ layout: base
         </dl>
     </header>
     {%- if cover %}
-    <img class="project-cover" src="{{ cover }}" alt="{{ coverAlt }}" loading="eager" sizes="(min-width: 768px) 720px, 100vw">
+    <img class="project-cover" src="{{ cover }}" alt="{{ coverAlt }}" loading="eager" sizes="(min-width: 720px) 676px, 100vw">
     {%- endif %}
     <div class="post-content">
         {{ content | safe }}

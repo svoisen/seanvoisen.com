@@ -6,7 +6,7 @@ localCSS: ["home", "making"]
 ---
 
 {% from "macros/section-bar.njk" import sectionBar, listMore %}
-{% from "macros/gutter-list.njk" import entryRow, postRow, projectRow %}
+{% from "macros/margin-list.njk" import entryRow, postRow, projectRow %}
 {% from "macros/work-list.njk" import workList %}
 
 {#
@@ -34,7 +34,7 @@ localCSS: ["home", "making"]
 
 <section class="home-section">
     {{ sectionBar("Writing") }}
-    <ul class="gutter-grid">
+    <ul class="margin-list">
     {%- for post in essays %}
     {{ postRow(post) }}
     {%- endfor %}
@@ -44,7 +44,7 @@ localCSS: ["home", "making"]
 
 <section class="home-section">
     {{ sectionBar("Thinking") }}
-    <ul class="gutter-grid">
+    <ul class="margin-list">
     {%- for post in thoughts %}
     {{ postRow(post) }}
     {%- endfor %}
@@ -54,7 +54,7 @@ localCSS: ["home", "making"]
 
 <section class="home-section">
     {{ sectionBar("Making") }}
-    <ul class="gutter-grid">
+    <ul class="margin-list">
     {%- for project in projects %}
     {{ projectRow(project) }}
     {%- endfor %}
@@ -66,9 +66,11 @@ localCSS: ["home", "making"]
    is already in the header. #}
 <section class="home-section">
     {{ sectionBar("Reading") }}
-    <ul class="gutter-grid">
-        {{ entryRow("", "Bookshelf", "Books I've read, grouped by year.", "/bookshelf/") }}
-        {{ entryRow("", "Philosophy for designers", "A reading list and a self-study journey.", "/philosophy-for-designers/") }}
+    <ul class="margin-list">
+        {#- Summaries are the pages' Directory descriptions, so the two lists
+            cannot describe a page differently. #}
+        {{ entryRow("", "Bookshelf", navigation.items | getDescription("/bookshelf/"), "/bookshelf/") }}
+        {{ entryRow("", "Philosophy for designers", navigation.items | getDescription("/philosophy-for-designers/"), "/philosophy-for-designers/") }}
     </ul>
 </section>
 

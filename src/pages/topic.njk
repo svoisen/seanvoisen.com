@@ -1,5 +1,6 @@
 ---
-layout: "base"
+layout: page
+listPage: true
 pagination:
     data: collections.tags
     size: 1
@@ -16,6 +17,7 @@ permalink: /topics/{{ tag | slug }}/index.html
 # It has to be eleventyComputed: a plain frontmatter string is not rendered as
 # a template, so `description:` here would ship the literal {{ tag }}.
 eleventyComputed:
+    title: "{{ tag | titlecase }}"
     description: "Essays and thinking posts about {{ tag }}."
 ---
 {#
@@ -26,13 +28,7 @@ eleventyComputed:
     index under a heading nobody chose.
 #}
 
-{% from "macros/section-bar.njk" import sectionBar, listMore %}
+{% from "macros/section-bar.njk" import listMore %}
 {% from "macros/postlist.njk" import postList %}
-<article class="page">
-    {{ sectionBar(tag | titlecase, 1) }}
-    {# Same treatment as every other index's standfirst. This page is built on
-       `base` rather than `page`, which is why it opts in by hand. #}
-    <p class="list-intro">There {% if collections[tag].length == 1 %}is {{ collections[tag].length }} entry{% else %}are {{ collections[tag].length }} entries{% endif %} about this topic:</p>
-    {{ postList(collections[tag] | reverse) }}
-    {{ listMore("All topics", "/topics/") }}
-</article>
+{{ postList(collections[tag] | reverse) }}
+{{ listMore("All topics", "/topics/") }}
