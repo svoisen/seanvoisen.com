@@ -16,7 +16,9 @@
     `projectRow` puts a picture in the gutter instead of a fact: a crop of the
     project's cover, or of its `thumbnail` when the cover is too dark to read
     that small, with the year moved up above the title. The thumbnail's
-    alt is empty because the title beside it already names the project. The
+    alt is empty because the title beside it already names the project.
+    `thumbnailFocus` is an optional object-position for the crop (say "50% 15%"),
+    for a picture whose subject sits off-centre in the mobile strip. The
     image transform wraps every <img> in a bare <picture>, so the gutter span
     has to be the row's child — left to itself the <picture> would land in
     the entry column.
@@ -35,7 +37,7 @@
 
 {% macro projectRow(item) %}
 <li class="gutter-grid__row gutter-grid__row--project">
-    <span class="gutter-grid__gutter gutter-grid__thumb"><img src="{{ item.data.thumbnail or item.data.cover }}" alt="" eleventy:widths="240,480,800" sizes="(min-width: 568px) 7rem, 100vw"></span>
+    <span class="gutter-grid__gutter gutter-grid__thumb"{% if item.data.thumbnailFocus %} style="--thumb-focus: {{ item.data.thumbnailFocus }}"{% endif %}><img src="{{ item.data.thumbnail or item.data.cover }}" alt="" eleventy:widths="240,480,800" sizes="(min-width: 568px) 7rem, 100vw"></span>
     <span class="gutter-grid__entry">
         <span class="gutter-grid__eyebrow">{{ item.data.year | projectDate }}</span>
         <span class="gutter-grid__title"><a href="{{ item.url }}">{{ item.data.title }}</a></span>

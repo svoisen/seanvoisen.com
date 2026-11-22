@@ -7,8 +7,7 @@ layout: base
     title, standfirst, meta row — and so are the prose and figure rules, so a
     project reads as part of the same site rather than a gallery bolted on.
     What differs is the cover between the header and the prose, and a meta
-    row that carries the project's disciplines and, when there is one, a
-    single way out to the thing itself.
+    row that carries the project's date and disciplines and nothing else.
 
     No back link and nothing after the prose, as on posts. How a page points
     back to its section is a question for the whole site, not this layout.
@@ -20,16 +19,11 @@ layout: base
         <p class="post-standfirst">{{ description }}</p>
         {%- endif %}
         <div class="post-metadata project-metadata">
-            <span class="project-metadata__facts">
-                <span>{{ year | projectDate(month) }}</span>
-                {%- for discipline in disciplines %}
-                <span class="post-metadata__separator" aria-hidden="true">·</span>
-                <span>{{ discipline }}</span>
-                {%- endfor %}
-            </span>
-            {%- if link %}
-            <a class="project-metadata__link" href="{{ link.url }}">{{ link.label }}</a>
-            {%- endif %}
+            <span>{{ year | projectDate(month) }}</span>
+            {%- for discipline in disciplines %}
+            <span class="post-metadata__separator" aria-hidden="true">·</span>
+            <span>{{ discipline }}</span>
+            {%- endfor %}
         </div>
     </header>
     {%- if cover %}

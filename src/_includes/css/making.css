@@ -30,6 +30,7 @@
         height: auto;
         aspect-ratio: 3 / 2;
         object-fit: cover;
+        object-position: var(--thumb-focus, 50% 50%);
         border-radius: 0;
     }
 }
@@ -46,30 +47,11 @@
 
 /*
  * Project page. Everything above the prose is the post's own header; this
- * adds the cover and the two things a project's meta row carries that a
- * post's does not.
+ * adds the cover, and lets the meta row's date and disciplines wrap.
  */
 
-/* The disciplines run on from the date in the meta row's tracked caps. The
-   link is the one way off the page to the thing itself, so it sits apart at
-   the right edge, in sentence case like every other link. */
 .project-metadata {
     flex-wrap: wrap;
-    justify-content: space-between;
-    row-gap: var(--space-2xs);
-}
-
-.project-metadata__facts {
-    display: flex;
-    flex-wrap: wrap;
-    align-items: baseline;
-    gap: 0.7em;
-}
-
-.project-metadata__link {
-    font-size: var(--font-size--1);
-    letter-spacing: 0;
-    text-transform: none;
 }
 
 /* The cover is the page's picture rather than an illustration of a passage,
@@ -118,36 +100,32 @@
 
 @media only screen and (max-width: 567px) {
     /* The gutter stacks above the entry at this width, so the thumbnail
-       becomes a full-width picture over its row — cropped wide, so three of
-       them do not take three screens. Text beside a thumbnail never lined
+       becomes a full-width picture over its row — cropped to a thin strip, so
+       three of them do not take three screens. A project can move the crop
+       off-centre with `thumbnailFocus`. Text beside a thumbnail never lined
        up with both of its edges. */
     .gutter-grid__thumb {
         margin-bottom: var(--space-2xs);
 
         & img {
-            aspect-ratio: 2 / 1;
+            aspect-ratio: 3 / 1;
         }
     }
 
-    /* Beside a 353px column the link would wrap a word a line, so it takes
-       a line of its own under the date. */
-    .project-metadata__link {
-        flex-basis: 100%;
+    /* Every figure takes the full column here, so its caption starts at
+       the picture's left edge rather than floating centred under it. */
+    .project .post-content figure figcaption {
+        text-align: left;
     }
 
     /* Beside the image the caption would run a word or two a line, so it
-       goes underneath, and the image stays narrower than the column. */
+       goes underneath. At this width even the full column leaves a tall
+       photo short of the screen, so it takes the column like any figure. */
     .post-content .figure--portrait {
         display: block;
 
-        & img {
-            width: 75%;
-            margin: 0 auto;
-        }
-
         & figcaption {
             margin-top: var(--space-2xs);
-            text-align: center;
         }
     }
 }

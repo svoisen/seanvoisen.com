@@ -6,6 +6,7 @@ month: 5
 disciplines: ["Interactive installation", "Image processing"]
 cover: "/assets/images/making/self-composed/self-composed-booths.jpg"
 thumbnail: "/assets/images/making/self-composed/self-composed-visitors.jpg"
+thumbnailFocus: "50% 25%"
 coverAlt: "Two Self-Composed booths in a wood-panelled gallery room, each a tall screen showing a black-and-white composite portrait above a glass-topped plinth."
 ---
 
@@ -29,6 +30,6 @@ Self-Composed won a Communication Arts Interactive Award in 2017.
 ![A printed Self-Composed portrait lying on a white table, with a link to the photo online printed beneath it.](/assets/images/making/self-composed/self-composed-print.jpg "Each visitor leaves with a print, and a link to the photo online.")
 
 <figure class="figure--portrait">
-    <img src="/assets/images/making/self-composed/self-composed-instagram.jpg" alt="A phone showing an Instagram post tagged #selfcomposed: a black-and-white portrait of a woman behind two outspread hands and a glass." sizes="(min-width: 768px) 420px, 75vw">
+    <img src="/assets/images/making/self-composed/self-composed-instagram.jpg" alt="A phone showing an Instagram post tagged #selfcomposed: a black-and-white portrait of a woman behind two outspread hands and a glass." sizes="(max-width: 567px) 100vw, (min-width: 768px) 420px, 75vw">
     <figcaption>Visitors shared their portraits on Instagram under #selfcomposed.</figcaption>
 </figure>

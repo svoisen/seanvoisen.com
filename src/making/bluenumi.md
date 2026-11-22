@@ -1,16 +1,14 @@
 ---
-title: "Bluenumi Clock"
-description: "An open-hardware numitron clock kit."
+title: "Bluenumi"
+description: "An open source numitron clock kit."
 year: 2011
-disciplines: ["Open hardware", "Electronics"]
-link:
-  label: "Source on GitHub"
-  url: "https://github.com/svoisen/bluenumi"
+disciplines: ["Electronics"]
 cover: "/assets/images/making/bluenumi/bluenumi-front.jpg"
+thumbnailFocus: "50% 15%"
 coverAlt: "The assembled Bluenumi clock on a desk, its four numitron tubes glowing orange above a blue-lit acrylic case."
 ---
 
-Bluenumi began with the idea of an easy-to-assemble, open-source kit clock with the look of a nixie tube clock, but without the cost or the potentially dangerous high voltage. The result is a small desktop clock built entirely from through-hole components that looks like a nixie clock at a fraction of the price.
+Bluenumi began with the idea of making an easy-to-assemble, open source kit clock that had the look of a nixie tube clock, but without the cost or the potentially dangerous high voltage. The result is a small desktop clock built entirely from through-hole components that nixie-ish but at a fraction of the price.
 
 ## Features
 
@@ -24,8 +22,8 @@ Bluenumi began with the idea of an easy-to-assemble, open-source kit clock with 
 ![A low side view of the clock, its four tubes lit from below by blue LEDs through the acrylic case.](/assets/images/making/bluenumi/bluenumi-side.jpg "Each IV-9 tube sits over its own blue LED, which shows through the acrylic case.")
 
 <figure class="figure--portrait">
-    <img src="/assets/images/making/bluenumi/bluenumi-bench.jpg" alt="The bare Bluenumi circuit board held in a clamp on a workbench, its tubes lit, with solder and tools behind it." sizes="(min-width: 768px) 420px, 75vw">
-    <figcaption>The bare board on the bench, before the case goes on. Every component is through-hole, so the kit can be soldered by a beginner.</figcaption>
+    <img src="/assets/images/making/bluenumi/bluenumi-bench.jpg" alt="The bare Bluenumi circuit board held in a clamp on a workbench, its tubes lit, with solder and tools behind it." sizes="(max-width: 567px) 100vw, (min-width: 768px) 420px, 75vw">
+    <figcaption>The bare board on the bench, before the case goes on. Every component is through-hole, so the kit can easily be soldered by a beginner.</figcaption>
 </figure>
 
 The firmware, parts list, assembly instructions, and schematics are all [on GitHub](https://github.com/svoisen/bluenumi).
