@@ -45,11 +45,6 @@ export default async function(eleventyConfig) {
   eleventyConfig.on("eleventy.before", images.generateOrphanedImages);
 
   /*
-   * bundles
-   */
-  eleventyConfig.addBundle('css', { hoist: true });
-
-  /*
    * filters
    */
   eleventyConfig.addFilter("w3Date", filters.w3Date);
@@ -57,15 +52,12 @@ export default async function(eleventyConfig) {
   eleventyConfig.addFilter("monthYear", filters.monthYear);
   eleventyConfig.addFilter("projectDate", filters.projectDate);
   eleventyConfig.addFilter("head", filters.head);
-  eleventyConfig.addFilter("slice", filters.slice);
   eleventyConfig.addFilter("filter", filters.filter);
-  eleventyConfig.addFilter("reject", filters.reject);
   eleventyConfig.addFilter("postcss", filters.postCssFilter);
   eleventyConfig.addFilter("titlecase", filters.titlecase);
   eleventyConfig.addFilter("navigationItems", filters.navigationItems);
   eleventyConfig.addFilter("directoryItems", filters.directoryItems);
   eleventyConfig.addFilter("getDescription", filters.getDescription);
-  eleventyConfig.addFilter("stars", filters.stars);
   eleventyConfig.addFilter("genRSSId", filters.genRSSId);
 
   /*
@@ -91,7 +83,6 @@ export default async function(eleventyConfig) {
   eleventyConfig.addLayoutAlias("post", "post.njk");
   eleventyConfig.addLayoutAlias("project", "project.njk");
   eleventyConfig.addLayoutAlias("home", "home.njk");
-  eleventyConfig.addLayoutAlias("atom", "atom.njk");
 
   /*
    * passthrough file copy

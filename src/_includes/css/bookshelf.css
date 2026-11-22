@@ -119,32 +119,20 @@
     font-size: var(--font-size--1);
     display: block;
 
+    /* Stretched over the whole item, so the cover is part of the link
+       without a second anchor around it. */
     &::after {
-        content: "" !important;
+        content: "";
+        position: absolute;
+        inset: 0;
+        z-index: 1;
     }
-}
-
-.books-grid-title::after {
-    content: "";
-    display: block;
-    left: 0;
-    top: 0;
-    position: absolute;
-    z-index: 1;
-    height: 100%;
-    width: 100%;
 }
 
 .books-grid-author {
     display: block;
     font-size: var(--font-size--2);
     color: var(--deemphasized-color);
-}
-
-.books-grid-rating {
-    display: block;
-    color: var(--deemphasized-color);
-    font-size: var(--font-size--2);
 }
 
 @media (prefers-reduced-motion: reduce) {

@@ -4,16 +4,13 @@
     heading on the list-shaped index pages, which is why the heading level is
     a parameter rather than fixed — a page needs exactly one h1.
 
-    A bar can carry a fact on its right (a count, a date) as `note`. It does
-    not carry links: the way on from a list closes the list instead, with
-    `listMore` below.
+    The bar carries only its label. Facts about the list (a count, a date)
+    go in the margin column; the way on from a list closes the list instead,
+    with `listMore` below.
 #}
-{% macro sectionBar(label, note = null, level = 2) %}
+{% macro sectionBar(label, level = 2) %}
 <div class="section-bar">
     <h{{ level }} class="section-bar__label">{{ label }}</h{{ level }}>
-    {%- if note %}
-    <span class="section-bar__note">{{ note }}</span>
-    {%- endif %}
 </div>
 {% endmacro %}
 

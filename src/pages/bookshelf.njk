@@ -20,10 +20,6 @@ localCSS: ["bookshelf"]
     </dl>
 </div>
 
-{{ bookshelfSection(books.books, 2026) }}
-{{ bookshelfSection(books.books, 2025) }}
-{{ bookshelfSection(books.books, 2024) }}
-{{ bookshelfSection(books.books, 2023) }}
-{{ bookshelfSection(books.books, 2022) }}
-{{ bookshelfSection(books.books, 2021) }}
-{{ bookshelfSection(books.books, 2020) }}
+{%- for year in bookYears %}
+{{ bookshelfSection(books.books, year) }}
+{%- endfor %}

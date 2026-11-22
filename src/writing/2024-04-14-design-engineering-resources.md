@@ -6,7 +6,7 @@ tags: ["design", "work"]
 
 This is a short list of articles, books, blog posts and other resources about the practice of design engineering. 
 
-I will periodically update this page as I come across new writing or other media I feel are worth sharing. Please feel free to [contact me]({{ site.url }}/about) with links to anything you feel I should consider adding to this list.
+I will periodically update this page as I come across new writing or other media I feel are worth sharing. Please feel free to [contact me](/about/) with links to anything you feel I should consider adding to this list.
 
 <small>**Last updated:** <time datetime="2025-01-13">January 13, 2025</time></small>
 

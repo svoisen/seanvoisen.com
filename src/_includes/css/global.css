@@ -469,42 +469,6 @@ blockquote {
     padding-left: var(--space-s);
 }
 
-summary {
-    color: var(--deemphasized-color);
-    font-size: var(--font-size--1);
-    cursor: pointer;
-    list-style: none;
-    display: flex;
-    align-items: center;
-}
-
-summary::-webkit-details-marker {
-    display: none;
-}
-
-summary::before {
-    content: "";
-    display: inline-block;
-    width: 1em;
-    height: 1em;
-    margin-right: var(--space-2xs);
-    flex-shrink: 0;
-    background-color: currentColor;
-    mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='currentColor'%3E%3Cpath fill-rule='evenodd' d='M6.22 3.22a.75.75 0 0 1 1.06 0l4.25 4.25a.75.75 0 0 1 0 1.06l-4.25 4.25a.75.75 0 0 1-1.06-1.06L9.94 8 6.22 4.28a.75.75 0 0 1 0-1.06Z'/%3E%3C/svg%3E");
-    mask-size: contain;
-    mask-repeat: no-repeat;
-    mask-position: center;
-    transition: transform 0.2s ease;
-}
-
-details[open] > summary::before {
-    transform: rotate(90deg);
-}
-
-details[open] > summary {
-    margin-bottom: var(--space-s);
-}
-
 /* Masthead, main and footer hang from the same left edge and span the same
    frame, so the logo, the first title and the footer rule share one line. */
 .main,
@@ -931,49 +895,6 @@ details[open] > summary {
     margin-top: var(--space-2xl);
 }
 
-/* Topics read as a caption on the essay just finished, in the same tracked
-   caps as the meta row that opened it. */
-.taglist {
-    margin: 0 0 var(--space-3xl) 0;
-    padding-top: var(--space-s);
-    border-top: 1px solid var(--border-color);
-    font-family: var(--font-family-ui);
-    font-size: var(--font-size--2);
-    line-height: var(--metadata-line-height);
-    letter-spacing: 0.112em;
-    text-transform: uppercase;
-    color: var(--deemphasized-color);
-}
-
-.taglist__tag {
-    color: var(--deemphasized-color);
-    text-decoration-line: none;
-
-    &:hover,
-    &:focus-visible {
-        text-decoration-line: underline;
-        text-decoration-color: currentColor;
-    }
-}
-
-/* Held between hairlines rather than indented like a citation, which is what
-   separates a pull quote from the block quotes around it. */
-.post-content .pullquote {
-    margin: var(--space-2xl) 0;
-    padding: var(--space-l) 0;
-    border-top: 1px solid var(--border-color);
-    border-bottom: 1px solid var(--border-color);
-    border-left: none;
-    padding-left: 0;
-    font-family: var(--font-family-heading);
-    font-size: var(--font-size-2);
-    font-weight: var(--heading-font-weight);
-    line-height: 1.35;
-    /* Heading face at heading weight and h3's size, so it takes h3's fit. */
-    letter-spacing: -0.007em;
-    color: var(--foreground-color);
-}
-
 /*
  * A list page's standfirst. The bar heading these pages is a tracked-caps
  * label with no room in it for a sentence, so the page's own description —
@@ -996,25 +917,13 @@ details[open] > summary {
  * sentence case for assistive technology.
  */
 .section-bar {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    gap: var(--space-s);
     border-top: 1px solid var(--border-color);
     padding-top: var(--space-s);
     margin-bottom: var(--space-l);
     font-family: var(--font-family-ui);
 
-    /*
-     * Both sides of the bar share one line box, given as a length so it does
-     * not rescale with the right-hand item's larger type, and they are
-     * aligned by that box rather than by baseline. A bar is a fixed row
-     * whether or not it carries a right-hand item: on baseline alignment the
-     * taller right item set the shared baseline and dropped the label — and
-     * everything under the bar with it — by a few pixels wherever there was
-     * one, which is why the Bookshelf's bar sat below the Directory's and
-     * the home page's Reading bar sat above the three sections over it.
-     */
+    /* The label's line box as a length, so every bar is the same height
+       whatever the type around it. */
     --section-bar-line: calc(var(--font-size--2) * var(--metadata-line-height));
 }
 
@@ -1022,8 +931,7 @@ details[open] > summary {
    nothing to draw: the space under the header already separates it from the
    header. Scoped to the page's own first child, which leaves the bars inside
    a composed page — the home page's sections — with their rules intact. */
-.page > .section-bar:first-child,
-.post > .section-bar:first-child {
+.page > .section-bar:first-child {
     border-top: none;
     padding-top: 0;
 }
@@ -1036,13 +944,6 @@ details[open] > summary {
     letter-spacing: 0.112em;
     text-transform: uppercase;
     color: var(--deemphasized-color);
-}
-
-.section-bar__note {
-    font-size: var(--font-size--1);
-    line-height: var(--section-bar-line);
-    color: var(--deemphasized-color);
-    white-space: nowrap;
 }
 
 /*
@@ -1251,7 +1152,7 @@ details[open] > summary {
    already fill both columns and keep the caption underneath; below 720px
    every caption goes back under its picture. */
 @media only screen and (min-width: 720px) {
-    .post-content figure:has(> figcaption):not(.figure--wide) {
+    :is(.post-content, .page-content) figure:has(> figcaption):not(.figure--wide) {
         display: grid;
         grid-template-columns: minmax(0, 1fr) var(--margin-width);
         column-gap: var(--column-gap);
@@ -1267,6 +1168,15 @@ details[open] > summary {
             margin-top: 0;
             text-align: left;
         }
+    }
+
+    /* On a prose page the figure is a direct child of the content wrapper,
+       which spans the frame and caps its children at the main column. Here
+       the figure is given the whole width outright instead of reaching
+       across with a negative margin. */
+    .page-content > figure:has(> figcaption):not(.figure--wide) {
+        max-width: calc(var(--main-width) + var(--column-gap) + var(--margin-width));
+        margin-inline-end: 0;
     }
 }
 

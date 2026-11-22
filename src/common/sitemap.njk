@@ -5,13 +5,13 @@ excludeFromSitemap: true
 ---
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-  {% for page in collections.sitemap %}
-    {% if page.url and page.data.excludeFromSitemap != true %}
-      {% if page.data.lastUpdated %}{% set lastmod = page.data.lastUpdated %}{% else %}{% set lastmod = page.date %}{% endif %}
+  {% for item in collections.sitemap %}
+    {% if item.url and item.data.excludeFromSitemap != true %}
+      {% set lastmod = item.data.lastUpdated or item.date %}
     <url>
-        <loc>{{ site.base }}{{ page.url }}</loc>
+        <loc>{{ site.base }}{{ item.url }}</loc>
         <lastmod>{{ lastmod | w3Date }}</lastmod>
-        <changefreq>{{ page.data.changeFreq if page.data.changeFreq else "monthly" }}</changefreq>
+        <changefreq>monthly</changefreq>
     </url>
     {% endif %}
   {% endfor %}

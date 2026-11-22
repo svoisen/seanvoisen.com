@@ -23,9 +23,9 @@
 /thinking/feed.json /feed.json 301
 /stream/* /thinking/:splat 301
 
-# /reading was never a path this site generated. Two posts reach for it
-# through `site.url`, which site.js does not export, so the link renders as a
-# bare /reading. The Bookshelf is the list they were pointing at.
+# /reading was never a path this site generated, but two posts once linked
+# to it through an undefined `site.url`, so the bare path went out in feeds
+# and may be cached. The posts now link to the Bookshelf directly.
 /reading /bookshelf/ 301
 /reading/ /bookshelf/ 301
 

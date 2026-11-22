@@ -31,7 +31,7 @@ If you’re looking for an approachable and engaging introduction to Socratic th
 
 ## [The Unbearable Lightness of Being](https://bookshop.org/a/106240/9780060932138) by Milan Kundera
 
-<a href="https://bookshop.org/a/106240/9781250280503">
+<a href="https://bookshop.org/a/106240/9780060932138">
 <img class="float-right book-cover" src="/assets/images/book_covers/the_unbearable_lightness_of_being@320.webp" alt="Cover of The Unbearable Lightness of Being by Milan Kundera."/>
 </a>
 

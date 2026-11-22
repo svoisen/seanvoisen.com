@@ -1,19 +1,13 @@
 ---
 layout: base
 ---
-{%- if (page.filePathStem.split("/")[1] == "writing") %}
-    {%- set type = "Writing" %}
-{%- else %}
-    {%- set type = "Thinking" %}
-{%- endif %}
-
 {#
     The reading view. Title, standfirst and prose run the main column; the
-    post's facts sit beside them in the margin column. There is no back link at the top: the header nav already carries
-    every route off this page. Nothing follows the prose either — no topics,
+    post's facts sit beside them in the margin column. There is no back link
+    at the top: the header nav already carries every route off this page. Nothing follows the prose either — no topics,
     no more-like-this — so a post ends where the writing ends.
 #}
-<article class="post post--{{ type | lower }}">
+<article class="post">
     <header class="post-header">
         <h1 class="post-title">{{ title }}</h1>
         {%- if description %}
