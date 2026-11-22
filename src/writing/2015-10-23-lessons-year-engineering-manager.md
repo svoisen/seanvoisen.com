@@ -57,5 +57,5 @@ tags: ["management", "work"]
 
 <p>A good 1:1 meeting is where the truth is laid bare. If you follow an agile process, then sprint retrospectives might be another time and place where this happens, but often people are more comfortable sharing their true feelings in a private setting. Use the time wisely!</p>
 
-<p><br />
+<p>
 Trying to be a good manager is not easy. Some days I wish I could just dive in and go back to straight-up programming. One day I might just do that. But for now, I’m grateful for the opportunity to learn, grow, serve and just try to be a better person. Ultimately, that’s what I think leadership is all about.</p>

@@ -12,16 +12,14 @@ Enthusiasm around large language models (LLMs) and text-to-image systems, howeve
 
 The shortcomings of this assertion should be obvious: not everything can nor should be expressed through spoken or written language. The future of computing cannot and will not be *only* talking to computers. For all its ease-of-use and benefits, text-based interfaces—be they verbal or written—are a limited interaction modality, a narrow straw of expressive bandwidth. Sometimes it's very hard to say what you want.
 
-From word processing to photo and video editing to drawing to 3D modeling—most creative work that happens on computers involves *manipulation.* It’s easier and more natural to trim a video by manipulating a slider on a track than by typing or speaking “trim the second clip on the timeline by 3.4 seconds.” It’s quicker to select a portion of a photo for editing by tapping it with your finger or circling it with a lasso than by telling the computer “please select the left eyebrow of the third woman to the right.”<sup><a href="#1">1</a></sup>
+From word processing to photo and video editing to drawing to 3D modeling—most creative work that happens on computers involves *manipulation.* It’s easier and more natural to trim a video by manipulating a slider on a track than by typing or speaking “trim the second clip on the timeline by 3.4 seconds.” It’s quicker to select a portion of a photo for editing by tapping it with your finger or circling it with a lasso than by telling the computer “please select the left eyebrow of the third woman to the right.”[^1]
 
-With direct manipulation we bypass the language centers of our brains and act without thinking, relying instead on muscular gestalts<sup><a href="#2">2</a></sup>, allowing us to enter [flow state](https://en.wikipedia.org/wiki/Flow_(psychology)). 
+With direct manipulation we bypass the language centers of our brains and act without thinking, relying instead on muscular gestalts[^2], allowing us to enter [flow state](https://en.wikipedia.org/wiki/Flow_(psychology)). 
 
 The exciting thing about a world where computers “understand” natural language isn’t that text-based interfaces will supplant the GUI. What’s exciting instead is how they will *augment* the GUI. The most compelling demos of AI-powered text-based interfaces, especially in creative contexts, always revolve around how they are paired with traditional input modalities. Sketch to image. Inpainting and style transfer from reference images. [Photoshop’s generative fill](https://www.adobe.com/products/photoshop/ai.html). All of these still require the graphical user interface as an input system.
 
 The future of user interfaces isn’t just chat; it’s *multimodal*.
 
-<aside class="footnote">
-<a name="1"></a><p>[1] This admittedly ignores the immense accessibility benefits of natural language interfaces for those who may have limited motor ability. But even in this case, vision tracking and other alternative pointing systems may still prove more efficient than natural language alone.</p>
+[^1]: This admittedly ignores the immense accessibility benefits of natural language interfaces for those who may have limited motor ability. But even in this case, vision tracking and other alternative pointing systems may still prove more efficient than natural language alone.
 
-<p><a name="2"></a>[2] I'm using the term as defined by Hubert Dreyfus in his book <a href="https://www.google.com/books/edition/What_Computers_Can_t_Do/TsraAAAAMAAJ?hl=en">What Computers Can't Do</a>.</p>
-</aside>
+[^2]: I'm using the term as defined by Hubert Dreyfus in his book [What Computers Can't Do](https://www.google.com/books/edition/What_Computers_Can_t_Do/TsraAAAAMAAJ?hl=en).

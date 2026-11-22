@@ -2,15 +2,14 @@
 title: Design engineering writing and resources
 description: A growing collection of articles, books, blog posts and other resources about design engineering.
 tags: ["design", "work"]
+lastUpdated: 2025-01-13
 ---
 
 This is a short list of articles, books, blog posts and other resources about the practice of design engineering. 
 
 I will periodically update this page as I come across new writing or other media I feel are worth sharing. Please feel free to [contact me](/about/) with links to anything you feel I should consider adding to this list.
 
-<small>**Last updated:** <time datetime="2025-01-13">January 13, 2025</time></small>
-
-### Articles and blog posts
+## Articles and blog posts
 - [The Attributes of a Design Engineer](https://www.ryngonzalez.com/blog/the-attributes-of-a-design-engineer) by Kathryn Gonzalez — Kathryn is a well-known design engineering leader who built her career as an early employee at DoorDash, creating and leading their Design Infrastructure organization. This is her unique take on design engineering through the lens of personal experience at a fast-growing startup.
 - [Design engineering, a working definition](https://sean.voisen.org/writing/design-engineering-working-definition) by Sean Voisen — My own perspective role based on my experience running Design Engineering inside Adobe's Design organization, highlighting what I call the three primary activities of design engineering: prototyping, design systems engineering, and building high-quality interfaces.
 - [Should you pursue a career in design engineering?](https://adobe.design/stories/leading-design/should-you-pursue-a-career-in-design-engineering) — Another one by me, but this time published on Adobe Design's official blog. In this article I discuss the role, a bit about how we do it at Adobe, and share tips or ideas on how to get started.
@@ -25,15 +24,15 @@ I will periodically update this page as I come across new writing or other media
 - [Why a Design Engineer career is an investment in your future](https://polar.sh/emilwidlund/posts/becoming-a-design-engineer-is-a-career-investment) by Emil Widlund — Emil shares his journey moving from designer to design engineer, and how embracing the multidisciplinarity of designing and coding allowed him to better express design intent than working in non-programmable design tools.
 - [Is 2025 the Year of the "Design Engineer"](https://zeroheight.com/blog/design-engineer/) by David Darnes — What's in a title? David offers us a timely provocation on the pros and cons of adopting "design engineer" as an official title for this perennially-difficult-to-name role and occupation.
 
-### Books
+## Books
 - [Design Engineering Handbook](https://marketing.invisionapp-cdn.com/www-assets.invisionapp.com/epubs/InVision_DesignEngineeringHandbook.pdf) — Perhaps the most thorough, in-depth resource on design engineering in existence. It covers everything from defining the role, describing design engineering processes, tips for collaborating with engineering, career growth, leadership and even organizational design. Published by InVision and well worth a read.
 
-### Podcasts and videos
+## Podcasts and videos
 <figure>
-<iframe style="width: 100%; min-width: 100%; aspect-ratio: 16/9" src="https://www.youtube.com/embed/U9X2tgPYcNk?si=9vjHiMKVskJVH3F5" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-<figcaption style="text-align: left;">Glenn Hitchcock and John Pham discuss how design engineering plays a critical role in shipping great product at Vercel on the <a href="https://www.dive.club/">Dive Club podcast</a>.</figcaption>
+<iframe src="https://www.youtube.com/embed/U9X2tgPYcNk?si=9vjHiMKVskJVH3F5" title="Glenn Hitchcock and John Pham on design engineering at Vercel, Dive Club (YouTube)" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen loading="lazy"></iframe>
+<figcaption>Glenn Hitchcock and John Pham discuss how design engineering plays a critical role in shipping great product at Vercel on the <a href="https://www.dive.club/">Dive Club podcast</a>.</figcaption>
 </figure>
 
-### Websites and communities
+## Websites and communities
 - [d×e](https://www.designengineer.xyz) — A relatively new platform focused on design engineering that looks promising. As of this writing, it's most valuable resources seems to be its growing job board as well as its collection of links to other articles and resources about design engineering. I'm excited to see where this one goes!
 - [Design Technologist Club](https://designtechnologist.club/) — The Design Technologist Club has a Slack instance that is relatively quiet. Still, if you're looking to connect with other design engineers/technologists, it's a place to start.

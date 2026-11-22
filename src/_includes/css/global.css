@@ -1188,6 +1188,18 @@ blockquote {
     background-color: var(--border-color);
 }
 
+/* An embedded player takes the figure's width at the shape of a video. The
+   size lives here rather than in a style attribute on each embed. */
+:is(.post-content, .page-content) figure iframe {
+    display: block;
+    width: 100%;
+    height: auto;
+    aspect-ratio: 16 / 9;
+    border: 0;
+    border-radius: var(--border-radius-md);
+    background-color: var(--border-color);
+}
+
 /* Footnotes close the essay in the body face a step down, set off by the
    same rule the topics use. */
 .footnotes-sep {
@@ -1337,7 +1349,7 @@ blockquote {
     /* A fact that is ambiguous without its name — a page's "Updated" date,
        which would otherwise read as a publication date — keeps the name on
        the line, in the same tracked caps as the value. */
-    .post-facts--labelled dt {
+    .post-facts__item--labelled dt {
         position: static;
         width: auto;
         height: auto;

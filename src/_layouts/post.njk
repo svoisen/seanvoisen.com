@@ -26,6 +26,15 @@ layout: base
                 <dt>Published</dt>
                 <dd><time datetime="{{ page.date | w3Date }}">{{ page.date | htmlDate }}</time></dd>
             </div>
+            {#- A post kept up to date, like a resource list, says when it
+                last changed. Opt-in by setting `lastUpdated`, for the reason
+                page.njk gives: git's date moves on edits that change nothing. #}
+            {%- if lastUpdated %}
+            <div class="post-facts__item post-facts__item--labelled">
+                <dt>Updated</dt>
+                <dd><time datetime="{{ lastUpdated | w3Date }}">{{ lastUpdated | htmlDate }}</time></dd>
+            </div>
+            {%- endif %}
             <div class="post-facts__item">
                 <dt>Reading time</dt>
                 <dd>{{ content | wordStats | replace(" read", "") }}</dd>

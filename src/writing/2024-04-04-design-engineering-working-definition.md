@@ -28,7 +28,7 @@ The frequently-cited shorthand definition of design engineer is simply: Someone 
 
 So, I have my own working definition. I qualify it with *working* because by no means do I mean to imply that my definition of design engineering is the canonical one. But it is often what I use to describe my own teams' work and position within our broader organization, and I've found it valuable in this respect. 
 
-### What is design engineering?
+## What is design engineering?
 Here's my working definition.
 
 > Design engineers solve the particular problems that arise where design and engineering overlap. Specifically, design engineering enhances, improves and supports user experience design through three primary activities:
@@ -39,26 +39,26 @@ Here's my working definition.
 
 I'll expound upon these three primary activities in the remainder of this post, but first some pretext about my particular bias and framing.
 
-### What design engineering is, and isn't, about
-#### Design engineering is about design
+## What design engineering is, and isn't, about
+### Design engineering is about design
 I believe the "design" in design engineer comes first for a reason. Design engineering exists to support design and to help ensure the output of product development stays true to design intent. While design engineers may partner closely with other engineers to help them get their jobs done—that is, they *engage* with with other engineering practitioners—they do not necessarily *serve* the practice of engineering. But design engineers *do* serve the practice of design. This stands in contrast with other types of engineers—SREs or DevOps engineers for instance—whose roles clearly exist to serve and improve engineering processes.
 
 I don't mean to imply that design engineering doesn't benefit the process of product engineering. It always does, and often to a significant degree. A well-built UI component library is a piece of high-leverage front-end infrastructure that will always increase the development velocity of any team that wields it well. Design engineers also often work on features that other engineers won't or can't take on, bringing a level of polish and fidelity to user experiences that would otherwise be neglected. And in the course of prototyping, design engineers will often solve specific technical problems, or have written bits of reusable code, that product engineers can reference or use during production. But still, design engineering done well means design first, engineering second.
 
-#### Design engineering isn't just about the web
+### Design engineering isn't just about the web
 I've noticed a bias in many articles and blog posts about design engineering that focus exclusively on web and web technologies. Perhaps this has happened because design engineering as a title arose to prominence out of discourse within the web development community. But design engineering need not be confined to a particular technology or tech stack. 
 
 Design engineers may build native mobile experiences, or VR or AR experiences, or desktop application experiences. And some of the most prolific design engineers in the industry have the skills to work across different platforms and tech stacks, sometimes equally adept at writing Swift code as they are working on the web.
 
-#### A brief aside on career path and organizational design
+### A brief aside on career path and organizational design
 A design-first perspective on design engineering has certain organizational implications. Specifically, it implies that design engineers may be better served operating within the design organization at their company, assuming one exists. This is because the work of design engineers is likely to be most valued by design and by designers. User experience prototyping and design systems building, in particular, are fundamentally about making design better, more scalable and more effective, after all.
 
 But this design-side focus also introduces a challenge: design engineering *is* a kind of software engineering. The practice of design engineering entails writing code. Oftentimes, design engineers write code or build libraries that other engineers heavily rely upon. Many design organizations are not set up to serve the career development of those whose primary job function is coding. Should design engineers report to design leaders who may not fully understand their technical work and unique skillset? Or would they be better served operating as isolated experts within engineering? And what do management and senior IC levels of design engineering leadership look like in each arrangement?
 
 These are challenging questions that have no single correct answer. Good organizational design is always dependent upon the unique context of the organization. (For anyone interested in organizational design, I recommend [Org Design for Design Orgs](https://orgdesignfordesignorgs.com/) and Chapter 4 of the [Design Engineering Handbook](https://marketing.invisionapp-cdn.com/www-assets.invisionapp.com/epubs/InVision_DesignEngineeringHandbook.pdf), the latter of which provides a few insights into the pros and cons of different organizational models for design engineering.)
 
-### The three activities of design engineering
-#### Prototyping
+## The three activities of design engineering
+### Prototyping
 Prototyping is a topic so vast that it deserves its own post, or probably a book. I'll have to make do with a few paragraphs. 
 
 There are many things designers cannot learn or understand about their designs without a working prototype. And there are many types of designs for which a click-through style prototype, such as those you can build in Figma, are insufficient. This is where design engineering as a prototyping comes into play. The benefits of high-fidelity, working prototypes written in code are numerous: they help to eliminate unspoken assumptions between design and engineering, they reduce time wasted in meetings and help drive consensus, they prevent expensive mistakes that would otherwise be uncovered after product development, they help teams explore technical capabilities and limitations, and they help uncover new design directions and possibilities.
@@ -69,7 +69,7 @@ I include under the umbrella of prototyping early-stage new product incubation, 
 
 Perhaps it's worth noting that prototypers who skew heavily towards the design side of the design-engineering spectrum may bristle at the title "design engineer." After all prototyping is *not* engineering in the traditional sense. If anything, *prototyping is designing with code*. (Or, as one person on my team likes to say: "designing by typing.") In some companies, prototyping specialists are sometimes called UX engineers or UI engineers or experience developers in an attempt to distinguish them from the design engineers who build design systems. Honestly, I'm not sure these title differences adequately distinguish the difference, and if anything, simply engender more confusion.
 
-#### Building tooling and infrastructure
+### Building tooling and infrastructure
 Most of the work of building design tooling and infrastructure is part of the purview of design systems engineering. Design systems engineering, like prototyping, probably deserves its own book. But, again, for now I'll have to stick with a brief summary.
 
 Design systems engineers typically engage in the following activities:
@@ -85,7 +85,7 @@ What design system engineering shares in common with prototyping is its role in 
 
 Passion for sweating the details shines in design systems engineering, where design engineers strive to build reusable, accessible components with delightful microinteractions that are well-crafted, well-tested and easy to integrate.
 
-#### Building UI
+### Building UI
 Sometimes design engineers are simply the best people at the company for building a particular bit of UI or entire experience in a product. Sometimes this work entails taking what started as a prototype and seeing it all the way through to release. Other times, however, design engineers are called upon to build a certain piece of user interface functionality because it requires strong design sense and willingness to finesse the details. Interactions related to direct manipulation, for example—where users will immediately notice dropped frames, imprecise timing or minor glitches in positioning—are the kinds of projects where design engineers excel.
 
 There's a risk here in conflating design engineers who build UI with front-end engineers. After all, when it comes to building UI, isn't the work for each role largely the same? The line is blurry but the distinction remains: design engineers are there in the service of great design. Design engineers may be embedded within a front-end engineering team, but their remit should be to focus on the parts of the user experience that require not just building UI to spec, but actually helping figure out the interaction patterns, animation nuance and other details that cannot be easily specified by designers in the first place.

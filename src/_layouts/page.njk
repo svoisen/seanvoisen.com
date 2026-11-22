@@ -30,8 +30,8 @@ layout: base
         {% endif %}
         {%- if showUpdated %}
         {%- set updated = lastUpdated or page.date %}
-        <dl class="post-facts post-facts--labelled">
-            <div class="post-facts__item"><dt>Updated</dt><dd><time datetime="{{ updated | w3Date }}">{{ updated | htmlDate }}</time></dd></div>
+        <dl class="post-facts">
+            <div class="post-facts__item post-facts__item--labelled"><dt>Updated</dt><dd><time datetime="{{ updated | w3Date }}">{{ updated | htmlDate }}</time></dd></div>
         </dl>
         {%- endif %}
     </header>

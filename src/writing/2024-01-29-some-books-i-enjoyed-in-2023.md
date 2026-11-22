@@ -19,17 +19,17 @@ Books remain my mainstay and most preferred form of media precisely because they
 
 So yes, I have a special fondness for books. I even keep [a public list of books that have had a profound impact own worldview](/bookshelf/). I don't think anything I read in 2023 is going to make that list, but I'll share a few standouts.
 
-### [All Things Shining](https://bookshop.org/p/books/all-things-shining-reading-the-western-canon-to-find-meaning-in-a-secular-world-hubert-dreyfus/16631673)
+## [All Things Shining](https://bookshop.org/p/books/all-things-shining-reading-the-western-canon-to-find-meaning-in-a-secular-world-hubert-dreyfus/16631673)
 I'd been exposed to Dreyfus' humanist takes on computing and AI through his books [What Computers Can't Do](https://search.worldcat.org/en/title/257056) and [Mind Over Machine](https://search.worldcat.org/en/title/171110823)—which are great if you're into philosophies of technology, and critiques of AI in particular—but [All Things Shining](https://bookshop.org/p/books/all-things-shining-reading-the-western-canon-to-find-meaning-in-a-secular-world-hubert-dreyfus/16631673) is a very different kind of book, less academic, more readable. It tackles the question of how to find meaning in our age of infinite choice and little cultural guidance on how to make *good* life choices. It's something of a call to arms to live life with more wonder, more awe, more appreciation and passion, grounded in examples drawn from mythology, Western philosophy and literature. Traipsing through a variety of cultural influences, from Homer to the Bible to Spinoza to Kant to Melville, it shows how each offers something from which to glean on how to live fully and engage more deeply with the world.
 
 I finished the book with a long supplementary reading list.
 
-### [Wanting](https://bookshop.org/p/books/wanting-the-power-of-mimetic-desire-in-everyday-life-luke-burgis/15083791)
+## [Wanting](https://bookshop.org/p/books/wanting-the-power-of-mimetic-desire-in-everyday-life-luke-burgis/15083791)
 Though grounded in René Girard's theory of [mimetic desire](https://en.wikipedia.org/wiki/Mimetic_theory), [Wanting](https://bookshop.org/p/books/wanting-the-power-of-mimetic-desire-in-everyday-life-luke-burgis/15083791) flirts with the boundaries of "pop psychology," something I typically disdain, but I actually enjoyed this book. It takes the theory of mimetic desire and explains it in a way that's engaging and approachable, attempting to show how it is applicable and relevant to everyday life. Sure, [mimetic theory has its critics](https://arcade.stanford.edu/rofl/deceit-desire-and-literature-professor-why-girardians-exist) and might be overreaching in many cases, but for me that's not really the point of the book. What I got out of this book were two things: 
 1. I should think much more deeply and critically about why *I* desire some of the things I do in life. This might seem obvious to anyone engaged in regular self-reflection, but this is a slippery and evasive activity. Mimetic theory provides one lens with which to approach this problem, and if you view it through with this lens honestly, I think you'll find it's a pretty decent lens in many cases. 
 2. I should think more deeply about and better understand the personal motivations of the people I work with too. Why do they want what they want? How will that help me be a better leader?
 
-### [The Prophet](https://bookshop.org/p/books/the-prophet-kahlil-gibran/14794867)
+## [The Prophet](https://bookshop.org/p/books/the-prophet-kahlil-gibran/14794867)
 [The Prophet](https://bookshop.org/p/books/the-prophet-kahlil-gibran/14794867) has been on my list of books to read for a long time and I finally made time for it. Regardless of religious background or standpoint, it's a beautiful, poetic meditation on life. You take from this book what you put into it, meaning that it doesn't really state anything novel or particularly profound, but serves more as a mirror to truths you likely already know.
 
 As a parent, I found the chapter "On Children" particularly touching:
@@ -39,7 +39,7 @@ As a parent, I found the chapter "On Children" particularly touching:
 > Let your bending in the Archer's hand be for gladness;<br>
 > For even as He loves the arrow that flies, so He loves also the bow that is stable.
 
-### [The Coaching Habit](https://bookshop.org/p/books/the-coaching-habit-say-less-ask-more-change-the-way-you-lead-forever-michael-bungay-stanier/17315881)
+## [The Coaching Habit](https://bookshop.org/p/books/the-coaching-habit-say-less-ask-more-change-the-way-you-lead-forever-michael-bungay-stanier/17315881)
 [The Coaching Habit](https://bookshop.org/p/books/the-coaching-habit-say-less-ask-more-change-the-way-you-lead-forever-michael-bungay-stanier/17315881) often gets a lot of praise in engineering management circles, and now I see why. Such a straightforward and useful book, especially if you're a manager trying to develop and improve your team's self-sufficiency. The essence of the The Coaching Habit is a clearly-defined, step-by-step strategy on *how to listen* in one-on-one conversations and break the cycle of wanting to immediately jump in with advice or help. Why not offer advice in one-on-ones? Well ...
 
 > ... in a nutshell, advice is overrated. I can tell you something, and it’s got a limited chance of making its way into your brain’s hippocampus, the region that encodes memory. If I can ask you a question and you generate the answer yourself, the odds increase substantially.
