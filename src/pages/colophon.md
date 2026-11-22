@@ -11,4 +11,4 @@ This site is built using [Eleventy](https://11ty.dev) and served using [Netlify]
 
 ## Typography
 
-Body copy for all long-form content is set in *IBM Plex Sans*. Headlines and user interface elements are set in *Outfit*.
+Everything on this site, from long-form body copy to headlines and user interface elements, is set in *IBM Plex Sans*.
