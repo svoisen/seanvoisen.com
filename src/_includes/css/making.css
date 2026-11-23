@@ -125,3 +125,16 @@
     height: auto;
     border-radius: var(--border-radius-md);
 }
+
+/* A sound sample: the player takes the picture's place in the figure, so
+   its label sits in the margin beside it, or under it on narrow screens. */
+.post-content .figure--audio audio {
+    display: block;
+    width: 100%;
+}
+
+/* A player is one line tall, so its label centres on it rather than
+   sitting on its foot as a picture's caption does. */
+.main .post-content figure.figure--audio {
+    align-items: center;
+}
