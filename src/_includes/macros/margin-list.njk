@@ -38,7 +38,7 @@
 
 {% macro projectRow(item) %}
 <li class="margin-list__row margin-list__row--project">
-    <span class="margin-list__thumb"{% if item.data.thumbnailFocus %} style="--thumb-focus: {{ item.data.thumbnailFocus }}"{% endif %}><img src="{{ item.data.thumbnail or item.data.cover }}" alt="" eleventy:widths="240,480,800" sizes="(min-width: 720px) 11rem, calc(100vw - 9.5rem)"></span>
+    <span class="margin-list__thumb"{% if item.data.thumbnailFocus %} style="--thumb-focus: {{ item.data.thumbnailFocus }}"{% endif %}><img src="{{ item.data.thumbnail or item.data.cover }}" alt="" eleventy:widths="240,480,800" sizes="(min-width: 720px) 11rem, 5.25rem"></span>
     <span class="margin-list__entry">
         <span class="margin-list__title"><a href="{{ item.url }}">{{ item.data.title }}</a></span>
         <span class="margin-list__summary">{{ item.data.description }}</span>

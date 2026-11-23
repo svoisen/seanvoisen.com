@@ -3,7 +3,7 @@ title: Lists on phones — fact column, project strips - Plan
 type: feat
 date: 2026-11-22
 topic: phone-list-columns
-status: built on feat/phone-list-columns; U3 (hide summaries) held in reserve
+status: built on feat/phone-list-columns; projects switched from B3 to B1 after testing; U3 held in reserve
 execution: code
 ---
 
@@ -115,3 +115,10 @@ picture carry the row; the summary is on the project page.
 - `src/_includes/css/global.css` — token, phone rules, comment.
 - `src/_includes/css/making.css` — project rows on phones.
 - `src/_includes/macros/margin-list.njk` — `sizes` on `projectRow`.
+
+## Change after testing
+
+Projects moved from B3 to **B1** (decided 2026-11-22): the thumbnail sits in
+the fact column as a 3:2 crop with the year under it, and the title and
+summary sit beside it in the main column, on the same edge as every other
+title. `projectRow`'s phone `sizes` is now `5.25rem`.

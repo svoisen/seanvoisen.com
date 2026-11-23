@@ -59,36 +59,31 @@
 
 @media only screen and (max-width: 719px) {
     /* The margin has folded away, so the row takes the phone lists' two
-       columns: the year in the fact column, level with the top of the
-       picture, and in the main column the thumbnail as a thin strip — so
-       three of them do not take three screens — over the title and summary.
-       A project can move the crop off-centre with `thumbnailFocus`. */
+       columns. The fact column holds a small crop of the thumbnail with the
+       year under it; the title and summary sit beside it in the main column,
+       on the same edge as every other title on the page. A project can move
+       the crop off-centre with `thumbnailFocus`. */
     .margin-list__row.margin-list__row--project {
         grid-template-columns: var(--fact-column) minmax(0, 1fr);
+        grid-template-rows: auto 1fr;
         column-gap: var(--space-s);
-
-        & > * {
-            grid-column: 2;
-        }
+        align-items: start;
 
         & > .margin-list__thumb {
+            grid-column: 1;
             grid-row: 1;
             margin-bottom: var(--space-2xs);
         }
 
         & > .margin-list__fact {
             grid-column: 1;
-            grid-row: 1;
-            align-self: start;
+            grid-row: 2;
         }
 
         & > .margin-list__entry {
-            grid-row: 2;
+            grid-column: 2;
+            grid-row: 1 / span 2;
         }
-    }
-
-    .margin-list .margin-list__thumb img {
-        aspect-ratio: 3 / 1;
     }
 }
 
