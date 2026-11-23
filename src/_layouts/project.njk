@@ -6,8 +6,8 @@ layout: base
     A project is a post that leads with a picture. The header is the post's —
     title, standfirst, facts list — and so are the prose and figure rules, so a
     project reads as part of the same site rather than a gallery bolted on.
-    What differs is the cover between the header and the prose, and facts
-    that are the project's date and disciplines and nothing else.
+    What differs is the cover between the header and the prose, and a
+    single fact: the project's date.
 
     No back link and nothing after the prose, as on posts. How a page points
     back to its section is a question for the whole site, not this layout.
@@ -24,14 +24,6 @@ layout: base
                 <dt>Date</dt>
                 <dd>{{ year | projectDate(month) }}</dd>
             </div>
-            {%- if disciplines and disciplines.length %}
-            <div class="facts__item facts__item--list">
-                <dt>Disciplines</dt>
-                {%- for discipline in disciplines %}
-                <dd>{{ discipline }}</dd>
-                {%- endfor %}
-            </div>
-            {%- endif %}
         </dl>
     </header>
     {%- if cover %}

@@ -2,7 +2,6 @@
 title: "Bluenumi"
 description: "An open source numitron clock kit."
 year: 2011
-disciplines: ["Electronics"]
 cover: "/assets/images/making/bluenumi/bluenumi-front.jpg"
 thumbnailFocus: "50% 15%"
 coverAlt: "The assembled Bluenumi clock on a desk, its four numitron tubes glowing orange above a blue-lit acrylic case."

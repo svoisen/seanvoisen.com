@@ -822,7 +822,7 @@ blockquote {
 /*
  * A post's facts: a description list, so each value is announced with its
  * name. Beside the title they are set as pairs, the name in tracked caps
- * over its value. A name with several values (topics, disciplines) runs its
+ * over its value. A name with several values (topics) runs its
  * values on in one line, comma-separated. The commas are generated, with
  * empty alternative text so assistive technology does not read them out:
  * the list structure already separates the values.
@@ -1193,6 +1193,45 @@ blockquote {
    go to zero, and the figure runs exactly the prose edges. */
 .post-content .figure--wide, .page-content .figure--wide {
     margin-inline-end: calc(-1 * (var(--column-gap) + var(--margin-width)));
+}
+
+/* A tall photo at the full column would fill the screen, so a portrait
+   figure runs narrower. Between 568 and 719px its caption sits beside it,
+   foot to foot. Once the margin column is there the caption moves into it
+   like any other (see the captioned-figure rule below), and the picture
+   keeps to the column's end so it stays next to its caption rather than a
+   gap away from it. On phones even the full column leaves a tall photo
+   short of the screen, so it takes the column and the caption goes under. */
+:is(.post-content, .page-content) .figure--portrait {
+    display: grid;
+    grid-template-columns: 58% 1fr;
+    column-gap: var(--space-l);
+    align-items: end;
+
+    & picture {
+        display: block;
+    }
+
+    & figcaption {
+        margin-top: 0;
+    }
+}
+
+@media only screen and (min-width: 720px) {
+    :is(.post-content, .page-content) .figure--portrait > picture {
+        width: 58%;
+        justify-self: end;
+    }
+}
+
+@media only screen and (max-width: 567px) {
+    :is(.post-content, .page-content) .figure--portrait {
+        display: block;
+
+        & figcaption {
+            margin-top: var(--space-2xs);
+        }
+    }
 }
 
 /* A captioned figure takes the margin column for its caption: the picture

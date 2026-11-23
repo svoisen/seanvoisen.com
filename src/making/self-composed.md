@@ -3,7 +3,6 @@ title: "Self-Composed"
 description: "A photo booth at SFMOMA that rethinks the selfie."
 year: 2016
 month: 5
-disciplines: ["Interactive installation", "Image processing"]
 cover: "/assets/images/making/self-composed/self-composed-booths.jpg"
 thumbnail: "/assets/images/making/self-composed/self-composed-visitors.jpg"
 thumbnailFocus: "50% 25%"
