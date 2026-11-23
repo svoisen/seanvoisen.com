@@ -4,6 +4,8 @@ title: "Philosophy for designers: ethics, experience and cognition"
 permalink: "/philosophy-for-designers/"
 description: A self-study journey for thoughtful designers and technologists.
 date: git Last Modified
+lastUpdated: 2025-11-10
+showUpdated: true
 ---
 
 This is a reading list and self-study journey in philosophy, design and cognitive science that I put together for myself. I'm sharing it here partly because it helps me commit to actually doing it, and partly because I suspect others might find it useful (or might want to read along).
