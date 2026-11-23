@@ -1336,6 +1336,15 @@ blockquote {
         --note-lift: calc(var(--space-m) + 0.5 * var(--font-size-0) + 1.125 * var(--font-size--1));
     }
 
+    /* A note, pull quote or cover in the margin can run longer than the
+       prose beside it. When it comes last, the post's body has to reach
+       down past it, or it hangs over the footer. */
+    .post-content::after {
+        content: "";
+        display: block;
+        clear: both;
+    }
+
     .post-content .note {
         position: relative;
         top: calc(-1 * var(--note-lift));
