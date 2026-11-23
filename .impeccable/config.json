@@ -1,0 +1,17 @@
+{
+  "detector": {
+    "ignoreRules": [],
+    "ignoreFiles": [],
+    "ignoreValues": [
+      {
+        "rule": "side-tab",
+        "value": "*",
+        "files": [
+          "src/_includes/css/global.css"
+        ],
+        "createdAt": "2026-11-23T01:02:53.473Z",
+        "reason": "user decided 2026-11-22: keep the blockquote's thick left rule for now (wants no thinner than 4px; it marks quotations)"
+      }
+    ]
+  }
+}
