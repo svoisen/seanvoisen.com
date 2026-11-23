@@ -1,17 +1,25 @@
+{#
+    One year of the shelf: the year's heading and its covers in the main
+    column, the year's count in the margin as the same description list a
+    post's facts use.
+#}
 {% macro bookshelfSection(books, year) %}
-<h2>{{ year }}</h2>
-<ul class="books-grid">
-{% for book in books | filter("year", year) %}
-    <li class="books-grid-item">
-        <img class="books-grid-cover" src="/assets/images/book_covers/{{ book.slug }}@320.webp" alt="{{ book.title }} cover" loading="lazy">
-        <div class="books-grid-metadata">
-            <a class="books-grid-title" href="{{ book.link }}">{{ book.title }}</a>
-            <span class="books-grid-author">by {{ book.author }}</span>
-            {# <span class="books-grid-rating">
-                <span class="visual-hidden">{{ book.rating }}/5.0 stars</span>
-                <span class="stars" aria-hidden="true">{{ book.rating | stars }}</span>
-            </span> #}
-        </div>
-{% endfor %}
-</ul>
+{%- set yearBooks = books | filter("year", year) %}
+<section class="bookshelf-year margin-grid" aria-labelledby="year-{{ year }}">
+    <h2 id="year-{{ year }}">{{ year }}</h2>
+    <dl class="facts">
+        <div class="facts__item"><dt>Read</dt><dd>{{ yearBooks.length }} {{ "book" if yearBooks.length == 1 else "books" }}</dd></div>
+    </dl>
+    <ul class="books-grid">
+    {%- for book in yearBooks %}
+        <li class="books-grid-item">
+            <img class="books-grid-cover" src="/assets/images/book_covers/{{ book.slug }}@320.webp" alt="{{ book.title }} cover" loading="lazy">
+            <div class="books-grid-metadata">
+                <a class="books-grid-title" href="{{ book.link }}">{{ book.title }}</a>
+                <span class="books-grid-author">by {{ book.author }}</span>
+            </div>
+        </li>
+    {%- endfor %}
+    </ul>
+</section>
 {% endmacro %}

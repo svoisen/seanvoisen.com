@@ -2,7 +2,7 @@
     The work list: the home page's WORKING section, and the only list on the
     site whose rows link nowhere. No role has a page, so every title is plain
     text — the section is the whole of the work history, not a way in to more
-    of it. The one link the section carries is on its bar, and it leaves.
+    of it. The one link the section carries closes it, and it leaves.
 
     An organisation shows once per consecutive run. The comparison is against
     the previous item by index rather than a flag carried across iterations: a
@@ -11,13 +11,13 @@
 
     The repeated ones are still written into the markup and hidden by class.
     Dropping them outright would leave a screen reader on the third Adobe item
-    hearing a role with no employer attached, which is the one fact the gutter
+    hearing a role with no employer attached, which is the one fact the margin
     is there to carry.
 #}
-{% from "macros/gutter-list.njk" import entryRow %}
+{% from "macros/margin-list.njk" import entryRow %}
 
 {% macro workList(items) %}
-<ul class="gutter-grid">
+<ul class="margin-list">
     {%- for item in items %}
     {%- set repeated = loop.index0 > 0 and items[loop.index0 - 1].organisation == item.organisation %}
     {{ entryRow(item.organisation, item.title, item.summary, null, repeated) }}

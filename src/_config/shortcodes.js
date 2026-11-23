@@ -20,4 +20,18 @@ export const video = (name, caption, width = 1680, height = 1020) => {
   return `<figure class="figure--wide figure--video"><video controls muted loop playsinline preload="metadata" width="${width}" height="${height}" poster="${base}-poster.webp"><source src="${base}.mp4" type="video/mp4"></video>${figcaption}</figure>`;
 };
 
-export default { video };
+/*
+ * A pull quote: a line from the essay repeated in the margin beside the
+ * passage it comes from. Place it on its own line, between paragraphs, just
+ * before the paragraph it should sit beside:
+ *
+ *   {% pullquote %}He didn’t paint mountains; …{% endpullquote %}
+ *
+ * Hidden from assistive technology, which meets the same words in the prose
+ * a few lines on, and hidden on phones, where there is no margin to put it
+ * in and it would read as the text repeating itself.
+ */
+export const pullquote = (content) =>
+  `<aside class="pullquote" aria-hidden="true"><p>${content.trim()}</p></aside>`;
+
+export default { video, pullquote };

@@ -1,0 +1,16 @@
+---
+layout: page
+title: "Making"
+permalink: "/making/"
+listPage: true
+localCSS: ["making"]
+---
+
+{% from "macros/margin-list.njk" import projectRow %}
+{% set projects = collections.making | reverse %}
+
+<ul class="margin-list">
+{%- for project in projects %}
+{{ projectRow(project) }}
+{%- endfor %}
+</ul>

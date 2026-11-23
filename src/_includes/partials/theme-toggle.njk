@@ -7,13 +7,9 @@
         const toggle = document.getElementById('theme-toggle');
         if (!toggle) return;
         
-        // Get current theme state
-        const savedTheme = localStorage.getItem('theme');
-        const systemPrefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
-        const isDark = savedTheme ? savedTheme === 'dark' : systemPrefersDark;
-        
-        // Sync toggle with current theme (theme already applied by inline script)
-        toggle.checked = isDark;
+        // The inline script in base.njk has already chosen the theme; read
+        // its decision rather than working it out a second time.
+        toggle.checked = document.documentElement.style.colorScheme === 'dark';
         
         // Update theme color meta tag to match current theme
         updateThemeColor();

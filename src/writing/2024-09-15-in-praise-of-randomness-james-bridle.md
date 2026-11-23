@@ -4,7 +4,7 @@ description: James Bridle on the value of randomness, and how modern computing i
 tags: ["computing"]
 ---
 
-I have to admit that the first time I ever encountered the book [A Million Random Digits with 100,000 Normal Deviates](https://en.wikipedia.org/wiki/A_Million_Random_Digits_with_100%2C000_Normal_Deviates) I was incredibly perplexed. Cracking the cover of this 400-page tome, originally published in 1955 by the RAND Corporation, I found it contained nothing but page upon page of 50-digit random numbers, each split into columns of 5. There was not much text to speak of, very little description, no narrative.<sup><a href="#1">1</a></sup> What, I wondered, was the purpose of such a book?
+I have to admit that the first time I ever encountered the book [A Million Random Digits with 100,000 Normal Deviates](https://en.wikipedia.org/wiki/A_Million_Random_Digits_with_100%2C000_Normal_Deviates) I was incredibly perplexed. Cracking the cover of this 400-page tome, originally published in 1955 by the RAND Corporation, I found it contained nothing but page upon page of 50-digit random numbers, each split into columns of 5. There was not much text to speak of, very little description, no narrative.[^1] What, I wondered, was the purpose of such a book?
 
 At the time, I was a graduate student at [UC Irvine](https://www.uci.edu) studying art and computer science. A colleague of mine, [Tom Jennings](https://en.wikipedia.org/wiki/Tom_Jennings), had brought the book with him to complement an exhibition of his new work, a random number generator he had built using a geiger counter and a small piece of radioactive material. Tom explained that the book was necessary—at the time it was published—for things like Monte Carlo simulations, and was produced by RAND for scientific purposes, most likely for nuclear fission simulations. [Writing about the book on his website](https://www.sensitiveresearch.com/Archive/MillionRandomDigitsBook/index.html), he comments on its sheer oddity:
 
@@ -50,6 +50,4 @@ Towards the end of their chapter, Bridle reminds us how critical randomness is t
 
 Randomness matters in more ways than we often appreciate. And as computing comes to dominate more and more of our lived experience, I find myself wondering if we can we find more ways to keep the beauty of chance encounters and experiences alive and well for us all. (And, perhaps, unlike my friend Tom, we might be able to do so without the mild dose of radiation.)
 
-<aside class="footnote">
-<p><a name="1"></a>[1] <a href="https://www.amazon.com/Million-Random-Digits-Normal-Deviates/dp/0833030477/">The Amazon reviews for A Million Random Digits with 100,000 Normal Deviates</a> hilariously complain about the poor plot and lack of character development. Definitely worth a read.</p>
-</aside>
+[^1]: [The Amazon reviews for A Million Random Digits with 100,000 Normal Deviates](https://www.amazon.com/Million-Random-Digits-Normal-Deviates/dp/0833030477/) hilariously complain about the poor plot and lack of character development. Definitely worth a read.

@@ -1,12 +1,12 @@
 {#
-    The archive list: every post, month and year in the gutter. Built from the same
+    The archive list: every post, month and year in the margin. Built from the same
     rows as the home page's sections so that following "All essays →" does not
     change the shape of the list you were just reading.
 #}
-{% from "macros/gutter-list.njk" import postRow %}
+{% from "macros/margin-list.njk" import postRow %}
 
 {% macro postList(items) %}
-<ul class="gutter-grid">
+<ul class="margin-list">
 {%- for item in items %}
 {{ postRow(item) }}
 {%- endfor %}

@@ -1,0 +1,5 @@
+{
+    "layout": "project",
+    "localCSS": ["making"],
+    "permalink": "/making/{{ page.fileSlug }}/index.html"
+}

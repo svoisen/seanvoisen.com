@@ -1,0 +1,127 @@
+/*
+ * Making: the project page, and the thumbnail rows that list projects on the
+ * home page and the Making index.
+ */
+
+/*
+ * Thumbnail rows. The picture sits in the main column beside the title and
+ * summary, and the year sits in the margin where every other list keeps its
+ * date. The row is laid out on the frame's tracks with the thumbnail cut
+ * out of the main column's start, so the year still lines up with the dates
+ * in the sections above and below.
+ */
+.margin-list__row--project {
+    --thumb-width: clamp(7rem, 12vw, 10.5rem);
+    grid-template-columns:
+        var(--thumb-width)
+        var(--space-l)
+        minmax(0, calc(var(--measure) - var(--thumb-width) - var(--space-l)))
+        var(--column-gap)
+        var(--margin-width);
+    column-gap: 0;
+
+    & > .margin-list__thumb {
+        grid-column: 1;
+        align-self: start;
+    }
+
+    & > .margin-list__entry {
+        grid-column: 3;
+    }
+
+    & > .margin-list__fact {
+        grid-column: 5;
+    }
+}
+
+/* Qualified by the grid so the image rule outranks the main column's
+   rounded-corner rule for images. */
+.margin-list .margin-list__thumb {
+    display: block;
+
+    & picture {
+        display: block;
+    }
+
+    /* Square-cornered, unlike the figures: the global rule rounds every image
+       in the main column, and on a picture this small the curve reads as a
+       button rather than a photograph. */
+    & img {
+        display: block;
+        width: 100%;
+        height: auto;
+        aspect-ratio: 3 / 2;
+        object-fit: cover;
+        object-position: var(--thumb-focus, 50% 50%);
+        border-radius: 0;
+    }
+}
+
+@media only screen and (max-width: 719px) {
+    /* The margin has folded away, so the row stacks: the thumbnail becomes a
+       full-width picture over its row — cropped to a thin strip, so three of
+       them do not take three screens — then the year, then the title. A
+       project can move the crop off-centre with `thumbnailFocus`. */
+    .margin-list__row.margin-list__row--project {
+        grid-template-columns: minmax(0, 1fr);
+
+        & > * {
+            grid-column: 1;
+        }
+
+        & > .margin-list__thumb {
+            grid-row: 1;
+            margin-bottom: var(--space-2xs);
+        }
+
+        & > .margin-list__fact {
+            grid-row: 2;
+        }
+
+        & > .margin-list__entry {
+            grid-row: 3;
+        }
+    }
+
+    .margin-list .margin-list__thumb img {
+        aspect-ratio: 3 / 1;
+    }
+}
+
+/*
+ * Project page. Everything above the prose is the post's own header,
+ * facts list included; this adds the cover.
+ */
+
+/* The cover is the page's picture rather than an illustration of a passage,
+   so it sits between the header and the prose at the full column, with the
+   same corners the figures below it use. */
+.project-cover {
+    display: block;
+    width: 100%;
+    height: auto;
+    margin-top: var(--space-2xl);
+    border-radius: var(--border-radius-md);
+}
+
+/* Held to the main column with the prose, like every figure under it. The
+   global rule that caps images at their container would otherwise let the
+   cover run on across the margin column. */
+.post > .project-cover {
+    max-width: var(--main-width);
+}
+
+/* Figures come one after another on a project page, so each takes room
+   above and below; without it a caption runs straight into the next
+   picture. */
+.project .post-content figure {
+    margin: var(--space-xl) 0;
+}
+
+/* Video sits at the full column with the corners the photographs use. */
+.project .post-content video {
+    display: block;
+    width: 100%;
+    height: auto;
+    border-radius: var(--border-radius-md);
+}

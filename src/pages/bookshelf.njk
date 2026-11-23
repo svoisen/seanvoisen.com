@@ -7,18 +7,7 @@ localCSS: ["bookshelf"]
 ---
 
 {% from "macros/bookshelf-section.njk" import bookshelfSection %}
-{% set intro = navigation.items | getDescription(page.url) %}
 
-{# The page's own line, read from the directory data rather than written here,
-   so the index and the sitemap cannot end up describing it differently. #}
-{%- if intro %}
-<p class="list-intro">{{ intro }}</p>
-{%- endif %}
-
-{{ bookshelfSection(books.books, 2026) }}
-{{ bookshelfSection(books.books, 2025) }}
-{{ bookshelfSection(books.books, 2024) }}
-{{ bookshelfSection(books.books, 2023) }}
-{{ bookshelfSection(books.books, 2022) }}
-{{ bookshelfSection(books.books, 2021) }}
-{{ bookshelfSection(books.books, 2020) }}
+{%- for year in bookYears %}
+{{ bookshelfSection(books.books, year) }}
+{%- endfor %}

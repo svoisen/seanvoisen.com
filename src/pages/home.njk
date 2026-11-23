@@ -2,72 +2,80 @@
 layout: "home"
 date: Last Modified
 permalink: "/index.html"
-localCSS: ["home"]
+localCSS: ["home", "making"]
 ---
 
-{% from "macros/section-bar.njk" import sectionBar %}
-{% from "macros/gutter-list.njk" import entryRow, postRow %}
+{% from "macros/section-bar.njk" import sectionBar, listMore %}
+{% from "macros/margin-list.njk" import entryRow, postRow, projectRow %}
 {% from "macros/work-list.njk" import workList %}
 
 {#
-    Four practices, one alignment line. Every section is a bar and a gutter
-    list, and every title in every list starts at the same horizontal position
-    — which is the whole device the page has, there being no images.
+    Five practices on one frame. Every section is a bar and a list, every
+    title starts on the main column's edge, and every fact about an entry —
+    a date, a year, an organisation — sits beside it in the margin column.
+    A section that leads somewhere ends on its way on, as the list's last
+    line.
 
-    WRITING and THINKING read their own collections newest-first, so
+    WRITING, THINKING and MAKING read their own collections newest-first, so
     publishing is what changes this page. Nothing here is hand-ordered.
 
     WORKING comes last and reads src/_data/roles.js. It is the one section
     whose rows link nowhere, because no role has a page: the history is short
-    enough to be the section rather than an index of one, and the bar sends
-    anyone who wants the long form to LinkedIn.
+    enough to be the section rather than an index of one, and its last line
+    sends anyone who wants the long form to LinkedIn.
 #}
 {% set essays = collections.writing | reverse | head(6) %}
 {% set thoughts = collections.thinking | reverse | head(4) %}
+{% set projects = collections.making | reverse | head(3) %}
 
 <section class="hero">
-    <p class="hero__statement">Sean Voisen is a software design and engineering leader working to <strong>make computers better for human thinking &amp; creativity.</strong></p>
-    {#
-    <dl class="hero__sub">
-        <div class="hero__sub-line">
-            <dt class="hero__sub-label">By day</dt><dd class="hero__sub-text">Shipping code and leading teams.</dd>
-        </div>
-        <div class="hero__sub-line">
-            <dt class="hero__sub-label">By night</dt><dd class="hero__sub-text">Plotter art and <a href="https://moonpointing.org">essays on philosophy</a>.</dd>
-        </div>
-    </dl>
-    #}
+    <p class="hero__statement">Sean Voisen is a software designer and engineer working to <strong>make computers better for human thinking &amp; creativity.</strong></p>
 </section>
 
 <section class="home-section">
-    {{ sectionBar("Writing", "All essays", "/writing/") }}
-    <ul class="gutter-grid">
+    {{ sectionBar("Writing") }}
+    <ul class="margin-list">
     {%- for post in essays %}
     {{ postRow(post) }}
     {%- endfor %}
     </ul>
+    {{ listMore("All essays", "/writing/") }}
 </section>
 
 <section class="home-section">
-    {{ sectionBar("Thinking", "All posts", "/thinking/") }}
-    <ul class="gutter-grid">
+    {{ sectionBar("Thinking") }}
+    <ul class="margin-list">
     {%- for post in thoughts %}
     {{ postRow(post) }}
     {%- endfor %}
     </ul>
+    {{ listMore("All posts", "/thinking/") }}
 </section>
 
-{# No right-hand link: there is no "all reading" page to point at, and the
-   Directory is already in the header. #}
+<section class="home-section">
+    {{ sectionBar("Making") }}
+    <ul class="margin-list">
+    {%- for project in projects %}
+    {{ projectRow(project) }}
+    {%- endfor %}
+    </ul>
+    {{ listMore("All projects", "/making/") }}
+</section>
+
+{# No way on: there is no "all reading" page to point at, and the Directory
+   is already in the header. #}
 <section class="home-section">
     {{ sectionBar("Reading") }}
-    <ul class="gutter-grid">
-        {{ entryRow("", "Bookshelf", "Books I've read, grouped by year.", "/bookshelf/") }}
-        {{ entryRow("", "Philosophy for designers", "A reading list and a self-study journey.", "/philosophy-for-designers/") }}
+    <ul class="margin-list">
+        {#- Summaries are the pages' Directory descriptions, so the two lists
+            cannot describe a page differently. #}
+        {{ entryRow("", "Bookshelf", navigation.items | getDescription("/bookshelf/"), "/bookshelf/") }}
+        {{ entryRow("", "Philosophy for designers", navigation.items | getDescription("/philosophy-for-designers/"), "/philosophy-for-designers/") }}
     </ul>
 </section>
 
 <section class="home-section">
-    {{ sectionBar("Working", "LinkedIn", "https://www.linkedin.com/in/svoisen/") }}
+    {{ sectionBar("Working") }}
     {{ workList(roles) }}
+    {{ listMore("Full work history on LinkedIn", "https://www.linkedin.com/in/svoisen/") }}
 </section>

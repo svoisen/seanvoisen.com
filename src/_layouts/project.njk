@@ -1,0 +1,35 @@
+---
+layout: base
+---
+
+{#
+    A project is a post that leads with a picture. The header is the post's —
+    title, standfirst, facts list — and so are the prose and figure rules, so a
+    project reads as part of the same site rather than a gallery bolted on.
+    What differs is the cover between the header and the prose, and a
+    single fact: the project's date.
+
+    No back link and nothing after the prose, as on posts. How a page points
+    back to its section is a question for the whole site, not this layout.
+#}
+<article class="post project">
+    <header class="post-header">
+        <h1 class="post-title">{{ title }}</h1>
+        {%- if description %}
+        <p class="post-standfirst">{{ description }}</p>
+        {%- endif %}
+        {# The post's facts list (see post.njk), with a project's own facts. #}
+        <dl class="facts">
+            <div class="facts__item">
+                <dt>Date</dt>
+                <dd>{{ year | projectDate(month) }}</dd>
+            </div>
+        </dl>
+    </header>
+    {%- if cover %}
+    <img class="project-cover" src="{{ cover }}" alt="{{ coverAlt }}" loading="eager" sizes="(min-width: 720px) 676px, 100vw">
+    {%- endif %}
+    <div class="post-content">
+        {{ content | safe }}
+    </div>
+</article>

@@ -53,6 +53,8 @@ Han’s critique of digital media, tools and experiences left me wondering: Does
 
 There’s nothing inherent in technology that reinforces the temporal crisis other than how we have chosen to design it. We *could* design things differently.
 
+{% pullquote %}There’s nothing inherent in technology that reinforces the temporal crisis other than how we have chosen to design it.{% endpullquote %}
+
 So, how might we design new digital tools that might encourage a different, healthier relationship to time? How might we design technologies that promote *lingering*?
 
 ## Design interventions (and a few caveats)
@@ -98,6 +100,8 @@ Imagine technologies that encourage us to think of time as something we give to 
 Lastly, we might consider shared spaces that allow us to linger, virtually, together, turning solitary contemplation into a communal experience. Imagine a virtual reading room where you see the images of other readers working through the same book, their pace visible as they turn pages alongside you. Or picture a system that reveals new stories, images or content only when enough people have “gathered” for the telling.
 
 ## Spaces for savoring time
+
+{% pullquote %}Deep in sesshin, time is not something we chop up and dole out; it is something we savor.{% endpullquote %}
 
 I recognize that these ideas seem unusual, and sit uncomfortably alongside commercial realities. Deliberately slowing down engagement is not what most designers have been asked to optimize for. But not every product need embrace these ideas wholesale, and in some cases these ideas might lead to a worse overall experience. Nevertheless, even small gestures towards a more contemplative experience, whether that means opting away from infinite scroll or defaulting away from auto-play, acknowledge that our relationship for time matters. Maybe there's room, even at the margins, to design with lingering in mind.
 
