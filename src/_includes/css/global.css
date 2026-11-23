@@ -514,14 +514,16 @@ blockquote {
             margin-top: 0;
         }
 
-        /* A pull quote between a heading and its paragraph leaves the
-           flow, so the pair keeps its tight spacing across it. */
-        :is(h1, h2, h3, h4, h5):has(+ p, + ul, + ol, + blockquote, + .pullquote + :is(p, ul, ol, blockquote)) {
+        /* A pull quote or a floated picture between a heading and its
+           paragraph leaves the flow, so the pair keeps its tight spacing
+           across it. */
+        /* No :has() inside :has() — it is invalid and drops the rule. */
+        :is(h1, h2, h3, h4, h5):has(+ p, + ul, + ol, + blockquote, + .pullquote + :is(p, ul, ol, blockquote), + a img:is(.float-left, .float-right)) {
             margin-bottom: var(--space-2xs);
         }
 
         :is(h1, h2, h3, h4, h5) + :is(p, ul, ol, blockquote),
-        :is(h1, h2, h3, h4, h5) + .pullquote + :is(p, ul, ol, blockquote) {
+        :is(h1, h2, h3, h4, h5) + :is(.pullquote, a:has(img:is(.float-left, .float-right))) + :is(p, ul, ol, blockquote) {
             margin-top: var(--space-2xs);
         }
 
@@ -1243,6 +1245,26 @@ blockquote {
             color: var(--foreground-color);
             text-wrap: balance;
         }
+    }
+
+    /* A floated picture — a book cover beside the passage about the book —
+       moves out of the main column into the margin, at the margin's width,
+       and stacks with the notes and pull quotes there. Like a pull quote
+       it floats from the top edge of the paragraph after it, so it is moved
+       down until its top meets that paragraph's first capitals (0.552em at
+       1.75 leading). */
+    .main .post-content img:is(.float-left, .float-right) {
+        --float-drop: calc(0.552 * var(--font-size-0));
+        position: relative;
+        top: var(--float-drop);
+        float: right;
+        clear: right;
+        width: var(--margin-width);
+        min-width: 0;
+        max-width: none;
+        /* Below it, the usual reserve plus its own drop, so whatever stacks
+           under it clears the cover where it is drawn. */
+        margin: 0 calc(-1 * (var(--column-gap) + var(--margin-width))) calc(var(--float-drop) + var(--note-lift) + var(--space-m)) 0;
     }
 
     /* A figure that reaches into the margin, with its caption or by its
