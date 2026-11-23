@@ -58,15 +58,17 @@
 }
 
 @media only screen and (max-width: 719px) {
-    /* The margin has folded away, so the row stacks: the thumbnail becomes a
-       full-width picture over its row — cropped to a thin strip, so three of
-       them do not take three screens — then the year, then the title. A
-       project can move the crop off-centre with `thumbnailFocus`. */
+    /* The margin has folded away, so the row takes the phone lists' two
+       columns: the year in the fact column, level with the top of the
+       picture, and in the main column the thumbnail as a thin strip — so
+       three of them do not take three screens — over the title and summary.
+       A project can move the crop off-centre with `thumbnailFocus`. */
     .margin-list__row.margin-list__row--project {
-        grid-template-columns: minmax(0, 1fr);
+        grid-template-columns: var(--fact-column) minmax(0, 1fr);
+        column-gap: var(--space-s);
 
         & > * {
-            grid-column: 1;
+            grid-column: 2;
         }
 
         & > .margin-list__thumb {
@@ -75,11 +77,13 @@
         }
 
         & > .margin-list__fact {
-            grid-row: 2;
+            grid-column: 1;
+            grid-row: 1;
+            align-self: start;
         }
 
         & > .margin-list__entry {
-            grid-row: 3;
+            grid-row: 2;
         }
     }
 

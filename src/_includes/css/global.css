@@ -187,6 +187,11 @@
     --frame-columns: minmax(0, var(--measure)) var(--margin-width);
     --frame-width: calc(var(--measure) + var(--column-gap) + var(--margin-width));
 
+    /* On phones, where the margin has folded away, a list keeps its facts
+       in a narrow column on the left instead. Wide enough for the longest
+       fact on the site in tracked caps ("MADEFIRE", "NOV 2026") on one line. */
+    --fact-column: 5.25rem;
+
     /* The page's right-hand edge, and its left edge on narrow screens.
        --space-m rather than the --space-xl it was: at phone widths 32px a
        side read as more air than the page wanted. On a 393px phone the
@@ -1458,10 +1463,10 @@ blockquote {
 
 /*
  * Narrow screens. Below 720px the margin column would leave the main column
- * a few words a line, so it folds away: the frame becomes one column, and
- * each fact the margin carried moves above the entry it belongs to as a
- * line of tracked caps — the date over the title, the organisation over the
- * role, the publication details under the standfirst.
+ * a few words a line, so it folds away and the frame becomes one column.
+ * The facts it carried find new places: in a list, a narrow column on the
+ * left of each row, so the titles still line up down the page; in a post's
+ * header, a line of tracked caps under the standfirst.
  */
 @media only screen and (max-width: 719px) {
     :root {
@@ -1469,35 +1474,30 @@ blockquote {
         --column-gap: 0px;
     }
 
+    /* The fact moves from the right-hand margin to a narrow column on the
+       left, on the title's first line. An empty fact (the reading section's)
+       keeps its column, so its titles share the same edge as the rest. */
     .margin-list__row {
-        grid-template-columns: minmax(0, 1fr);
-        row-gap: var(--space-3xs);
+        grid-template-columns: var(--fact-column) minmax(0, 1fr);
+        column-gap: var(--space-s);
     }
 
     .margin-list__row > * {
-        grid-column: 1;
-        grid-row: 2;
+        grid-column: 2;
     }
 
     .margin-list__row > .margin-list__fact {
-        grid-row: 1;
+        grid-column: 1;
         font-size: var(--font-size--2);
         line-height: var(--metadata-line-height);
         letter-spacing: 0.112em;
         text-transform: uppercase;
     }
 
-    /* The reading section's facts are empty by design; stacked, an empty
-       one would spend a line saying nothing. */
-    .margin-list__fact:empty {
-        display: none;
-    }
-
-    /* With the fact stacked there is no column left to carry the grouping,
-       so a repeated organisation comes back. Suppressing it here would leave
-       the second and third items of a run with nothing filing them at all —
-       which is why the value stayed in the markup rather than being dropped
-       from the template. */
+    /* On a phone each row shows its organisation, so the second and third
+       roles at one employer are not left with nothing filing them; the
+       column is narrow enough that the repetition reads as a column rather
+       than as noise. The value stayed in the markup for this. */
     .margin-list__fact--quiet {
         position: static;
         width: auto;
@@ -1505,14 +1505,6 @@ blockquote {
         overflow: visible;
         white-space: normal;
         clip-path: none;
-    }
-
-    .margin-list__row:not(:last-child) {
-        margin-bottom: var(--space-m);
-    }
-
-    .margin-list__row:has(.margin-list__entry):not(:last-child) {
-        margin-bottom: var(--space-l);
     }
 
     /* The facts become one line of tracked caps under the standfirst. The
