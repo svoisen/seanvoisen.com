@@ -698,6 +698,21 @@ blockquote {
     animation-delay: calc(var(--cascade-i, 0) * 40ms);
 }
 
+/* Until the foot script has numbered the units, the main column is held
+   transparent, so the page is never drawn whole before it cascades. If the
+   script never lifts the mark, the column shows itself after two seconds
+   anyway. */
+.cascade-pending main {
+    opacity: 0;
+    animation: cascade-failsafe 0s 2s forwards;
+}
+
+@keyframes cascade-failsafe {
+    to {
+        opacity: 1;
+    }
+}
+
 /*
  * The one reduced-motion block in this file, sited after the last transition
  * it has to answer for. Everything in global.css that moves is listed here —
@@ -717,6 +732,11 @@ blockquote {
     /* The script already stands down for reduced motion; this covers a
        preference changed after the page loaded. */
     .cascade {
+        animation: none;
+    }
+
+    .cascade-pending main {
+        opacity: 1;
         animation: none;
     }
 }
