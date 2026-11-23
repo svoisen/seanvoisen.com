@@ -58,33 +58,37 @@
 }
 
 @media only screen and (max-width: 719px) {
-    /* The margin has folded away, so the row stacks: the thumbnail becomes a
-       full-width picture over its row — cropped to a thin strip, so three of
-       them do not take three screens — then the year, then the title. A
+    /* The margin has folded away, so the row takes the phone lists' two
+       columns. The fact column holds a small crop of the thumbnail; the
+       title and summary sit beside it in the main column, on the same edge
+       as every other title on the page, with the year closing the entry. A
        project can move the crop off-centre with `thumbnailFocus`. */
     .margin-list__row.margin-list__row--project {
-        grid-template-columns: minmax(0, 1fr);
+        grid-template-columns: var(--fact-column) minmax(0, 1fr);
+        column-gap: var(--space-s);
+        align-items: start;
 
-        & > * {
-            grid-column: 1;
-        }
-
+        /* Dropped so the picture's top edge meets the top of the title's
+           capitals rather than the top of its line box. In IBM Plex Sans
+           (ascent 1.025, descent 0.275, cap height 0.698) at the title's
+           1.32 line height, the caps start 0.337em down: 0.01em of
+           half-leading plus 0.327em of ascent above the cap line. */
         & > .margin-list__thumb {
-            grid-row: 1;
-            margin-bottom: var(--space-2xs);
-        }
-
-        & > .margin-list__fact {
-            grid-row: 2;
+            grid-column: 1;
+            grid-row: 1 / span 2;
+            margin-top: calc(var(--font-size-0) * 0.337);
         }
 
         & > .margin-list__entry {
-            grid-row: 3;
+            grid-column: 2;
+            grid-row: 1;
         }
-    }
 
-    .margin-list .margin-list__thumb img {
-        aspect-ratio: 3 / 1;
+        & > .margin-list__fact {
+            grid-column: 2;
+            grid-row: 2;
+            margin-top: var(--space-3xs);
+        }
     }
 }
 
