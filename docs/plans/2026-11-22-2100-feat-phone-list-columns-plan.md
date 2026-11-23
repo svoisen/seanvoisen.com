@@ -3,7 +3,7 @@ title: Lists on phones — fact column, project strips - Plan
 type: feat
 date: 2026-11-22
 topic: phone-list-columns
-status: built on feat/phone-list-columns; projects switched from B3 to B1 after testing; U3 held in reserve
+status: built on feat/phone-list-columns; projects switched from B3 to B1, then B2, after testing; U3 held in reserve
 execution: code
 ---
 
@@ -122,3 +122,7 @@ Projects moved from B3 to **B1** (decided 2026-11-22): the thumbnail sits in
 the fact column as a 3:2 crop with the year under it, and the title and
 summary sit beside it in the main column, on the same edge as every other
 title. `projectRow`'s phone `sizes` is now `5.25rem`.
+
+Then to **B2** (same day): in B1 the year hung below the thumbnail, out of
+place. The thumbnail now has the fact column to itself and the year closes
+the entry, under the summary.
