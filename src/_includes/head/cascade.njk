@@ -1,0 +1,15 @@
+{#
+    The cascade's first half: decides, before anything is drawn, whether
+    this page will cascade, and if so keeps the main column transparent
+    until partials/cascade.njk has numbered its units. See that file.
+    Stands down for reduced motion and for a page brought back with the back
+    button, which the reader has already seen.
+#}
+<script>
+(function () {
+    if (matchMedia("(prefers-reduced-motion: reduce)").matches) return;
+    var nav = performance.getEntriesByType("navigation")[0];
+    if (nav && nav.type === "back_forward") return;
+    document.documentElement.classList.add("cascade-pending");
+})();
+</script>
