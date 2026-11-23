@@ -3,7 +3,7 @@ layout: "page"
 title: "About"
 date: git Last Modified
 permalink: "/about/"
-lastUpdated: 2026-08-24
+lastUpdated: 2026-11-22
 showUpdated: true
 ---
 
@@ -12,9 +12,9 @@ showUpdated: true
 I’m originally from California, and live with my wife and kids in the San Francisco bay area. I studied computer science at [UCLA](https://www.ucla.edu) and at the (radically interdisciplinary and sadly now shuttered) Arts Computation Engineering program at [UC Irvine](https://www.uci.edu). 
 
 ![A portrait of the author.](/assets/images/sean_voisen_wide.webp
-"A portrait of the author.")
+"That's me!")
 
-Currently, I am taking time off between jobs. Previously, I led teams of engineers and design technologists building design systems and inventing new user experiences for web, mobile and desktop at Adobe. Before that I built collaboration and accessibility features for [Adobe Express](https://express.adobe.com), managed CSS layout, rendering and accessibility engineering teams working on [Firefox](https://mozilla.org), and made web-based tools for animated comics at [Madefire](https://techcrunch.com/2021/04/29/madefire-shuts-down/).
+Currently, I am a Director of Engineering at [Figma](https://figma.com). Previously, I led teams of engineers and design technologists building design systems and new user experiences at Adobe. Before that I built collaboration and accessibility features for [Adobe Express](https://express.adobe.com), managed CSS layout, rendering and accessibility engineering teams working on [Firefox](https://mozilla.org), and made web-based tools for animated comics at [Madefire](https://techcrunch.com/2021/04/29/madefire-shuts-down/).
 
 ---
 

@@ -18,11 +18,11 @@ Bluenumi began with the idea of making an easy-to-assemble, open source kit cloc
 - Display blanking for night-time use and longer tube life
 - Open-source hardware and software, programmable like an Arduino over TTL serial
 
+The firmware, parts list, assembly instructions, and schematics are all [on GitHub](https://github.com/svoisen/bluenumi).
+
 ![A low side view of the clock, its four tubes lit from below by blue LEDs through the acrylic case.](/assets/images/making/bluenumi/bluenumi-side.jpg "Each IV-9 tube sits over its own blue LED, which shows through the acrylic case.")
 
 <figure class="figure--portrait">
     <img src="/assets/images/making/bluenumi/bluenumi-bench.jpg" alt="The bare Bluenumi circuit board held in a clamp on a workbench, its tubes lit, with solder and tools behind it." sizes="(max-width: 567px) 100vw, (min-width: 768px) 420px, 75vw">
     <figcaption>The bare board on the bench, before the case goes on. Every component is through-hole, so the kit can easily be soldered by a beginner.</figcaption>
 </figure>
-
-The firmware, parts list, assembly instructions, and schematics are all [on GitHub](https://github.com/svoisen/bluenumi).

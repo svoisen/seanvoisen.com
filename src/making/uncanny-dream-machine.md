@@ -1,6 +1,6 @@
 ---
 title: "The Uncanny Dream Machine"
-description: "An old radio that tells dreams no one ever had."
+description: "An old radio that recounts dreams no one ever had."
 year: 2010
 cover: "/assets/images/making/uncanny-dream-machine/uncanny-dream-machine-radio.jpg"
 coverAlt: "A small wooden Philco radio on a table, its dial window lit a pale blue."
@@ -10,6 +10,8 @@ The Uncanny Dream Machine is an exploration in computer-generated dreamlike narr
 
 This project was part of my master’s thesis research at the University of California, Irvine. You may [read the thesis in its entirety](/assets/docs/voisen-computational-dream-narrative.pdf) if you like.
 
+The Uncanny Dream Machine was conceived and built well before the invention of LLMs. Looking back on it more than a decade later, it's hard not to be struck by how primitive the system was compared to modern AI.
+
 <figure>
 <iframe src="https://player.vimeo.com/video/12502610?title=0&amp;byline=0&amp;portrait=0" title="The Uncanny Dream Machine (Vimeo)" allow="fullscreen; picture-in-picture" allowfullscreen loading="lazy"></iframe>
 <figcaption>The machine telling its dreams.</figcaption>
@@ -17,25 +19,4 @@ This project was part of my master’s thesis research at the University of Cali
 
 ![The radio on a side table beside an upholstered armchair under a standing lamp, in a darkened gallery.](/assets/images/making/uncanny-dream-machine/uncanny-dream-machine-installation.jpg "The machine as installed, with a chair to listen from.")
 
-## Sample dreams
-
-The Uncanny Dream Machine generates dreams characterized by any one of eight emotional tenors: anger, anxiety, embarrassment, fear, frustration, worry, joy and curiosity. Here are three, chosen at random.
-
-<figure class="figure--audio">
-<audio controls preload="none" src="/assets/audio/uncanny-dream-machine/anger.mp3"></audio>
-<figcaption>Anger</figcaption>
-</figure>
-
-<figure class="figure--audio">
-<audio controls preload="none" src="/assets/audio/uncanny-dream-machine/anxiety.mp3"></audio>
-<figcaption>Anxiety</figcaption>
-</figure>
-
-<figure class="figure--audio">
-<audio controls preload="none" src="/assets/audio/uncanny-dream-machine/frustration.mp3"></audio>
-<figcaption>Frustration</figcaption>
-</figure>
-
 ![The radio opened up: a small computer board, a speaker and wiring mounted inside the wooden case.](/assets/images/making/uncanny-dream-machine/uncanny-dream-machine-inside.jpg "Inside the radio: the computer, the speaker, and the electronics behind the knobs.")
-
-![A web page titled Uncanny Dreamer showing one dream transcript, its emotion marked Curiosity, and every word tagged with its part of speech.](/assets/images/making/uncanny-dream-machine/uncanny-dream-machine-transcripts.jpg "The tool for entering and analysing the dream transcripts the machine draws on.")
