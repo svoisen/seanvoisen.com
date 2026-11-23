@@ -12,16 +12,23 @@
     Units below the fold are left alone, so nothing animates out of sight
     and the run's length is bounded by the screen, not by the page.
 
-    It runs at the foot of the body, before the first paint, so a unit is
-    never seen before it starts. Without the script nothing moves and the
-    page is simply there. It stands down for reduced motion and for a page
-    brought back with the back button, which the reader has already seen.
+    The units can only be measured once the page is laid out, which is why
+    this runs at the foot of the body. But a browser may draw the page
+    before it gets here (phones do, often), and the reader would see it
+    whole and then watch it cascade. So the decision is made earlier: the
+    head (head/cascade.njk) marks the page cascade-pending, which keeps the
+    main column transparent until this script has numbered the units and
+    lifts the mark. From then each unit is held at its start by the
+    animation itself.
+
+    Without the head's mark (reduced motion, a page brought back with the
+    back button, no JavaScript) this does nothing and the page is simply
+    there.
 #}
 <script>
 (function () {
-    if (matchMedia("(prefers-reduced-motion: reduce)").matches) return;
-    var nav = performance.getEntriesByType("navigation")[0];
-    if (nav && nav.type === "back_forward") return;
+    var root = document.documentElement;
+    if (!root.classList.contains("cascade-pending")) return;
 
     var containers = "article, section, header, .page-content, .post-content, .margin-list, .facts, .list-header, .books-grid, .directory-list";
     var fold = innerHeight;
@@ -37,5 +44,7 @@
             c.classList.add("cascade");
         }
     })(document.querySelector("main"));
+
+    root.classList.remove("cascade-pending");
 })();
 </script>
