@@ -772,11 +772,8 @@ blockquote {
 .post-header {
     display: grid;
     grid-template-columns: var(--frame-columns);
-    /* Title and standfirst take the first two rows. The facts span all three,
-       and when they run longer than the title and standfirst the flexible
-       third row takes up the difference, rather than the title's row growing
-       and pushing the standfirst away from it. */
-    grid-template-rows: auto auto 1fr;
+    /* Title and standfirst take the two rows; the facts span both. */
+    grid-template-rows: auto auto;
     column-gap: var(--column-gap);
     align-items: start;
 
@@ -790,9 +787,15 @@ blockquote {
        Plex Sans's metrics (ascent 1.025em, descent 0.275em, cap height
        0.698em). For the title at 1.15 leading that is 0.252em; for the label
        at --metadata-line-height (1.45) it is 0.402em. */
+    /* The facts are given no height of their own, so the header is only as
+       tall as the title and standfirst. When the facts run longer (a short
+       title, several topics) they carry on down the margin beside the
+       opening of the post, as a margin note would, instead of growing the
+       header and pushing the prose away from the standfirst. */
     & > .facts {
         grid-column: 2;
         grid-row: 1 / -1;
+        height: 0;
         margin-top: calc(0.252 * var(--font-size-4) - 0.402 * var(--font-size--2));
     }
 }
@@ -1364,6 +1367,7 @@ blockquote {
             flex-wrap: wrap;
             align-items: baseline;
             column-gap: 0.7em;
+            height: auto;
             margin-top: var(--space-l);
         }
     }
