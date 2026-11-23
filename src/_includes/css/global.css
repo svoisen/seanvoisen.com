@@ -679,9 +679,29 @@ blockquote {
 }
 
 /*
+ * Cascade. The page's content rises into place on load as one continuous
+ * run: each unit 8px below its place and transparent, settling over 340ms,
+ * 40ms after the one above it. The units and their order come from
+ * partials/cascade.njk; this is only the motion. `backwards` holds each
+ * unit at its starting state through its delay, and once it has run nothing
+ * is left on the element, so a settled page has no transforms on it.
+ */
+@keyframes cascade-in {
+    from {
+        opacity: 0;
+        transform: translateY(8px);
+    }
+}
+
+.cascade {
+    animation: cascade-in 340ms cubic-bezier(0.2, 0, 0, 1) backwards;
+    animation-delay: calc(var(--cascade-i, 0) * 40ms);
+}
+
+/*
  * The one reduced-motion block in this file, sited after the last transition
  * it has to answer for. Everything in global.css that moves is listed here —
- * the disclosure caret, the toggle's two icons, the monogram — so a transition
+ * the disclosure caret, the toggle's two icons, the monogram, the cascade — so a transition
  * added anywhere above has exactly one place to be registered. It is far from
  * most of what it covers, which is why it names its subjects rather than
  * leaving them to be found: the caret was declared 180 lines up and went
@@ -692,6 +712,12 @@ blockquote {
     .theme-toggle__icon,
     svg.logo {
         transition: none;
+    }
+
+    /* The script already stands down for reduced motion; this covers a
+       preference changed after the page loaded. */
+    .cascade {
+        animation: none;
     }
 }
 
