@@ -68,9 +68,15 @@
         column-gap: var(--space-s);
         align-items: start;
 
+        /* Dropped so the picture's top edge meets the top of the title's
+           capitals rather than the top of its line box. In IBM Plex Sans
+           (ascent 1.025, descent 0.275, cap height 0.698) at the title's
+           1.32 line height, the caps start 0.337em down: 0.01em of
+           half-leading plus 0.327em of ascent above the cap line. */
         & > .margin-list__thumb {
             grid-column: 1;
             grid-row: 1 / span 2;
+            margin-top: calc(var(--font-size-0) * 0.337);
         }
 
         & > .margin-list__entry {
