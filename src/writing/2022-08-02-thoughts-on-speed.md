@@ -42,6 +42,8 @@ Our aim, as software designers and developers, should be to never break this cou
 
 ---
 
+{% pullquote %}Speed is not a feature; you don’t build software and then tack on speed as an enhancement later.{% endpullquote %}
+
 Speed is not a feature; you don’t build software and then tack on speed as an enhancement later. Sure, you can speed it up through refactoring or optimizations, but you will inevitably hit the limits of what is achievable—a limit imposed on you by the inertia of earlier decisions. Pushing beyond this limit often involves rebuilding large swaths of the entire system.
 
 Speed is thus the byproduct of numerous architectural, product and design decisions on the macro and micro scale throughout the development and maintenance of a system. Achieving speed means considering it as a factor in each and every one of these decisions. 

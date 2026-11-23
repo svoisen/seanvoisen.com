@@ -64,6 +64,7 @@ export default async function(eleventyConfig) {
    * shortcodes
    */
   eleventyConfig.addShortcode("video", shortcodes.video);
+  eleventyConfig.addPairedShortcode("pullquote", shortcodes.pullquote);
 
   /*
    * collections

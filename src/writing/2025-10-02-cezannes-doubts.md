@@ -87,6 +87,8 @@ The phenomenological epoché isn’t about deliberate ignorance. It’s not abou
 
 ### Use perception as material
 
+{% pullquote %}He didn’t paint mountains; he painted his perception of mountains.{% endpullquote %}
+
 Lastly, Cézanne used perception as raw material. He didn’t paint mountains; he painted his perception of mountains. Designers can adopt a similar approach. When we design a loading animation, we’re not merely filling time; we’re designing the perception of duration. When we choose between a sharp corner and a rounded one, we’re working with how edges feel to the eye, how they guide or arrest movement across a screen. When we design for accessibility through well-contrasted color choices, we respect the needs of people who may perceive the world differently than ourselves.
 
 To do this well, we must recognize that perceptual material behaves differently than purely visual material. First, it’s culturally influenced and contextually defined. The color red, for instance means “error” or “stop” in one context, and “luck” in another. Perceptual material is also physiologically grounded. We can't help but notice motion in our peripheral vision. And we’re forced into specific sequences of attention simply by how blurring background objects. When Cézanne painted what he perceived rather than what he merely saw, he was playing with these properties of perception too, showing how distance and nearness could coexist, or how solidity and atmosphere interpenetrate.

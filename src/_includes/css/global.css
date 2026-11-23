@@ -514,15 +514,20 @@ blockquote {
             margin-top: 0;
         }
 
-        :is(h1, h2, h3, h4, h5):has(+ p, + ul, + ol, + blockquote) {
+        /* A pull quote between a heading and its paragraph leaves the
+           flow, so the pair keeps its tight spacing across it. */
+        :is(h1, h2, h3, h4, h5):has(+ p, + ul, + ol, + blockquote, + .pullquote + :is(p, ul, ol, blockquote)) {
             margin-bottom: var(--space-2xs);
         }
 
-        :is(h1, h2, h3, h4, h5) + :is(p, ul, ol, blockquote) {
+        :is(h1, h2, h3, h4, h5) + :is(p, ul, ol, blockquote),
+        :is(h1, h2, h3, h4, h5) + .pullquote + :is(p, ul, ol, blockquote) {
             margin-top: var(--space-2xs);
         }
 
-        :is(aside) {
+        /* A boxed callout. Notes and pull quotes are asides too, set on
+           their own terms further down. */
+        & aside:not(.note, .pullquote) {
             font-family: var(--font-family-ui);
             padding: var(--space-s);
             border: var(--border-width-default) solid var(--border-color);
@@ -1210,6 +1215,71 @@ blockquote {
         }
     }
 
+    .post-content .pullquote {
+        display: block;
+        float: right;
+        clear: right;
+        width: var(--margin-width);
+        /* The quote comes before its paragraph in the markup and floats
+           from the paragraph's top edge. Its top margin moves it down until
+           its first capitals meet the paragraph's: to the paragraph's cap
+           top (0.552em at 1.75 leading), back up over the hairline and its
+           padding, and the quote's own cap top (0.327em at 1.3 leading).
+           That comes out slightly negative, so like a note's lift it is a
+           relative offset rather than a margin. */
+        position: relative;
+        top: calc(0.552 * var(--font-size-0) - 1px - var(--space-s) - 0.327 * var(--font-size-1));
+        margin: 0 calc(-1 * (var(--column-gap) + var(--margin-width))) calc(var(--note-lift) + var(--space-m)) 0;
+        padding-top: var(--space-s);
+        border-top: 1px solid var(--border-color);
+
+        & p {
+            margin: 0;
+            font-family: var(--font-family-heading);
+            font-size: var(--font-size-1);
+            font-weight: var(--heading-font-weight);
+            line-height: 1.3;
+            letter-spacing: -0.006em;
+            color: var(--foreground-color);
+            text-wrap: balance;
+        }
+    }
+
+    /* A figure that reaches into the margin, with its caption or by its
+       width, starts below any note or pull quote still running down the
+       margin rather than printing over it. */
+    :is(.post-content, .page-content) figure {
+        clear: right;
+    }
+
+    /* A note leaves the flow for the margin column, reaching across the gap
+       the way the captions do. Notes stack rather than overlap.
+
+       It follows its paragraph in the markup, so it would float level with
+       the next one. --note-lift raises it until its first baseline meets
+       the paragraph's last: back over the paragraph's bottom margin
+       (--space-m), then the paragraph's last baseline above its bottom edge
+       (0.5em at 1.75 leading, from Plex's 1.025/0.275 ascent/descent), then
+       the note's first baseline below its top (1.125em at 1.5 leading).
+
+       The lift is a relative offset, not a negative margin: clearance
+       between floats is worked out before a negative margin applies, so a
+       second note would be pulled up into the first. Every margin float
+       instead reserves the lift below itself, so whatever stacks under it
+       lands that much lower and the lift brings it back to the usual gap. */
+    .post-content {
+        --note-lift: calc(var(--space-m) + 0.5 * var(--font-size-0) + 1.125 * var(--font-size--1));
+    }
+
+    .post-content .note {
+        position: relative;
+        top: calc(-1 * var(--note-lift));
+        float: right;
+        clear: right;
+        width: var(--margin-width);
+        margin: 0 calc(-1 * (var(--column-gap) + var(--margin-width))) calc(var(--note-lift) + var(--space-s)) 0;
+    }
+
     /* On a prose page the figure is a direct child of the content wrapper,
        which spans the frame and caps its children at the main column. Here
        the figure is given the whole width outright instead of reaching
@@ -1240,31 +1310,48 @@ blockquote {
     background-color: var(--border-color);
 }
 
-/* Footnotes close the essay in the body face a step down, set off by the
-   same rule the topics use. */
-.footnotes-sep {
-    display: none;
-}
-
-.footnotes {
-    margin-top: var(--space-xl);
-    padding-top: var(--space-s);
-    border-top: 1px solid var(--border-color);
-    font-family: var(--font-family-body);
+/*
+ * Notes. A footnote is rendered right after the paragraph that cites it
+ * (see plugins/markdown.js), as an aside with its number hanging in a
+ * column of its own. On a phone it reads there, inset a step from the
+ * prose; from 720px it moves into the margin column, below.
+ */
+.note {
+    display: grid;
+    grid-template-columns: auto minmax(0, 1fr);
+    column-gap: 0.5em;
+    margin: var(--space-s) 0 var(--space-m) var(--space-m);
+    font-family: var(--font-family-ui);
     font-size: var(--font-size--1);
+    line-height: 1.5;
     color: var(--deemphasized-color);
-
-    & ol {
-        margin-left: var(--space-s);
-    }
 
     & p {
         margin: 0;
     }
+
+    & p + p {
+        margin-top: var(--space-2xs);
+    }
 }
 
-.footnote-ref a, .footnote-backref {
+.note__number {
+    font-variant-numeric: tabular-nums;
+}
+
+.footnote-ref a {
     text-decoration: none;
+}
+
+/*
+ * Pull quotes. A line from the essay set again, larger, in the margin
+ * beside the passage it comes from: the heading face at h4's size, opened
+ * by the hairline the section bars use. No quotation marks and no colour —
+ * the size and the margin are what mark it. Hidden below 720px, where
+ * there is no margin and it would read as the text repeating itself.
+ */
+.pullquote {
+    display: none;
 }
 
 /* Qualified enough to outrank the main column's image rule

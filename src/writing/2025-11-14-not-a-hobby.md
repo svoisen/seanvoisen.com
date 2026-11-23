@@ -61,6 +61,8 @@ I leaned on companion books and secondary material to help me decipher and under
 
 In reading all of these authors together, I learned more deeply than if I had approached each philosopher independently. I saw how certain ideas about the human lived experience shifted and transformed over time. And if, on first reading, a given concept felt opaque or confusing, encountering it again and again through another perspective would often bring new clarity and understanding.
 
+{% pullquote %}It is the thing I do outside of work that I take as seriously as work, except with one small difference: I’m not paid for it.{% endpullquote %}
+
 I also (I will openly admit!) used AI to aid in my learning process. Used poorly, LLMs quickly become a crutch, a way to fool yourself and feign learning without actually learning anything. But, with a careful approach, a well-wielded LLM can act as a powerful learning partner, a tool for testing understanding and suggesting new avenues for discovery. I have a lot I can say on this topic, but I’ll have to save it for another day.
 
 As part of my experiment, I shared my thoughts and learnings in an ongoing series of essays. As of now, I’ve published four of these essays: [Phenomenology and the impossibility of experience design](/writing/phenomenology-and-the-impossibility-of-experience-design/), [Parts and wholes and moments, oh my!](/writing/parts-wholes-moments-oh-my/), [Cézanne’s doubts](https://seanvoisen.com/writing/cezannes-doubts/), and [Design for lingering](/writing/design-for-lingering/). I am also currently editing a first draft of a fifth essay. 
