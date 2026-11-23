@@ -1,0 +1,41 @@
+{#
+    The cascade: on load, the page's content arrives as one unbroken run, each
+    block a beat after the one above it, top to bottom across every section.
+    The continuity is the point; staggering whole sections instead reads as a
+    flicker.
+
+    The script walks the main column in document order, descending through
+    containers (the article, its sections and headers, the prose, the lists)
+    and treating everything else as one unit: a paragraph, a figure, a list
+    row, a section bar. Each unit above the fold gets its place in the run as
+    --cascade-i and the class that animates it (global.css, "Cascade").
+    Units below the fold are left alone, so nothing animates out of sight
+    and the run's length is bounded by the screen, not by the page.
+
+    It runs at the foot of the body, before the first paint, so a unit is
+    never seen before it starts. Without the script nothing moves and the
+    page is simply there. It stands down for reduced motion and for a page
+    brought back with the back button, which the reader has already seen.
+#}
+<script>
+(function () {
+    if (matchMedia("(prefers-reduced-motion: reduce)").matches) return;
+    var nav = performance.getEntriesByType("navigation")[0];
+    if (nav && nav.type === "back_forward") return;
+
+    var containers = "article, section, header, .page-content, .post-content, .margin-list, .facts, .list-header, .books-grid, .directory-list";
+    var fold = innerHeight;
+    var i = 0;
+
+    (function walk(el) {
+        for (var c = el.firstElementChild; c; c = c.nextElementSibling) {
+            if (c.matches(containers)) { walk(c); continue; }
+            var r = c.getBoundingClientRect();
+            if (r.top >= fold) return;
+            if (!r.height) continue;
+            c.style.setProperty("--cascade-i", i++);
+            c.classList.add("cascade");
+        }
+    })(document.querySelector("main"));
+})();
+</script>
